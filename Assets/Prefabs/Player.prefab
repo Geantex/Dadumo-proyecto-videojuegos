@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8533895736318388644}
   - component: {fileID: 7885590786983776198}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Visor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,8 +110,9 @@ GameObject:
   - component: {fileID: 5810865458521887181}
   - component: {fileID: 5810865458521887180}
   - component: {fileID: 5810865458521887179}
+  - component: {fileID: 4330091110751831373}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Cuerpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,6 +197,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4330091110751831373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810865458521887176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6df7c427750a3249b51741b52ccb43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: 5
+  moveSpeed: 2
 --- !u!1 &5810865458929154171
 GameObject:
   m_ObjectHideFlags: 0
