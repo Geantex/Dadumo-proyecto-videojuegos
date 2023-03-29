@@ -320,7 +320,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
--r:"C:/Users/Adria/Documents/UPV/2º Cuatrimestre/Diseño y Prog Web/Prueba/GitFlow/Dadumo-proyecto-videojuegos/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"C:/Users/gerar/Desktop/UPV/GTI/2o/Proyecto Aplicaciones Multimedia Interactivas. Videojuegos/Dadumo-proyecto-videojuegos/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
@@ -339,6 +339,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/MainMenu.cs"
+"Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/TacticsCamera.cs"
 -langversion:9.0
 
