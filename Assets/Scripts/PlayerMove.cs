@@ -20,7 +20,7 @@ public class PlayerMove : TacticsMove
         }
         else
         {
-            // todo: Move();
+            Move();
         }
     }
     void CheckMouse()
