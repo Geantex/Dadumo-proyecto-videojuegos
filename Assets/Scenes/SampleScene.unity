@@ -1660,8 +1660,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5810865458521887176, guid: 74852777d863006458f07f13cbf36064, type: 3}
+      propertyPath: m_TagString
+      value: Unidad
+      objectReference: {fileID: 0}
     - target: {fileID: 5810865458929154171, guid: 74852777d863006458f07f13cbf36064, type: 3}
       propertyPath: m_Name
+      value: Mario
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810865458929154171, guid: 74852777d863006458f07f13cbf36064, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
