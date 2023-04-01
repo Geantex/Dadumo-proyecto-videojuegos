@@ -17,10 +17,36 @@ public class PlayerMove : TacticsMove
         {
             FindSelectableTiles();
             CheckMouse();
+            DondeRaton();
         }
         else
         {
             Move();
+        }
+    }
+
+    // Esta función mira donde está el ratón, sin falta de hacer click. Hay que llamarla desde el Update de vuestro script
+    public void DondeRaton()
+    //public Unidad DondeRaton()
+    {
+        Ray trackearCursor = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit sobreUnidad;
+        if (Physics.Raycast(trackearCursor, out sobreUnidad))
+        {
+            if (sobreUnidad.collider.tag == "Unidad")
+            {
+                // falta crear la clase unidad
+                // Unidad unidad = hit.collider.GetComponent<Unidad>();
+
+                Debug.Log("Unidad encontrada! Se llama " + sobreUnidad.collider.gameObject.name);
+            }
+            // si hace click en enemigo en el futuro??
+            // Hugo AQUI!!!!
+            /*if (hit.collider.tag = "Enemigo") 
+            {
+            // atacarEnemigo();
+            }
+            */
         }
     }
     void CheckMouse()
@@ -42,7 +68,12 @@ public class PlayerMove : TacticsMove
                     }
                 }
                 // si hace click en enemigo en el futuro??
-                //if (hit.collider.tag = "Enemigo")
+                // Hugo AQUI!!!!
+                /*if (hit.collider.tag = "Enemigo") 
+                {
+                // atacarEnemigo();
+                }
+                */
             }
         }
     }
