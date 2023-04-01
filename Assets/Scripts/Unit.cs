@@ -8,6 +8,9 @@ public class Unit : MonoBehaviour
     private int life = 150;
     private int mana = 100;
     private int movement;
+    private string stateEffect;
+    private string boostType;
+    private double boost;
     private BasicAtack atack = new BasicAtack(9, 20);
     private ArrayList specialAtacks = new ArrayList();
     private GameObject selectedObject = new GameObject();
@@ -56,6 +59,25 @@ public class Unit : MonoBehaviour
         get { return mana; }
         set { mana = value; }
     }
+
+    public string StateEffect
+    {
+        get { return stateEffect; }
+        set { stateEffect = value; }
+    }
+
+    public string BoostType
+    {
+        get { return boostType; }
+        set { boostType = value; }
+    }
+
+    public double Boost
+    {
+        get { return boost; }
+        set { boost = value; }
+    }
+
     public void AddSpecialAtack(SpecialAtack specialAtack)
     {
         specialAtacks.Add(specialAtack);

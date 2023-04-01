@@ -6,6 +6,20 @@ public class SpecialAtack : MonoBehaviour
 {
     private int damage;
     private int range;
+    private string stateEffect;
+    private double stateEffectProbability;
+    private string boostType;
+    private double boostValue;
+
+    public SpecialAtack(int damage, int range, string stateEffect, double stateEffectProbability, string boostType, double boostValue)
+    {
+        this.damage = damage;
+        this.range = range;
+        this.stateEffect = stateEffect;
+        this.stateEffectProbability = stateEffectProbability;
+        this.boostType = boostType;
+        this.boostValue = boostValue;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,18 +32,17 @@ public class SpecialAtack : MonoBehaviour
         
     }
 
-    void Atack()
+    public void Atack(GameObject enemy, GameObject allie)
     {
+        float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
+        if (distance <= range)
+        {
+            enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
+            enemy.GetComponent<Unit>().StateEffect = stateEffect;
+            enemy.GetComponent<Unit>().BoostType = boostType;
+            enemy.GetComponent<Unit>().Boost = boostValue;
+        }
 
-    }
-
-    void MainEffect()
-    {
-
-    }
-
-    void SideEffect()
-    {
-
+        Debug.Log("La distancia entre los dos objetos es: " + distance);
     }
 }
