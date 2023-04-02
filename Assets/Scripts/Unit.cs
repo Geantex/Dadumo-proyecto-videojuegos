@@ -8,21 +8,41 @@ public class Unit : MonoBehaviour
     private int life = 150;
     private int mana = 100;
     private int movement;
+    private PlayerMove move = new PlayerMove();
+    private NPCMove npc = new NPCMove();
     private string stateEffect;
     private string boostType;
     private double boost;
     private BasicAtack atack = new BasicAtack(9, 20);
     private ArrayList specialAtacks = new ArrayList();
-    private GameObject selectedObject = new GameObject();
+    private GameObject selectedObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            move.Init(gameObject);
+        }
+        else if (GameObject.FindGameObjectWithTag("Enemy"))
+        {
+            npc.Init(gameObject);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            move.UpdateMove(gameObject);
+        }
+        else if (GameObject.FindGameObjectWithTag("Enemy"))
+        {
+            npc.UpdateNPCMove(gameObject);
+        }
+        
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -36,13 +56,8 @@ public class Unit : MonoBehaviour
                 
             }
         }
-        if(selectedObject != null)
-        {
-            Debug.Log("Clicked: " + selectedObject);
-        }
         if(selectedObject != null && selectedObject.GetComponent<Unit>() != null)
         {
-            Debug.Log("Clicked: " + selectedObject.GetComponent<Unit>().Life);
             atack.Atack(selectedObject, GameObject.FindGameObjectWithTag("Player"));
             Debug.Log("Clicked: " + selectedObject.GetComponent<Unit>().Life);
         }
