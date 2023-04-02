@@ -38,9 +38,18 @@ public class SpecialAtack : MonoBehaviour
         if (distance <= range)
         {
             enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
-            enemy.GetComponent<Unit>().StateEffect = stateEffect;
-            enemy.GetComponent<Unit>().BoostType = boostType;
-            enemy.GetComponent<Unit>().Boost = boostValue;
+            if(stateEffect != null && stateEffectProbability != null)
+            {
+                if (Random.Range(0, 100) < stateEffectProbability)
+                {
+                    enemy.GetComponent<Unit>().StateEffect = stateEffect;
+                }
+            }
+            if (boostType != null && boostValue != null)
+            {
+                enemy.GetComponent<Unit>().BoostType = boostType;
+                enemy.GetComponent<Unit>().Boost = boostValue;
+            }
         }
 
         Debug.Log("La distancia entre los dos objetos es: " + distance);
