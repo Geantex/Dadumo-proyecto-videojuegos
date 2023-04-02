@@ -7,20 +7,45 @@ public class PlayerMove : TacticsMove
     // Start is called before the first frame update
     void Start()
     {
-        Init();
+        Init(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void UpdateMove(GameObject gameObject)
+    {
         if (!moving)
         {
-            FindSelectableTiles();
+
+            FindSelectableTiles(gameObject);
             CheckMouse();
+            WhereMouse();
         }
         else
         {
-            Move();
+            Move(gameObject);
+        }
+    }
+
+    // Esta función mira donde está el ratón, sin falta de hacer click. Hay que llamarla desde el Update de vuestro script
+    public void WhereMouse()
+    //public Unidad DondeRaton()
+    {
+        Ray trackearCursor = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit sobreUnidad;
+        if (Physics.Raycast(trackearCursor, out sobreUnidad))
+        {
+            if (sobreUnidad.collider.tag == "Unidad")
+            {
+                // falta crear la clase unidad
+                // Unidad unidad = hit.collider.GetComponent<Unidad>();
+
+                Debug.Log("Unidad encontrada! Se llama " + sobreUnidad.collider.gameObject.name);
+            }
         }
     }
     void CheckMouse()
@@ -41,8 +66,6 @@ public class PlayerMove : TacticsMove
                         MoveToTile(t);
                     }
                 }
-                // si hace click en enemigo en el futuro??
-                //if (hit.collider.tag = "Enemigo")
             }
         }
     }

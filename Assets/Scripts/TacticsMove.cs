@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class TacticsMove : MonoBehaviour
 {
+    public bool turn = false;
+
     List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
@@ -14,21 +16,33 @@ public class TacticsMove : MonoBehaviour
 
     public bool moving = false;
     public int move = 5;
+    public float jumpHeight = 2;
     public float moveSpeed = 2;
+    public float jumpVelocity = 4.5f;
 
     Vector3 velocity = new Vector3();
     Vector3 heading = new Vector3();
 
     float halfHeight = 0;
-    protected void Init() 
+
+    bool fallingDown = false;
+    bool jumpingUp = false;
+    bool movingEdge = false;
+    Vector3 jumpTarget;
+
+    public Tile actualTargetTile;
+    public void Init(GameObject gameObject) 
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
 
-        halfHeight = GetComponent<Collider>().bounds.extents.y;
+        halfHeight = gameObject.GetComponent<Collider>().bounds.extents.y;
 
+        GetCurrentTile(gameObject);
+
+        TurnManager.AddUnit(this);
     }
 
-    public void GetCurrentTile()
+    public void GetCurrentTile(GameObject gameObject)
     {
         currentTile = GetTargetTile(gameObject);
         currentTile.current = true;
@@ -47,27 +61,27 @@ public class TacticsMove : MonoBehaviour
         return tile;
     }
 
-    public void ComputeAdjacencyLists()
+    public void ComputeAdjacencyLists(float jumpHeight, Tile target)
     {
+        //tiles = GameObject.FindGameObjectsWithTag("Tile");
+
         foreach (GameObject tile in tiles)
         {
             Tile t = tile.GetComponent<Tile>();
-            t.FindNeighbors();
-
+            t.FindNeighbors(jumpHeight, target);
         }
     }
 
-    public void FindSelectableTiles()
+    public void FindSelectableTiles(GameObject gameObject)
     {
-        ComputeAdjacencyLists();
-        GetCurrentTile();
+        ComputeAdjacencyLists(jumpHeight, null);
+        GetCurrentTile(gameObject);
 
         Queue<Tile> process = new Queue<Tile>();
 
         process.Enqueue(currentTile);
         currentTile.visited = true;
-        //currentTile.parent = ?? leave as null
-
+        //currentTile.parent = ??  leave as null 
 
         while (process.Count > 0)
         {
@@ -105,30 +119,44 @@ public class TacticsMove : MonoBehaviour
         }
     }
 
-    public void Move()
+    public void Move(GameObject gameObject)
     {
         if (path.Count > 0)
         {
+            //Tile t = path.Peek();
             Tile t = path.Peek();
-            Vector3 target = t.transform.position;
-
-            // Calculate the unit's position on top of the target tile (we are going to move it there!)
-            target.y += halfHeight + t.GetComponent<Collider>().bounds.extents.y;
-
-            if (Vector3.Distance(transform.position, target) >= 0.05f*moveSpeed)
+            if (t != null) // Agrega esta verificación condicional para evitar acceder a una referencia nula
             {
+                Vector3 target = t.transform.position;
 
-                CalculateHeading(target);
-                SetHorizontalVelocity();
+                // Calculate the unit's position on top of the target tile (we are going to move it there!)
+                target.y += halfHeight + t.GetComponent<Collider>().bounds.extents.y;
 
-                transform.forward = heading;
-                transform.position += velocity * Time.deltaTime;
-            }
-            else
-            {
-                // Tile center reached
-                transform.position = target;
-                path.Pop();
+                if (Vector3.Distance(gameObject.transform.position, target) >= 0.05f * moveSpeed)
+                {
+                    bool jump = gameObject.transform.position.y != target.y;
+
+                    if (jump)
+                    {
+                        Jump(target, gameObject);
+                    }
+                    else
+                    {
+                        CalculateHeading(target, gameObject);
+                        SetHorizontalVelocity();
+                    }
+
+                    gameObject.transform.forward = heading;
+                    gameObject.transform.position += velocity * Time.deltaTime;
+                }
+                else
+                {
+                    // Tile center reached
+                    gameObject.transform.position = target;
+                    path.Pop();
+
+                    TurnManager.EndTurn();
+                }
             }
         }
         else
@@ -152,15 +180,222 @@ public class TacticsMove : MonoBehaviour
 
         selectableTiles.Clear();
     }
-    void CalculateHeading(Vector3 target)
+    void CalculateHeading(Vector3 target, GameObject gameObject)
     {
-        heading = target - transform.position;
+        heading = target - gameObject.transform.position;
         heading.Normalize();
 
     }
     void SetHorizontalVelocity()
     {
         velocity = heading * moveSpeed;
+    }
+
+    void Jump(Vector3 target, GameObject gameObject)
+    {
+        if (fallingDown)
+        {
+            FallDownward(target);
+        }
+        else if (jumpingUp)
+        {
+            JumpUpward(target);
+        }
+        else if (movingEdge)
+        {
+            MoveToEdge();
+        }
+        else
+        {
+            PrepareJump(target, gameObject);
+        }
+    }
+
+    void PrepareJump(Vector3 target, GameObject gameObject)
+    {
+        float targetY = target.y;
+        target.y = transform.position.y;
+
+        CalculateHeading(target, gameObject);
+
+        if (transform.position.y > targetY)
+        {
+            fallingDown = false;
+            jumpingUp = false;
+            movingEdge = true;
+
+            jumpTarget = transform.position + (target - transform.position) / 2.0f;
+        }
+        else
+        {
+            fallingDown = false;
+            jumpingUp = true;
+            movingEdge = false;
+
+            velocity = heading * moveSpeed / 3.0f;
+
+            float difference = targetY - transform.position.y;
+
+            velocity.y = jumpVelocity * (0.5f + difference / 2.0f);
+        }
+    }
+
+    void FallDownward(Vector3 target)
+    {
+        velocity += Physics.gravity * Time.deltaTime;
+
+        if (transform.position.y <= target.y)
+        {
+            fallingDown = false;
+            jumpingUp = false;
+            movingEdge = false;
+
+            Vector3 p = transform.position;
+            p.y = target.y;
+            transform.position = p;
+
+            velocity = new Vector3();
+        }
+    }
+
+    void JumpUpward(Vector3 target)
+    {
+        velocity += Physics.gravity * Time.deltaTime;
+
+        if (transform.position.y > target.y)
+        {
+            jumpingUp = false;
+            fallingDown = true;
+        }
+    }
+
+    void MoveToEdge()
+    {
+        if (Vector3.Distance(transform.position, jumpTarget) >= 0.05f)
+        {
+            SetHorizontalVelocity();
+        }
+        else
+        {
+            movingEdge = false;
+            fallingDown = true;
+
+            velocity /= 5.0f;
+            velocity.y = 1.5f;
+        }
+    }
+
+    protected Tile FindLowestF(List<Tile> list)
+    {
+        Tile lowest = list[0];
+
+        foreach (Tile t in list)
+        {
+            if (t.f < lowest.f)
+            {
+                lowest = t;
+            }
+        }
+
+        list.Remove(lowest);
+
+        return lowest;
+    }
+
+    protected Tile FindEndTile(Tile t)
+    {
+        Stack<Tile> tempPath = new Stack<Tile>();
+
+        Tile next = t.parent;
+        while (next != null)
+        {
+            tempPath.Push(next);
+            next = next.parent;
+        }
+
+        if (tempPath.Count <= move)
+        {
+            return t.parent;
+        }
+
+        Tile endTile = null;
+        for (int i = 0; i <= move; i++)
+        {
+            endTile = tempPath.Pop();
+        }
+
+        return endTile;
+    }
+
+    protected void FindPath(Tile target, GameObject gameObject)
+    {
+        ComputeAdjacencyLists(jumpHeight, target);
+        GetCurrentTile(gameObject);
+
+        List<Tile> openList = new List<Tile>();
+        List<Tile> closedList = new List<Tile>();
+
+        openList.Add(currentTile);
+        //currentTile.parent = ??
+        currentTile.h = Vector3.Distance(currentTile.transform.position, target.transform.position);
+        currentTile.f = currentTile.h;
+
+        while (openList.Count > 0)
+        {
+            Tile t = FindLowestF(openList);
+
+            closedList.Add(t);
+
+            if (t == target)
+            {
+                actualTargetTile = FindEndTile(t);
+                MoveToTile(actualTargetTile);
+                return;
+            }
+
+            foreach (Tile tile in t.adjacencyList)
+            {
+                if (closedList.Contains(tile))
+                {
+                    //Do nothing, already processed
+                }
+                else if (openList.Contains(tile))
+                {
+                    float tempG = t.g + Vector3.Distance(tile.transform.position, t.transform.position);
+
+                    if (tempG < tile.g)
+                    {
+                        tile.parent = t;
+
+                        tile.g = tempG;
+                        tile.f = tile.g + tile.h;
+                    }
+                }
+                else
+                {
+                    tile.parent = t;
+
+                    tile.g = t.g + Vector3.Distance(tile.transform.position, t.transform.position);
+                    tile.h = Vector3.Distance(tile.transform.position, target.transform.position);
+                    tile.f = tile.g + tile.h;
+
+                    openList.Add(tile);
+                }
+            }
+        }
+
+        //todo - what do you do if there is no path to the target tile?
+        Debug.Log("Path not found");
+    }
+
+    public void BeginTurn()
+    {
+        turn = true;
+    }
+
+    public void EndTurn()
+    {
+        turn = false;
     }
 }
 
