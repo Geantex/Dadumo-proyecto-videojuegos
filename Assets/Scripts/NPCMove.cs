@@ -6,7 +6,7 @@ public class NPCMove : TacticsMove
 {
     GameObject target;
 
-    // Use this for initialization
+    // Use this for initializationn
     void Start()
     {
         //Init(gameObject);
