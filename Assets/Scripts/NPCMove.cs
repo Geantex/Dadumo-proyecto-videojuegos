@@ -9,7 +9,7 @@ public class NPCMove : TacticsMove
     // Use this for initialization
     void Start()
     {
-        Init(gameObject);
+        //Init(gameObject);
     }
 
     // Update is called once per frame
@@ -18,9 +18,9 @@ public class NPCMove : TacticsMove
         
     }
 
-    public void UpdateNPCMove(GameObject gameObject)
+    public void UpdateNPCMove(GameObject gameObject, bool turn)
     {
-        Debug.DrawRay(transform.position, transform.forward);
+        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward);
 
         if (!turn)
         {

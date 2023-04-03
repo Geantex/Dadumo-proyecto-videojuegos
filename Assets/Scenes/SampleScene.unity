@@ -994,6 +994,23 @@ MonoBehaviour:
   f: 0
   g: 0
   h: 0
+--- !u!1 &187151002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3075343191714246893, guid: 902d25036f1e0e44286a8cc5625683bc, type: 3}
+  m_PrefabInstance: {fileID: 3075343191855903354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &187151004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187151002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e421f5db9018107469f427bd50039cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &190295017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,11 +1047,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5810865458521887176, guid: 74852777d863006458f07f13cbf36064, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 5810865458929154171, guid: 74852777d863006458f07f13cbf36064, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810865458929154171, guid: 74852777d863006458f07f13cbf36064, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
       propertyPath: m_RootOrder
@@ -1945,58 +1966,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4330091110751831373, guid: 74852777d863006458f07f13cbf36064, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154171, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_Name
-      value: Mario
+    - target: {fileID: 5810865458521887176, guid: 74852777d863006458f07f13cbf36064, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5810865458929154171, guid: 74852777d863006458f07f13cbf36064, type: 3}
       propertyPath: m_TagString
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5810865458929154172, guid: 74852777d863006458f07f13cbf36064, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74852777d863006458f07f13cbf36064, type: 3}
@@ -2061,7 +2041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2997285381758370612, guid: 78261669bc6f0034c9d514d130935f98, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2997285381758370612, guid: 78261669bc6f0034c9d514d130935f98, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3713,7 +3693,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &706004564
 MonoBehaviour:
@@ -4218,7 +4198,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &757679237
 MonoBehaviour:
@@ -9397,7 +9377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 5
 --- !u!4 &1824458190
 Transform:
   m_ObjectHideFlags: 0
@@ -9411,7 +9391,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1825845319
 MonoBehaviour:
