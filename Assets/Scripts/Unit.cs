@@ -30,11 +30,11 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Player"))
+        if (gameObject.tag == "Player")
         {
             move.Init(gameObject, this);
         }
-        else if (GameObject.FindGameObjectWithTag("NPC"))
+        else if (gameObject.tag == "NPC")
         {
             npc.Init(gameObject, this);
         }
@@ -44,11 +44,11 @@ public class Unit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player"))
+        if (gameObject.tag == "Player")
         {
             move.UpdateMove(gameObject, turn);
         }
-        else if (GameObject.FindGameObjectWithTag("NPC"))
+        else if (gameObject.tag == "NPC")
         {
             npc.UpdateNPCMove(gameObject, turn);
         }

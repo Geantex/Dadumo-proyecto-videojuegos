@@ -29,7 +29,7 @@ public class NPCMove : TacticsMove
 
         if (!moving)
         {
-            FindNearestTarget();
+            FindNearestTarget(gameObject);
             CalculatePath(gameObject);
             FindSelectableTiles(gameObject);
             actualTargetTile.target = true;
@@ -42,11 +42,22 @@ public class NPCMove : TacticsMove
 
     void CalculatePath(GameObject gameObject)
     {
-        Tile targetTile = GetTargetTile(target);
+        Tile targetTile;
+        Debug.Log("SuperTarget" + target + "SuperOtro" + target.transform.position);
+        /*if(target.transform.position == null)
+        {
+            targetTile = GetTargetTile(target);
+        }
+        else
+        {
+            targetTile = GetTargetTile(gameObject);
+        }*/
+        targetTile = GetTargetTile(target);
+
         FindPath(targetTile, gameObject);
     }
 
-    void FindNearestTarget()
+    void FindNearestTarget(GameObject gameObject)
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
 
@@ -55,7 +66,7 @@ public class NPCMove : TacticsMove
 
         foreach (GameObject obj in targets)
         {
-            float d = Vector3.Distance(transform.position, obj.transform.position);
+            float d = Vector3.Distance(gameObject.transform.position, obj.transform.position);
 
             if (d < distance)
             {
