@@ -51,12 +51,11 @@ public class TacticsMove : MonoBehaviour
     {
         RaycastHit hit;
         Tile tile = null;
-
         if (Physics.Raycast(target.transform.position, -Vector3.up, out hit, 1)) 
         {
             tile = hit.collider.GetComponent<Tile>();
         }
-
+        Debug.Log(tile);
         return tile;
     }
 
@@ -338,6 +337,8 @@ public class TacticsMove : MonoBehaviour
 
         openList.Add(currentTile);
         //currentTile.parent = ??
+        Debug.Log(target.transform.position);
+        Debug.Log(currentTile.transform.position);
         currentTile.h = Vector3.Distance(currentTile.transform.position, target.transform.position);
         currentTile.f = currentTile.h;
 
