@@ -128,7 +128,7 @@ public class BattleManagment : MonoBehaviour
         if (state != BattleState.PLAYERTURN)
             return;
 
-        StartCoroutine(PlayerAttack());
+        //StartCoroutine(PlayerAttack());
     }
 
     public void OnHealButton()
@@ -136,6 +136,6 @@ public class BattleManagment : MonoBehaviour
         if (state != BattleState.PLAYERTURN)
             return;
 
-        StartCoroutine(PlayerHeal());
+        //StartCoroutine(PlayerHeal());
     }
 }
