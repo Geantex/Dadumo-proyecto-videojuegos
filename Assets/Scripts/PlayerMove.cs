@@ -7,7 +7,7 @@ public class PlayerMove : TacticsMove
     // Start is called before the first frame update
     void Start()
     {
-        Init(gameObject);
+        //Init(gameObject);
     }
 
     // Update is called once per frame
@@ -16,8 +16,15 @@ public class PlayerMove : TacticsMove
         
     }
 
-    public void UpdateMove(GameObject gameObject)
+    public void UpdateMove(GameObject gameObject, bool turn)
     {
+        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward);
+
+        if (!turn)
+        {
+            return;
+        }
+
         if (!moving)
         {
 

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class TacticsMove : MonoBehaviour
 {
-    public bool turn = false;
+    //public bool turn = false;
 
     List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
@@ -31,15 +31,14 @@ public class TacticsMove : MonoBehaviour
     Vector3 jumpTarget;
 
     public Tile actualTargetTile;
-    public void Init(GameObject gameObject) 
+    public void Init(GameObject gameObject, Unit unit) 
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
 
         halfHeight = gameObject.GetComponent<Collider>().bounds.extents.y;
 
-        GetCurrentTile(gameObject);
-
-        TurnManager.AddUnit(this);
+        //GetCurrentTile(gameObject);
+        TurnManager.AddUnit(unit, this);
     }
 
     public void GetCurrentTile(GameObject gameObject)
@@ -132,7 +131,7 @@ public class TacticsMove : MonoBehaviour
                 // Calculate the unit's position on top of the target tile (we are going to move it there!)
                 target.y += halfHeight + t.GetComponent<Collider>().bounds.extents.y;
 
-                if (Vector3.Distance(gameObject.transform.position, target) >= 0.05f * moveSpeed)
+                if (Vector3.Distance(gameObject.transform.position, target) >= 0.05f)
                 {
                     bool jump = gameObject.transform.position.y != target.y;
 
@@ -155,7 +154,7 @@ public class TacticsMove : MonoBehaviour
                     gameObject.transform.position = target;
                     path.Pop();
 
-                    TurnManager.EndTurn();
+                    
                 }
             }
         }
@@ -163,6 +162,8 @@ public class TacticsMove : MonoBehaviour
         {
             RemoveSelectableTiles();
             moving = false;
+
+            TurnManager.EndTurn();
         }
     }
     
@@ -195,15 +196,15 @@ public class TacticsMove : MonoBehaviour
     {
         if (fallingDown)
         {
-            FallDownward(target);
+            FallDownward(target, gameObject);
         }
         else if (jumpingUp)
         {
-            JumpUpward(target);
+            JumpUpward(target, gameObject);
         }
         else if (movingEdge)
         {
-            MoveToEdge();
+            MoveToEdge(gameObject);
         }
         else
         {
@@ -224,7 +225,7 @@ public class TacticsMove : MonoBehaviour
             jumpingUp = false;
             movingEdge = true;
 
-            jumpTarget = transform.position + (target - transform.position) / 2.0f;
+            jumpTarget = gameObject.transform.position + (target - gameObject.transform.position) / 2.0f;
         }
         else
         {
@@ -234,44 +235,44 @@ public class TacticsMove : MonoBehaviour
 
             velocity = heading * moveSpeed / 3.0f;
 
-            float difference = targetY - transform.position.y;
+            float difference = targetY - gameObject.transform.position.y;
 
             velocity.y = jumpVelocity * (0.5f + difference / 2.0f);
         }
     }
 
-    void FallDownward(Vector3 target)
+    void FallDownward(Vector3 target, GameObject gameObject)
     {
         velocity += Physics.gravity * Time.deltaTime;
 
-        if (transform.position.y <= target.y)
+        if (gameObject.transform.position.y <= target.y)
         {
             fallingDown = false;
             jumpingUp = false;
             movingEdge = false;
 
-            Vector3 p = transform.position;
+            Vector3 p = gameObject.transform.position;
             p.y = target.y;
-            transform.position = p;
+            gameObject.transform.position = p;
 
             velocity = new Vector3();
         }
     }
 
-    void JumpUpward(Vector3 target)
+    void JumpUpward(Vector3 target, GameObject gameObject)
     {
         velocity += Physics.gravity * Time.deltaTime;
 
-        if (transform.position.y > target.y)
+        if (gameObject.transform.position.y > target.y)
         {
             jumpingUp = false;
             fallingDown = true;
         }
     }
 
-    void MoveToEdge()
+    void MoveToEdge(GameObject gameObject)
     {
-        if (Vector3.Distance(transform.position, jumpTarget) >= 0.05f)
+        if (Vector3.Distance(gameObject.transform.position, jumpTarget) >= 0.05f)
         {
             SetHorizontalVelocity();
         }
@@ -388,15 +389,7 @@ public class TacticsMove : MonoBehaviour
         Debug.Log("Path not found");
     }
 
-    public void BeginTurn()
-    {
-        turn = true;
-    }
-
-    public void EndTurn()
-    {
-        turn = false;
-    }
+    
 }
 
 

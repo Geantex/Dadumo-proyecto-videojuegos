@@ -16,16 +16,27 @@ public class Unit : MonoBehaviour
     private BasicAtack atack = new BasicAtack(9, 20);
     private ArrayList specialAtacks = new ArrayList();
     private GameObject selectedObject;
+    public bool turn = false;
+
+    public void BeginTurn()
+    {
+        turn = true;
+    }
+
+    public void EndTurn()
+    {
+        turn = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
         if (GameObject.FindGameObjectWithTag("Player"))
         {
-            move.Init(gameObject);
+            move.Init(gameObject, this);
         }
-        else if (GameObject.FindGameObjectWithTag("Enemy"))
+        else if (GameObject.FindGameObjectWithTag("NPC"))
         {
-            npc.Init(gameObject);
+            npc.Init(gameObject, this);
         }
 
     }
@@ -35,11 +46,11 @@ public class Unit : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Player"))
         {
-            move.UpdateMove(gameObject);
+            move.UpdateMove(gameObject, turn);
         }
-        else if (GameObject.FindGameObjectWithTag("Enemy"))
+        else if (GameObject.FindGameObjectWithTag("NPC"))
         {
-            npc.UpdateNPCMove(gameObject);
+            npc.UpdateNPCMove(gameObject, turn);
         }
         
 
@@ -49,7 +60,7 @@ public class Unit : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.tag == "Enemy")
+                if (hit.collider.tag == "NPC")
                 {
                     selectedObject = hit.transform.gameObject;
                 }
