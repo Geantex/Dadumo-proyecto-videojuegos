@@ -23,7 +23,9 @@ public class PlayerMove : TacticsMove
 
             FindSelectableTiles(gameObject);
             CheckMouse();
+
             WhereMouse();
+
         }
         else
         {
