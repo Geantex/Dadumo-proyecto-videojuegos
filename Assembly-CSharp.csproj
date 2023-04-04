@@ -56,13 +56,8 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\UnitClass.cs" />
-    <Compile Include="Assets\Scripts\BattleManagment.cs" />
-    <Compile Include="Assets\Scripts\SpecialAtack.cs" />
     <Compile Include="Assets\Scripts\BattleHUD.cs" />
-    <Compile Include="Assets\Scripts\Unit.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\BasicAtack.cs" />
     <Compile Include="Assets\Scripts\TacticsMove.cs" />
     <Compile Include="Assets\Scripts\TurnManager.cs" />
     <Compile Include="Assets\Scripts\NPCMove.cs" />
@@ -70,6 +65,7 @@
     <Compile Include="Assets\Scripts\TacticsCamera.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\XD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

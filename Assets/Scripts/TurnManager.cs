@@ -1,43 +1,33 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnManager : MonoBehaviour
+public class TurnManager : MonoBehaviour 
 {
-    static Dictionary<string, List<Unit>> units = new Dictionary<string, List<Unit>>();
+    static Dictionary<string, List<TacticsMove>> units = new Dictionary<string, List<TacticsMove>>();
     static Queue<string> turnKey = new Queue<string>();
-    static Queue<Unit> turnTeam = new Queue<Unit>();
+    static Queue<TacticsMove> turnTeam = new Queue<TacticsMove>();
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+	// Use this for initialization
+	void Start () 
+	{
+		
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
         if (turnTeam.Count == 0)
         {
             InitTeamTurnQueue();
         }
-    }
+	}
 
     static void InitTeamTurnQueue()
     {
-        if (turnKey.Count == 0)
-        {
-            foreach (string key in units.Keys)
-            {
-                turnKey.Enqueue(key);
-            }
-        }
+        List<TacticsMove> teamList = units[turnKey.Peek()];
 
-        Debug.Log("turnKey contents: " + string.Join(", ", turnKey));
-
-        List<Unit> teamList = units[turnKey.Peek()];
-        
-        foreach (Unit unit in teamList)
+        foreach (TacticsMove unit in teamList)
         {
             turnTeam.Enqueue(unit);
         }
@@ -55,7 +45,7 @@ public class TurnManager : MonoBehaviour
 
     public static void EndTurn()
     {
-        Unit unit = turnTeam.Dequeue();
+        TacticsMove unit = turnTeam.Dequeue();
         unit.EndTurn();
 
         if (turnTeam.Count > 0)
@@ -70,13 +60,13 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    public static void AddUnit(Unit unit, TacticsMove tactic)
+    public static void AddUnit(TacticsMove unit)
     {
-        List<Unit> list;
+        List<TacticsMove> list;
 
         if (!units.ContainsKey(unit.tag))
         {
-            list = new List<Unit>();
+            list = new List<TacticsMove>();
             units[unit.tag] = list;
 
             if (!turnKey.Contains(unit.tag))
