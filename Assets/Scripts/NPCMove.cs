@@ -1,26 +1,21 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCMove : TacticsMove
+public class NPCMove : TacticsMove 
 {
     GameObject target;
 
-    // Use this for initialization
-    void Start()
-    {
-        //Init(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void UpdateNPCMove(GameObject gameObject, bool turn)
-    {
-        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward);
+	// Use this for initialization
+	void Start () 
+	{
+        Init();
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
+        Debug.DrawRay(transform.position, transform.forward);
 
         if (!turn)
         {
@@ -29,35 +24,24 @@ public class NPCMove : TacticsMove
 
         if (!moving)
         {
-            FindNearestTarget(gameObject);
-            CalculatePath(gameObject);
-            FindSelectableTiles(gameObject);
+            FindNearestTarget();
+            CalculatePath();
+            FindSelectableTiles();
             actualTargetTile.target = true;
         }
         else
         {
-            Move(gameObject);
+            Move();
         }
-    }
+	}
 
-    void CalculatePath(GameObject gameObject)
+    void CalculatePath()
     {
-        Tile targetTile;
-        Debug.Log("SuperTarget" + target + "SuperOtro" + target.transform.position);
-        /*if(target.transform.position == null)
-        {
-            targetTile = GetTargetTile(target);
-        }
-        else
-        {
-            targetTile = GetTargetTile(gameObject);
-        }*/
-        targetTile = GetTargetTile(target);
-
-        FindPath(targetTile, gameObject);
+        Tile targetTile = GetTargetTile(target);
+        FindPath(targetTile);
     }
 
-    void FindNearestTarget(GameObject gameObject)
+    void FindNearestTarget()
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
 
@@ -66,7 +50,7 @@ public class NPCMove : TacticsMove
 
         foreach (GameObject obj in targets)
         {
-            float d = Vector3.Distance(gameObject.transform.position, obj.transform.position);
+            float d = Vector3.Distance(transform.position, obj.transform.position);
 
             if (d < distance)
             {
