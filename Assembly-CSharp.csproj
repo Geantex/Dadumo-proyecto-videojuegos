@@ -53,19 +53,35 @@
     <UnityVersion>2021.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BattleHUD.cs" />
-    <Compile Include="Assets\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\TacticsMove.cs" />
-    <Compile Include="Assets\Scripts\TurnManager.cs" />
-    <Compile Include="Assets\Scripts\NPCMove.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\TacticsCamera.cs" />
-    <Compile Include="Assets\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Tile.cs" />
-    <Compile Include="Assets\Scripts\XD.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\CharacterClass\PlayerCharacterCLass.cs" />
+    <Compile Include="Assets\InGameCombat\Game\States\PauseState.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Allies\Scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\InGameCombat\Game\States\GameState.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Movement\PlayerMove.cs" />
+    <Compile Include="Assets\MainMenu\Scripts\MainMenuManager.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Enemies\Scripts\NPCAttack.cs" />
+    <Compile Include="Assets\Dapasa\FSM\FSMState.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Movement\TacticsMove.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\CharacterClass\CharacterClass.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Turns\TurnManager.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\CharacterClass\EnemyCharacterClass.cs" />
+    <Compile Include="Assets\InGameCombat\Game\States\GameController.cs" />
+    <Compile Include="Assets\InGameCombat\Game\UI\WinText.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Battle\BattleManagement.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Movement\NPCMove.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Unit.cs" />
+    <Compile Include="Assets\InGameCombat\Game\States\WinState.cs" />
+    <Compile Include="Assets\InGameCombat\Map\Camera\Scripts\TacticsCamera.cs" />
+    <Compile Include="Assets\InGameCombat\Game\States\LoseState.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Battle\Attacks\SpecialAttack.cs" />
+    <Compile Include="Assets\InGameCombat\Map\Scripts\Tile.cs" />
+    <Compile Include="Assets\Dapasa\FSM\FSMMachine.cs" />
+    <Compile Include="Assets\InGameCombat\HUD\InGameHUD\Scripts\BattleHUD.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Scripts\Battle\Attacks\BasicAttack.cs" />
+    <Compile Include="Assets\InGameCombat\Game\UI\LoseText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
