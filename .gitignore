@@ -4,3 +4,7 @@ Library/
 Logs/
 
 UserSettings/Layouts/
+
+UserSettings/
+
+obj/Debug/
