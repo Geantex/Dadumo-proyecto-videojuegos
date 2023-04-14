@@ -8,3 +8,7 @@ UserSettings/Layouts/
 UserSettings/
 
 obj/Debug/
+
+Temp/
+
+.vs/Dadumo-proyecto-videojuegos/v17/

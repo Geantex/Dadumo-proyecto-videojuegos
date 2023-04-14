@@ -78,10 +78,12 @@
     <Compile Include="Assets\InGameCombat\Game\States\LoseState.cs" />
     <Compile Include="Assets\InGameCombat\Units\Scripts\Battle\Attacks\SpecialAttack.cs" />
     <Compile Include="Assets\InGameCombat\Map\Scripts\Tile.cs" />
+    <Compile Include="Assets\Encounters\Encounter.cs" />
     <Compile Include="Assets\Dapasa\FSM\FSMMachine.cs" />
     <Compile Include="Assets\InGameCombat\HUD\InGameHUD\Scripts\BattleHUD.cs" />
     <Compile Include="Assets\InGameCombat\Units\Scripts\Battle\Attacks\BasicAttack.cs" />
     <Compile Include="Assets\InGameCombat\Game\UI\LoseText.cs" />
+    <Compile Include="Assets\Encounters\EncounterManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
