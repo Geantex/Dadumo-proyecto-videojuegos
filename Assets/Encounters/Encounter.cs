@@ -58,10 +58,7 @@ public class Encounter : MonoBehaviour
         {
             button1.SetActive(false);
         }
-        // TODO: Hacer que si no hay texto en un boton, que desaparezca (esto para los 4 botones)
-        // HECHO!!!1! <3 mmm Gabi haces muy buen código!!! Gracias Gabi!!!
-        // Hola soy yo Mario, me gusta mucho tu codigo Gabi, el mio lo voy a hacer LA NOCHE ANTERIOR GILIPOLLAS!!!!!!
-
+        
         if (encounterButton2Text != null)
         {
             button2TextSlot.GetComponent<Text>().text = encounterButton2Text;

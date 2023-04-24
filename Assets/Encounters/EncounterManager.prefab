@@ -296,9 +296,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Number 15 burger king foot lettuce the last thing you want in your burger
-    king burger is someone's foot fungus, but as it turns out, that might be what
-    you get.
+  m_Text: 'Texto de descripcion Texto de descripcion Texto de descripcion Texto de
+    descripcion Texto de descripcion Texto de descripcion Texto de descripcion Texto
+    de descripcion Texto de descripcion Texto de descripcion Texto de descripcion
+    Texto de descripcion Texto de descripcion Texto de descripcion Texto de descripcion
+    Texto de descripcion '
 --- !u!1 &4192329415183838733
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +380,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MATAR!!!
+  m_Text: Boton1
 --- !u!1 &4192329415229766794
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9f528f1075e4448afc98cd428ec405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HUD: {fileID: 0}
+  CameraButtons: {fileID: 0}
+  EncounterCanvas: {fileID: 0}
   button1: {fileID: 4192329414572955639}
   button2: {fileID: 4192329415852910418}
   button3: {fileID: 4192329415229766796}
@@ -1030,7 +1035,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "INCRED\xCDIIIIIIIBILIIIIIS"
+  m_Text: Boton4
 --- !u!1 &4192329416410604227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1216,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FOLLAR
+  m_Text: Boton2
 --- !u!1 &4192329416670689941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,4 +1296,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AD PROFUNDIS!!
+  m_Text: Boton3
