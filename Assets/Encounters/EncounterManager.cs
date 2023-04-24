@@ -7,36 +7,58 @@ using UnityEngine.UI;
 
 public class EncounterManager : MonoBehaviour
 {
-    private GameObject HUD;
-    private GameObject CameraButtons;
-    private GameObject EncounterCanvas;
+    public GameObject HUD;
+    public GameObject CameraButtons;
+    public GameObject EncounterCanvas;
 
     public Button button1;
     public Button button2;
     public Button button3;
     public Button button4;
 
+    Encounter encounter1 = new Encounter();
+    Encounter encounter2 = new Encounter();
 
     [SerializeField] Material encounter1image;
     // Start is called before the first frame update
     void Start()
     {
-        HUD = GameObject.Find("HUD");
-        CameraButtons = GameObject.Find("CameraButtons");
-        EncounterCanvas = GameObject.Find("EncounterCanvas");
-
-        
-
         createEncounters();
-        
+        //startRandomEncounter();
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    // Estos son los métodos para empezar y acabar un encuentro aleatorio
+
+
+    // en startRandomEncounter es donde escribiremos cada "case",
+    // que es donde rellenamos el canvas y asignamos las funciones a los botones con el evento correspondiente
+    public void startRandomEncounter()
     {
-        
+        // cogerá un numero entre 1 y 2, que son los dos encuentros actuales
+        int encuentroAleatorioNumero = UnityEngine.Random.Range(1, 3);
+        showOnlyEncounterCanvas();
+        switch (encuentroAleatorioNumero)
+        {
+            case 1:
+                encounter1.FillEncounterCanvas();
+                button1.onClick.AddListener(Encounter1Button1);
+                button2.onClick.AddListener(Encounter1Button2);
+                break;
+            case 2:
+                encounter2.FillEncounterCanvas();
+                button1.onClick.AddListener(Encounter2Button1);
+                break;
+        }
     }
 
+    public void finishRandomEncounter()
+    {
+        ResetButtons();
+        hideOnlyEncounterCanvas();
+    }
+   
     void showOnlyEncounterCanvas()
     {
         HUD.SetActive(false);
@@ -54,49 +76,34 @@ public class EncounterManager : MonoBehaviour
     void createEncounters()
     {
         // Hacer un tutorial para como hacer un nuevo encuentro
-        Encounter encounter1 = new Encounter();
         encounter1.encounterName = "Encuentro 1!!!";
-        encounter1.encounterDescription = "ESTOY POR FOLLAR AD PROFUNDIS ESTOY POR FOLLAR AD PROFUNDIS ESTOY POR FOLLAR AD PROFUNDIS ESTOY POR FOLLAR AD PROFUNDIS ";
+        encounter1.encounterDescription = "Esta es la descripcion del encuentro 1! Texto de descripcion Texto de descripcion Texto de descripcion Texto de descripcion ";
         // Desconozco el motivo, pero no se ve bien la imagen
         encounter1.encounterImage = encounter1image;
-        encounter1.encounterButton1Text = "Kill yourself";
-        encounter1.encounterButton2Text = "EXPLOTATE LOS TESTICULOS EN ESTE INSTANTE";
+        encounter1.encounterButton1Text = "Saltar";
+        encounter1.encounterButton2Text = "Huir muy rapido rapidin";
 
 
-        Encounter encounter2 = new Encounter();
         encounter2.encounterName = "Encuentro 2!!!";
-        encounter2.encounterDescription = "Eres Mario Climent, haz una de tus actividades favoritas!!!";
+        encounter2.encounterDescription = "Unity.Random funciona!!";
         //encounter2.encounterImage = encounter2image; // Aún no hay imagen para el segundo encuentro :(
-        encounter2.encounterButton1Text = "Spluirgh";
-
-        //button1.onClick.AddListener(Encounter1Button1);
-        
-
-
+        encounter2.encounterButton1Text = "Robar";
         //--------------------------------------------
         // Aquí ya deberían estar definidos todos los encuentros
-
-        
-        // cogerá un numero entre 1 y 2, que son los dos encuentros actuales
-        int encuentroAleatorioNumero = UnityEngine.Random.Range(1, 3);
-        switch (encuentroAleatorioNumero)
-        {
-            case 1:
-                encounter1.FillEncounterCanvas();
-                button1.onClick.AddListener(Encounter1Button1);
-                button2.onClick.AddListener(Encounter1Button2);
-                break;
-            case 2:
-                encounter2.FillEncounterCanvas();
-                button1.onClick.AddListener(Encounter2Button1);
-                break;
-        }
-
-
-        // Esto es de prueba; esta función debe ser llamada con un encuentro al azar
-
     }
-
+    private void ResetButtons()
+    {
+        button1.gameObject.SetActive(true);
+        button2.gameObject.SetActive(true);
+        button3.gameObject.SetActive(true);
+        button4.gameObject.SetActive(true);
+        // borrar las funciones que se le han añadido
+        button1.onClick.RemoveAllListeners();
+        button2.onClick.RemoveAllListeners();
+        button3.onClick.RemoveAllListeners();
+        button4.onClick.RemoveAllListeners();
+        // yippie!
+    }
 
 
 
@@ -109,13 +116,14 @@ public class EncounterManager : MonoBehaviour
 
     void Encounter1Button1()
     {
-        Debug.Log("You should kill yourself, now!");
-        
+        Debug.Log("El boton 1 del encuentro 1 funciona");
+        finishRandomEncounter();
     }
 
     void Encounter1Button2()
     {
-        Debug.Log("Muere en el infierno estúpido!");
+        Debug.Log("El 2 tambien funciona :)");
+        finishRandomEncounter();
     }
 
 
@@ -126,7 +134,8 @@ public class EncounterManager : MonoBehaviour
 
     void Encounter2Button1()
     {
-        Debug.Log("OOOOOOH ME CORROOOOOOOOOOOOOO");
+        Debug.Log("Robas 1 millon de oro!");
+        finishRandomEncounter();
     }
 
     //-----------------------------------------------------------------------
