@@ -4,3 +4,13 @@ Library/
 Logs/
 
 UserSettings/Layouts/
+
+UserSettings/
+
+obj/Debug/
+
+Temp/
+
+.vs/Dadumo-proyecto-videojuegos/v17/
+
+.vs/Dadumo-proyecto-videojuegos/FileContentIndex/
