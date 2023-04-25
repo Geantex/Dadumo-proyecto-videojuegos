@@ -34,10 +34,20 @@ public class EncounterManager : MonoBehaviour
 
     // en startRandomEncounter es donde escribiremos cada "case",
     // que es donde rellenamos el canvas y asignamos las funciones a los botones con el evento correspondiente
-    public void startRandomEncounter()
+
+    // Ahora puedes mandarle un int para coger un encuentro específico, si no, le mandas 0 para que te dé un evento aleatorio
+    public void startRandomEncounter(int encuentroEspecifico)
     {
         // cogerá un numero entre 1 y 2, que son los dos encuentros actuales
-        int encuentroAleatorioNumero = UnityEngine.Random.Range(1, 3);
+
+        int encuentroAleatorioNumero;
+        if(encuentroEspecifico == 0)
+        {
+            encuentroAleatorioNumero = UnityEngine.Random.Range(1, 3);
+        } else
+        {
+            encuentroAleatorioNumero = encuentroEspecifico;
+        }
         showOnlyEncounterCanvas();
         switch (encuentroAleatorioNumero)
         {
@@ -124,6 +134,7 @@ public class EncounterManager : MonoBehaviour
     {
         Debug.Log("El 2 tambien funciona :)");
         finishRandomEncounter();
+        startRandomEncounter(2);
     }
 
 
