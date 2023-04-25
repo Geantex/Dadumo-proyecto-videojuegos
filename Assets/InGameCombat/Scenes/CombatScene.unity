@@ -1008,11 +1008,6 @@ MonoBehaviour:
   f: 0
   g: 0
   h: 0
---- !u!1 &180746166 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4192329416410604227, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
-  m_PrefabInstance: {fileID: 1635300628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &180813830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8363,10 +8358,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EncounterManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4192329416027699378, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4192329416027699382, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -8419,14 +8410,6 @@ PrefabInstance:
       propertyPath: CameraButtons
       value: 
       objectReference: {fileID: 178508860}
-    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
-      propertyPath: EncounterCanvas
-      value: 
-      objectReference: {fileID: 180746166}
-    - target: {fileID: 4192329416410604227, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
 --- !u!114 &1638444645
@@ -10890,6 +10873,10 @@ PrefabInstance:
     - target: {fileID: 7451569638716765550, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911558196320501808, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7911558196320501808, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

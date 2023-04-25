@@ -828,7 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HUD: {fileID: 0}
   CameraButtons: {fileID: 0}
-  EncounterCanvas: {fileID: 0}
+  EncounterCanvas: {fileID: 4192329416410604227}
   button1: {fileID: 4192329414572955639}
   button2: {fileID: 4192329415852910418}
   button3: {fileID: 4192329415229766796}
@@ -1054,7 +1054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4192329416410604226
 RectTransform:
   m_ObjectHideFlags: 0
