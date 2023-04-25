@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\InGameCombat\Units\Scripts\CharacterClass\PlayerCharacterCLass.cs" />
+    <Compile Include="Assets\Scripts\Tableros Aleatorios\Spawner.cs" />
     <Compile Include="Assets\InGameCombat\Game\States\PauseState.cs" />
     <Compile Include="Assets\InGameCombat\Units\Allies\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\InGameCombat\Game\States\GameState.cs" />

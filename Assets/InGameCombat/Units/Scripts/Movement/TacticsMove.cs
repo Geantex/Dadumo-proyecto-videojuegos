@@ -149,18 +149,9 @@ public class TacticsMove : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, target) >= 0.05f)
                 {
-                    bool jump = transform.position.y != target.y;
-
-                    if (jump)
-                    {
-                        Jump(target);
-                    }
-                    else
-                    {
-                        CalculateHeading(target);
-                        SetHorizotalVelocity();
-                    }
-
+                    
+                    CalculateHeading(target);
+                    SetHorizotalVelocity();
                     //Locomotion
                     transform.forward = heading;
                     transform.position += velocity * Time.deltaTime;
