@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Tile
   - NPC
+  - Mapa
+  - Tablero1
   layers:
   - Default
   - TransparentFX

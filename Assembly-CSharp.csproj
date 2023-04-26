@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\InGameCombat\Units\Scripts\CharacterClass\PlayerCharacterCLass.cs" />
+    <Compile Include="Assets\Scripts\Tableros Aleatorios\Spawner.cs" />
     <Compile Include="Assets\InGameCombat\Game\States\PauseState.cs" />
     <Compile Include="Assets\InGameCombat\Units\Allies\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\InGameCombat\Game\States\GameState.cs" />
@@ -84,24 +85,108 @@
     <Compile Include="Assets\InGameCombat\Units\Scripts\Battle\Attacks\BasicAttack.cs" />
     <Compile Include="Assets\InGameCombat\Game\UI\LoseText.cs" />
     <Compile Include="Assets\Encounters\EncounterManager.cs" />
+    <Compile Include="Assets\Mapa\Scripts\Map.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\HideLabelExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\ArrayLengthAttribute.cs" />
+    <Compile Include="Assets\Mapa\Scripts\UI Lines\Utilities\BezierPath.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\FixedLengthExample.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapView.cs" />
+    <Compile Include="Assets\Mapa\OneLine\RectEx\Internal\IEnumerableExtension.cs" />
+    <Compile Include="Assets\Mapa\Scripts\UI Lines\Utilities\SetPropertyUtility.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\GameObjectExample.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapNode.cs" />
+    <Compile Include="Assets\Mapa\Scripts\UI Lines\Utilities\CableCurve.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ScrollNonUI.cs" />
+    <Compile Include="Assets\Mapa\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Tests\Scripts\SlicesTest.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\HighlightExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Overview\Scripts\StandartTypesOverview.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\RecursionTest.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\WidthAttribute.cs" />
+    <Compile Include="Assets\Mapa\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapPlayerTracker.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\WeightExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\OneLineDrawerExample.cs" />
+    <Compile Include="Assets\Mapa\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MinMax.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\SurrogateTest.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\ExpandableExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\SeparatorAttribute.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\HighlightAttribute.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\Nested\NestedArrayExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\Nested\NestedSimpleExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Benchmark\Scripts\ArrayBenchmark.cs" />
+    <Compile Include="Assets\Mapa\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\ArrayOfArraysExample.cs" />
+    <Compile Include="Assets\Mapa\Scripts\UI Lines\UIPrimitiveBase.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Overview\Scripts\ComplexExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\RectEx\CutFromExtensions.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\OneLineExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Benchmark\Scripts\SeparateFieldsBenchmark.cs" />
+    <Compile Include="Assets\Mapa\Scripts\Point.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\NestedArrayExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\HideButtonsAttribute.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\List\Attributes\ReorderableAttribute.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\NestedExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\ExpandableAttribute.cs" />
+    <Compile Include="Assets\Mapa\OneLine\RectEx\MiscellaniousExtensions.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\WeightAttribute.cs" />
+    <Compile Include="Assets\Mapa\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\Example.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapViewUI.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\WidthExample.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapConfig.cs" />
+    <Compile Include="Assets\Mapa\OneLine\RectEx\MoveToExtensions.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\OneLineAttribute.cs" />
+    <Compile Include="Assets\Mapa\OneLine\RectEx\GridExtensions.cs" />
+    <Compile Include="Assets\Mapa\Scripts\LineConnection.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ShufflingExtension.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\List\ReorderableArray.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\CustomPropertyDrawerExample.cs" />
+    <Compile Include="Assets\Mapa\OneLine\RectEx\ColumnExtensions.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Tests\Scripts\ExtendedClassTest.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\HideButtonsExample.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapManager.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\RootArrayExample.cs" />
+    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\NameOverride.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\SeparatorExample.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapGenerator.cs" />
+    <Compile Include="Assets\Mapa\Scripts\UI Lines\UILineRenderer.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Tests\Scripts\ExtendedGenericTest.cs" />
+    <Compile Include="Assets\Mapa\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\Mapa\Scripts\Node.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Overview\Scripts\Overview.cs" />
+    <Compile Include="Assets\Mapa\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\Mapa\OneLine\RectEx\RowExtensions.cs" />
+    <Compile Include="Assets\Mapa\Scripts\MapLayer.cs" />
+    <Compile Include="Assets\Mapa\Scripts\NodeBlueprint.cs" />
+    <Compile Include="Assets\Mapa\OneLine\OneLine\Attributes\HideLabelAttribute.cs" />
+    <Compile Include="Assets\Mapa\Scripts\DottedLineRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Mapa\Shaders\Scroll.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Mapa\Sprites\game-icons.net\license.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Mapa\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Mapa\Demigiant\DOTween\DOTween.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Mapa\Shaders\MADFINGER-Unlit-Scroll2Layers-Sine-AlphaBlend-No-Amp.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Mapa\Demigiant\DOTween\readme.txt" />
+    <None Include="Assets\Mapa\OneLine\OneLine\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
@@ -360,6 +445,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Mapa\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.18f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
