@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class EncounterManager : MonoBehaviour
 {
-    public GameObject HUD;
-    public GameObject CameraButtons;
+    public GameObject Mapa;
+    // hola Dora la exploradora!! estoy por explorarme!!
     public GameObject EncounterCanvas;
 
     public Button button1;
@@ -23,6 +23,7 @@ public class EncounterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         createEncounters();
         //startRandomEncounter();
     }
@@ -71,15 +72,13 @@ public class EncounterManager : MonoBehaviour
    
     void showOnlyEncounterCanvas()
     {
-        HUD.SetActive(false);
-        CameraButtons.SetActive(false);
+        Mapa.SetActive(false);
         EncounterCanvas.SetActive(true);
     }
     // Esta función, "hideOnlyEncounterCanvas", quita el HUD de encuentros y muestra el HUD de combate y el de girar la cámara
     void hideOnlyEncounterCanvas()
     {
-        HUD.SetActive(true);
-        CameraButtons.SetActive(true);
+        Mapa.SetActive(true);
         EncounterCanvas.SetActive(false);
     }
 
