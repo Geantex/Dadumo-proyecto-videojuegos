@@ -56,60 +56,60 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Decorators\TooltipDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Decorators\HeaderDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\Settings.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\ISettings.cs" />
-    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\Editor\NameOverrideEditor.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Slices\Slices.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\ExpandableAttributeDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\CustomDrawer\CustomPropertyTypesCache.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\CustomPropertyDrawerExtension.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\SerializedPropertyReflectionExtension.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\SettingsEditor.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Slices\Slice.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Array\ArrayButtonsDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Decorators\SeparatorDrawer.cs" />
-    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\Editor\SurrogateTestEditor.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\Primitives\TernaryBoolean.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\CustomDrawer\TypeForDrawing.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\OneLinePropertyDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\GlobalSettingsLayer.cs" />
-    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\Editor\NestedChildDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Array\FixedArrayDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\LocalSettingsLayer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\SimpleFieldDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Drawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\CustomDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\SerializedPropertyExtension.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Decorators\HighlightDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Example\Details\Scripts\Editor\OneLineDrawerExampleEditor.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Decorators\SpaceDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Slices\Drawable.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\Tools\SettingsMenu.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\IEnumerableExtension.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Array\DynamicArrayDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\ArraysSizeObserver.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\SeparatorAttributeDrawer.cs" />
-    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\Editor\ExampleEditor.cs" />
-    <Compile Include="Assets\Mapa\Scripts\ReorderableList\Example\Editor\GameObjectEditor.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\ComplexFieldDrawer.cs" />
-    <Compile Include="Assets\Mapa\Scripts\Editor\MapManagerInspector.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Directory\DirectoryDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Slices\SlicesCache.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\Directory\RootDirectoryDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\GuiUtil.cs" />
-    <Compile Include="Assets\Mapa\Scripts\ReorderableList\List\Editor\ReorderableList.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\DefaultSettingsLayer.cs" />
-    <Compile Include="Assets\Mapa\Scripts\ReorderableList\List\Editor\ReorderableDrawer.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\InspectorUtil.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Utils\NullableObjectExtension.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Drawers\CustomDrawer\CustomPropertyDrawers.cs" />
-    <Compile Include="Assets\Mapa\OneLine\OneLine\Editor\Settings\Tools\PreprocessorDirectives\PreprocessorDirectives.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Array\FixedArrayDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Decorators\SpaceDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Directory\RootDirectoryDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\InspectorUtil.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Directory\DirectoryDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\CustomDrawer\TypeForDrawing.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\SimpleFieldDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Example\Details\Scripts\Editor\OneLineDrawerExampleEditor.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\CustomDrawer\CustomPropertyDrawers.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\Settings.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\Tools\SettingsMenu.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Decorators\SeparatorDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\GlobalSettingsLayer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\DefaultSettingsLayer.cs" />
+    <Compile Include="Assets\Map\Scripts\ReorderableList\List\Editor\ReorderableDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\ExpandableAttributeDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\CustomDrawer\CustomPropertyTypesCache.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\CustomPropertyDrawerExtension.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\SerializedPropertyReflectionExtension.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\SerializedPropertyExtension.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\Tools\PreprocessorDirectives\PreprocessorDirectives.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\SettingsEditor.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Slices\Slice.cs" />
+    <Compile Include="Assets\Map\Scripts\ReorderableList\Example\Editor\NestedChildDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Slices\Drawable.cs" />
+    <Compile Include="Assets\Map\Scripts\ReorderableList\Example\Editor\ExampleEditor.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Slices\SlicesCache.cs" />
+    <Compile Include="Assets\Map\Scripts\ReorderableList\List\Editor\ReorderableList.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\NullableObjectExtension.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Decorators\TooltipDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Decorators\HeaderDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Slices\Slices.cs" />
+    <Compile Include="Assets\Map\Scripts\ReorderableList\Example\Editor\SurrogateTestEditor.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\ArraysSizeObserver.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\ComplexFieldDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\Primitives\TernaryBoolean.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Drawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\IEnumerableExtension.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\SeparatorAttributeDrawer.cs" />
+    <Compile Include="Assets\Map\Scripts\ReorderableList\Example\Editor\GameObjectEditor.cs" />
+    <Compile Include="Assets\Map\Scripts\Editor\MapManagerInspector.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Utils\GuiUtil.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Decorators\HighlightDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\ISettings.cs" />
+    <Compile Include="Assets\Map\Scripts\ReorderableList\Example\Editor\NameOverrideEditor.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Array\ArrayButtonsDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\OneLinePropertyDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Settings\LocalSettingsLayer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\CustomDrawer.cs" />
+    <Compile Include="Assets\Map\OneLine\OneLine\Editor\Drawers\Array\DynamicArrayDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Mapa\Demigiant\DOTween\Editor\DOTweenEditor.dll" />
-    <None Include="Assets\Mapa\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\Map\Demigiant\DOTween\Editor\DOTweenEditor.dll" />
+    <None Include="Assets\Map\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -398,10 +398,10 @@
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>Assets\Mapa\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+      <HintPath>Assets\Map\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>Assets\Mapa\Demigiant\DOTween\DOTween.dll</HintPath>
+      <HintPath>Assets\Map\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
