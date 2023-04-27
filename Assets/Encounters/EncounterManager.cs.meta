@@ -3,7 +3,15 @@ guid: 9f9f528f1075e4448afc98cd428ec405
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HUD: {instanceID: 0}
+  - CameraButtons: {instanceID: 0}
+  - EncounterCanvas: {instanceID: 0}
+  - button1: {instanceID: 0}
+  - button2: {instanceID: 0}
+  - button3: {instanceID: 0}
+  - button4: {instanceID: 0}
+  - encounter1image: {fileID: 2100000, guid: 06b8f5ec403a7d84585cc389b631a7e2, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
