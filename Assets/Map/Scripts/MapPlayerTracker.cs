@@ -93,7 +93,13 @@ namespace Map
                     break;
                 case NodeType.Mystery:
                     // encuentro aleatorio!!!
-                
+                    GameObject encounterManager = GameObject.FindWithTag("EncounterManager");
+                    Debug.Log("ESTOY POR SUICIDARME!!!");
+                    encounterManager.GetComponent<EncounterManager>().startRandomEncounter(0);
+
+
+
+
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

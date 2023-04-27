@@ -6,47 +6,29 @@ public class TacticsMove : MonoBehaviour
 {
     public bool turn = false;
     public int numTurn = 0;
-
     List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
-
     public Stack<Tile> path = new Stack<Tile>();
     Tile currentTile;
-
     public bool moving = false;
     public int move = 5;
-    public float jumpHeight = 2;
     public float moveSpeed = 2;
-    public float jumpVelocity = 4.5f;
-
     Vector3 velocity = new Vector3();
     Vector3 heading = new Vector3();
 
     float halfHeight = 0;
-
-    bool fallingDown = false;
-    bool jumpingUp = false;
-    bool movingEdge = false;
-    Vector3 jumpTarget;
-
     public Tile actualTargetTile;
 
     protected void Init()
     {
         Debug.Log("Entro en INIT");
-
         tiles = GameObject.FindGameObjectsWithTag("Tile");
-
             halfHeight = GetComponent<Collider>().bounds.extents.y;
-
             TurnManager.AddUnit(this);
-        
-        
     }
 
     public void GetCurrentTile()
     {
-
         //Debug.Log("Entro en CURRENT TILE");
         currentTile = GetTargetTile(gameObject);
         currentTile.current = true;
@@ -55,19 +37,16 @@ public class TacticsMove : MonoBehaviour
     public Tile GetTargetTile(GameObject target)
     {
         //Debug.Log("Entro en TARGET TILE");
-
         RaycastHit hit;
         Tile tile = null;
-
         if (Physics.Raycast(target.transform.position, -Vector3.up, out hit, 1))
         {
             tile = hit.collider.GetComponent<Tile>();
         }
-
         return tile;
     }
 
-    public void ComputeAdjacencyLists(float jumpHeight, Tile target)
+    public void ComputeAdjacencyLists(Tile target)
     {
         //Debug.Log("Entro en ADJACENCY");
 
@@ -76,7 +55,7 @@ public class TacticsMove : MonoBehaviour
         foreach (GameObject tile in tiles)
         {
             Tile t = tile.GetComponent<Tile>();
-            t.FindNeighbors(jumpHeight, target);
+            t.FindNeighbors(target);
         }
     }
 
@@ -85,7 +64,7 @@ public class TacticsMove : MonoBehaviour
         
         //Debug.Log("Entro en SELECTABLES");
 
-        ComputeAdjacencyLists(jumpHeight, null);
+        ComputeAdjacencyLists(null);
         GetCurrentTile();
 
         Queue<Tile> process = new Queue<Tile>();
@@ -213,101 +192,6 @@ public class TacticsMove : MonoBehaviour
         velocity = heading * moveSpeed;
     }
 
-    void Jump(Vector3 target)
-    {
-        if (fallingDown)
-        {
-            FallDownward(target);
-        }
-        else if (jumpingUp)
-        {
-            JumpUpward(target);
-        }
-        else if (movingEdge)
-        {
-            MoveToEdge();
-        }
-        else
-        {
-            PrepareJump(target);
-        }
-    }
-
-    void PrepareJump(Vector3 target)
-    {
-        float targetY = target.y;
-        target.y = transform.position.y;
-
-        CalculateHeading(target);
-
-        if (transform.position.y > targetY)
-        {
-            fallingDown = false;
-            jumpingUp = false;
-            movingEdge = true;
-
-            jumpTarget = transform.position + (target - transform.position) / 2.0f;
-        }
-        else
-        {
-            fallingDown = false;
-            jumpingUp = true;
-            movingEdge = false;
-
-            velocity = heading * moveSpeed / 3.0f;
-
-            float difference = targetY - transform.position.y;
-
-            velocity.y = jumpVelocity * (0.5f + difference / 2.0f);
-        }
-    }
-
-    void FallDownward(Vector3 target)
-    {
-        velocity += Physics.gravity * Time.deltaTime;
-
-        if (transform.position.y <= target.y)
-        {
-            fallingDown = false;
-            jumpingUp = false;
-            movingEdge = false;
-
-            Vector3 p = transform.position;
-            p.y = target.y;
-            transform.position = p;
-
-            velocity = new Vector3();
-        }
-    }
-
-    void JumpUpward(Vector3 target)
-    {
-        velocity += Physics.gravity * Time.deltaTime;
-
-        if (transform.position.y > target.y)
-        {
-            jumpingUp = false;
-            fallingDown = true;
-        }
-    }
-
-    void MoveToEdge()
-    {
-       // Debug.Log("Entro en MOVE TO EDGE");
-        if (Vector3.Distance(transform.position, jumpTarget) >= 0.05f)
-        {
-            SetHorizotalVelocity();
-        }
-        else
-        {
-            movingEdge = false;
-            fallingDown = true;
-
-            velocity /= 5.0f;
-            velocity.y = 1.5f;
-        }
-    }
-
     protected Tile FindLowestF(List<Tile> list)
     {
         Tile lowest = list[0];
@@ -353,7 +237,7 @@ public class TacticsMove : MonoBehaviour
     protected void FindPath(Tile target)
     {
         //Debug.Log("Entro en FIND PATH");
-        ComputeAdjacencyLists(jumpHeight, target);
+        ComputeAdjacencyLists(target);
         GetCurrentTile();
 
         List<Tile> openList = new List<Tile>();
