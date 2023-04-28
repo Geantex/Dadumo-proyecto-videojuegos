@@ -30,17 +30,17 @@ public class BasicAttack : MonoBehaviour
         if (distance <= range)
         {
             
-            Debug.Log("La distancia entre los dos objetos es: " + distance);
+            /*Debug.Log("La distancia entre los dos objetos es: " + distance);
             Debug.Log(enemy);
-            Debug.Log(enemy.GetComponent<Unit>().Life);
+            Debug.Log(enemy.GetComponent<Unit>().Life);*/
             enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
-            Debug.Log(enemy.GetComponent<Unit>().Life);
+            //Debug.Log(enemy.GetComponent<Unit>().Life);
             return true;
         }
         else
         {
-            Debug.Log("La distancia entre los dos objetos es: " + distance);
-            Debug.Log("No hay rango");
+            //Debug.Log("La distancia entre los dos objetos es: " + distance);
+            //Debug.Log("No hay rango");
             return false;
         }
     }

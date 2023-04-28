@@ -27,11 +27,13 @@ public class Unit : MonoBehaviour
         {
             if (gameObject.CompareTag("NPC"))
             {
-                GameController.Instancia.SetStateByType(typeof(WinState));
+                //GameController.Instancia.SetStateByType(typeof(WinState));
+                gameObject.SetActive(false);
             }
             else if (gameObject.CompareTag("Player"))
             {
-                GameController.Instancia.SetStateByType(typeof(LoseState));
+                //GameController.Instancia.SetStateByType(typeof(LoseState));
+                gameObject.SetActive(false);
             }
             DestroyImmediate(gameObject);
         }

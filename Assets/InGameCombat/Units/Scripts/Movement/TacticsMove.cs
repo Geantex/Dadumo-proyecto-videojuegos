@@ -33,8 +33,6 @@ public class TacticsMove : MonoBehaviour
 
     protected void Init()
     {
-        Debug.Log("Entro en INIT");
-
         tiles = GameObject.FindGameObjectsWithTag("Tile");
 
             halfHeight = GetComponent<Collider>().bounds.extents.y;
@@ -46,16 +44,12 @@ public class TacticsMove : MonoBehaviour
 
     public void GetCurrentTile()
     {
-
-        //Debug.Log("Entro en CURRENT TILE");
         currentTile = GetTargetTile(gameObject);
         currentTile.current = true;
     }
 
     public Tile GetTargetTile(GameObject target)
     {
-        //Debug.Log("Entro en TARGET TILE");
-
         RaycastHit hit;
         Tile tile = null;
 
@@ -69,8 +63,6 @@ public class TacticsMove : MonoBehaviour
 
     public void ComputeAdjacencyLists(float jumpHeight, Tile target)
     {
-        //Debug.Log("Entro en ADJACENCY");
-
         //tiles = GameObject.FindGameObjectsWithTag("Tile");
 
         foreach (GameObject tile in tiles)
@@ -82,9 +74,6 @@ public class TacticsMove : MonoBehaviour
 
     public void FindSelectableTiles()
     {
-        
-        //Debug.Log("Entro en SELECTABLES");
-
         ComputeAdjacencyLists(jumpHeight, null);
         GetCurrentTile();
 
@@ -119,7 +108,6 @@ public class TacticsMove : MonoBehaviour
 
     public void MoveToTile(Tile tile)
     {
-        //Debug.Log("Entro en MOVE TO");
         Debug.Log("Mi turno" + gameObject.name);
         path.Clear();
         tile.target = true;
@@ -135,8 +123,6 @@ public class TacticsMove : MonoBehaviour
 
     public void Move()
     {
-        
-        //Debug.Log("Entro en MOVE");
         if (path != null)
         {
             if (path.Count > 0)
@@ -185,7 +171,6 @@ public class TacticsMove : MonoBehaviour
 
     protected void RemoveSelectableTiles()
     {
-        //Debug.Log("Entro en REMOVE SELECTABLES");
         if (currentTile != null)
         {
             currentTile.current = false;
@@ -202,14 +187,12 @@ public class TacticsMove : MonoBehaviour
 
     void CalculateHeading(Vector3 target)
     {
-        //Debug.Log("Entro en CALCULATE HEADING");
         heading = target - transform.position;
         heading.Normalize();
     }
 
     void SetHorizotalVelocity()
     {
-        //Debug.Log("Entro en SPEED");
         velocity = heading * moveSpeed;
     }
 
@@ -293,7 +276,6 @@ public class TacticsMove : MonoBehaviour
 
     void MoveToEdge()
     {
-       // Debug.Log("Entro en MOVE TO EDGE");
         if (Vector3.Distance(transform.position, jumpTarget) >= 0.05f)
         {
             SetHorizotalVelocity();
@@ -352,7 +334,6 @@ public class TacticsMove : MonoBehaviour
 
     protected void FindPath(Tile target)
     {
-        //Debug.Log("Entro en FIND PATH");
         ComputeAdjacencyLists(jumpHeight, target);
         GetCurrentTile();
 
