@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4192329415734245300, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192329415734245300, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4192329416027699378, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
       propertyPath: m_Name
       value: EncounterManager
@@ -182,6 +190,10 @@ PrefabInstance:
       propertyPath: Mapa
       value: 
       objectReference: {fileID: 1311161698}
+    - target: {fileID: 4192329416410604227, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4192329416410604228, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
       propertyPath: m_UiScaleMode
       value: 0

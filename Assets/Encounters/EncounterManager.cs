@@ -47,11 +47,17 @@ public class EncounterManager : MonoBehaviour
     {
         // cogerá un numero entre 1 y 2, que son los dos encuentros actuales
 
-        int encuentroAleatorioNumero;
+        int encuentroAleatorioNumero = 0;
         if(encuentroEspecifico == 0)
         {
-            // Aqui es si queremos un encuentro aleatorio
             encuentroAleatorioNumero = Random.Range(1, 3);
+            while (!AlreadyEncounteredList.Contains(encuentroEspecifico))
+            {
+                // hasta que no hayan bastante encuentros, puede dar problemas
+                encuentroAleatorioNumero = Random.Range(1, 3);
+                Debug.Log("cogiendo otro evento aleatorio! El anterior está repetido");
+            }
+            // Aqui es si queremos un encuentro aleatorio
             // Meter aqui lo de eventos que no se repitan!
             AlreadyEncounteredList.Add(encuentroEspecifico);
         } else
