@@ -12,10 +12,10 @@ public class itemManager : MonoBehaviour
     void Start()
     {
         // Este me da error
-        item[] arrayItems;
-        arrayItems = (item[])AssetDatabase.LoadAllAssetsAtPath("Assets/Map/Tienda/Scripts/createdItems");
-        allItemsList = new List<item>(arrayItems);
-        Debug.Log(allItemsList.ElementAt(0).itemName);
+        //item[] arrayItems;
+        //arrayItems = (item[])AssetDatabase.LoadAllAssetsAtPath("Assets/Map/Tienda/Scripts/createdItems");
+        //allItemsList = new List<item>(arrayItems);
+        //Debug.Log(allItemsList.ElementAt(0).itemName);
 
         // Este me va
         item prueba = ScriptableObject.CreateInstance<item>();
