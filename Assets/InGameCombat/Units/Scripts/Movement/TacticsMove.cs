@@ -6,75 +6,76 @@ public class TacticsMove : MonoBehaviour
 {
     public bool turn = false;
     public int numTurn = 0;
-
     List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
-
     public Stack<Tile> path = new Stack<Tile>();
     Tile currentTile;
-
     public bool moving = false;
     public int move = 5;
-    public float jumpHeight = 2;
     public float moveSpeed = 2;
-    public float jumpVelocity = 4.5f;
-
     Vector3 velocity = new Vector3();
     Vector3 heading = new Vector3();
 
     float halfHeight = 0;
-
-    bool fallingDown = false;
-    bool jumpingUp = false;
-    bool movingEdge = false;
-    Vector3 jumpTarget;
-
     public Tile actualTargetTile;
 
     protected void Init()
     {
+<<<<<<< HEAD
+=======
+        Debug.Log("Entro en INIT");
+>>>>>>> develop
         tiles = GameObject.FindGameObjectsWithTag("Tile");
-
             halfHeight = GetComponent<Collider>().bounds.extents.y;
-
             TurnManager.AddUnit(this);
-        
-        
     }
 
     public void GetCurrentTile()
     {
+<<<<<<< HEAD
+=======
+        //Debug.Log("Entro en CURRENT TILE");
+>>>>>>> develop
         currentTile = GetTargetTile(gameObject);
         currentTile.current = true;
     }
 
     public Tile GetTargetTile(GameObject target)
     {
+<<<<<<< HEAD
+=======
+        //Debug.Log("Entro en TARGET TILE");
+>>>>>>> develop
         RaycastHit hit;
         Tile tile = null;
-
         if (Physics.Raycast(target.transform.position, -Vector3.up, out hit, 1))
         {
             tile = hit.collider.GetComponent<Tile>();
         }
-
         return tile;
     }
 
-    public void ComputeAdjacencyLists(float jumpHeight, Tile target)
+    public void ComputeAdjacencyLists(Tile target)
     {
         //tiles = GameObject.FindGameObjectsWithTag("Tile");
 
         foreach (GameObject tile in tiles)
         {
             Tile t = tile.GetComponent<Tile>();
-            t.FindNeighbors(jumpHeight, target);
+            t.FindNeighbors(target);
         }
     }
 
     public void FindSelectableTiles()
     {
+<<<<<<< HEAD
         ComputeAdjacencyLists(jumpHeight, null);
+=======
+        
+        //Debug.Log("Entro en SELECTABLES");
+
+        ComputeAdjacencyLists(null);
+>>>>>>> develop
         GetCurrentTile();
 
         Queue<Tile> process = new Queue<Tile>();
@@ -196,6 +197,7 @@ public class TacticsMove : MonoBehaviour
         velocity = heading * moveSpeed;
     }
 
+<<<<<<< HEAD
     void Jump(Vector3 target)
     {
         if (fallingDown)
@@ -290,6 +292,8 @@ public class TacticsMove : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> develop
     protected Tile FindLowestF(List<Tile> list)
     {
         Tile lowest = list[0];
@@ -334,7 +338,12 @@ public class TacticsMove : MonoBehaviour
 
     protected void FindPath(Tile target)
     {
+<<<<<<< HEAD
         ComputeAdjacencyLists(jumpHeight, target);
+=======
+        //Debug.Log("Entro en FIND PATH");
+        ComputeAdjacencyLists(target);
+>>>>>>> develop
         GetCurrentTile();
 
         List<Tile> openList = new List<Tile>();
