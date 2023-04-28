@@ -51,7 +51,7 @@ public class EncounterManager : MonoBehaviour
         if(encuentroEspecifico == 0)
         {
             encuentroAleatorioNumero = Random.Range(1, 3);
-            while (!AlreadyEncounteredList.Contains(encuentroEspecifico))
+            while (AlreadyEncounteredList.Contains(encuentroEspecifico))
             {
                 // hasta que no hayan bastante encuentros, puede dar problemas
                 encuentroAleatorioNumero = Random.Range(1, 3);
