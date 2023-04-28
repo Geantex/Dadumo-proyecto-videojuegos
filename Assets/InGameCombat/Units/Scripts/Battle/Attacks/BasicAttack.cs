@@ -25,7 +25,7 @@ public class BasicAttack : MonoBehaviour
 
     public bool Attack(GameObject enemy, GameObject allie)
     {
-        Debug.Log("Mi turno" + gameObject.name);
+        //Debug.Log("Mi turno" + gameObject.name);
         float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
         if (distance <= range)
         {

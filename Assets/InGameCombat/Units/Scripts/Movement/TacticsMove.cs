@@ -96,7 +96,6 @@ public class TacticsMove : MonoBehaviour
 
     public void MoveToTile(Tile tile)
     {
-        Debug.Log("Mi turno" + gameObject.name);
         path.Clear();
         tile.target = true;
         moving = true;
@@ -238,6 +237,7 @@ public class TacticsMove : MonoBehaviour
         //currentTile.parent = ??
         currentTile.h = Vector3.Distance(currentTile.transform.position, target.transform.position);
         currentTile.f = currentTile.h;
+        Debug.Log("Mi turno" + gameObject.name);
 
         while (openList.Count > 0)
         {
