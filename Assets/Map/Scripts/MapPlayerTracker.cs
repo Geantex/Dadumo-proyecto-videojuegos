@@ -67,20 +67,24 @@ namespace Map
             // load appropriate scene with context based on nodeType:
             // or show appropriate GUI over the map: 
             // if you choose to show GUI in some of these cases, do not forget to set "Locked" in MapPlayerTracker back to false
+            GameObject encounterManager = GameObject.FindWithTag("EncounterManager");
             switch (mapNode.Node.nodeType)
             {
                 case NodeType.MinorEnemy:
                     // Aqui cargamos la escena de batalla!
                     //SceneManager:LoadScene(1);
                     break;
+                    // !! Esto seria si queremos meter minijefes
                     //case NodeType.EliteEnemy:
                     //    break;
                 case NodeType.RestSite:
                     // Aqui es un descanso y recuperas salud
+                    encounterManager.GetComponent<EncounterManager>().startRandomEncounter(1001);
 
                     break;
                 case NodeType.Treasure:
-
+                    // Aqui consigues una mejora de ataque o de salud
+                    encounterManager.GetComponent<EncounterManager>().startRandomEncounter(1002);
 
                     break;
                 case NodeType.Store:
@@ -93,12 +97,7 @@ namespace Map
                     break;
                 case NodeType.Mystery:
                     // encuentro aleatorio!!!
-                    GameObject encounterManager = GameObject.FindWithTag("EncounterManager");
-                    Debug.Log("ESTOY POR SUICIDARME!!!");
                     encounterManager.GetComponent<EncounterManager>().startRandomEncounter(0);
-
-
-
 
                     break;
                 default:
