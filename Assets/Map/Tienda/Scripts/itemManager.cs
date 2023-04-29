@@ -7,20 +7,22 @@ using UnityEngine;
 
 public class itemManager : MonoBehaviour
 {
+
+    // RECUERDA METER ESTO A ALGUN OBJETO EN LA ESCENA, o algo no se xd
+   
     public List<item> allItemsList;
     // Start is called before the first frame update
     void Start()
     {
-        // Este me da error
-        //item[] arrayItems;
-        //arrayItems = (item[])AssetDatabase.LoadAllAssetsAtPath("Assets/Map/Tienda/Scripts/createdItems");
-        //allItemsList = new List<item>(arrayItems);
-        //Debug.Log(allItemsList.ElementAt(0).itemName);
-
-        // Este me va
-        item prueba = ScriptableObject.CreateInstance<item>();
-        prueba = AssetDatabase.LoadAssetAtPath<item>("Assets/Map/Tienda/Scripts/itemsCreated/ataqueGalentin+.asset");
-        Debug.Log(prueba.itemName);
+        string[] assetPaths = AssetDatabase.FindAssets("t: item", new string[] { "Assets/Map/Tienda/Scripts/itemsCreated/" });
+        item[] arrayItem = new item[assetPaths.Length];
+        for (int i = 0; i < assetPaths.Length; i++)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(assetPaths[i]);
+            arrayItem[i] = AssetDatabase.LoadAssetAtPath<item>(path);
+            //Debug.Log("Loaded asset " + i + " with name: " + arrayItem[i].itemName);
+        }
+        allItemsList = new List<item>(arrayItem);
     }
 
 
@@ -28,5 +30,36 @@ public class itemManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void DeleteItemFromList(item itemToDelete)
+    {
+        allItemsList.Remove(itemToDelete);
+    }
+
+    public void OnEquip(item equippedItem)
+    {
+        DeleteItemFromList(equippedItem);
+        foreach (item item in allItemsList) 
+        { 
+            // Esto borrará los objetos que sean del mismo personaje, que tengan un tier igual o menor, y que ocupen el mismo espacio (arma == arma o armadura == armadura)
+            if (item.characterTag == equippedItem.characterTag && item.itemTier <= equippedItem.itemTier && item.itemSlot == equippedItem.itemSlot)
+            {
+                DeleteItemFromList(item);
+            }
+        }
+    }
+
+    // deberia entrarle un valor de personaje, por ejemplo, Galentin
+    // OnCharacterDeath(character deadCharacter)
+    public void OnCharacterDeath()
+    {
+        foreach (item item in allItemsList)
+        {
+            //if (item.characterTag == deadCharacter.characterTag )
+            {
+                DeleteItemFromList(item);
+            }
+        }
     }
 }
