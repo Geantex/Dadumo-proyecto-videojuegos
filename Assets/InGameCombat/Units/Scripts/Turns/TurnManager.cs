@@ -30,8 +30,9 @@ public class TurnManager : MonoBehaviour
     static void InitTeamTurnQueue()
     {
         List<TacticsMove> teamList = units[turnKey.Peek()];
+        List<TacticsMove> teamListCopy = new List<TacticsMove>(teamList);
 
-        foreach (TacticsMove unit in teamList)
+        foreach (TacticsMove unit in teamListCopy)
         {
             Debug.Log(unit);
             GameObject gameObject = GameObject.Find(unit.name);
