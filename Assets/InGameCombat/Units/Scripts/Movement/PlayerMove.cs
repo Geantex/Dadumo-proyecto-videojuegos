@@ -1,13 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : TacticsMove 
 {
+    public Button buttonh1;
+    public Button buttonh2;
+    public Button buttonh3;
+    public Button buttonh4;
 
+    GameObject actualTarget = null;
+    bool clicked = false;
 	// Use this for initialization
 	void Start () 
 	{
+        //AddButton();
+        buttonh1.onClick.AddListener(AttackButton);
+        buttonh4.onClick.AddListener(endMyTurn);
         Init();
 	}
 	
@@ -23,7 +33,14 @@ public class PlayerMove : TacticsMove
         }
         if (!moving)
         {
-            gameObject.GetComponent<PlayerAttack>().AttackMouse();
+            if (!clicked)
+            {
+                actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
+                if (actualTarget != null )
+                {
+                    clicked = true;
+                }
+            }
             FindSelectableTiles();
             CheckMouse();
         }
@@ -54,5 +71,38 @@ public class PlayerMove : TacticsMove
                 }
             }
         }
+    }
+
+    void AddButton()
+    {
+        GameObject gameObjectButton = GameObject.FindWithTag("HUD");
+
+        GameObject gameObjectButtonH1 = gameObjectButton.transform.Find("H1").gameObject;
+        buttonh1 = gameObjectButtonH1.AddComponent<Button>();
+        buttonh1.onClick.AddListener(AttackButton);
+
+        GameObject gameObjectButtonH2 = gameObjectButton.transform.Find("H2").gameObject;
+        buttonh2 = gameObjectButtonH2.AddComponent<Button>();
+
+        GameObject gameObjectButtonH3 = gameObjectButton.transform.Find("H3").gameObject;
+        buttonh3 = gameObjectButtonH3.AddComponent<Button>();
+
+        GameObject gameObjectButtonH4 = gameObjectButton.transform.Find("H4").gameObject;
+        buttonh4 = gameObjectButtonH4.AddComponent<Button>();
+    }
+
+    void AttackButton()
+    {
+        if (actualTarget != null)
+        {
+            gameObject.GetComponent<PlayerAttack>().AoD = gameObject.GetComponent<PlayerAttack>().Attack(actualTarget, gameObject);
+            clicked = false;
+            TurnManager.EndTurn();
+        }
+    }
+
+    void endMyTurn()
+    {
+        TurnManager.EndTurn();
     }
 }

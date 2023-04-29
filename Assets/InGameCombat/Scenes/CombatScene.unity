@@ -336,6 +336,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163818380}
   m_CullTransparentMesh: 1
+--- !u!114 &287279757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7451569639532530416, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
+  m_PrefabInstance: {fileID: 1352648183131787881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405540674
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +386,10 @@ MonoBehaviour:
   move: 5
   moveSpeed: 2
   actualTargetTile: {fileID: 0}
+  buttonh1: {fileID: 466183972}
+  buttonh2: {fileID: 0}
+  buttonh3: {fileID: 0}
+  buttonh4: {fileID: 287279757}
 --- !u!4 &405540676
 Transform:
   m_ObjectHideFlags: 0
@@ -446,6 +461,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: clerigo
+--- !u!114 &466183972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7451569638390310754, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
+  m_PrefabInstance: {fileID: 1352648183131787881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &664666837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,6 +1327,10 @@ MonoBehaviour:
   move: 5
   moveSpeed: 2
   actualTargetTile: {fileID: 0}
+  buttonh1: {fileID: 466183972}
+  buttonh2: {fileID: 0}
+  buttonh3: {fileID: 0}
+  buttonh4: {fileID: 287279757}
 --- !u!4 &2114284157
 Transform:
   m_ObjectHideFlags: 0
@@ -1339,6 +1369,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7451569638716765546, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
       propertyPath: m_Name
+      value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451569638716765546, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
+      propertyPath: m_TagString
       value: HUD
       objectReference: {fileID: 0}
     - target: {fileID: 7451569638716765550, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}

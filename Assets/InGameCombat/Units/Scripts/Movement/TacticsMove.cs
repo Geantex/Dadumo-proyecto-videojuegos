@@ -142,8 +142,11 @@ public class TacticsMove : MonoBehaviour
                 RemoveSelectableTiles();
                 moving = false;
 
-
-                TurnManager.EndTurn();
+                if(gameObject.tag == "NPC")
+                {
+                    TurnManager.EndTurn();
+                }
+                
             }
         }
         else
@@ -152,7 +155,10 @@ public class TacticsMove : MonoBehaviour
                 moving = false;
 
 
-                TurnManager.EndTurn();
+                if (gameObject.tag == "NPC")
+                {
+                    TurnManager.EndTurn();
+                }
         }
         
     }

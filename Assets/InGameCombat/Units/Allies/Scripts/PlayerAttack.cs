@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class PlayerAttack : BasicAttack
 {
     public bool AoD = true;
-    
+
 
     
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class PlayerAttack : BasicAttack
         
     }
 
-    public void AttackMouse()
+    public GameObject AttackMouse()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -34,12 +34,14 @@ public class PlayerAttack : BasicAttack
             if (sobreUnidad.collider.tag == "NPC")
             {
                 Debug.Log("Unidad encontrada! Se llama " + sobreUnidad.collider.gameObject.name);
-                    AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
-                    TurnManager.EndTurn();
+
+                    //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
+                    return sobreUnidad.collider.gameObject;
+                    //TurnManager.EndTurn();
 
                 }
-        } 
+            } 
         }
-        
+        return null;
     }
 }
