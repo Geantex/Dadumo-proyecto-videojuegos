@@ -73,7 +73,7 @@ public class PlayerMove : TacticsMove
                     if (lastTarget != null)
                     {
                         Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-                        renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+                        renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
                     }
                     lastTarget = actualTarget;
                     clickedMarked = true;
@@ -143,7 +143,7 @@ public class PlayerMove : TacticsMove
             clicked = false;
             firstClick = false;
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn();
@@ -158,7 +158,7 @@ public class PlayerMove : TacticsMove
             clicked = false;
             firstClick = false;
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn();
@@ -173,7 +173,7 @@ public class PlayerMove : TacticsMove
         if(actualTarget != null)
         {
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
         }
         lastTarget = null;
         actualTarget = null;
