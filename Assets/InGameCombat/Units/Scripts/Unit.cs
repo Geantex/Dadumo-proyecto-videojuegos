@@ -12,8 +12,7 @@ public class Unit : MonoBehaviour
     private string stateEffect;
     private string boostType;
     private double boost;
-    private ArrayList specialAttacks = new ArrayList();
-    private GameObject selectedObject;
+    public ArrayList specialAttacks = new ArrayList();
     // Start is called before the first frame update
     void Start()
     {
@@ -73,10 +72,5 @@ public class Unit : MonoBehaviour
     {
         get { return name; }
         set { name = value; }
-    }
-
-    public void AddSpecialAttack(SpecialAttack specialAttack)
-    {
-        specialAttacks.Add(specialAttack);
     }
 }

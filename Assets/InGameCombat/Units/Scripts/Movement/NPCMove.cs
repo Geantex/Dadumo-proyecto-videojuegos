@@ -24,6 +24,7 @@ public class NPCMove : TacticsMove
         
         if (!moving)
         {
+            calculateZone = false;
             FindNearestTarget();
             CalculatePath();
             FindSelectableTiles();
