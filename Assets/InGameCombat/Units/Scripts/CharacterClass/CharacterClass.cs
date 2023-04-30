@@ -40,7 +40,7 @@ public class CharacterClass : MonoBehaviour
             life = 100;
             mana = 100;
             damage = 10;
-            range = 6;
+            range = 4;
         }
         else if (name == "ladron")
         {
