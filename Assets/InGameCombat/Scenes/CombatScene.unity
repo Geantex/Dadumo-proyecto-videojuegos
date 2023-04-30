@@ -381,6 +381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
+  HUDturn: 0
+  calculateZone: 0
   numTurn: 0
   moving: 0
   move: 5
@@ -484,7 +486,7 @@ GameObject:
   - component: {fileID: 664666838}
   m_Layer: 0
   m_Name: SpawnTablero
-  m_TagString: Untagged
+  m_TagString: Tablero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,6 +506,7 @@ MonoBehaviour:
   tablero1: {fileID: 3843830063838629789, guid: e65df360db11bed4bb2f7399ec0a8ee8, type: 3}
   tablero2: {fileID: 3843830063838629789, guid: 103a2b60502ab97458d057d2ca16d48d, type: 3}
   coordSpawnerTablero: {fileID: 664666839}
+  TableroCreado: 0
 --- !u!4 &664666839
 Transform:
   m_ObjectHideFlags: 0
@@ -1322,6 +1325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
+  HUDturn: 0
+  calculateZone: 0
   numTurn: 0
   moving: 0
   move: 5

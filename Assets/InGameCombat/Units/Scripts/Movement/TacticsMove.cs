@@ -5,6 +5,8 @@ using UnityEngine;
 public class TacticsMove : MonoBehaviour 
 {
     public bool turn = false;
+    public bool HUDturn = false;
+    public bool calculateZone = false;
     public int numTurn = 0;
 
     List<Tile> selectableTiles = new List<Tile>();
@@ -63,6 +65,11 @@ public class TacticsMove : MonoBehaviour
     {
         ComputeAdjacencyLists(null);
 
+        /*if (!calculateZone)
+        {
+            GetCurrentTile();
+            calculateZone = true;
+        }*/
         GetCurrentTile();
 
         Queue<Tile> process = new Queue<Tile>();
@@ -139,7 +146,7 @@ public class TacticsMove : MonoBehaviour
             }
             else
             {
-                RemoveSelectableTiles();
+                //RemoveSelectableTiles();
                 moving = false;
 
                 if(gameObject.tag == "NPC")
@@ -301,5 +308,7 @@ public class TacticsMove : MonoBehaviour
     public void EndTurn()
     {
         turn = false;
+        HUDturn = false;
+        calculateZone = false;
     }
 }

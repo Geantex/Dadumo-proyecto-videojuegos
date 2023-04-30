@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     public GameObject tablero1;
     public GameObject tablero2;
     public Transform coordSpawnerTablero;
+    public bool TableroCreado = false;
     
 
 
@@ -34,10 +35,12 @@ public class Spawner : MonoBehaviour
             case 1:
                 Instantiate(tablero1, coordSpawnerTablero);
                 Debug.Log("He hecho aparecer el tablero1");
+                TableroCreado = true;
                 break;
             case 2:
                 Instantiate(tablero2, coordSpawnerTablero);
                 Debug.Log("He hecho aparecer el tablero2");
+                TableroCreado = true;
                 break;
         }
     }
