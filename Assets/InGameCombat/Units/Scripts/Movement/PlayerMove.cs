@@ -14,6 +14,7 @@ public class PlayerMove : TacticsMove
     GameObject actualTarget = null;
     GameObject lastTarget = null;
     bool clicked = false;
+    bool firstClick = false;
     bool clickedMarked = false;
 	// Use this for initialization
 	void Start () 
@@ -21,17 +22,12 @@ public class PlayerMove : TacticsMove
         //AddButton();
         buttonh1.onClick.AddListener(AttackButton);
         buttonh4.onClick.AddListener(endMyTurn);
-        while (!GameObject.FindWithTag("Tablero").GetComponent<Spawner>().TableroCreado)
-        {
-
-        }
         Init();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-        //Debug.Log("Entro en UPDATE PLAYERMOVE");
         Debug.DrawRay(transform.position, transform.forward);
 
         if (!turn)
@@ -45,15 +41,30 @@ public class PlayerMove : TacticsMove
             {
                 if (!clicked)
                 {
-                    actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
-                    if (actualTarget != null)
+                    if(gameObject.GetComponent<PlayerAttack>().AttackMouse() != null && firstClick)
                     {
-                        clicked = true;
+                        actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
+                        if (actualTarget != null)
+                        {
+                            clicked = true;
+                            StartCoroutine(EsperarCincoSegundos());
+                        }
+                        clickedMarked = false;
                     }
-                    clickedMarked = false;
+                    if (!firstClick)
+                    {
+                        actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
+                        if (actualTarget != null)
+                        {
+                            clicked = true;
+                            firstClick = true;
+                            StartCoroutine(EsperarCincoSegundos());
+                        }
+                        clickedMarked = false;
+                    }
 
                 }
-                if (!clickedMarked)
+                if (!clickedMarked && lastTarget != actualTarget)
                 {
                     if (lastTarget != null)
                     {
@@ -126,14 +137,34 @@ public class PlayerMove : TacticsMove
         {
             gameObject.GetComponent<PlayerAttack>().AoD = gameObject.GetComponent<PlayerAttack>().Attack(actualTarget, gameObject);
             clicked = false;
+            firstClick = false;
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Seleccionado.mat");
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            lastTarget = null;
+            actualTarget = null;
             TurnManager.EndTurn();
         }
     }
 
     void endMyTurn()
     {
+        Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHH");
+        clicked = false;
+        firstClick = false;
+        if(actualTarget != null)
+        {
+            Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+        }
+        lastTarget = null;
+        actualTarget = null;
         TurnManager.EndTurn();
+    }
+
+    IEnumerator EsperarCincoSegundos()
+    {
+        yield return new WaitForSeconds(1);
+        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
+        clicked = false;
     }
 }
