@@ -19,7 +19,11 @@ public class PlayerMove : TacticsMove
 	// Use this for initialization
 	void Start () 
 	{
-        //AddButton();
+        //Prueba Special Attack
+        buttonh2.onClick.AddListener(SpecialAttackButton);
+        //buttonh3.onClick.AddListener();
+        //Prueba Special Attack
+
         buttonh1.onClick.AddListener(AttackButton);
         buttonh4.onClick.AddListener(endMyTurn);
         Init();
@@ -136,6 +140,21 @@ public class PlayerMove : TacticsMove
         if (actualTarget != null)
         {
             gameObject.GetComponent<PlayerAttack>().AoD = gameObject.GetComponent<PlayerAttack>().Attack(actualTarget, gameObject);
+            clicked = false;
+            firstClick = false;
+            Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            lastTarget = null;
+            actualTarget = null;
+            TurnManager.EndTurn();
+        }
+    }
+
+    void SpecialAttackButton()
+    {
+        if (actualTarget != null)
+        {
+            gameObject.GetComponent<PlayerSpecialAttack>().AoD = gameObject.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks[0].Attack(actualTarget, gameObject);
             clicked = false;
             firstClick = false;
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();

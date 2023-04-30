@@ -162,6 +162,7 @@
     <Compile Include="Assets\Map\Scripts\MapConfig.cs" />
     <Compile Include="Assets\Encounters\EncounterManager.cs" />
     <Compile Include="Assets\Map\Scripts\MapLayer.cs" />
+    <Compile Include="Assets\InGameCombat\Units\Allies\Scripts\PlayerSpecialAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
