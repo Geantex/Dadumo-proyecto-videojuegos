@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,13 +35,15 @@ public class PlayerAttack : BasicAttack
             if (sobreUnidad.collider.tag == "NPC")
             {
                 Debug.Log("Unidad encontrada! Se llama " + sobreUnidad.collider.gameObject.name);
+                Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
+                renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Seleccionado.mat");
 
-                    //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
-                    return sobreUnidad.collider.gameObject;
-                    //TurnManager.EndTurn();
+                //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
+                return sobreUnidad.collider.gameObject;
+                //TurnManager.EndTurn();
 
-                }
-            } 
+            }
+        } 
         }
         return null;
     }

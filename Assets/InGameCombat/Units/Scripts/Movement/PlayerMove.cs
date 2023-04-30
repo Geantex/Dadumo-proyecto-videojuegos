@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +12,19 @@ public class PlayerMove : TacticsMove
     public Button buttonh4;
 
     GameObject actualTarget = null;
+    GameObject lastTarget = null;
     bool clicked = false;
+    bool clickedMarked = false;
 	// Use this for initialization
 	void Start () 
 	{
         //AddButton();
         buttonh1.onClick.AddListener(AttackButton);
         buttonh4.onClick.AddListener(endMyTurn);
+        while (!GameObject.FindWithTag("Tablero").GetComponent<Spawner>().TableroCreado)
+        {
+
+        }
         Init();
 	}
 	
@@ -31,23 +38,45 @@ public class PlayerMove : TacticsMove
         {
             return;
         }
-        if (!moving)
-        {
-            if (!clicked)
-            {
-                actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
-                if (actualTarget != null )
-                {
-                    clicked = true;
-                }
-            }
-            FindSelectableTiles();
-            CheckMouse();
-        }
-        else
-        {
 
-            Move();
+        if (GameObject.FindWithTag("Tablero").GetComponent<Spawner>().TableroCreado)
+        {
+            if (!moving)
+            {
+                if (!clicked)
+                {
+                    actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
+                    if (actualTarget != null)
+                    {
+                        clicked = true;
+                    }
+                    clickedMarked = false;
+
+                }
+                if (!clickedMarked)
+                {
+                    if (lastTarget != null)
+                    {
+                        Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
+                        renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+                    }
+                    lastTarget = actualTarget;
+                    clickedMarked = true;
+                }
+
+                if (!calculateZone)
+                {
+                    FindSelectableTiles();
+                    calculateZone = true;
+                }
+                //FindSelectableTiles();
+                CheckMouse();
+            }
+            else
+            {
+
+                Move();
+            }
         }
 	}
 
@@ -97,6 +126,8 @@ public class PlayerMove : TacticsMove
         {
             gameObject.GetComponent<PlayerAttack>().AoD = gameObject.GetComponent<PlayerAttack>().Attack(actualTarget, gameObject);
             clicked = false;
+            Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Seleccionado.mat");
             TurnManager.EndTurn();
         }
     }
