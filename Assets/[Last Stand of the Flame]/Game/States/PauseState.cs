@@ -18,9 +18,9 @@ public class PauseState : FSMState
 
     public void LoadMenu()
     {
-       
+        GameController.Instancia.SetStateByType(typeof(MainMenuState));
         Debug.Log("Loading menu...");
-        SceneManager.LoadScene("MainMenu");
+        
     }
 
     public void QuitGame()
