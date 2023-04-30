@@ -6747,6 +6747,7 @@ GameObject:
   - component: {fileID: 405540678}
   - component: {fileID: 405540679}
   - component: {fileID: 405540680}
+  - component: {fileID: 405540681}
   m_Layer: 0
   m_Name: Clerigo
   m_TagString: Player
@@ -6775,7 +6776,7 @@ MonoBehaviour:
   moveSpeed: 2
   actualTargetTile: {fileID: 0}
   buttonh1: {fileID: 466183972}
-  buttonh2: {fileID: 0}
+  buttonh2: {fileID: 1352648183131787882}
   buttonh3: {fileID: 0}
   buttonh4: {fileID: 287279757}
 --- !u!4 &405540676
@@ -6849,6 +6850,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: clerigo
+--- !u!114 &405540681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405540674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335a8018e18fca34c829e5a610d23d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AoD: 1
+  AllSpecialAttacks: []
 --- !u!114 &407632152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14676,6 +14691,7 @@ GameObject:
   - component: {fileID: 2114284154}
   - component: {fileID: 2114284153}
   - component: {fileID: 2114284158}
+  - component: {fileID: 2114284159}
   m_Layer: 0
   m_Name: Mago
   m_TagString: Player
@@ -14746,7 +14762,7 @@ MonoBehaviour:
   moveSpeed: 2
   actualTargetTile: {fileID: 0}
   buttonh1: {fileID: 466183972}
-  buttonh2: {fileID: 0}
+  buttonh2: {fileID: 1352648183131787882}
   buttonh3: {fileID: 0}
   buttonh4: {fileID: 287279757}
 --- !u!4 &2114284157
@@ -14778,6 +14794,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Wizard
+--- !u!114 &2114284159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114284151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335a8018e18fca34c829e5a610d23d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AoD: 1
+  AllSpecialAttacks: []
 --- !u!114 &2129287179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14960,6 +14990,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
+--- !u!114 &1352648183131787882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7451569639513139120, guid: 44acc4aedb329914c8a00e94a5b5240f, type: 3}
+  m_PrefabInstance: {fileID: 1352648183131787881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2366697568762757439
 PrefabInstance:
   m_ObjectHideFlags: 0
