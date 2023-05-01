@@ -22,51 +22,46 @@ public class EncounterManager : MonoBehaviour
     public Button button4;
 
     public List<Encounter> encounterList = new List<Encounter>();
-
-
-    List<int> AlreadyEncounteredList = new List<int>();
-
-
-    // Esto lo pasaremos a una lista!
-    /*
-    Encounter encounter1 = new Encounter();
-    Encounter encounter2 = new Encounter();
-    Encounter encounter3 = new Encounter();
-    Encounter encounter4 = new Encounter();
-    Encounter encounter5 = new Encounter();
-    Encounter encounter6 = new Encounter();
-    Encounter encounter7 = new Encounter();
-    Encounter encounter8 = new Encounter();
-    Encounter encounter9 = new Encounter();
-    Encounter encounter10 = new Encounter();
-    Encounter encounter1001 = new Encounter();
-    Encounter encounter1002 = new Encounter();
-    */
-
+    public List<Encounter> restsiteList = new List<Encounter>();
+    public List<Encounter> treasureList = new List<Encounter>();
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("getEncounterList", 2f);
-        createEncounters();
-        //startRandomEncounter();
+        Invoke("getEncounterList", 1.5f);
     }
     void getEncounterList()
     {
-        string[] assetPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RandomEncounters/Objects" });
-        Encounter[] arrayEncounter = new Encounter[assetPaths.Length];
-        for (int i = 0; i < assetPaths.Length; i++)
+        string[] encounterPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RandomEncounters/Objects" });
+        Encounter[] arrayEncounter = new Encounter[encounterPaths.Length];
+        for (int i = 0; i < encounterPaths.Length; i++)
         {
-            string path = AssetDatabase.GUIDToAssetPath(assetPaths[i]);
-            arrayEncounter[i] = AssetDatabase.LoadAssetAtPath<Encounter>(path);
-            Debug.Log("Loaded asset " + i + " with name: " + arrayEncounter[i].encounterName);
+            string pathEncounter = AssetDatabase.GUIDToAssetPath(encounterPaths[i]);
+            arrayEncounter[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathEncounter);
         }
         encounterList = new List<Encounter>(arrayEncounter);
+
+        string[] restsitePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RestsiteEncounters/Objects" });
+        Encounter[] arrayRestsite = new Encounter[restsitePaths.Length];
+        for (int i = 0; i < restsitePaths.Length; i++)
+        {
+            string pathRestsite = AssetDatabase.GUIDToAssetPath(restsitePaths[i]);
+            arrayRestsite[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathRestsite);
+        }
+        restsiteList = new List<Encounter>(arrayRestsite);
+
+        string[] treasurePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/TreasureEncounters/Objects" });
+        Encounter[] arrayTreasure = new Encounter[treasurePaths.Length];
+        for (int i = 0; i < treasurePaths.Length; i++)
+        {
+            string pathTreasure = AssetDatabase.GUIDToAssetPath(treasurePaths[i]);
+            arrayTreasure[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathTreasure);
+        }
+        treasureList = new List<Encounter>(arrayTreasure);
     }
 
     Encounter PopEncounter(int index)
     {
-        Debug.Log("Frank JOE BIDEN!!!" + encounterList.Count);
         Encounter encounter = encounterList.ElementAt(index);
         encounterList.RemoveAt(index);
         return encounter;
@@ -77,20 +72,19 @@ public class EncounterManager : MonoBehaviour
     // Estos son los métodos para empezar y acabar un encuentro aleatorio
 
 
-    // en startRandomEncounter es donde escribiremos cada "case",
+    // en StartRandomEncounter es donde escribiremos cada "case",
     // que es donde rellenamos el canvas y asignamos las funciones a los botones con el evento correspondiente
 
     // Ahora puedes mandarle un int para coger un encuentro específico, si no, le mandas 0 para que te dé un evento aleatorio
-    public void startRandomEncounter(int encuentroEspecifico)
+    public void StartRandomEncounter(int encuentroEspecifico)
     {
         // cogerá un numero entre 1 y 2, que son los dos encuentros actuales
 
-        int encuentroAleatorioNumero = 0;
-        Debug.Log("Frank Sinatra" + encounterList.Count);
+        int encuentroAleatorioNumero;
         Encounter randomEncounter;
-        if(encuentroEspecifico == 0)
+        if (encuentroEspecifico == 0)
         {
-            encuentroAleatorioNumero = Random.Range(1, encounterList.Count+1); // de 1 a uhhhhh
+            encuentroAleatorioNumero = Random.Range(1, encounterList.Count + 1); // de 1 a uhhhhh
             randomEncounter = PopEncounter(encuentroAleatorioNumero - 1);
 
 
@@ -104,39 +98,8 @@ public class EncounterManager : MonoBehaviour
             randomEncounter = encounterList.ElementAt(encuentroAleatorioNumero - 1);
 
         }
-        Debug.Log("AleatorioNumero" + encuentroAleatorioNumero);
         showOnlyEncounterCanvas();
         randomEncounter.FillEncounterCanvas();
-
-        /*
-        switch (encuentroAleatorioNumero)
-        {
-            case 1:
-                encounter1.FillEncounterCanvas();
-                button1.onClick.AddListener(Encounter1Button1);
-                button2.onClick.AddListener(Encounter1Button2);
-                break;
-            case 2:
-                encounter2.FillEncounterCanvas();
-                button1.onClick.AddListener(Encounter2Button1);
-                break;
-            case 3:
-                encounter3.FillEncounterCanvas();
-
-                break;
-            case 1001:
-                encounter1001.FillEncounterCanvas();
-                button1.onClick.AddListener(Encounter1001Button1);
-                button2.onClick.AddListener(Encounter1001Button2);
-                button3.onClick.AddListener(Encounter1001Button3);
-                button4.onClick.AddListener(Encounter1001Button4);
-                break;
-            case 1002:
-                encounter1002.FillEncounterCanvas();
-                button1.onClick.AddListener(Encounter1002Button1);
-                break;
-        }
-        */
     }
 
     public void ShowResults(string results)
@@ -150,7 +113,7 @@ public class EncounterManager : MonoBehaviour
         ResetButtons();
         hideOnlyEncounterCanvas();
     }
-   
+
     void showOnlyEncounterCanvas()
     {
         Mapa.SetActive(false);
@@ -186,7 +149,7 @@ public class EncounterManager : MonoBehaviour
 
     void Encounter1Button1()
     { // 0, 1, 2, 3
-        if (Random.Range(0,4) == 0)
+        if (Random.Range(0, 4) == 0)
         {
             // el dragon os quema por 40% de daño
             // DamageAllPercentage(0.4); (esta funcion no existe, se supone que daña a todo el grupo por un 40% de su salud)
@@ -204,8 +167,8 @@ public class EncounterManager : MonoBehaviour
 
     void Encounter1Button2()
     {
-        
-        if(Random.Range(0,2) == 0)
+
+        if (Random.Range(0, 2) == 0)
         {
             // El dragón te quema!!!
             ShowResults("El tesoro parece que tenía un encantamiento de alarma, ¡porque empieza a hacer un poderoso pitido que despierta al dragón, quien lanza una llamarada!" +
@@ -218,87 +181,24 @@ public class EncounterManager : MonoBehaviour
         }
     }
 
-    void Encounter1Button3()
+    public void StartRestsiteEncounter()
     {
-
+        Encounter restsiteEncounter = restsiteList.ElementAt(0);
+        showOnlyEncounterCanvas();
+        restsiteEncounter.FillEncounterCanvas();
     }
 
-
-
-    //-----------------------------------------------------------------------
-    // ENCOUNTER 2
-    //-----------------------------------------------------------------------
-
-    void Encounter2Button1()
+    public void StartTreasureEncounter()
     {
-        Debug.Log("Robas 1 millon de oro!");
-        finishRandomEncounter();
+        Encounter treasureEncounter = treasureList.ElementAt(0);
+        showOnlyEncounterCanvas();
+        treasureEncounter.FillEncounterCanvas();
     }
 
-    //-----------------------------------------------------------------------
-    // ENCOUNTER 3
-    //-----------------------------------------------------------------------
-
-
-    //-----------------------------------------------------------------------
-    // ENCOUNTER 4
-    //-----------------------------------------------------------------------
-
-    //-----------------------------------------------------------------------
-    // ENCOUNTER 5
-    //-----------------------------------------------------------------------
-
-    //-----------------------------------------------------------------------
-    // ENCOUNTER 1001 - Sitio de descanso
-    //-----------------------------------------------------------------------
-    void Encounter1001Button1()
-    {
-        Debug.Log("Romero suelta que se quiere arrancar la polla a mordiscos");
-        // Tambien se deberían de curar aquí
-        finishRandomEncounter();
-    }
-
-    void Encounter1001Button2()
-    {
-        Debug.Log("Deen Ecan propone al grupo el peor plan posible para derrotar al Señor de la Ceniza");
-        // Tambien se deberían de curar aquí
-
-        finishRandomEncounter();
-    }
-
-    void Encounter1001Button3()
-    {
-        Debug.Log("Galentin se queja de que es el peor grupo de aventureros que ha tenido desde el 86'");
-        // Tambien se deberían de curar aquí
-
-        finishRandomEncounter();
-    }
-
-    void Encounter1001Button4()
-    {
-        Debug.Log("Jose Maria dice ''¡Joder soy muy bajito!''");
-        // Tambien se deberían de curar aquí
-
-        finishRandomEncounter();
-    }
-
-    //-----------------------------------------------------------------------
-    // ENCOUNTER 1002 - Tesoro
-    //-----------------------------------------------------------------------
-    void Encounter1002Button1()
-    {
-        Debug.Log("Te equipas el tesoro! Pegate un tiro en la polla!");
-        // Aqui te deberias equipar tesoros
-        finishRandomEncounter();
-    }
-
-    //-----------------------------------------------------------------------
-    //-----------------------------------------------------------------------
-
-
+    /*
     void createEncounters()
     {
-        /*
+        
         // Hacer un tutorial para como hacer un nuevo encuentro
         encounter1.encounterName = "Dragón durmiente";
         encounter1.encounterDescription = "Pasando cerca de una cueva, escucháis a un dragón roncar en su cueva, con su gran pila de tesoro. Podríais intentar apropiaros con parte de su tesoro, pero si el dragón despierta...";
@@ -392,9 +292,10 @@ public class EncounterManager : MonoBehaviour
                 break;
         }
         encounter1002.encounterButton1Text = "¡Recoger el tesoro!";
-        */
-        //--------------------------------------------
-        // Aquí ya deberían estar definidos todos los encuentros
+        
+    //--------------------------------------------
+    // Aquí ya deberían estar definidos todos los encuentros
     }
+    */
 
 }
