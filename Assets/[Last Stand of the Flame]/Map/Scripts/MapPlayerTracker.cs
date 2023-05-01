@@ -81,12 +81,12 @@ namespace Map
                     //    break;
                 case NodeType.RestSite:
                     // Aqui es un descanso y recuperas salud
-                    encounterManager.GetComponent<EncounterManager>().startRandomEncounter(1001);
+                    encounterManager.GetComponent<EncounterManager>().StartRestsiteEncounter();
 
                     break;
                 case NodeType.Treasure:
                     // Aqui consigues una mejora de ataque o de salud
-                    encounterManager.GetComponent<EncounterManager>().startRandomEncounter(1002);
+                    encounterManager.GetComponent<EncounterManager>().StartTreasureEncounter();
 
                     break;
                 case NodeType.Store:
@@ -99,7 +99,7 @@ namespace Map
                     break;
                 case NodeType.Mystery:
                     // encuentro aleatorio!!!
-                    encounterManager.GetComponent<EncounterManager>().startRandomEncounter(0);
+                    encounterManager.GetComponent<EncounterManager>().StartRandomEncounter(0);
 
                     break;
                 default:
