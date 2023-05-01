@@ -20,6 +20,7 @@ public class GameController : FSMMachine
         if (_instancia == null)
         {
             _instancia = this;
+            DontDestroyOnLoad(this);
         }
         else
         {
