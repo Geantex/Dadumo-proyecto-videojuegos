@@ -1,8 +1,10 @@
+using Dapasa.FSM;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MapState : MonoBehaviour
+public class MapState : FSMState
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +15,18 @@ public class MapState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GameController.Instancia.SetStateByType(typeof(PauseState));
+        }
+    }
+    protected override void EnterState()
+    {
+        SceneManager.LoadScene("Map");
+    }
+
+    protected override void ExitState()
+    {
+
     }
 }

@@ -20,6 +20,7 @@ public class MainMenuState : FSMState
 
     protected override void EnterState()
     {
+        
     }
 
     protected override void ExitState()
