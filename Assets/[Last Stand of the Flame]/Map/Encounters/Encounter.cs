@@ -61,7 +61,7 @@ public class Encounter : ScriptableObject
         // Puede que no hayan 4 opciones en todos los encuentros, así que vamos a hacer ifs para ver si hay texto que agregar al boton
         //myScriptReference = go.GetComponent<MyScript>();
         Debug.Log("Es hora de asignar!");
-        if (encounterButton1Text != null || encounterButton1Text != "")
+        if (encounterButton1Text != "")
         {
             button1TextSlot.GetComponent<Text>().text = encounterButton1Text;
             try
@@ -79,12 +79,13 @@ public class Encounter : ScriptableObject
             button1.SetActive(false);
         }
         
-        if (encounterButton2Text != null || encounterButton2Text != "")
+        if (encounterButton2Text != "")
         {
             button2TextSlot.GetComponent<Text>().text = encounterButton2Text;
             try
             {
-                // poner funcion aqui
+                // veamos si funciona????
+                button2.GetComponent<Button>().onClick.AddListener(() => buttonScripts.GetComponent<MonoBehaviour>().GetType().GetMethod("functionButton2").Invoke(buttonScripts.GetComponent<MonoBehaviour>(), null));
             }
             catch
             {
@@ -96,18 +97,36 @@ public class Encounter : ScriptableObject
             button2.SetActive(false);
         }
 
-        if (encounterButton3Text != null || encounterButton3Text != "")
+        if (encounterButton3Text != "")
         {
             button3TextSlot.GetComponent<Text>().text = encounterButton3Text;
+            try
+            {
+                // veamos si funciona????
+                button3.GetComponent<Button>().onClick.AddListener(() => buttonScripts.GetComponent<MonoBehaviour>().GetType().GetMethod("functionButton3").Invoke(buttonScripts.GetComponent<MonoBehaviour>(), null));
+            }
+            catch
+            {
+                Debug.LogError("Button 3 no tiene función asignada!");
+            }
         }
         else
         {
             button3.SetActive(false);
         }
 
-        if (encounterButton4Text != null || encounterButton4Text != "")
+        if (encounterButton4Text != "")
         {
             button4TextSlot.GetComponent<Text>().text = encounterButton4Text;
+            try
+            {
+                // veamos si funciona????
+                button4.GetComponent<Button>().onClick.AddListener(() => buttonScripts.GetComponent<MonoBehaviour>().GetType().GetMethod("functionButton4").Invoke(buttonScripts.GetComponent<MonoBehaviour>(), null));
+            }
+            catch
+            {
+                Debug.LogError("Button 4 no tiene función asignada!");
+            }
         }
         else
         {
