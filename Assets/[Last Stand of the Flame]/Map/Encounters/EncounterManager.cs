@@ -54,7 +54,7 @@ public class EncounterManager : MonoBehaviour
         Encounter[] arrayTreasure = new Encounter[treasurePaths.Length];
         for (int i = 0; i < treasurePaths.Length; i++)
         {
-            string pathTreasure = AssetDatabase.GUIDToAssetPath(restsitePaths[i]);
+            string pathTreasure = AssetDatabase.GUIDToAssetPath(treasurePaths[i]);
             arrayTreasure[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathTreasure);
         }
         treasureList = new List<Encounter>(arrayTreasure);
@@ -82,9 +82,9 @@ public class EncounterManager : MonoBehaviour
 
         int encuentroAleatorioNumero;
         Encounter randomEncounter;
-        if(encuentroEspecifico == 0)
+        if (encuentroEspecifico == 0)
         {
-            encuentroAleatorioNumero = Random.Range(1, encounterList.Count+1); // de 1 a uhhhhh
+            encuentroAleatorioNumero = Random.Range(1, encounterList.Count + 1); // de 1 a uhhhhh
             randomEncounter = PopEncounter(encuentroAleatorioNumero - 1);
 
 
@@ -113,7 +113,7 @@ public class EncounterManager : MonoBehaviour
         ResetButtons();
         hideOnlyEncounterCanvas();
     }
-   
+
     void showOnlyEncounterCanvas()
     {
         Mapa.SetActive(false);
@@ -149,7 +149,7 @@ public class EncounterManager : MonoBehaviour
 
     void Encounter1Button1()
     { // 0, 1, 2, 3
-        if (Random.Range(0,4) == 0)
+        if (Random.Range(0, 4) == 0)
         {
             // el dragon os quema por 40% de daño
             // DamageAllPercentage(0.4); (esta funcion no existe, se supone que daña a todo el grupo por un 40% de su salud)
@@ -167,8 +167,8 @@ public class EncounterManager : MonoBehaviour
 
     void Encounter1Button2()
     {
-        
-        if(Random.Range(0,2) == 0)
+
+        if (Random.Range(0, 2) == 0)
         {
             // El dragón te quema!!!
             ShowResults("El tesoro parece que tenía un encantamiento de alarma, ¡porque empieza a hacer un poderoso pitido que despierta al dragón, quien lanza una llamarada!" +
