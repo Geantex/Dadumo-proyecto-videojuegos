@@ -53,7 +53,7 @@ public class EncounterManager : MonoBehaviour
     }
     void getEncounterList()
     {
-        string[] assetPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/Encounters/RandomEncounters" });
+        string[] assetPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RandomEncounters/Objects" });
         Encounter[] arrayEncounter = new Encounter[assetPaths.Length];
         for (int i = 0; i < assetPaths.Length; i++)
         {
