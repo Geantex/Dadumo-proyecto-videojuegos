@@ -17,8 +17,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("CombatScene");
-        GameController.Instancia.SetStateByType(typeof(GameState));
+        GameController.Instancia.SetStateByType(typeof(MapState));
     }
 
     public void ExitGame()
