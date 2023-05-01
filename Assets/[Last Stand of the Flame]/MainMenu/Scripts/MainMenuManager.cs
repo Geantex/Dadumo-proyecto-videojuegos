@@ -17,6 +17,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        SceneManager.LoadScene("Map");
         GameController.Instancia.SetStateByType(typeof(MapState));
     }
 

@@ -22,7 +22,8 @@ public class MapState : FSMState
     }
     protected override void EnterState()
     {
-        SceneManager.LoadScene("Map");
+        Time.timeScale = 1f;
+        //SceneManager.LoadScene("Map");
     }
 
     protected override void ExitState()

@@ -73,6 +73,7 @@ namespace Map
                 case NodeType.MinorEnemy:
                     // Aqui cargamos la escena de batalla!
                     SceneManager.LoadScene("CombatScene");
+                    GameController.Instancia.SetStateByType(typeof(GameState));
 
                     break;
                     // !! Esto seria si queremos meter minijefes
