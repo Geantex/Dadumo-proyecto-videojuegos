@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
@@ -12,26 +13,63 @@ public class EncounterManager : MonoBehaviour
     public GameObject Mapa;
     // hola Dora la exploradora!! estoy por explorarme!!
     public GameObject EncounterCanvas;
+    public GameObject ResultCanvas;
+    public GameObject ResultDescription;
 
     public Button button1;
     public Button button2;
     public Button button3;
     public Button button4;
 
+    public List<Encounter> encounterList = new List<Encounter>();
+
+
     List<int> AlreadyEncounteredList = new List<int>();
 
+
+    // Esto lo pasaremos a una lista!
+    /*
     Encounter encounter1 = new Encounter();
     Encounter encounter2 = new Encounter();
+    Encounter encounter3 = new Encounter();
+    Encounter encounter4 = new Encounter();
+    Encounter encounter5 = new Encounter();
+    Encounter encounter6 = new Encounter();
+    Encounter encounter7 = new Encounter();
+    Encounter encounter8 = new Encounter();
+    Encounter encounter9 = new Encounter();
+    Encounter encounter10 = new Encounter();
     Encounter encounter1001 = new Encounter();
     Encounter encounter1002 = new Encounter();
+    */
 
-    [SerializeField] Material encounter1image;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("getEncounterList", 2f);
         createEncounters();
         //startRandomEncounter();
+    }
+    void getEncounterList()
+    {
+        string[] assetPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/Encounters/RandomEncounters" });
+        Encounter[] arrayEncounter = new Encounter[assetPaths.Length];
+        for (int i = 0; i < assetPaths.Length; i++)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(assetPaths[i]);
+            arrayEncounter[i] = AssetDatabase.LoadAssetAtPath<Encounter>(path);
+            Debug.Log("Loaded asset " + i + " with name: " + arrayEncounter[i].encounterName);
+        }
+        encounterList = new List<Encounter>(arrayEncounter);
+    }
+
+    Encounter PopEncounter(int index)
+    {
+        Debug.Log("Frank JOE BIDEN!!!" + encounterList.Count);
+        Encounter encounter = encounterList.ElementAt(index);
+        encounterList.RemoveAt(index);
+        return encounter;
     }
 
 
@@ -48,24 +86,29 @@ public class EncounterManager : MonoBehaviour
         // cogerá un numero entre 1 y 2, que son los dos encuentros actuales
 
         int encuentroAleatorioNumero = 0;
+        Debug.Log("Frank Sinatra" + encounterList.Count);
+        Encounter randomEncounter;
         if(encuentroEspecifico == 0)
         {
-            encuentroAleatorioNumero = Random.Range(1, 3);
-            while (AlreadyEncounteredList.Contains(encuentroEspecifico))
-            {
-                // hasta que no hayan bastante encuentros, puede dar problemas
-                encuentroAleatorioNumero = Random.Range(1, 3);
-                Debug.Log("cogiendo otro evento aleatorio! El anterior está repetido");
-            }
+            encuentroAleatorioNumero = Random.Range(1, encounterList.Count+1); // de 1 a uhhhhh
+            randomEncounter = PopEncounter(encuentroAleatorioNumero - 1);
+
+
             // Aqui es si queremos un encuentro aleatorio
             // Meter aqui lo de eventos que no se repitan!
-            AlreadyEncounteredList.Add(encuentroEspecifico);
-        } else
+        }
+        else
         {
             // Aqui es si queremos un encuentro específico
             encuentroAleatorioNumero = encuentroEspecifico;
+            randomEncounter = encounterList.ElementAt(encuentroAleatorioNumero - 1);
+
         }
+        Debug.Log("AleatorioNumero" + encuentroAleatorioNumero);
         showOnlyEncounterCanvas();
+        randomEncounter.FillEncounterCanvas();
+
+        /*
         switch (encuentroAleatorioNumero)
         {
             case 1:
@@ -76,6 +119,10 @@ public class EncounterManager : MonoBehaviour
             case 2:
                 encounter2.FillEncounterCanvas();
                 button1.onClick.AddListener(Encounter2Button1);
+                break;
+            case 3:
+                encounter3.FillEncounterCanvas();
+
                 break;
             case 1001:
                 encounter1001.FillEncounterCanvas();
@@ -89,6 +136,13 @@ public class EncounterManager : MonoBehaviour
                 button1.onClick.AddListener(Encounter1002Button1);
                 break;
         }
+        */
+    }
+
+    public void ShowResults(string results)
+    {
+        ResultCanvas.SetActive(true);
+        ResultDescription.GetComponent<Text>().text = results;
     }
 
     public void finishRandomEncounter()
@@ -101,12 +155,15 @@ public class EncounterManager : MonoBehaviour
     {
         Mapa.SetActive(false);
         EncounterCanvas.SetActive(true);
+        ResultCanvas.SetActive(false);
+
     }
     // Esta función, "hideOnlyEncounterCanvas", quita el HUD de encuentros y muestra el HUD de combate y el de girar la cámara
     void hideOnlyEncounterCanvas()
     {
         Mapa.SetActive(true);
         EncounterCanvas.SetActive(false);
+        ResultCanvas.SetActive(false);
     }
 
     private void ResetButtons()
@@ -123,26 +180,47 @@ public class EncounterManager : MonoBehaviour
         // yippie!
     }
 
-
-
-
-
-
     //-----------------------------------------------------------------------
     // ENCOUNTER 1
     //-----------------------------------------------------------------------
 
     void Encounter1Button1()
-    {
-        Debug.Log("El boton 1 del encuentro 1 funciona");
-        finishRandomEncounter();
+    { // 0, 1, 2, 3
+        if (Random.Range(0,4) == 0)
+        {
+            // el dragon os quema por 40% de daño
+            // DamageAllPercentage(0.4); (esta funcion no existe, se supone que daña a todo el grupo por un 40% de su salud)
+            ShowResults("Mientras saqueáis, una pila de tesoros particularmente ruidosos colapsa, ¡y el dragón instintivamente lanza una llamarada!" +
+                " Conseguís escapar vivos y parcialmente chamuscados, sin nada de tesoro entre manos");
+        }
+        else
+        {
+            // robais 50 de oro
+            // Economia.anyadirOro(50); (esta funcion no existe) y el oro deberia ser poco
+            ShowResults("El dragón duerme profundamente, y ahora es 50 monedas de oro más pobre que antes. El dragón empieza a despertarse un poco," +
+                " así que el grupo huye de la cueva antes de que tengan un dracónido enemigo reclamándoles dinero");
+        }
     }
 
     void Encounter1Button2()
     {
-        Debug.Log("El 2 tambien funciona :)");
-        finishRandomEncounter();
-        startRandomEncounter(2);
+        
+        if(Random.Range(0,2) == 0)
+        {
+            // El dragón te quema!!!
+            ShowResults("El tesoro parece que tenía un encantamiento de alarma, ¡porque empieza a hacer un poderoso pitido que despierta al dragón, quien lanza una llamarada!" +
+                " Huís con las ropas chamuscadas y heridos, jurando jamás robar otra vez al dragón (lo haréis otra vez seguro)");
+        }
+        else
+        {
+            // oops
+            ShowResults("");
+        }
+    }
+
+    void Encounter1Button3()
+    {
+
     }
 
 
@@ -220,19 +298,26 @@ public class EncounterManager : MonoBehaviour
 
     void createEncounters()
     {
+        /*
         // Hacer un tutorial para como hacer un nuevo encuentro
-        encounter1.encounterName = "Encuentro 1!!!";
-        encounter1.encounterDescription = "Esta es la descripcion del encuentro 1! Texto de descripcion Texto de descripcion Texto de descripcion Texto de descripcion ";
+        encounter1.encounterName = "Dragón durmiente";
+        encounter1.encounterDescription = "Pasando cerca de una cueva, escucháis a un dragón roncar en su cueva, con su gran pila de tesoro. Podríais intentar apropiaros con parte de su tesoro, pero si el dragón despierta...";
         // Desconozco el motivo, pero no se ve bien la imagen
-        encounter1.encounterImage = encounter1image;
-        encounter1.encounterButton1Text = "Saltar";
-        encounter1.encounterButton2Text = "Huir muy rapido rapidin";
+        encounter1.encounterImage = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Encounters/imagenesEncuentros/megaRobarDragon.png"); // poner path aqui
+        encounter1.encounterButton1Text = "Robar 50 de oro (75% de éxito)";
+        encounter1.encounterButton2Text = "Robar equipamiento (50% de éxito)";
+        encounter1.encounterButton3Text = "¡Nos largamos!";
 
 
         encounter2.encounterName = "Encuentro 2!!!";
         encounter2.encounterDescription = "Unity.Random funciona!!";
-        //encounter2.encounterImage = encounter2image; // Aún no hay imagen para el segundo encuentro :(
+        //encounter2.encounterImage = encounter2image; // Aún no hay imagen para el segundo encuentro :(, joder jajaja, pero como se turbofolla?
         encounter2.encounterButton1Text = "Robar";
+
+        encounter3.encounterName = "";
+
+
+
 
         //---------------------------------------------------
         // ENCUENTROS 1000 -> Estos encuentros no son aleatorios (puesto que no están en el rango de ser escogidos aleatorios)
@@ -307,6 +392,7 @@ public class EncounterManager : MonoBehaviour
                 break;
         }
         encounter1002.encounterButton1Text = "¡Recoger el tesoro!";
+        */
         //--------------------------------------------
         // Aquí ya deberían estar definidos todos los encuentros
     }
