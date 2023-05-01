@@ -6,6 +6,7 @@ using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.VersionControl;
 
 [CreateAssetMenu()]
 public class Encounter : ScriptableObject
@@ -52,7 +53,7 @@ public class Encounter : ScriptableObject
         GameObject button2TextSlot = button2.transform.Find("EncounterButton2Text").gameObject;
         GameObject button3TextSlot = button3.transform.Find("EncounterButton3Text").gameObject;
         GameObject button4TextSlot = button4.transform.Find("EncounterButton4Text").gameObject;
-        
+
 
         nameSlot.GetComponent<Text>().text = encounterName;
         descriptionSlot.GetComponent<Text>().text = encounterDescription;
@@ -78,7 +79,7 @@ public class Encounter : ScriptableObject
         {
             button1.SetActive(false);
         }
-        
+
         if (encounterButton2Text != "")
         {
             button2TextSlot.GetComponent<Text>().text = encounterButton2Text;
