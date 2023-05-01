@@ -17,7 +17,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("CombatScene");
+        SceneManager.LoadScene("Map");
+        GameController.Instancia.SetStateByType(typeof(MapState));
     }
 
     public void ExitGame()
@@ -25,4 +26,5 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Saliendo...");
     }
+
 }
