@@ -13,6 +13,8 @@ TagManager:
   - EncounterManager
   - MapaCanvas
   - EncounterCanvas
+  - HUD
+  - Tablero
   layers:
   - Default
   - TransparentFX
