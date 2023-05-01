@@ -386,6 +386,8 @@
 "Assets/[Last Stand of the Flame]/Map/Encounters/Encounter.cs"
 "Assets/[Last Stand of the Flame]/Map/Encounters/EncounterManager.cs"
 "Assets/[Last Stand of the Flame]/Map/Encounters/RandomEncounters/Scripts/Encounter1.cs"
+"Assets/[Last Stand of the Flame]/Map/Encounters/RestsiteEncounters/Scripts/RestsiteEncounter1.cs"
+"Assets/[Last Stand of the Flame]/Map/Encounters/TreasureEncounters/Scripts/WereRich.cs"
 "Assets/[Last Stand of the Flame]/Map/OneLine/OneLine/Attributes/ArrayLengthAttribute.cs"
 "Assets/[Last Stand of the Flame]/Map/OneLine/OneLine/Attributes/ExpandableAttribute.cs"
 "Assets/[Last Stand of the Flame]/Map/OneLine/OneLine/Attributes/HideButtonsAttribute.cs"
