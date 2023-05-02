@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02675909590d950469e96ebf45a0f852, type: 3}
+  m_Name: Vendedor de rocas
+  m_EditorClassIdentifier: 
+  encounterName: Vendedor de rocas
+  encounterDescription: "Cruz\xE1is un r\xEDo y os encontrais con un vendedor de
+    rocas que asegura que vende rocas con poderes m\xE1gicos. Este os ense\xF1a su
+    cat\xE1logo de rocas, todas parecen iguales."
+  encounterImage: {fileID: 21300000, guid: a893c2a7cc4a003418491df21ba41be5, type: 3}
+  encounterButton1Text: "Comprar la roca n\xBA1 por 5 de oro"
+  encounterButton2Text: "Comprar la roca n\xBA2 por 5 de oro"
+  encounterButton3Text: "Comprar la roca n\xBA3 por 5 de oro"
+  encounterButton4Text: 'Irse '
+  buttonScripts: {fileID: 1531344495759887289, guid: a73911a95087e4b499b5651245d1cfed, type: 3}
