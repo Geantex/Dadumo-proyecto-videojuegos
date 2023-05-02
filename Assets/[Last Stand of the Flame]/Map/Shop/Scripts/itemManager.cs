@@ -42,21 +42,8 @@ public class itemManager : MonoBehaviour
         DeleteItemFromList(equippedItem);
         foreach (item item in allItemsList) 
         { 
-            // Esto borrará los objetos que sean del mismo personaje, que tengan un tier igual o menor, y que ocupen el mismo espacio (arma == arma o armadura == armadura)
+            // Esto borrarï¿½ los objetos que sean del mismo personaje, que tengan un tier igual o menor, y que ocupen el mismo espacio (arma == arma o armadura == armadura)
             if (item.characterTag == equippedItem.characterTag && item.itemTier <= equippedItem.itemTier && item.itemSlot == equippedItem.itemSlot)
-            {
-                DeleteItemFromList(item);
-            }
-        }
-    }
-
-    // deberia entrarle un valor de personaje, por ejemplo, Galentin
-    // OnCharacterDeath(character deadCharacter)
-    public void OnCharacterDeath()
-    {
-        foreach (item item in allItemsList)
-        {
-            //if (item.characterTag == deadCharacter.characterTag )
             {
                 DeleteItemFromList(item);
             }

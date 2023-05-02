@@ -17,6 +17,12 @@ TagManager:
   - Tablero
   - PauseMenu
   - StateText
+  - itemTienda1
+  - itemTienda2
+  - itemTienda3
+  - itemTienda4
+  - canvas
+  - mercenarioTienda
   layers:
   - Default
   - TransparentFX

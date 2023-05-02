@@ -91,7 +91,7 @@ namespace Map
                     break;
                 case NodeType.Store:
                     // Tienda para comprar objetos
-
+                    SceneManager.LoadScene("Shop");
                     break;
                 case NodeType.Boss:
                     // El señor de la ceniza (plin plin plon!)
