@@ -20,7 +20,7 @@ public class MainMenuState : FSMState
 
     protected override void EnterState()
     {
-        
+        (machine as GameController).goldCoins = 100f;
     }
 
     protected override void ExitState()

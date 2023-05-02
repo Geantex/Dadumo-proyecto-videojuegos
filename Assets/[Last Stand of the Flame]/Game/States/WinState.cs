@@ -8,21 +8,22 @@ public class WinState : FSMState
 {
     protected override void EnterState()
     {
-        Time.timeScale = 0f;
+        
+        (machine as GameController).goldCoins = GameController.Instancia.goldCoins + 100f;
         StartCoroutine(EndState());
     }
 
     IEnumerator EndState()
     {
         yield return new WaitForSeconds(2f);
-        machine.SetStateByType(typeof(MapState));
         SceneManager.UnloadSceneAsync("CombatScene");
         SceneManager.LoadScene("Map");
+        machine.SetStateByType(typeof(MapState));
         
     }
     protected override void ExitState()
     {
-       Time.timeScale = 1f;
+        Time.timeScale = 1f;
     }
 
     void Start()

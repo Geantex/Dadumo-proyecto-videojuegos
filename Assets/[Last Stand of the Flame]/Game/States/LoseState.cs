@@ -9,16 +9,21 @@ public class LoseState : FSMState
 {
     protected override void EnterState()
     {
+        if (GameController.Instancia.goldCoins >= 50f)
+        {
+            (machine as GameController).goldCoins = GameController.Instancia.goldCoins - 50f;
+        }
         StartCoroutine(EndState());
     }
 
     IEnumerator EndState()
     {
         yield return new WaitForSeconds(2f);
-        machine.SetStateByType(typeof(MainMenuState));
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.UnloadSceneAsync("CombatScene");
+        SceneManager.LoadScene("Map");
+        machine.SetStateByType(typeof(MapState));
+        
     }
-
     protected override void ExitState()
     {
         Time.timeScale = 1f;

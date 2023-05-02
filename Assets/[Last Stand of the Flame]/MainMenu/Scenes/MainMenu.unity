@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 65890572}
   - component: {fileID: 65890578}
   - component: {fileID: 65890579}
+  - component: {fileID: 65890580}
   m_Layer: 0
   m_Name: GameStateController
   m_TagString: Untagged
@@ -399,6 +400,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  goldCoins: 1
 --- !u!4 &65890577
 Transform:
   m_ObjectHideFlags: 0
@@ -439,6 +441,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75f75ad6070b2de41955d4ecd12460ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: 
+  isDefaultState: 0
+  _init: 0
+--- !u!114 &65890580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65890571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15887078063376b4ebb92d751e1541ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: 
