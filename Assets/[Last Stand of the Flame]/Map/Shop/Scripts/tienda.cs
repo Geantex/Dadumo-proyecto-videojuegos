@@ -4,12 +4,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Dapasa.FSM;
 
-public class tienda : MonoBehaviour
-
+public class tienda : /*FSMState*/MonoBehaviour
 {
 
-    public int dineraco = 2000; // dabloons!
+    private float dineraco = GameController.Instancia.goldCoins; // dabloons!
     public GameObject dineroText;
 
     public List<item> itemsList;
@@ -150,6 +150,7 @@ public class tienda : MonoBehaviour
     public void exitShop()
     {
         SceneManager.LoadScene("Map");
+        GameController.Instancia.SetStateByType(typeof(MapState));
     }
     public void buyItem1()
     {
@@ -161,6 +162,7 @@ public class tienda : MonoBehaviour
         else
         {
             dineraco = dineraco - item1.itemPrice;
+            GameController.Instancia.goldCoins = dineraco;
             // comprar el objeto, equiparselo al jugador y descontarselo del dinero total
             //item1.equipItem(item1);
             itemTienda1.transform.Find("Vendido").gameObject.SetActive(true);
@@ -177,6 +179,7 @@ public class tienda : MonoBehaviour
         else
         {
             dineraco = dineraco - item2.itemPrice;
+            GameController.Instancia.goldCoins = dineraco;
             // comprar el objeto, equiparselo al jugador y descontarselo del dinero total
             //item2.equipItem(item2);
             itemTienda2.transform.Find("Vendido").gameObject.SetActive(true);
@@ -190,6 +193,7 @@ public class tienda : MonoBehaviour
         if (dineraco < item3.itemPrice)
         {
             Debug.Log("Die notas eres pobre!!");
+            GameController.Instancia.goldCoins = dineraco;
             // TasearAlJugador(); No me dejan meter esta funcion #cringe?? me watching my mom shower
         }
         else
@@ -211,6 +215,7 @@ public class tienda : MonoBehaviour
         else
         {
             dineraco = dineraco - item4.itemPrice;
+            GameController.Instancia.goldCoins = dineraco;
             //item4.equipItem(item4); // Hugo c:
             // comprar el objeto, equiparselo al jugador y descontarselo del dinero total
             itemTienda4.transform.Find("Vendido").gameObject.SetActive(true);
@@ -231,6 +236,7 @@ public class tienda : MonoBehaviour
         else
         {
             dineraco = dineraco - 100;
+            GameController.Instancia.goldCoins = dineraco;
             // curar a la party funcion Hugo vuelale los cojones a Gerad!! y a Maro! y a George! y a Miawses! y a Gabriel! espera soy yo!! a ese tambien !! mm
             sanacionBoton.transform.Find("Vendido").gameObject.SetActive(true);
             sanacionBoton.onClick.RemoveAllListeners();
@@ -249,12 +255,25 @@ public class tienda : MonoBehaviour
         else
         {
             dineraco = dineraco - mercenarioPrecio;
+            GameController.Instancia.goldCoins = dineraco;
             mercenarioTienda.transform.Find("Vendido").gameObject.SetActive(true);
             mercenarioTienda.transform.Find("botonMercenario").gameObject.SetActive(false);
         }
 
     }
 
-    
+    /*protected override void EnterState()
+    {
+        Debug.Log("Estoy en la tienda");
+    }
+
+    protected override void ExitState()
+    {
+        Debug.Log("Salgo de la tienda");
+        Debug.Log(dineraco);
+        (machine as GameController).goldCoins = dineraco; 
+    }*/
+
+
 
 }

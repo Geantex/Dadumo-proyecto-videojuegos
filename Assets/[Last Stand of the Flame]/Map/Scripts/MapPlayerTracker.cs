@@ -72,8 +72,8 @@ namespace Map
             {
                 case NodeType.MinorEnemy:
                     // Aqui cargamos la escena de batalla!
-                    SceneManager.LoadScene("CombatScene");
                     GameController.Instancia.SetStateByType(typeof(GameState));
+                    SceneManager.LoadScene("CombatScene");
 
                     break;
                     // !! Esto seria si queremos meter minijefes
@@ -91,7 +91,8 @@ namespace Map
                     break;
                 case NodeType.Store:
                     // Tienda para comprar objetos
-                    SceneManager.LoadScene("Shop");
+                    GameController.Instancia.SetStateByType(typeof(ShopState));
+                    
                     break;
                 case NodeType.Boss:
                     // El señor de la ceniza (plin plin plon!)

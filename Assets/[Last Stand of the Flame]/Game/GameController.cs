@@ -7,6 +7,8 @@ public class GameController : FSMMachine
 {
     static GameController _instancia;
 
+    public float goldCoins = 0f;
+
     public static GameController Instancia
     {
         get

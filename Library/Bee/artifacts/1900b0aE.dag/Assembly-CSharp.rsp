@@ -355,6 +355,7 @@
 "Assets/[Last Stand of the Flame]/Game/States/MainMenuState.cs"
 "Assets/[Last Stand of the Flame]/Game/States/MapState.cs"
 "Assets/[Last Stand of the Flame]/Game/States/PauseState.cs"
+"Assets/[Last Stand of the Flame]/Game/States/ShopState.cs"
 "Assets/[Last Stand of the Flame]/Game/States/WinState.cs"
 "Assets/[Last Stand of the Flame]/Game/UI/LoseText.cs"
 "Assets/[Last Stand of the Flame]/Game/UI/WinText.cs"

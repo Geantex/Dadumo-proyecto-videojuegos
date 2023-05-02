@@ -22,8 +22,8 @@ public class MapState : FSMState
     }
     protected override void EnterState()
     {
-        Time.timeScale = 1f;
-        //SceneManager.LoadScene("Map");
+        Debug.Log(GameController.Instancia.goldCoins + "COINS");
+        SceneManager.LoadScene("Map");
     }
 
     protected override void ExitState()
