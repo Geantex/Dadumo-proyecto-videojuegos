@@ -1,30 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BattleHUD : MonoBehaviour
 {
-    public Text nameText;
-    public Text levelText;
+    public GameObject nameContainer;
+    public GameObject levelContainer;
+    public GameObject hpContainer;
+
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI levelText;
     public Slider hpSlider;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //nameText = nameContainer.GetComponent<TextMeshProUGUI>();
+        //levelText = levelContainer.GetComponent<TextMeshProUGUI>();
+        //hpSlider = hpContainer.GetComponent<Slider>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public BattleHUD()
     {
-        GameObject textObjecto = GameObject.Find("NameText");
-        nameText = textObjecto.GetComponent<Text>();
-
-        GameObject textObjecto2 = GameObject.Find("VM");
-        levelText = textObjecto2.GetComponent<Text>();
-
-        GameObject sliderObjeto = GameObject.Find("NamePanel");
-        hpSlider = sliderObjeto.GetComponent<Slider>();
+        
     }
 
     public void SetHUD(string name, int level, int maxhp, int currenthp)
     {
+        Debug.Log("El puto nombre::::: " + name);
         nameText.text = name;
-        levelText.text = "Lvl " + level;
+        //levelText.text = "Lvl " + level;
         hpSlider.maxValue = maxhp;
         hpSlider.value = currenthp;
     }

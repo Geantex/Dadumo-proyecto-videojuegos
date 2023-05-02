@@ -10,6 +10,7 @@ public class CharacterClass : MonoBehaviour
     protected int mana;
     protected int damage;
     protected int range;
+    protected List<SpecialAttack> AllSpecialAttacks = new List<SpecialAttack>();
     // Start is called before the first frame update
     void Start()
     {

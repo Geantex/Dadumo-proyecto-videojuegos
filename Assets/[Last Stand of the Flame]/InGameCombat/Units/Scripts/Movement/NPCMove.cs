@@ -36,10 +36,7 @@ public class NPCMove : TacticsMove
             //Move();
         }
 
-        /*if(actualTurn < gameObject.GetComponent<TacticsMove>().numTurn)
-        {
-            gameObject.GetComponent<Unit>().Attack.Attack(target, gameObject);
-        }*/
+        
     }
 
     void CalculatePath()

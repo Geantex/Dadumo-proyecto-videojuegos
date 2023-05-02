@@ -20,6 +20,7 @@ public class PauseState : FSMState
     public void LoadMenu()
     {
         GameController.Instancia.SetStateByType(typeof(MainMenuState));
+        SceneManager.LoadScene("MainMenu");
         Debug.Log("Loading menu...");
         
     }
@@ -62,6 +63,7 @@ public class PauseState : FSMState
     protected override void ExitState()
     {
         pauseMenuUI.SetActive(false);
-        
+        Time.timeScale = 1f;
+
     }
 }

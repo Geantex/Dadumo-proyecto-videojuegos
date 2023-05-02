@@ -12,7 +12,6 @@ public class Unit : MonoBehaviour
     private string stateEffect;
     private string boostType;
     private double boost;
-    public ArrayList specialAttacks = new ArrayList();
     // Start is called before the first frame update
     void Start()
     {

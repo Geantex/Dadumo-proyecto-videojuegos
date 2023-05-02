@@ -8,12 +8,10 @@ public class TurnManager : MonoBehaviour
     static Dictionary<string, List<TacticsMove>> units = new Dictionary<string, List<TacticsMove>>();
     static Queue<string> turnKey = new Queue<string>();
     static Queue<TacticsMove> turnTeam = new Queue<TacticsMove>();
-    private static BattleHUD battleHUD;
 
 	// Use this for initialization
 	void Start () 
 	{
-        battleHUD = new BattleHUD();
         Debug.Log("Entro en los turnos");
         
     }
@@ -61,10 +59,10 @@ public class TurnManager : MonoBehaviour
 
         foreach (TacticsMove unit in teamList)
         {
-            GameObject gameObject = GameObject.Find(unit.name);
-            Debug.Log(gameObject);
+            GameObject gameObjectPlayer = unit.gameObject;
+            Debug.Log(gameObjectPlayer);
             //Aquí me da el error
-            //battleHUD.SetHUD(unit.name, 8, 100, 50);
+            FindObjectOfType<BattleHUD>().SetHUD(gameObjectPlayer.GetComponent<Unit>().Name, 8, 100, 50);
             
         }
         Debug.Log("----------------------------------------------------");

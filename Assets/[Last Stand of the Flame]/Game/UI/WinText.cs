@@ -17,5 +17,6 @@ public class WinText : MonoBehaviour
     public void FSMStateChangeHandler(FSMState nuevo, FSMState anterior)
     {
         if (nuevo is WinState) gameObject.SetActive(true);
+        else gameObject.SetActive(false);
     }
 }
