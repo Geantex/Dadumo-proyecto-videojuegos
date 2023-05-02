@@ -17,5 +17,6 @@ public class LoseText : MonoBehaviour
     public void FSMStateChangeHandler(FSMState nuevo, FSMState anterior)
     {
         if (nuevo is LoseState) gameObject.SetActive(true);
+        else gameObject.SetActive(false);
     }
 }

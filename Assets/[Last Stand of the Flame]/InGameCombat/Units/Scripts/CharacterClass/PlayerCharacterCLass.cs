@@ -23,5 +23,6 @@ public class PlayerCharacterCLass : CharacterClass
         gameObject.GetComponent<Unit>().Mana = mana;
         gameObject.GetComponent<PlayerAttack>().Damage = damage;
         gameObject.GetComponent<PlayerAttack>().Range = range;
+        gameObject.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks = AllSpecialAttacks;
     }
 }

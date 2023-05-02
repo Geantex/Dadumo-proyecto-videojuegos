@@ -6,26 +6,32 @@ using UnityEngine.UI;
 
 public class PlayerMove : TacticsMove 
 {
-    public Button buttonh1;
-    public Button buttonh2;
-    public Button buttonh3;
-    public Button buttonh4;
+    public Button buttonBasicAttack;
+    public Button buttonSpecialAttack1;
+    public Button buttonSpecialAttack2;
+    public Button buttonSpecialAttack3;
+    public Button buttonSpecialAttack4;
+    public Button buttonFinishTurn;
 
     GameObject actualTarget = null;
     GameObject lastTarget = null;
     bool clicked = false;
     bool firstClick = false;
     bool clickedMarked = false;
-	// Use this for initialization
-	void Start () 
+
+    public BattleHUD battleHUD;
+    // Use this for initialization
+    void Start () 
 	{
+        battleHUD = new BattleHUD();
+
         //Prueba Special Attack
-        buttonh2.onClick.AddListener(SpecialAttackButton);
+        buttonSpecialAttack1.onClick.AddListener(SpecialAttackButton);
         //buttonh3.onClick.AddListener();
         //Prueba Special Attack
 
-        buttonh1.onClick.AddListener(AttackButton);
-        buttonh4.onClick.AddListener(endMyTurn);
+        buttonBasicAttack.onClick.AddListener(AttackButton);
+        buttonFinishTurn.onClick.AddListener(endMyTurn);
         Init();
 	}
 	
@@ -38,6 +44,8 @@ public class PlayerMove : TacticsMove
         {
             return;
         }
+
+        battleHUD = new BattleHUD();
 
         if (GameObject.FindWithTag("Tablero").GetComponent<Spawner>().TableroCreado)
         {
@@ -73,7 +81,7 @@ public class PlayerMove : TacticsMove
                     if (lastTarget != null)
                     {
                         Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-                        renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+                        renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
                     }
                     lastTarget = actualTarget;
                     clickedMarked = true;
@@ -122,17 +130,17 @@ public class PlayerMove : TacticsMove
         GameObject gameObjectButton = GameObject.FindWithTag("HUD");
 
         GameObject gameObjectButtonH1 = gameObjectButton.transform.Find("H1").gameObject;
-        buttonh1 = gameObjectButtonH1.AddComponent<Button>();
-        buttonh1.onClick.AddListener(AttackButton);
+        buttonBasicAttack = gameObjectButtonH1.AddComponent<Button>();
+        buttonBasicAttack.onClick.AddListener(AttackButton);
 
         GameObject gameObjectButtonH2 = gameObjectButton.transform.Find("H2").gameObject;
-        buttonh2 = gameObjectButtonH2.AddComponent<Button>();
+        buttonSpecialAttack1 = gameObjectButtonH2.AddComponent<Button>();
 
         GameObject gameObjectButtonH3 = gameObjectButton.transform.Find("H3").gameObject;
-        buttonh3 = gameObjectButtonH3.AddComponent<Button>();
+        buttonSpecialAttack2 = gameObjectButtonH3.AddComponent<Button>();
 
         GameObject gameObjectButtonH4 = gameObjectButton.transform.Find("H4").gameObject;
-        buttonh4 = gameObjectButtonH4.AddComponent<Button>();
+        buttonFinishTurn = gameObjectButtonH4.AddComponent<Button>();
     }
 
     void AttackButton()
@@ -143,7 +151,7 @@ public class PlayerMove : TacticsMove
             clicked = false;
             firstClick = false;
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn();
@@ -158,7 +166,7 @@ public class PlayerMove : TacticsMove
             clicked = false;
             firstClick = false;
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn();
@@ -173,7 +181,7 @@ public class PlayerMove : TacticsMove
         if(actualTarget != null)
         {
             Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/[Last Stand of the Flame]/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
         }
         lastTarget = null;
         actualTarget = null;
