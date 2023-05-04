@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Encounter4 : MonoBehaviour
 {
-    public GameObject encounterManager;
+    private GameObject encounterManager;
+
     public void functionButton1()
     {
         //+ 20 monedas
+        GameController.Instancia.goldCoins += 20f;
         encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
         encounterManager.GetComponent<EncounterManager>().ShowResults("el slime parece muy contento y os da 20 monedas");
     }
@@ -19,7 +21,8 @@ public class Encounter4 : MonoBehaviour
     }
     public void functionButton3()
     {
-        // -20% de dinero
+        // -50 de dinero
+        GameController.Instancia.goldCoins -= 50f;
         encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
         encounterManager.GetComponent<EncounterManager>().ShowResults("su mirada es más intensa que la vuestra, os sentis mareados y a los pocos segundos" +
             " os desmayáis todos, cuando os despertáis el slime ha desaparecido y con el parte de vustro dinero");
@@ -28,6 +31,7 @@ public class Encounter4 : MonoBehaviour
     {
         //+10 de vida a toda la party
         // + 50 de oro
+        GameController.Instancia.goldCoins += 50f;
         encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
         encounterManager.GetComponent<EncounterManager>().ShowResults("El slime parece muy contento, ves como se hace más grande hasta el punto que os absorbe a todos. " +
             "Este os enseña el planeta del que proviene, sus costumbres, tradiciones y creencias. Al final del día os sentis como si hubieráis estado bebiendo de fiesta" +
