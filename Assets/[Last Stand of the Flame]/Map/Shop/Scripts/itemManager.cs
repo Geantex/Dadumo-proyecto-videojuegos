@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class itemManager : MonoBehaviour
@@ -14,7 +11,7 @@ public class itemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] assetPaths = AssetDatabase.FindAssets("t: item", new string[] { "Assets/[Last Stand of the Flame]/Map/Shop/Scripts/itemsCreated" });
+        /*string[] assetPaths = AssetDatabase.FindAssets("t: item", new string[] { "Assets/[Last Stand of the Flame]/Map/Shop/Scripts/itemsCreated" });
         item[] arrayItem = new item[assetPaths.Length];
         for (int i = 0; i < assetPaths.Length; i++)
         {
@@ -22,7 +19,7 @@ public class itemManager : MonoBehaviour
             arrayItem[i] = AssetDatabase.LoadAssetAtPath<item>(path);
             //Debug.Log("Loaded asset " + i + " with name: " + arrayItem[i].itemName);
         }
-        allItemsList = new List<item>(arrayItem);
+        allItemsList = new List<item>(arrayItem);*/
     }
 
 

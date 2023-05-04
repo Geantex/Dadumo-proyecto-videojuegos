@@ -59,14 +59,17 @@ public class Encounter2 : MonoBehaviour
         int elegir = Random.Range(0, 3);
         if (elegir == 0)
         {
+            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins - 5f;
             opcion1();
         }
         else if (elegir == 1)
         {
+            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins - 5f;
             opcion2();
         }
         else if(elegir == 2)
         {
+            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins - 5f;
             opcion3();
         }
     }

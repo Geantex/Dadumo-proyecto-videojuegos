@@ -20,6 +20,9 @@ public class PlayerMove : TacticsMove
     bool clickedMarked = false;
 
     public BattleHUD battleHUD;
+
+    public Material enemyColor;
+
     // Use this for initialization
     void Start () 
 	{
@@ -81,7 +84,8 @@ public class PlayerMove : TacticsMove
                     if (lastTarget != null)
                     {
                         Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-                        renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+                        //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+                        renderer.material = enemyColor;
                     }
                     lastTarget = actualTarget;
                     clickedMarked = true;
@@ -150,8 +154,9 @@ public class PlayerMove : TacticsMove
             gameObject.GetComponent<PlayerAttack>().AoD = gameObject.GetComponent<PlayerAttack>().Attack(actualTarget, gameObject);
             clicked = false;
             firstClick = false;
-            Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
+            //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = enemyColor;
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn();
@@ -165,8 +170,9 @@ public class PlayerMove : TacticsMove
             gameObject.GetComponent<PlayerSpecialAttack>().AoD = gameObject.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks[0].Attack(actualTarget, gameObject);
             clicked = false;
             firstClick = false;
-            Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
+            //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = enemyColor;
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn();
@@ -180,8 +186,9 @@ public class PlayerMove : TacticsMove
         firstClick = false;
         if(actualTarget != null)
         {
-            Renderer renderer = actualTarget.GetComponentInChildren<Renderer>();
-            renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
+            //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+            renderer.material = enemyColor;
         }
         lastTarget = null;
         actualTarget = null;

@@ -194,6 +194,46 @@ PrefabInstance:
       propertyPath: Mapa
       value: 
       objectReference: {fileID: 1311161698}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: restsiteList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: treasureList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: restsiteList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78235d307677a1d4dbb54d16324d1146, type: 2}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: treasureList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ca315e93479a424c80efa8360484054, type: 2}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5de5dac0379ce6342803ef4b6e45f30e, type: 2}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 804666f2788ea2f4f8758ccd1f20ce4a, type: 2}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d1cbd006315cd64daadced4c671c1df, type: 2}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bc2a4d6f5eec834991b349e180f9c60, type: 2}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: fcd4de8ac8854dd45a65b9ab720459cc, type: 2}
     - target: {fileID: 4192329416410604227, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
       propertyPath: m_IsActive
       value: 0
