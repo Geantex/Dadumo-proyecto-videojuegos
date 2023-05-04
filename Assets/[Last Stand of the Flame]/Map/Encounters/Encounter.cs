@@ -1,12 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System;
-using System.Reflection;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.VersionControl;
 
 [CreateAssetMenu()]
 public class Encounter : ScriptableObject

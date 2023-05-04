@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+//using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters; // No volver a usar
 using Random = UnityEngine.Random;
 
 public class EncounterManager : MonoBehaviour
@@ -32,32 +32,35 @@ public class EncounterManager : MonoBehaviour
     }
     void getEncounterList()
     {
-        string[] encounterPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RandomEncounters/Objects" });
+        //Aquí uno de los problemas que causan el fallo el ASSETDATABASE, es mejor añadir a mano directamente los encuentros
+        //en el ENCOUNTERMANAGER directamente a mano para no tener problemas de compilación el el futuro
+
+        /*string[] encounterPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RandomEncounters/Objects" });
         Encounter[] arrayEncounter = new Encounter[encounterPaths.Length];
         for (int i = 0; i < encounterPaths.Length; i++)
         {
             string pathEncounter = AssetDatabase.GUIDToAssetPath(encounterPaths[i]);
             arrayEncounter[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathEncounter);
         }
-        encounterList = new List<Encounter>(arrayEncounter);
+        encounterList = new List<Encounter>(arrayEncounter);*/
 
-        string[] restsitePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RestsiteEncounters/Objects" });
+        /*string[] restsitePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RestsiteEncounters/Objects" });
         Encounter[] arrayRestsite = new Encounter[restsitePaths.Length];
         for (int i = 0; i < restsitePaths.Length; i++)
         {
             string pathRestsite = AssetDatabase.GUIDToAssetPath(restsitePaths[i]);
             arrayRestsite[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathRestsite);
         }
-        restsiteList = new List<Encounter>(arrayRestsite);
+        restsiteList = new List<Encounter>(arrayRestsite);*/
 
-        string[] treasurePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/TreasureEncounters/Objects" });
+        /*string[] treasurePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/TreasureEncounters/Objects" });
         Encounter[] arrayTreasure = new Encounter[treasurePaths.Length];
         for (int i = 0; i < treasurePaths.Length; i++)
         {
             string pathTreasure = AssetDatabase.GUIDToAssetPath(treasurePaths[i]);
             arrayTreasure[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathTreasure);
         }
-        treasureList = new List<Encounter>(arrayTreasure);
+        treasureList = new List<Encounter>(arrayTreasure);*/
     }
 
     Encounter PopEncounter(int index)

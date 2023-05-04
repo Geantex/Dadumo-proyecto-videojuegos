@@ -8,9 +8,10 @@ using UnityEngine.UI;
 public class PlayerAttack : BasicAttack
 {
     public bool AoD = true;
+    public Material enemyColor;
 
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +37,8 @@ public class PlayerAttack : BasicAttack
             {
                 Debug.Log("Unidad encontrada! Se llama " + sobreUnidad.collider.gameObject.name);
                 Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
-                renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Seleccionado.mat");
-
+                //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+                renderer.material = enemyColor;
                 //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
                 return sobreUnidad.collider.gameObject;
                 //TurnManager.EndTurn();

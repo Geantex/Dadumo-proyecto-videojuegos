@@ -263,6 +263,10 @@ PrefabInstance:
       value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2218742394344866092, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218742394344866092, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -161
       objectReference: {fileID: 0}
@@ -344,6 +348,13 @@ MonoBehaviour:
   imageCharacter2: {fileID: 549647942}
   imageCharacter3: {fileID: 1149523143}
   rerollUsed: 0
+  Clerigo: {fileID: 21300000, guid: 8405ccb2d7c675248b81999b0c108229, type: 3}
+  Asesino: {fileID: 21300000, guid: e7eb0d2dec14cbb459d732ce4372eb16, type: 3}
+  Paladin: {fileID: 21300000, guid: 191419c6930d97847807752aaf1d5331, type: 3}
+  Monje: {fileID: 21300000, guid: 6a5057fd78c39794d9c22497b5f98f52, type: 3}
+  Mago: {fileID: 21300000, guid: 27c4d7e86fa80374f8b7e0965214e8df, type: 3}
+  Bardo: {fileID: 21300000, guid: 54b10afbb66cc9642b06ee70a802044e, type: 3}
+  Barbaro: {fileID: 21300000, guid: 1f1d14807a58f884e82df22ab3af3e11, type: 3}
 --- !u!1 &316744071
 GameObject:
   m_ObjectHideFlags: 0
