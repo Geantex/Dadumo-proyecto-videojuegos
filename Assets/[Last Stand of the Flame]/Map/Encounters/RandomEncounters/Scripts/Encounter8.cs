@@ -21,6 +21,7 @@ public class Encounter8 : MonoBehaviour
     {
         //-1 de vida a todo el equipo
         //+50 monedas
+        GameController.Instancia.goldCoins += 50f;
         encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
         encounterManager.GetComponent<EncounterManager>().ShowResults("Donáis la sangre y el doctor morbius te paga por tu ayuda");
     }

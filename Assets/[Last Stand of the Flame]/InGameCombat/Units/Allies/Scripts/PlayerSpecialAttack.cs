@@ -8,6 +8,8 @@ public class PlayerSpecialAttack : MonoBehaviour
     public bool AoD = true;
     public List<SpecialAttack> AllSpecialAttacks = new List<SpecialAttack>();
 
+    public Material enemyColor;
+
     /*public PlayerSpecialAttack(int damage, int range, string stateEffect, double stateEffectProbability, string boostType, double boostValue)
     {
         this.Damage = damage;
@@ -41,7 +43,8 @@ public class PlayerSpecialAttack : MonoBehaviour
                 {
                     Debug.Log("Unidad encontrada! Se llama " + sobreUnidad.collider.gameObject.name);
                     Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
-                    renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Seleccionado.mat");
+                    //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
+                    renderer.material = enemyColor;
 
                     //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
                     return sobreUnidad.collider.gameObject;

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/[Last Stand of the Flame]/MainMenu/Scenes/MainMenu.unity
+- path: Assets/[Last Stand of the Flame]/InGameCombat/Scenes/CombatScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

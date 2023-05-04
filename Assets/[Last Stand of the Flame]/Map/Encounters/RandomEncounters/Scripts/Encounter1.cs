@@ -21,7 +21,7 @@ public class Encounter1 : MonoBehaviour
         else
         {
             // robais 50 de oro
-            // Economia.anyadirOro(50); (esta funcion no existe) y el oro deberia ser poco
+            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins - 50f;
             encounterManager.GetComponent<EncounterManager>().ShowResults("El dragón duerme profundamente, y ahora es 50 monedas de oro más pobre que antes. El dragón empieza a despertarse un poco," +
                 " así que el grupo huye de la cueva antes de que tengan un dracónido enemigo reclamándoles dinero");
         }
@@ -41,6 +41,7 @@ public class Encounter1 : MonoBehaviour
         {
             // robais una pieza de equipamiento
             // Economia.anyadirOro(50); (esta funcion no existe) y el oro deberia ser poco
+            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins + 50f;
             encounterManager.GetComponent<EncounterManager>().ShowResults("El dragón duerme profundamente, y os apropiáis un equipamiento con marcas de quemadura; su penúltimo propietario seguramente no lo echará de menos. El dragón empieza a despertarse un poco," +
                 " así que el grupo huye de la cueva antes de que tengan que probar su equipamiento contra su último propietario");
         }
