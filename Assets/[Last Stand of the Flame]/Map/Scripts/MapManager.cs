@@ -36,6 +36,16 @@ namespace Map
             }
         }
 
+        private void Update()
+        {
+            if (GameController.Instancia.NewGame == true)
+            {
+                GenerateNewMap();
+                SaveMap();
+                GameController.Instancia.NewGame = false;
+            }
+        }
+
         public void GenerateNewMap()
         {
             var map = MapGenerator.GetMap(config);

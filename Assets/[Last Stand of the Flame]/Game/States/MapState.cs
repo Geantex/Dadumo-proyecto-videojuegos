@@ -22,8 +22,8 @@ public class MapState : FSMState
     }
     protected override void EnterState()
     {
-        Debug.Log(GameController.Instancia.goldCoins + "COINS");
         SceneManager.LoadScene("Map");
+        Debug.Log(GameController.Instancia.GoldCoins + "COINS");
     }
 
     protected override void ExitState()

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457eb3358e151104587262333d375e0c, type: 3}
+  m_Name: Kazuro
+  m_EditorClassIdentifier: 
+  characterName: Kazuro
+  characterClass: asesino
+  characterImage: {fileID: 3792388835238295109, guid: 40f908276ded42446b51ef0e6a942e7e, type: 3}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 4224001364122300964, guid: 45a9c84f8d158ef488eed99754b46c98, type: 3}
+  healthPoints: 50
+  manaPoints: 100
+  damagePoints: 50
+  rangeTiles: 1
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}

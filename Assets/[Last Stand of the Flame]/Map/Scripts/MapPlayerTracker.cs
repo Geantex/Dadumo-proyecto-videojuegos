@@ -9,7 +9,7 @@ namespace Map
     public class MapPlayerTracker : MonoBehaviour
     {
         public bool lockAfterSelecting = false;
-        public float enterNodeDelay = 1f;
+        public float enterNodeDelay = 0f;
         public MapManager mapManager;
         public MapView view;
 
@@ -73,15 +73,60 @@ namespace Map
                 case NodeType.MinorEnemy:
                     // Aqui cargamos la escena de batalla!
                     GameController.Instancia.SetStateByType(typeof(GameState));
-                    SceneManager.LoadScene("CombatScene");
+                    switch (mapNode.Node.mapPosition)
+                    {
+                        case 0:
+                            SceneManager.LoadScene("BosqueCombate");
+                            break;
 
+                        case 1:
+                            SceneManager.LoadScene("BosqueCombate");
+                            break;
+
+                        case 2:
+                            SceneManager.LoadScene("BosqueCombate");
+                            break;
+
+                        case 3:
+                            SceneManager.LoadScene("PuebloCombate");
+                            break;
+
+                        case 4:
+                            SceneManager.LoadScene("PuebloCombate");
+                            break;
+
+                        case 5:
+                            SceneManager.LoadScene("PuebloCombate");
+                            break;
+
+                        case 6:
+                            SceneManager.LoadScene("PuebloCombate");
+                            break;
+
+                        case 7:
+                            SceneManager.LoadScene("MontanaCombate");
+                            break;
+
+                        case 8:
+                            SceneManager.LoadScene("MontanaCombate");
+                            break;
+
+                        case 9:
+                            SceneManager.LoadScene("MontanaCombate");
+                            break;
+
+                        case 10:
+                            SceneManager.LoadScene("MontanaCombate");
+                            break;
+
+                    }
                     break;
                     // !! Esto seria si queremos meter minijefes
                     //case NodeType.EliteEnemy:
                     //    break;
                 case NodeType.RestSite:
                     // Aqui es un descanso y recuperas salud
-                    encounterManager.GetComponent<EncounterManager>().StartRestsiteEncounter();
+                    SceneManager.LoadScene("Hoguera");
 
                     break;
                 case NodeType.Treasure:
@@ -96,6 +141,9 @@ namespace Map
                     break;
                 case NodeType.Boss:
                     // El señor de la ceniza (plin plin plon!)
+                    // Aqui solo puede salir el volcan!
+                    // Hay que meter esta escena en el scene manager
+                    SceneManager.LoadScene("VolcanCombate");
 
                     break;
                 case NodeType.Mystery:

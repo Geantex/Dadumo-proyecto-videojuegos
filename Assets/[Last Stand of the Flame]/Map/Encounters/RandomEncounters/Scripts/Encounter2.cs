@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class Encounter2 : MonoBehaviour
 {
-    public GameObject encounterManager;
     public int elegir;
+
+    private EncounterManager encounterManager;
+
+    public EncounterManager EncounterManager
+    {
+        get
+        {
+            if (encounterManager == null)
+            {
+                encounterManager = GameObject.FindObjectOfType<EncounterManager>();
+            }
+            return encounterManager;
+        }
+    }
 
     public void functionButton1()
     {
@@ -21,34 +34,29 @@ public class Encounter2 : MonoBehaviour
     }
     public void functionButton4()
     {
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("Te despides del vendedor, pero este para y te regala una roca, la aceptas, esta resulta ser una roca mágica," +
+        EncounterManager.ShowResults("Te despides del vendedor, pero este para y te regala una roca, la aceptas, esta resulta ser una roca mágica," +
             " pero defectuosa, toda tu equipo pierde 5 de vida ");
     }
     public void opcion1()
     {
-        //gasta 5 monedas
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("Gastas 5 monedas en comprar la roca, pero resultó ser una roca normal");
+        EncounterManager.ShowResults("Gastas 5 monedas en comprar la roca, pero resultó ser una roca normal");
     }
     //--------------------------------------------------------------------
     //--------------------------------------------------------------------
     public void opcion2()
     {
-        //gasta 5 de oro
-        //suma 5 de vida a toda la party
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("Gastas 5 monedas en comprar la roca, reultó ser una roca mágica," +
+        //suma 10 de vida a toda la party
+        GameController.Instancia.modifyPartyHealthPoints(10f);
+        EncounterManager.ShowResults("Gastas 5 monedas en comprar la roca, reultó ser una roca mágica," +
             "esta cura 10 de vida a cada miembro de te equipo");
     }
     //--------------------------------------------------------------------
     //--------------------------------------------------------------------
     public void opcion3()
     {
-        //gasta 5 de oro
         //quita 1 de vida a todo el equipo
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("Te despides del vendedor, pero este para y te regala una roca, la aceptas, esta resulta ser una roca mágica," +
+        GameController.Instancia.modifyPartyHealthPoints(-1f);
+        EncounterManager.ShowResults("Te despides del vendedor, pero este para y te regala una roca, la aceptas, esta resulta ser una roca mágica," +
             " pero defectuosa, toda tu equipo pierde 1 de vida ");
     }
     //--------------------------------------------------------------------
@@ -56,20 +64,18 @@ public class Encounter2 : MonoBehaviour
        public void robada()
     {
         //-5 de dinero por comprar la roca
+        GameController.Instancia.modifyGoldCoins(-5f);
         int elegir = Random.Range(0, 3);
         if (elegir == 0)
-        {
-            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins - 5f;
+        {  
             opcion1();
         }
         else if (elegir == 1)
         {
-            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins - 5f;
             opcion2();
         }
         else if(elegir == 2)
         {
-            GameController.Instancia.goldCoins = GameController.Instancia.goldCoins - 5f;
             opcion3();
         }
     }

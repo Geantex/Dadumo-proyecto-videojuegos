@@ -17,7 +17,7 @@ MonoBehaviour:
     de lobos a su espalda. Parece que los puede controlar. Este se os acerca y os
     dice:  \t\"Buenas, soy el doctor Morbius, estoy buscando muestras de sangre para
     mutar a mis lobos, \xBFme podr\xEDas ayudar?"
-  encounterImage: {fileID: 21300000, guid: 607113c068ae75041b809e0e91dd0987, type: 3}
+  encounterImage: {fileID: 21300000, guid: 4b43fad02d8b3574da5b9d23819b84cb, type: 3}
   encounterButton1Text: Ladrar a los lobos
   encounterButton2Text: Llamar a uno de los lobos como "Pastelito"
   encounterButton3Text: Donar la sangre

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02675909590d950469e96ebf45a0f852, type: 3}
+  m_Name: Mendigo
+  m_EditorClassIdentifier: 
+  encounterName: Persona misteriosa
+  encounterDescription: "Encontrais a una persona misteriosa, os suena haberla visto
+    antes en alg\xFAn lugar, pero no record\xE1is a quien. Os pide dinero para poder
+    comprar algo de comida."
+  encounterImage: {fileID: 21300000, guid: b9ccc61460f62ac499c5f77326af3bab, type: 3}
+  encounterButton1Text: Darle 5 monedas de oro
+  encounterButton2Text: Pasar de largo
+  encounterButton3Text: 
+  encounterButton4Text: 
+  buttonScripts: {fileID: 5038607067871423369, guid: e9638b8675d276a4a9ede07c5a2af24c, type: 3}

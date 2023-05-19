@@ -14,6 +14,7 @@ namespace Map
         [JsonConverter(typeof(StringEnumConverter))]
         public readonly NodeType nodeType;
         public readonly string blueprintName;
+        public int mapPosition; // MOD de Gabriel -> esto nos dice en que casilla estamos (contando de izquierda a derecha empezando de 0 a 11 creo)
         public Vector2 position;
 
         public Node(NodeType nodeType, string blueprintName, Point point)

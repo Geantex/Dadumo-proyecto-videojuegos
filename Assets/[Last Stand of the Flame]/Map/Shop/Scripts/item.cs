@@ -15,7 +15,7 @@ public class item : ScriptableObject
     public int itemHealthModifier; // esto modificara la salud del personaje
     public int itemTier; // esto lo usaremos para saber cómo de fuerte es un objeto, y para que no salgan de menor calidad (1)*
     public string characterTag; // Esto lo usaremos para que solo salgan objetos de personajes que hayan en el juego
-    public string itemSlot; // esto solo puede ser o "Weapon" o "Armor"
+    public string itemSlot; // esto solo puede ser o "weapon" o "armor"
     public Sprite characterImage; // podemos poner una imagen en el canvas que señale quien puede equiparse el objeto
 
 

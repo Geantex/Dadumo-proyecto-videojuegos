@@ -16,7 +16,7 @@ MonoBehaviour:
   encounterDescription: "Por el camino os encontrais con lo que parece un slime,
     aunque este parece un poco raro, este se dirige a vosotros. \"@##\xAC~#\u20AC&/W$\u20AC\xAC~##~\u20AC\"
     No entend\xE9is nada. \xBFQue haceis?"
-  encounterImage: {fileID: 21300000, guid: b4d33863ba5c0b54aaa13cbb00169b4c, type: 3}
+  encounterImage: {fileID: 21300000, guid: c0642d63e2a275b41890824c6e9b5809, type: 3}
   encounterButton1Text: "Se\xF1alar a alg\xFAn lugar aleatorio"
   encounterButton2Text: Pelear contra el
   encounterButton3Text: "Os qued\xE1is mir\xE1ndole fijamente"

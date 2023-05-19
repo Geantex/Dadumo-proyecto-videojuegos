@@ -35,7 +35,7 @@ public class PauseState : FSMState
     {
         if (anterior is GameState) stateName = "GameState";
         else if (anterior is MapState) stateName = "MapState";
-        Debug.Log(stateName);
+        //Debug.Log(stateName);
     }
 
 
