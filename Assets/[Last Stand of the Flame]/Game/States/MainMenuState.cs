@@ -9,7 +9,7 @@ public class MainMenuState : FSMState
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("MainMenu");
+        //
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class MainMenuState : FSMState
 
     protected override void EnterState()
     {
-        (machine as GameController).goldCoins = 100f;
+        //SceneManager.LoadScene("MainMenu");
     }
 
     protected override void ExitState()

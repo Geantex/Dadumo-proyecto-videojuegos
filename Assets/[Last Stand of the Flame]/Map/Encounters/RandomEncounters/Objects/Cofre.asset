@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02675909590d950469e96ebf45a0f852, type: 3}
+  m_Name: Cofre
+  m_EditorClassIdentifier: 
+  encounterName: "\xA1Un cofre!"
+  encounterDescription: "Os encontr\xE1is con un cofre muy grande en vuestro camino"
+  encounterImage: {fileID: 21300000, guid: 102e915d5d93e0e4081eb78821f374c6, type: 3}
+  encounterButton1Text: Abrir el cofre
+  encounterButton2Text: Irse
+  encounterButton3Text: 
+  encounterButton4Text: 
+  buttonScripts: {fileID: 3011017030111785934, guid: 764d93e6dc2cc3c479a8f95861008e52, type: 3}

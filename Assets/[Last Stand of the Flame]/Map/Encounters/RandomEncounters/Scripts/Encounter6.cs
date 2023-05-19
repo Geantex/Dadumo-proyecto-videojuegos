@@ -4,31 +4,42 @@ using UnityEngine;
 
 public class Encounter6 : MonoBehaviour
 {
-    public GameObject encounterManager;
+
+    private EncounterManager encounterManager;
+
+    public EncounterManager EncounterManager
+    {
+        get
+        {
+            if (encounterManager == null)
+            {
+                encounterManager = GameObject.FindObjectOfType<EncounterManager>();
+            }
+            return encounterManager;
+        }
+    }
     public void functionButton1()
     {
         //-5 de vida a todo el equipo
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("cruzais, pero caeis en algunas trampar por haber resuelto mal el poema");
+        GameController.Instancia.modifyPartyHealthPoints(-5f);
+        EncounterManager.ShowResults("cruzais, pero caeis en algunas trampar por haber resuelto mal el poema");
     }
     public void functionButton2()
     {
         //+ 20 monedas
-        GameController.Instancia.goldCoins = GameController.Instancia.goldCoins + 20f;
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("cruzáis con total seguridad y de camino os encontráis con un pequeño cofre");
+        GameController.Instancia.modifyGoldCoins(20f);
+        EncounterManager.ShowResults("cruzáis con total seguridad y de camino os encontráis con un pequeño cofre");
     }
     public void functionButton3()
     {
         //+50 monedas
-        GameController.Instancia.goldCoins = GameController.Instancia.goldCoins + 50f;
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("cruzais, pero caeis en algunas trampar por haber resuelto mal el poema");
+        GameController.Instancia.modifyGoldCoins(50f);
+        EncounterManager.ShowResults("cruzais, pero caeis en algunas trampar por haber resuelto mal el poema");
     }
     public void functionButton4()
     {
         //-5 de vida a todo el equipo
-        encounterManager = GameObject.FindGameObjectWithTag("EncounterManager").gameObject;
-        encounterManager.GetComponent<EncounterManager>().ShowResults("cruzais, pero caeis en algunas trampar por haber resuelto mal el poema");
+        GameController.Instancia.modifyPartyHealthPoints(-5f);
+        EncounterManager.ShowResults("cruzais, pero caeis en algunas trampar por haber resuelto mal el poema");
     }
 }

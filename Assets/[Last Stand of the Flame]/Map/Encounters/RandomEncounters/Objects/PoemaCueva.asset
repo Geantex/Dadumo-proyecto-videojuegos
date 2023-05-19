@@ -27,7 +27,7 @@ MonoBehaviour:
     enca~a, un r~jo pez  \tAl ser la \xFAlt~ma prueba, sac~~ la salchicha \tPara
     reve~tir el efecto, puls~~lo otra vez  \tPara poder pasar segruros hay que descifrar
     que tipo de rima usa "
-  encounterImage: {fileID: 21300000, guid: 3dd33663ee774f44a8aeb8d91cd84633, type: 3}
+  encounterImage: {fileID: 21300000, guid: cd2cf925c9eb6814d9ae34d256abffa3, type: 3}
   encounterButton1Text: abba ab-a cdc ddc
   encounterButton2Text: abba abba cdc dcd
   encounterButton3Text: AbbA AbbA cdc dcd

@@ -14,12 +14,16 @@ public class MainMenuManager : MonoBehaviour
     {
 
     }
-
+    public void NewGame()
+    {
+        GameController.Instancia.NewGame = true;
+        GameController.Instancia.SetStateByType(typeof(Randomizer));
+    }
     public void StartGame()
     {
+        GameController.Instancia.SetStateByType(typeof(MapState));
         SceneManager.LoadScene("Map");
         //SceneManager.CreateScene("Map");
-        GameController.Instancia.SetStateByType(typeof(MapState));
     }
 
     public void ExitGame()

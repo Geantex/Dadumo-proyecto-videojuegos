@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02675909590d950469e96ebf45a0f852, type: 3}
+  m_Name: Duelo de honor
+  m_EditorClassIdentifier: 
+  encounterName: Duelo de honor
+  encounterDescription: "Os cruz\xE1is con un noble caballero que os reta a un duelo
+    de honor. Este consiste en una batalla con la espada. El que gane se lleva un
+    saco de oro con 200 monedas de oro. (Esto es como un piedra papel o tijera)"
+  encounterImage: {fileID: 21300000, guid: ae6f28849376ad34885b0cad902a8354, type: 3}
+  encounterButton1Text: Escoger ataque (piedra)
+  encounterButton2Text: Escoger defensa (papel)
+  encounterButton3Text: Escoger rotura de guardia (tijera)
+  encounterButton4Text: Negarse e irse
+  buttonScripts: {fileID: 2929145428061278326, guid: e4f81c1c674a0ed4fad1c240cb35c954, type: 3}

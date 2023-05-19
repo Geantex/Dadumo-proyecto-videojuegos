@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02675909590d950469e96ebf45a0f852, type: 3}
+  m_Name: Cadaver
+  m_EditorClassIdentifier: 
+  encounterName: Cadaver
+  encounterDescription: "Encountr\xE1is un cadaver de un aventurero que fracas\xF3
+    en su camino hacia el se\xF1or de la ceniza"
+  encounterImage: {fileID: 21300000, guid: 21c4ad358f6ebbe4d88e91fc075bebc8, type: 3}
+  encounterButton1Text: "Rebusc\xE1is en el cadaver"
+  encounterButton2Text: Irse
+  encounterButton3Text: 
+  encounterButton4Text: 
+  buttonScripts: {fileID: 5405359390401869061, guid: fcfc9f2c35f02434ea0ae7ad359a4e47, type: 3}
