@@ -115,12 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
-  HUDturn: 0
   calculateZone: 0
-  numTurn: 0
   moving: 0
   move: 5
-  moveSpeed: 2
+  moveSpeed: 6
   actualTargetTile: {fileID: 0}
 --- !u!114 &6756909428466273
 MonoBehaviour:
@@ -135,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: clerigo
+  combatStart: 0
 --- !u!114 &6756909428466286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,4 +161,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd64938fc080294e9e4bf35ff2f4361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: ladron
+  characterName: 
+  characterClassName: 
+  characterImage: {fileID: 0}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 0}
+  healthPoints: 0
+  manaPoints: 0
+  damagePoints: 0
+  rangeTiles: 0
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}

@@ -40,18 +40,26 @@ public class Tile : MonoBehaviour
         if (current)
         {
             GetComponent<Renderer>().material.color = Color.magenta;
+            GetComponent<Renderer>().enabled = true;  // Enable it again to make it visible!
         }
         else if (target)
         {
             GetComponent<Renderer>().material.color = Color.green;
+            GetComponent<Renderer>().enabled = true;  // Enable it again to make it visible!
         }
         else if (selectable)
         {
             GetComponent<Renderer>().material.color = Color.red;
+            GetComponent<Renderer>().enabled = true;  // Enable it again to make it visible!
+
         }
         else
         {
-            GetComponent<Renderer>().material.color = Color.white;
+            // CHATGPT, HERE!!!
+            // Instead of turning white, I want it to become invisible
+            Color invisibleColor = new Color(0, 0, 0, 0);  // Set the alpha channel to 0 (fully transparent)
+            GetComponent<Renderer>().material.color = invisibleColor;
+            GetComponent<Renderer>().enabled = false;  // Disable the renderer to make the object invisible
         }
     }
 
