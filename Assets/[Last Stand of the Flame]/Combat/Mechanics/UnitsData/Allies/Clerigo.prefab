@@ -54,7 +54,7 @@ MonoBehaviour:
   calculateZone: 0
   moving: 0
   move: 5
-  moveSpeed: 2
+  moveSpeed: 6
   actualTargetTile: {fileID: 0}
   buttonBasicAttack: {fileID: 0}
   buttonSpecialAttack1: {fileID: 0}
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: clerigo
+  combatStart: 0
 --- !u!114 &3858053825818039176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: clerigo
+  characterName: 
+  characterClassName: 
+  characterImage: {fileID: 0}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 0}
+  healthPoints: 0
+  manaPoints: 0
+  damagePoints: 0
+  rangeTiles: 0
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
 --- !u!114 &3858053825818039174
 MonoBehaviour:
   m_ObjectHideFlags: 0

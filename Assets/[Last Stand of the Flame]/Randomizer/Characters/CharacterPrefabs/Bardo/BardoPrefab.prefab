@@ -69,7 +69,7 @@ MonoBehaviour:
   calculateZone: 0
   moving: 0
   move: 5
-  moveSpeed: 2
+  moveSpeed: 6
   actualTargetTile: {fileID: 0}
   buttonBasicAttack: {fileID: 0}
   buttonSpecialAttack1: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f00b93609783a2458156868d9d4ae27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Romero MacBeth
   combatStart: 0
 --- !u!114 &799080042042419572
 MonoBehaviour:
@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5003b7e5603a14797dbda414f99463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
+  damage: 25
+  range: 1
   AoD: 1
   enemySelectedColor: {fileID: 2100000, guid: e015b621a49c7404ea4cd50fa97ca938, type: 2}
   enemyBasicColor: {fileID: 2100000, guid: 285812d24dab54346a209faa5ef19395, type: 2}
@@ -139,15 +139,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 
-  characterClassName: 
-  characterImage: {fileID: 0}
+  characterName: Romero MacBeth
+  characterClassName: bardo
+  characterImage: {fileID: 3792388835238295109, guid: a325707a3e6dcac4ba9e35ed7e632bf8, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 0
-  manaPoints: 0
-  damagePoints: 0
-  rangeTiles: 0
+  healthPoints: 100
+  manaPoints: 100
+  damagePoints: 25
+  rangeTiles: 1
   specialAttacks: []
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
