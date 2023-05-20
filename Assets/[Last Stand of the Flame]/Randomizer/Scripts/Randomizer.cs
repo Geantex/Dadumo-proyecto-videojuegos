@@ -356,10 +356,7 @@ public class Randomizer : FSMState
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "paladin"));
 
                         break;
-                        if (Paladin != null)
-                        {
-                            Debug.Log(Paladin);
-                        }
+                        
                     case 3:
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/animacion_Deenecan.png");
                         imageCharacter3 = Paladin;
