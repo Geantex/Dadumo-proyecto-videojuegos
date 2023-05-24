@@ -1,4 +1,4 @@
-using Dapasa.FSM;
+ using Dapasa.FSM;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,18 +19,31 @@ public class PauseState : FSMState
 
     public void LoadMenu()
     {
+        Time.timeScale = 1f;
+        FadeToBlack.QuickFade();
+        Invoke("LoadMenuFade", 0.26f);
+        
+    }
+
+    private void LoadMenuFade()
+    {
         GameController.Instancia.SetStateByType(typeof(MainMenuState));
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Loading menu...");
-        
     }
 
     public void QuitGame()
     {
+        Time.timeScale = 1f;
+        FadeToBlack.QuickFade();
+        Invoke("QuitGameFade", 0.28f);        
+    }
+
+    public void QuitGameFade()
+    {
         Application.Quit();
         Debug.Log("Quitting game...");
     }
-
     public void FSMStateChangeHandler(FSMState nuevo, FSMState anterior)
     {
         if (anterior is GameState) stateName = "GameState";
