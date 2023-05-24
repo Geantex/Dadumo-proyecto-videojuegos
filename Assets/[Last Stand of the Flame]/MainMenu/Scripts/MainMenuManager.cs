@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    void Start()
+    public void NewGameFade()
     {
-        
-    }
-
-    void Update()
-    {
-
+        FadeToBlack.QuickFade();
+        Invoke("NewGame",0.25f);
     }
     public void NewGame()
     {
+        
         GameController.Instancia.NewGame = true;
         GameController.Instancia.SetStateByType(typeof(Randomizer));
+    }
+    public void StartGameFade()
+    {
+        FadeToBlack.QuickFade();
+        Invoke("StartGame", 0.25f);
     }
     public void StartGame()
     {
@@ -26,6 +28,11 @@ public class MainMenuManager : MonoBehaviour
         //SceneManager.CreateScene("Map");
     }
 
+    public void ExitGameFade()
+    {
+        FadeToBlack.QuickFade();
+        Invoke("ExitGame", 0.28f);
+    }
     public void ExitGame()
     {
         Application.Quit();
