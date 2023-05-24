@@ -9,7 +9,16 @@ public class botonDescansar : MonoBehaviour
 
     public void ActivarResultCanvasHoguera()
     {
-        Debug.Log("Activando el canvas de resultados de la hoguera!");
+        FadeToBlack.QuickFade();
+        Invoke("HolaDani", 0.25f);
+        
+    }
+
+    // Hola Dani! Gracias por revisar nuestro código!
+    public void HolaDani()
+    {
+        FadeToBlack.QuickReverseFade();
+        //Debug.Log("Activando el canvas de resultados de la hoguera!");
         resultCanvasHoguera.SetActive(true);
     }
 }
