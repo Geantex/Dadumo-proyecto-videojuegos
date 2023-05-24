@@ -11239,6 +11239,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01e017f15894714db83026d7e549de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameContainer1: {fileID: 0}
+  levelContainer1: {fileID: 0}
+  hpContainer1: {fileID: 0}
+  nameTextA1: {fileID: 668225985249527528}
+  hpSliderA1: {fileID: 5176915156599515105}
+  manaSliderA1: {fileID: 3329301324326801819}
+  nameTextA2: {fileID: 3697248063883998689}
+  hpSliderA2: {fileID: 6352460034509121028}
+  manaSliderA2: {fileID: 8323545732882571689}
+  nameTextA3: {fileID: 7216482029879843291}
+  hpSliderA3: {fileID: 4442071913656637947}
+  manaSliderA3: {fileID: 8992987484110304556}
+  nameTextA4: {fileID: 8355285221402664074}
+  hpSliderA4: {fileID: 6259021742054129283}
+  manaSliderA4: {fileID: 4351853877691837329}
+  nameTextE1: {fileID: 1361276055751188095}
+  hpSliderE1: {fileID: 2385349462860636595}
+  manaSliderE1: {fileID: 6994336514629787332}
+  nameTextE2: {fileID: 136535996740212925}
+  hpSliderE2: {fileID: 8509436557673150196}
+  manaSliderE2: {fileID: 3849626168972185954}
+  nameTextE3: {fileID: 7109153270225512241}
+  hpSliderE3: {fileID: 7741855229460890870}
+  manaSliderE3: {fileID: 1623232690655606056}
+  nameTextE4: {fileID: 4610976173213470515}
+  hpSliderE4: {fileID: 8164234174162874989}
+  manaSliderE4: {fileID: 5402833535606265314}
   nameContainer: {fileID: 0}
   levelContainer: {fileID: 0}
   hpContainer: {fileID: 0}
