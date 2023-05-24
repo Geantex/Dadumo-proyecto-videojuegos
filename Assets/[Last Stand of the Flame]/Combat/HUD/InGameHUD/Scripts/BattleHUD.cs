@@ -322,16 +322,16 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-
+                        SetHUDA1(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                     case 2:
-
+                        SetHUDA2(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                     case 3:
-
+                        SetHUDA3(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                     case 4:
-
+                        SetHUDA4(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                 }
 
@@ -342,62 +342,16 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-
+                        SetHUDE1(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                     case 2:
-
+                        SetHUDE2(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                     case 3:
-
+                        SetHUDE3(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                     case 4:
-
-                        break;
-                }
-
-                break;
-        }
-    }
-
-    public void SetHP(int party, bool myteam, int hp)
-    {
-        switch (myteam)
-        {
-            case true:
-
-                switch (party)
-                {
-                    case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:
-
-                        break;
-                }
-
-                break;
-
-            case false:
-
-                switch (party)
-                {
-                    case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:
-
+                        SetHUDE4(name, maxhp, currenthp, maxmana, currentmana);
                         break;
                 }
 
@@ -414,16 +368,16 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-
+                        SetNameA1(name);
                         break;
                     case 2:
-
+                        SetNameA2(name);
                         break;
                     case 3:
-
+                        SetNameA3(name);
                         break;
                     case 4:
-
+                        SetNameA4(name);
                         break;
                 }
 
@@ -434,16 +388,62 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-
+                        SetNameE1(name);
                         break;
                     case 2:
-
+                        SetNameE2(name);
                         break;
                     case 3:
-
+                        SetNameE3(name);
                         break;
                     case 4:
+                        SetNameE4(name);
+                        break;
+                }
 
+                break;
+        }
+    }
+
+    public void SetHP(int party, bool myteam, int hp)
+    {
+        switch (myteam)
+        {
+            case true:
+
+                switch (party)
+                {
+                    case 1:
+                        SetHPA1(hp);
+                        break;
+                    case 2:
+                        SetHPA2(hp);
+                        break;
+                    case 3:
+                        SetHPA3(hp);
+                        break;
+                    case 4:
+                        SetHPA4(hp);
+                        break;
+                }
+
+                break;
+
+            case false:
+
+                switch (party)
+                {
+                    case 1:
+                        SetHPE1(hp);
+                        break;
+                    case 2:
+                        SetHPE2(hp);
+                        break;
+                    case 3:
+                        SetHPE3(hp);
+                        break;
+                    case 4:
+                        SetHPE4(hp);
                         break;
                 }
 
@@ -460,16 +460,16 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-
+                        SetManaA1(mana);
                         break;
                     case 2:
-
+                        SetManaA2(mana);
                         break;
                     case 3:
-
+                        SetManaA3(mana);
                         break;
                     case 4:
-
+                        SetManaA4(mana);
                         break;
                 }
 
@@ -480,16 +480,16 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-
+                        SetManaE1(mana);
                         break;
                     case 2:
-
+                        SetManaE2(mana);
                         break;
                     case 3:
-
+                        SetManaE3(mana);
                         break;
                     case 4:
-
+                        SetManaE4(mana);
                         break;
                 }
 

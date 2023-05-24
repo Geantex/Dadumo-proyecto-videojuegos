@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour
     private int speed;
 
     public int party;
+    public bool myteam;
 
     // Estadísticas de combate
     private string stateEffect;

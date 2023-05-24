@@ -57,7 +57,7 @@ public class TurnManager : MonoBehaviour
 
         foreach (TacticsMove move in units)
         {
-            
+            FindObjectOfType<BattleHUD>().SetHUD(move.GetComponent<Unit>().party, move.GetComponent<Unit>().myteam, move.GetComponent<Unit>().name, move.GetComponent<Unit>().Life, move.GetComponent<Unit>().Life, 100, 100);
         }
 
         // Sort the units by speed
