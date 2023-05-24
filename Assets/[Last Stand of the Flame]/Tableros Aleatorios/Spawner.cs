@@ -112,11 +112,13 @@ public class Spawner : MonoBehaviour
             case 1:
                 aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
+                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
                 Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
                 break;
             case 2:
                 aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
+                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
                 Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
 
                 aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -127,13 +129,14 @@ public class Spawner : MonoBehaviour
                     aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
                 }
-
+                myPlayers[1].gameObject.GetComponent<Unit>().party = 2;
                 Instantiate(myPlayers[1].gameObject, new Vector3(aliado2x, 1.2f, aliado2z), Quaternion.identity);
 
                 break;
             case 3:
                 aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
+                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
                 Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
 
                 aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -144,7 +147,7 @@ public class Spawner : MonoBehaviour
                     aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
                 }
-
+                myPlayers[1].gameObject.GetComponent<Unit>().party = 2;
                 Instantiate(myPlayers[1].gameObject, new Vector3(aliado2x, 1.2f, aliado2z), Quaternion.identity);
 
                 aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -155,13 +158,14 @@ public class Spawner : MonoBehaviour
                     aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
                     aliado3z = (float)((double)Random.Range(-3, -7) - 2.5);
                 }
-
+                myPlayers[2].gameObject.GetComponent<Unit>().party = 3;
                 Instantiate(myPlayers[2].gameObject, new Vector3(aliado3x, 1.2f, aliado3z), Quaternion.identity);
 
                 break;
             case 4:
                 aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
+                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
                 Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
 
                 aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -172,7 +176,7 @@ public class Spawner : MonoBehaviour
                     aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
                 }
-
+                myPlayers[1].gameObject.GetComponent<Unit>().party = 2;
                 Instantiate(myPlayers[1].gameObject, new Vector3(aliado2x, 1.2f, aliado2z), Quaternion.identity);
 
                 aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -183,7 +187,7 @@ public class Spawner : MonoBehaviour
                     aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
                     aliado3z = (float)((double)Random.Range(-3, -7) - 2.5);
                 }
-
+                myPlayers[2].gameObject.GetComponent<Unit>().party = 3;
                 Instantiate(myPlayers[2].gameObject, new Vector3(aliado3x, 1.2f, aliado3z), Quaternion.identity);
 
                 aliado4x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -194,7 +198,7 @@ public class Spawner : MonoBehaviour
                     aliado4x = (float)((double)Random.Range(-4, 15) - 4.5);
                     aliado4z = (float)((double)Random.Range(-3, -7) - 2.5);
                 }
-
+                myPlayers[3].gameObject.GetComponent<Unit>().party = 4;
                 Instantiate(myPlayers[3].gameObject, new Vector3(aliado4x, 1.2f, aliado4z), Quaternion.identity);
 
                 break;
@@ -208,6 +212,7 @@ public class Spawner : MonoBehaviour
             case 2:
                 enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
+                enemigoPrueba.GetComponent<Unit>().party = 1;
                 Instantiate(enemigoPrueba, new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
 
                 enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -218,13 +223,14 @@ public class Spawner : MonoBehaviour
                     enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-
+                enemigoPrueba.GetComponent<Unit>().party = 2;
                 Instantiate(enemigoPrueba, new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
 
                 break;
             case 3:
                 enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
+                enemigoPrueba.GetComponent<Unit>().party = 1;
                 Instantiate(enemigoPrueba, new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
 
                 enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -235,7 +241,7 @@ public class Spawner : MonoBehaviour
                     enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-
+                enemigoPrueba.GetComponent<Unit>().party = 2;
                 Instantiate(enemigoPrueba, new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
 
                 enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -246,13 +252,14 @@ public class Spawner : MonoBehaviour
                     enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-
+                enemigoPrueba.GetComponent<Unit>().party = 3;
                 Instantiate(enemigoPrueba, new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
 
                 break;
             case 4:
                 enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
+                enemigoPrueba.GetComponent<Unit>().party = 1;
                 Instantiate(enemigoPrueba, new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
 
                 enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -263,7 +270,7 @@ public class Spawner : MonoBehaviour
                     enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-
+                enemigoPrueba.GetComponent<Unit>().party = 2;
                 Instantiate(enemigoPrueba, new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
 
                 enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -274,7 +281,7 @@ public class Spawner : MonoBehaviour
                     enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-
+                enemigoPrueba.GetComponent<Unit>().party = 3;
                 Instantiate(enemigoPrueba, new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
 
                 enemigo4x = (float)((double)Random.Range(-4, 15) - 4.5);
@@ -285,7 +292,7 @@ public class Spawner : MonoBehaviour
                     enemigo4x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo4z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-
+                enemigoPrueba.GetComponent<Unit>().party = 4;
                 Instantiate(enemigoPrueba, new Vector3(enemigo4x, 1.2f, enemigo4z), Quaternion.identity);
 
                 break;

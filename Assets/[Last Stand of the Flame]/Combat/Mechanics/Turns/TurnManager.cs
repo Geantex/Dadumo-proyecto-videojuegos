@@ -55,6 +55,11 @@ public class TurnManager : MonoBehaviour
         }
         Debug.Log("----------------------FIN DE TURNO FIN-------------------");
 
+        foreach (TacticsMove move in units)
+        {
+            
+        }
+
         // Sort the units by speed
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
 
@@ -85,22 +90,39 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    public static void EndTurn(TacticsMove unit)
+    public static void EndTurn(TacticsMove unit, TurnManager turnManager)
     {
         unit.EndTurn();
 
+        foreach (TacticsMove move in units)
+        {
+            Debug.Log(move);
+        }
         // Add the unit back to the list and sort the list by speed
         units.Add(unit);
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
+        Debug.Log("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
 
+        foreach (TacticsMove move in units)
+        {
+            Debug.Log(move);
+        }
         // Start the next turn
-        StartTurn();
+        //StartTurn();
+        turnManager.StartCoroutine(turnManager.EsperarUnSegundo());
     }
 
     public static void RemoveUnit(TacticsMove unit)
     {
         units.Remove(unit);
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
+        StartTurn();
+    }
+
+    IEnumerator EsperarUnSegundo()
+    {
+        yield return new WaitForSeconds(1);
+        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         StartTurn();
     }
 }

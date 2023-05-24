@@ -10,6 +10,8 @@ public class Unit : MonoBehaviour
     private int mana;
     private int speed;
 
+    public int party;
+
     // Estadísticas de combate
     private string stateEffect;
     private string boostType;
