@@ -148,6 +148,12 @@ public class tienda : MonoBehaviour
 
     public void exitShop()
     {
+        FadeToBlack.QuickFade();
+        Invoke("exitShopAmbatakam", 0.25f);
+    }
+
+    public void exitShopAmbatakam()
+    {
         SceneManager.LoadScene("Map");
         GameController.Instancia.SetStateByType(typeof(MapState));
     }

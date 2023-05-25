@@ -19,7 +19,9 @@ public class LoseState : FSMState
 
     IEnumerator EndState()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.74f);
+        FadeToBlack.QuickFade();
+        yield return new WaitForSeconds(0.26f);
         SceneManager.LoadScene("Map");
         machine.SetStateByType(typeof(MapState));
         

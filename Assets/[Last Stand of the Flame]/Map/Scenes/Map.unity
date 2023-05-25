@@ -155,7 +155,7 @@ RectTransform:
   m_Children:
   - {fileID: 633666875}
   m_Father: {fileID: 1311161702}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -322,6 +322,14 @@ PrefabInstance:
       propertyPath: Mapa
       value: 
       objectReference: {fileID: 1311161698}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: encounterList.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bc2a4d6f5eec834991b349e180f9c60, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
 --- !u!850595691 &141361322
@@ -1279,8 +1287,8 @@ RectTransform:
   m_Children:
   - {fileID: 1147387324}
   - {fileID: 302862921}
-  - {fileID: 599531536}
   - {fileID: 81536399}
+  - {fileID: 599531536}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

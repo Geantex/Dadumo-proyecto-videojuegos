@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/[Last Stand of the Flame]/Combat/Mechanics/UnitsData/Enemies/Prefabs/Rata/rata_normal.fbx.meta
 guid: a3ba32d5877b86e46b5d9d3c5ec580a5
+=======
+guid: f7fd93c16f5e01e429117668604ef1f8
+>>>>>>> develop:Assets/mapasModeladosEscenas/mapasPrefab/ladron.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

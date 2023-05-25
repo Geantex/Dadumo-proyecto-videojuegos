@@ -5,9 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class volverAlMapa : MonoBehaviour
 {
+    public GameObject botonMatar;
     public void volverMapa()
     {
-        Debug.Log("Cargando mapa desde la hoguera");
+        botonMatar.SetActive(false);
+        FadeToBlack.QuickFade();
+        Invoke("HolaDani2", 0.28f);
+    }
+
+    // Hola otra vez Dani!
+    public void HolaDani2()
+    {
+        //Debug.Log("Cargando mapa desde la hoguera");
         SceneManager.LoadScene("Map");
     }
 }
