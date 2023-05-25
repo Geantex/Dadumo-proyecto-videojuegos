@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Unit : MonoBehaviour
 
     public int party;
     public bool myteam;
+
+    public Image imagen;
 
     // Estadísticas de combate
     private string stateEffect;

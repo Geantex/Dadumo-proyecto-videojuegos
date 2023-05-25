@@ -773,6 +773,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 844310590402408017, guid: a037c775b6e0c3a47ab8809e2d1e6d3d, type: 3}
+      propertyPath: allPlayableEnemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 844310590402408017, guid: a037c775b6e0c3a47ab8809e2d1e6d3d, type: 3}
+      propertyPath: allPlayableEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 344c941275a988a4eaa9ab1095c7557c, type: 2}
+    - target: {fileID: 844310590402408017, guid: a037c775b6e0c3a47ab8809e2d1e6d3d, type: 3}
+      propertyPath: allPlayableEnemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ccb0573cbbca614e9de3d2ac9f304a2, type: 2}
+    - target: {fileID: 844310590402408017, guid: a037c775b6e0c3a47ab8809e2d1e6d3d, type: 3}
+      propertyPath: allPlayableEnemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f9d3198eb5a24543877ba0fc5229b5f, type: 2}
+    - target: {fileID: 844310590402408017, guid: a037c775b6e0c3a47ab8809e2d1e6d3d, type: 3}
       propertyPath: OnStateChanged.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}

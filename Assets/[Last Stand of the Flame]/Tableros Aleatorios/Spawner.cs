@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 
 public class Spawner : MonoBehaviour
@@ -41,6 +42,10 @@ public class Spawner : MonoBehaviour
     //-------------------------------------------------------
     //---------------------ENEMIGOS--------------------------
     //-------------------------------------------------------
+    public List<CharacterCreator> allPlayableEnemies;
+    public List<CharacterCreator> myPartyEnemies;
+
+    public List<GameObject> myEnemies;
 
     public GameObject enemigoPrueba;
 
@@ -80,12 +85,23 @@ public class Spawner : MonoBehaviour
     public float obstaculo2x = 0;
     public float obstaculo2z = 0;
 
+    string sceneName;
+
     private void Awake()
     {
+        // Obtén el nombre de la escena actual
+        sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("El nombre de la escena actual es: " + sceneName);
+
+        allPlayableEnemies = GameController.Instancia.AllPlayableEnemies;
+        myEnemies = new List<GameObject>();
+        myPartyEnemies = new List<CharacterCreator>();
+        AlgoritmoEnemigos();
+
         myPlayers = new List<GameObject>();
         myPartyPlayers = GameController.Instancia.CharactersParty;
         SetCharacters();
-        numEnemigos = Random.Range(2, 5);
+        SetEnemies();
         numObstaculos = Random.Range(1, 3);
         numAliados = myPartyPlayers.Count;
         creacionGeneral();
@@ -93,7 +109,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -219,12 +235,20 @@ public class Spawner : MonoBehaviour
         //-------------------------------------------------------
         switch (numEnemigos)
         {
+            case 1:
+                enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
+                enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
+                myEnemies[0].GetComponent<Unit>().party = 1;
+                myEnemies[0].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+
+                break;
             case 2:
                 enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
-                enemigoPrueba.GetComponent<Unit>().party = 1;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+                myEnemies[0].GetComponent<Unit>().party = 1;
+                myEnemies[0].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
 
                 enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
@@ -234,17 +258,17 @@ public class Spawner : MonoBehaviour
                     enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-                enemigoPrueba.GetComponent<Unit>().party = 2;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
+                myEnemies[1].GetComponent<Unit>().party = 2;
+                myEnemies[1].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[1], new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
 
                 break;
             case 3:
                 enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
-                enemigoPrueba.GetComponent<Unit>().party = 1;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+                myEnemies[0].GetComponent<Unit>().party = 1;
+                myEnemies[0].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
 
                 enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
@@ -254,9 +278,9 @@ public class Spawner : MonoBehaviour
                     enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-                enemigoPrueba.GetComponent<Unit>().party = 2;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
+                myEnemies[1].GetComponent<Unit>().party = 2;
+                myEnemies[1].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[1], new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
 
                 enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
@@ -266,17 +290,17 @@ public class Spawner : MonoBehaviour
                     enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-                enemigoPrueba.GetComponent<Unit>().party = 3;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
+                myEnemies[2].GetComponent<Unit>().party = 3;
+                myEnemies[2].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[2], new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
 
                 break;
             case 4:
                 enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
-                enemigoPrueba.GetComponent<Unit>().party = 1;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+                myEnemies[0].GetComponent<Unit>().party = 1;
+                myEnemies[0].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
 
                 enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
@@ -286,9 +310,9 @@ public class Spawner : MonoBehaviour
                     enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-                enemigoPrueba.GetComponent<Unit>().party = 2;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
+                myEnemies[1].GetComponent<Unit>().party = 2;
+                myEnemies[1].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[1], new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
 
                 enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
@@ -298,9 +322,9 @@ public class Spawner : MonoBehaviour
                     enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-                enemigoPrueba.GetComponent<Unit>().party = 3;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
+                myEnemies[2].GetComponent<Unit>().party = 3;
+                myEnemies[2].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[2], new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
 
                 enemigo4x = (float)((double)Random.Range(-4, 15) - 4.5);
                 enemigo4z = (float)((double)Random.Range(8, 13) - 2.5);
@@ -310,9 +334,9 @@ public class Spawner : MonoBehaviour
                     enemigo4x = (float)((double)Random.Range(-4, 15) - 4.5);
                     enemigo4z = (float)((double)Random.Range(8, 13) - 2.5);
                 }
-                enemigoPrueba.GetComponent<Unit>().party = 4;
-                enemigoPrueba.GetComponent<Unit>().myteam = false;
-                Instantiate(enemigoPrueba, new Vector3(enemigo4x, 1.2f, enemigo4z), Quaternion.identity);
+                myEnemies[3].GetComponent<Unit>().party = 4;
+                myEnemies[3].GetComponent<Unit>().myteam = false;
+                Instantiate(myEnemies[3], new Vector3(enemigo4x, 1.2f, enemigo4z), Quaternion.identity);
 
                 break;
         }
@@ -384,6 +408,84 @@ public class Spawner : MonoBehaviour
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().UpdateValues();
 
             myPlayers.Add(gameObjectPlayer);
+        }
+    }
+
+    public void SetEnemies()
+    {
+        foreach (CharacterCreator ch in myPartyEnemies)
+        {
+            GameObject gameObjectEnemy = ch.CharacterPrefab;
+
+            //PlayerCharacterCLass player = new PlayerCharacterCLass();
+
+
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName = ch.CharacterName;
+            Debug.Log(gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterClassName = ch.CharacterClass;
+            Debug.Log(ch.CharacterClass);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterImage = ch.CharacterImage;
+            Debug.Log(ch.CharacterImage);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterMaterial = ch.CharacterMaterial;
+            Debug.Log(ch.CharacterMaterial);
+            //player.CharacterPrefab = ch.CharacterPrefab;
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().HealthPoints = ch.HealthPoints;
+            Debug.Log(ch.HealthPoints);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().ManaPoints = ch.ManaPoints;
+            Debug.Log(ch.ManaPoints);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().DamagePoints = ch.DamagePoints;
+            Debug.Log(ch.DamagePoints);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().RangeTiles = ch.RangeTiles;
+            Debug.Log(ch.RangeTiles);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().SpecialAttacks = ch.SpecialAttacks;
+            Debug.Log(ch.SpecialAttacks);
+            //player.CharacterWeapon = ch.CharacterWeapon;
+            //player.CharacterArmor = ch.CharacterArmor;
+
+            //gameObjectPlayer.GetComponent<PlayerCharacterCLass>() = player
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().UpdateValues();
+
+            myEnemies.Add(gameObjectEnemy);
+        }
+    }
+
+    public void AlgoritmoEnemigos()
+    {
+        switch (sceneName)
+        {
+            case "BosqueCombate":
+                numEnemigos = Random.Range(2, 5);
+                for(int i = 0; i < numEnemigos; i++)
+                {
+                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "rata rapida"));
+                }
+                break;
+            case "PuebloCombate":
+                int numEnemigosRata = Random.Range(1, 3);
+                for (int i = 0; i < numEnemigosRata; i++)
+                {
+                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "rata rapida"));
+                }
+
+                int numEnemigosLadron = Random.Range(1, 3);
+                for (int i = 0; i < numEnemigosLadron; i++)
+                {
+                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "ladron"));
+                }
+
+                numEnemigos = numEnemigosRata + numEnemigosLadron;
+                break;
+            case "MontanaCombate":
+                numEnemigos = Random.Range(2, 5);
+                for (int i = 0; i < numEnemigos; i++)
+                {
+                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "ladron"));
+                }
+                break;
+            case "VolcanCombate":
+                numEnemigos = 1;
+                myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "boss"));
+                break;
         }
     }
 }
