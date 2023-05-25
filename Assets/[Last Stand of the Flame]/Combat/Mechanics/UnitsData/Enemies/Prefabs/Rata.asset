@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457eb3358e151104587262333d375e0c, type: 3}
+  m_Name: Rata
+  m_EditorClassIdentifier: 
+  characterName: Rata
+  characterClass: rata rapida
+  characterImage: {fileID: 0}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 6283088128132516384, guid: 2098f1428da16cd49a3f483d4104b7aa, type: 3}
+  healthPoints: 40
+  manaPoints: 0
+  damagePoints: 20
+  rangeTiles: 1
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
