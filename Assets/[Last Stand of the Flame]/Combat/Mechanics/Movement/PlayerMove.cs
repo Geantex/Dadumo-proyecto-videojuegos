@@ -155,6 +155,11 @@ public class PlayerMove : TacticsMove
 
     void AttackButton()
     {
+        if (!turn)
+        {
+            return;
+        }
+
         targets = gameObject.GetComponent<PlayerAttack>().AttackMouse();
         basicAttack = true;
 
@@ -168,7 +173,7 @@ public class PlayerMove : TacticsMove
             renderer.material = enemyColor;
             lastTarget = null;
             actualTarget = null;
-            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>()); //AQUI
+            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
         }
     }
 
@@ -184,12 +189,16 @@ public class PlayerMove : TacticsMove
             renderer.material = enemyColor;
             lastTarget = null;
             actualTarget = null;
-            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>()); //AQUI
+            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
         }
     }
 
     void endMyTurn()
     {
+        if (!turn)
+        {
+            return;
+        }
         Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHH");
         clicked = false;
         firstClick = false;
@@ -205,13 +214,6 @@ public class PlayerMove : TacticsMove
         basicAttack = false;
         specialAttack = false;
 
-        TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>()); //AQUI
-    }
-
-    IEnumerator EsperarCincoSegundos()
-    {
-        yield return new WaitForSeconds(1);
-        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
-        clicked = false;
+        TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
     }
 }

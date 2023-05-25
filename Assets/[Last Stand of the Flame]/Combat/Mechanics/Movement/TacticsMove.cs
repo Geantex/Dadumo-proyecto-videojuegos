@@ -216,7 +216,7 @@ public class TacticsMove : MonoBehaviour
                 // Si el personaje es un NPC, terminamos su turno
                 if (gameObject.tag == "NPC")
                 {
-                    TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>());
+                    TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
                 }
 
             }
@@ -231,7 +231,7 @@ public class TacticsMove : MonoBehaviour
             // Si el personaje es un NPC, terminamos su turno
             if (gameObject.tag == "NPC")
             {
-                TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>());
+                TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
             }
         }
 

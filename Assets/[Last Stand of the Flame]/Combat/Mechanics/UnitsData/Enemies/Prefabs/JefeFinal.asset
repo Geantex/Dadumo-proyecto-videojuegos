@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457eb3358e151104587262333d375e0c, type: 3}
+  m_Name: JefeFinal
+  m_EditorClassIdentifier: 
+  characterName: "Se\xF1or de la ceniza"
+  characterClass: boss
+  characterImage: {fileID: 0}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 7145378970324420070, guid: 351a7bebf2658f84bb700d7e4a47a25a, type: 3}
+  healthPoints: 200
+  manaPoints: 0
+  damagePoints: 40
+  rangeTiles: 4
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
