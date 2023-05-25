@@ -27,7 +27,7 @@ public class NPCAttack : BasicAttack
         AoD = Attack(gameObjectObjective, gameObject);
         if (AoD)
         {
-            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>()); //AQUI
+            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
         }
         else
         {
