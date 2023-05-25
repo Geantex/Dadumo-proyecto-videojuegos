@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/[Last Stand of the Flame]/Combat/Mechanics/UnitsData/Enemies/Prefabs/JefeFinal/EspadonJefeFinal.fbx.meta
 guid: b4ebcabc7787a2c4abd135da011e92a9
+=======
+guid: d8ad684b98dcc644c92357d0fa422054
+>>>>>>> develop:Assets/mapasModeladosEscenas/mapasPrefab/EspadonJefeFinal.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

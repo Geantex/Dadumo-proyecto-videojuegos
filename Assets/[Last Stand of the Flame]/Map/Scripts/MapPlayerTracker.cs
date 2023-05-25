@@ -8,8 +8,8 @@ namespace Map
 {
     public class MapPlayerTracker : MonoBehaviour
     {
-        public bool lockAfterSelecting = false;
-        public float enterNodeDelay = 0f;
+        public bool lockAfterSelecting = true;
+        public float enterNodeDelay = 0.6f;
         public MapManager mapManager;
         public MapView view;
 
@@ -55,6 +55,8 @@ namespace Map
             mapManager.SaveMap();
             view.SetAttainableNodes();
             view.SetLineColors();
+            // Aqui hacemos el fundido a negro cuando haces click en una parte del mapa
+            FadeToBlack.StartFade(false, 0.5f);
             mapNode.ShowSwirlAnimation();
 
             DOTween.Sequence().AppendInterval(enterNodeDelay).OnComplete(() => EnterNode(mapNode));

@@ -69,7 +69,7 @@ MonoBehaviour:
   calculateZone: 0
   moving: 0
   move: 5
-  moveSpeed: 2
+  moveSpeed: 6
   actualTargetTile: {fileID: 0}
   buttonBasicAttack: {fileID: 0}
   buttonSpecialAttack1: {fileID: 0}
