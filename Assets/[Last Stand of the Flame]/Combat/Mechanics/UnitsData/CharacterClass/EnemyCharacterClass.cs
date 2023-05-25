@@ -8,7 +8,7 @@ public class EnemyCharacterClass : CharacterClass
     // Start is called before the first frame update
     void Start()
     {
-        UpdateValues();
+        //UpdateValues();
     }
 
     // Update is called once per frame
@@ -18,10 +18,10 @@ public class EnemyCharacterClass : CharacterClass
     }
     public void UpdateValues()
     {
-        gameObject.GetComponent<Unit>().Name = "ladron";
-        gameObject.GetComponent<Unit>().Life = 80;
-        gameObject.GetComponent<Unit>().Mana = 0;
-        gameObject.GetComponent<NPCAttack>().Damage = 30;
-        gameObject.GetComponent<NPCAttack>().Range = 1;
+        gameObject.GetComponent<Unit>().Name = CharacterName;
+        gameObject.GetComponent<Unit>().Life = (int)HealthPoints;
+        gameObject.GetComponent<Unit>().Mana = (int)ManaPoints;
+        gameObject.GetComponent<NPCAttack>().Damage = (int)DamagePoints;
+        gameObject.GetComponent<NPCAttack>().Range = (int)RangeTiles;
     }
 }
