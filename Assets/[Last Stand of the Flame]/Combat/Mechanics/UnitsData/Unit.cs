@@ -7,9 +7,12 @@ public class Unit : MonoBehaviour
 {
     // Estadísticas básicas de la unidad
     public string name = "";
+    private int maxLife = 100;
     private int life = 100;
     private int mana;
     private int speed;
+    private int initDamage;
+    private int initRange;
 
     public int party;
     public bool myteam;
@@ -17,6 +20,10 @@ public class Unit : MonoBehaviour
     public Image imagen;
 
     // Estadísticas de combate
+    private int lifeInCombat = 100;
+    private int manaInCombat;
+    private int speedInCombats;
+
     private string stateEffect;
     private string boostType;
     private double boost;
