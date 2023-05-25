@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: f7fd93c16f5e01e429117668604ef1f8
+<<<<<<< HEAD:Assets/[Last Stand of the Flame]/Combat/Mechanics/UnitsData/Enemies/Prefabs/Rata/rata_nuca_rota.fbx.meta
+guid: 11f17e2055965ed44860cf479529d559
+=======
+guid: 329ee2c52d2764844b4506ef937a5eed
+>>>>>>> develop:Assets/mapasModeladosEscenas/mapasPrefab/rata_con_sida_normal.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

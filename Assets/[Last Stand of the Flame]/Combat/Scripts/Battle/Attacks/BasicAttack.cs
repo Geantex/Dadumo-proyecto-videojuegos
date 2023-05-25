@@ -29,11 +29,12 @@ public class BasicAttack : MonoBehaviour
         if (distance <= range)
         {
             enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
+            FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
             return true;
         }
         else
         {
-            Debug.Log("No hay rango");
+            //Debug.Log("No hay rango");
             return false;
         }
     }

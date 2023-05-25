@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: d8ad684b98dcc644c92357d0fa422054
+<<<<<<< HEAD:Assets/[Last Stand of the Flame]/Combat/Mechanics/UnitsData/Enemies/Prefabs/JefeFinal/JefeFinal.fbx.meta
+guid: f8a9223a095a3d3458f5dcd722dd0e75
+=======
+guid: a288b6a62989cd04b9ce39ee50fa65b4
+>>>>>>> develop:Assets/mapasModeladosEscenas/mapasPrefab/JefeFinal.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
