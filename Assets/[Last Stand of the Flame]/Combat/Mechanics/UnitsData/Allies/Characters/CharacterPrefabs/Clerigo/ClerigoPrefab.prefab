@@ -70,7 +70,7 @@ MonoBehaviour:
   calculateZone: 0
   moving: 0
   move: 5
-  moveSpeed: 1
+  moveSpeed: 15
   actualTargetTile: {fileID: 0}
   buttonBasicAttack: {fileID: 0}
   buttonSpecialAttack1: {fileID: 0}
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Jose Maria
-  party: 3
+  party: 2
   myteam: 1
   imagen: {fileID: 0}
   combatStart: 0
