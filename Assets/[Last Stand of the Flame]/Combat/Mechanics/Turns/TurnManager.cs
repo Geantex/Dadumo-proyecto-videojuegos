@@ -11,16 +11,6 @@ public class TurnManager : MonoBehaviour
     {
         units.Clear();
 
-        Debug.Log("-------------------INICIO DE TURNO-------------------");
-        foreach (TacticsMove move in units)
-        {
-            Debug.Log(move);
-            Debug.Log(move.name);
-            Debug.Log(move.turn);
-            Debug.Log("----------------------------------------------------");
-        }
-        Debug.Log("----------------------FIN DE TURNO-------------------");
-
         // Find all units with "Player" tag and add them to the list
         GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject playerObject in playerObjects)
@@ -44,16 +34,6 @@ public class TurnManager : MonoBehaviour
                 npcObject.GetComponent<Unit>().combatStart = true;
             }
         }
-
-        Debug.Log("-------------------INICIO DE TURNO FIN-------------------");
-        foreach (TacticsMove move in units)
-        {
-            Debug.Log(move);
-            Debug.Log(move.name);
-            Debug.Log(move.turn);
-            Debug.Log("----------------------------------------------------");
-        }
-        Debug.Log("----------------------FIN DE TURNO FIN-------------------");
 
         foreach (TacticsMove move in units)
         {
@@ -93,11 +73,26 @@ public class TurnManager : MonoBehaviour
     public static void EndTurn(TacticsMove unit, TurnManager turnManager)
     {
         unit.EndTurn();
+        unit.RemoveSelectableTiles();
+
+        List<TacticsMove> defeatedUnits = new List<TacticsMove>(); // Lista de unidades derrotadas
 
         foreach (TacticsMove move in units)
         {
-            Debug.Log(move);
+            if (move.GetComponent<Unit>().Life <= 0)
+            {
+                defeatedUnits.Add(move); // Agregar unidad derrotada a la lista
+            }
         }
+
+        // Eliminar las unidades derrotadas de la lista principal
+        foreach (TacticsMove defeatedUnit in defeatedUnits)
+        {
+            units.Remove(defeatedUnit);
+            defeatedUnit.GetComponent<Unit>().desaparecer();
+        }
+
+        
         // Add the unit back to the list and sort the list by speed
         units.Add(unit);
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
@@ -107,6 +102,7 @@ public class TurnManager : MonoBehaviour
         {
             Debug.Log(move);
         }
+        Debug.Log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
         // Start the next turn
         //StartTurn();
         turnManager.StartCoroutine(turnManager.EsperarUnSegundo());
@@ -121,7 +117,7 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EsperarUnSegundo()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         StartTurn();
     }

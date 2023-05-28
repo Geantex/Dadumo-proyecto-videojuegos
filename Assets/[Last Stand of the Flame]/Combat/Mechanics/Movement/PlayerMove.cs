@@ -72,7 +72,6 @@ public class PlayerMove : TacticsMove
                             }
 
                             Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
-                            //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
                             renderer.material = enemyColor;
                             //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
                             //TurnManager.EndTurn();
@@ -80,54 +79,22 @@ public class PlayerMove : TacticsMove
                     }
                 }
             }
-        
-                /*if (!clicked)
-                {
-                    if(gameObject.GetComponent<PlayerAttack>().AttackMouse() != null && firstClick)
-                    {
-                        actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
-                        if (actualTarget != null)
-                        {
-                            clicked = true;
-                            StartCoroutine(EsperarCincoSegundos());
-                        }
-                        clickedMarked = false;
-                    }
-                    if (!firstClick)
-                    {
-                        actualTarget = gameObject.GetComponent<PlayerAttack>().AttackMouse();
-                        if (actualTarget != null)
-                        {
-                            clicked = true;
-                            firstClick = true;
-                            StartCoroutine(EsperarCincoSegundos());
-                        }
-                        clickedMarked = false;
-                    }
-
-                }
-                if (!clickedMarked && lastTarget != actualTarget)
-                {
-                    if (lastTarget != null)
-                    {
-                        Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-                        //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
-                        renderer.material = enemyColor;
-                    }
-                    lastTarget = actualTarget;
-                    clickedMarked = true;
-                }*/
-
+            //FindSelectableTiles();
             if (!calculateZone)
             {
                 FindSelectableTiles();
                 calculateZone = true;
+            }
+            else
+            {
+                GetCurrentTile();
             }
             CheckMouse();
         }
         else
         {
             Move();
+            Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
         }
 	}
 
@@ -155,7 +122,7 @@ public class PlayerMove : TacticsMove
 
     void AttackButton()
     {
-        if (!turn)
+        if (!turn && !moving)
         {
             return;
         }
@@ -195,17 +162,15 @@ public class PlayerMove : TacticsMove
 
     void endMyTurn()
     {
-        if (!turn)
+        if (!turn && !moving)
         {
             return;
         }
-        Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHH");
         clicked = false;
         firstClick = false;
         if(actualTarget != null)
         {
             Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-            //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
             renderer.material = enemyColor;
         }
         lastTarget = null;

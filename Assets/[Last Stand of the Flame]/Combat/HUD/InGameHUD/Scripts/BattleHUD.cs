@@ -14,10 +14,7 @@ public class BattleHUD : MonoBehaviour
     //---------------------ALIADO 1--------------------------
     //-------------------------------------------------------
     [Header("Aliado 1")]
-    public GameObject nameContainer1;
-    public GameObject levelContainer1;
-    public GameObject hpContainer1;
-
+    public GameObject A1;
     public TextMeshProUGUI nameTextA1;
     public Slider hpSliderA1;
     public Slider manaSliderA1;
@@ -26,6 +23,7 @@ public class BattleHUD : MonoBehaviour
     //---------------------ALIADO 2--------------------------
     //-------------------------------------------------------
     [Header("Aliado 2")]
+    public GameObject A2;
     public TextMeshProUGUI nameTextA2;
     public Slider hpSliderA2;
     public Slider manaSliderA2;
@@ -34,6 +32,7 @@ public class BattleHUD : MonoBehaviour
     //---------------------ALIADO 3--------------------------
     //-------------------------------------------------------
     [Header("Aliado 3")]
+    public GameObject A3;
     public TextMeshProUGUI nameTextA3;
     public Slider hpSliderA3;
     public Slider manaSliderA3;
@@ -42,6 +41,7 @@ public class BattleHUD : MonoBehaviour
     //---------------------ALIADO 4--------------------------
     //-------------------------------------------------------
     [Header("Aliado 4")]
+    public GameObject A4;
     public TextMeshProUGUI nameTextA4;
     public Slider hpSliderA4;
     public Slider manaSliderA4;
@@ -50,6 +50,7 @@ public class BattleHUD : MonoBehaviour
     //---------------------ENEMIGO 1-------------------------
     //-------------------------------------------------------
     [Header("Enemigo 1")]
+    public GameObject E1;
     public TextMeshProUGUI nameTextE1;
     public Slider hpSliderE1;
     public Slider manaSliderE1;
@@ -58,6 +59,7 @@ public class BattleHUD : MonoBehaviour
     //---------------------ENEMIGO 2-------------------------
     //-------------------------------------------------------
     [Header("Enemigo 2")]
+    public GameObject E2;
     public TextMeshProUGUI nameTextE2;
     public Slider hpSliderE2;
     public Slider manaSliderE2;
@@ -66,6 +68,7 @@ public class BattleHUD : MonoBehaviour
     //---------------------ENEMIGO 3-------------------------
     //-------------------------------------------------------
     [Header("Enemigo 3")]
+    public GameObject E3;
     public TextMeshProUGUI nameTextE3;
     public Slider hpSliderE3;
     public Slider manaSliderE3;
@@ -74,17 +77,10 @@ public class BattleHUD : MonoBehaviour
     //---------------------ENEMIGO 4-------------------------
     //-------------------------------------------------------
     [Header("Enemigo 4")]
+    public GameObject E4;
     public TextMeshProUGUI nameTextE4;
     public Slider hpSliderE4;
     public Slider manaSliderE4;
-
-    public GameObject nameContainer;
-    public GameObject levelContainer;
-    public GameObject hpContainer;
-
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI levelText;
-    public Slider hpSlider;
 
     //-------------------------------------------------------
     //-----------------MOVEMENT BUTTONS----------------------
@@ -97,11 +93,24 @@ public class BattleHUD : MonoBehaviour
     public Button buttonSpecialAttack4;
     public Button buttonFinishTurn;
 
+    private void Awake()
+    {
+        A1.SetActive(false);
+        A2.SetActive(false);
+        A3.SetActive(false);
+        A4.SetActive(false);
+        E1.SetActive(false);
+        E2.SetActive(false);
+        E3.SetActive(false);
+        E4.SetActive(false);
+    }
+
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ALIADO 1-------------------
     //-------------------------------------------------------
     public void SetHUDA1(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        A1.SetActive(true);
         nameTextA1.text = name;
         hpSliderA1.maxValue = maxhp;
         hpSliderA1.value = currenthp;
@@ -129,6 +138,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     public void SetHUDA2(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        A2.SetActive(true);
         nameTextA2.text = name;
         hpSliderA2.maxValue = maxhp;
         hpSliderA2.value = currenthp;
@@ -156,6 +166,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     public void SetHUDA3(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        A3.SetActive(true);
         nameTextA3.text = name;
         hpSliderA3.maxValue = maxhp;
         hpSliderA3.value = currenthp;
@@ -183,6 +194,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     public void SetHUDA4(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        A4.SetActive(true);
         nameTextA4.text = name;
         hpSliderA4.maxValue = maxhp;
         hpSliderA4.value = currenthp;
@@ -210,6 +222,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     public void SetHUDE1(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        E1.SetActive(true);
         nameTextE1.text = name;
         hpSliderE1.maxValue = maxhp;
         hpSliderE1.value = currenthp;
@@ -237,6 +250,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     public void SetHUDE2(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        E2.SetActive(true);
         nameTextE2.text = name;
         hpSliderE2.maxValue = maxhp;
         hpSliderE2.value = currenthp;
@@ -264,6 +278,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     public void SetHUDE3(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        E3.SetActive(true);
         nameTextE3.text = name;
         hpSliderE3.maxValue = maxhp;
         hpSliderE3.value = currenthp;
@@ -291,6 +306,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     public void SetHUDE4(string name, int maxhp, int currenthp, int maxmana, int currentmana)
     {
+        E4.SetActive(true);
         nameTextE4.text = name;
         hpSliderE4.maxValue = maxhp;
         hpSliderE4.value = currenthp;
