@@ -1,0 +1,321 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7470411927642483249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8701945487303175953}
+  - component: {fileID: 7338122741857554229}
+  - component: {fileID: 4153297468120953966}
+  - component: {fileID: 6789401541128754549}
+  - component: {fileID: 4281771115954950224}
+  - component: {fileID: 8695671047036050726}
+  - component: {fileID: 8491471094195468907}
+  m_Layer: 0
+  m_Name: MonjePrefab
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8701945487303175953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470411927642483249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5, y: 1.2, z: -2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3515363194010964152}
+  - {fileID: 864127566208915706}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7338122741857554229
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470411927642483249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4153297468120953966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470411927642483249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6df7c427750a3249b51741b52ccb43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: 0
+  calculateZone: 0
+  moving: 0
+  move: 5
+  moveSpeed: 6
+  actualTargetTile: {fileID: 0}
+  buttonBasicAttack: {fileID: 0}
+  buttonSpecialAttack1: {fileID: 0}
+  buttonSpecialAttack2: {fileID: 0}
+  buttonSpecialAttack3: {fileID: 0}
+  buttonSpecialAttack4: {fileID: 0}
+  buttonFinishTurn: {fileID: 0}
+  battleHUD: {fileID: 0}
+  enemyColor: {fileID: 2100000, guid: 285812d24dab54346a209faa5ef19395, type: 2}
+  basicAttack: 0
+  specialAttack: 0
+--- !u!114 &6789401541128754549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470411927642483249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f00b93609783a2458156868d9d4ae27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Kaka
+  party: 2
+  myteam: 1
+  imagen: {fileID: 0}
+  combatStart: 0
+--- !u!114 &4281771115954950224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470411927642483249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5003b7e5603a14797dbda414f99463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  range: 1
+  AoD: 1
+  enemySelectedColor: {fileID: 2100000, guid: e015b621a49c7404ea4cd50fa97ca938, type: 2}
+  enemyBasicColor: {fileID: 2100000, guid: 285812d24dab54346a209faa5ef19395, type: 2}
+--- !u!114 &8695671047036050726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470411927642483249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335a8018e18fca34c829e5a610d23d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AoD: 1
+  AllSpecialAttacks: []
+  enemyColor: {fileID: 2100000, guid: 285812d24dab54346a209faa5ef19395, type: 2}
+--- !u!114 &8491471094195468907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470411927642483249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Kaka
+  characterClassName: monje
+  characterImage: {fileID: 3792388835238295109, guid: 55d6d6ac735fdd3468253370eaad8f16, type: 3}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 0}
+  healthPoints: 50
+  manaPoints: 100
+  damagePoints: 50
+  rangeTiles: 1
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
+--- !u!1001 &898263668276084497
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8701945487303175953}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+      propertyPath: m_Name
+      value: Kaka idle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+--- !u!1 &51281075924697664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+  m_PrefabInstance: {fileID: 898263668276084497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5939931057073738603
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51281075924697664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c12fa42ad689f9941afe1be8f4d98f40, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!4 &864127566208915706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 083374d4fbb82a5418a5fbc542967c6d, type: 3}
+  m_PrefabInstance: {fileID: 898263668276084497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3982217047608981331
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8701945487303175953}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.746
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_Name
+      value: Kaka
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+--- !u!4 &3515363194010964152 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36950e1860df81549b89ba6c4b60e1a3, type: 3}
+  m_PrefabInstance: {fileID: 3982217047608981331}
+  m_PrefabAsset: {fileID: 0}

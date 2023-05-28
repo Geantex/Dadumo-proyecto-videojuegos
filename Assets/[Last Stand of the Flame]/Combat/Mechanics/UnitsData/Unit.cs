@@ -38,21 +38,24 @@ public class Unit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Life <= 0 && combatStart)
-        {
-            if (gameObject.CompareTag("NPC"))
-            {
-                //GameController.Instancia.SetStateByType(typeof(WinState));
-                gameObject.SetActive(false);
-            }
-            else if (gameObject.CompareTag("Player"))
-            {
-                //GameController.Instancia.SetStateByType(typeof(LoseState));
-                gameObject.SetActive(false);
-            }
-            TurnManager.RemoveUnit(gameObject.GetComponent<TacticsMove>());
-            DestroyImmediate(gameObject);
-        }
+
+    }
+
+    IEnumerator EsperarCincoSegundo()
+    {
+        yield return new WaitForSeconds(3);
+        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
+        gameObject.SetActive(false);
+
+        //TurnManager.RemoveUnit(gameObject.GetComponent<TacticsMove>());
+
+        DestroyImmediate(gameObject);
+    }
+
+    public void desaparecer()
+    {
+        Animaciones.morir(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name);
+        StartCoroutine(EsperarCincoSegundo());
     }
 
     public int Life

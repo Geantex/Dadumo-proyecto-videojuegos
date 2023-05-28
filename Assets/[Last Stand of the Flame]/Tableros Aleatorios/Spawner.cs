@@ -461,10 +461,10 @@ public class Spawner : MonoBehaviour
                 }
                 break;
             case "PuebloCombate":
-                int numEnemigosRata = Random.Range(1, 3);
-                for (int i = 0; i < numEnemigosRata; i++)
+                int numEnemigosBrujo = Random.Range(1, 3);
+                for (int i = 0; i < numEnemigosBrujo; i++)
                 {
-                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "rata rapida"));
+                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "brujo"));
                 }
 
                 int numEnemigosLadron = Random.Range(1, 3);
@@ -473,13 +473,13 @@ public class Spawner : MonoBehaviour
                     myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "ladron"));
                 }
 
-                numEnemigos = numEnemigosRata + numEnemigosLadron;
+                numEnemigos = numEnemigosBrujo + numEnemigosLadron;
                 break;
             case "MontanaCombate":
                 numEnemigos = Random.Range(2, 5);
                 for (int i = 0; i < numEnemigos; i++)
                 {
-                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "ladron"));
+                    myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "troll"));
                 }
                 break;
             case "VolcanCombate":
