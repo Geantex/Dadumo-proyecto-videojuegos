@@ -532,6 +532,35 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1823779572, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
+--- !u!1 &210566851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5129056552698784376, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
+  m_PrefabInstance: {fileID: 210566850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &210566852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210566851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d0c172d09867f4289cf409eac59bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asesino: {fileID: 0}
+  barbaro: {fileID: 0}
+  bardo: {fileID: 0}
+  clerigo: {fileID: 0}
+  mago: {fileID: 0}
+  monje: {fileID: 0}
+  paladin: {fileID: 0}
+  rata: {fileID: 0}
+  ladron: {fileID: 0}
+  brujo: {fileID: 0}
+  troll: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!1 &478291245
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +688,9 @@ MonoBehaviour:
   aliado3z: 0
   aliado4x: 0
   aliado4z: 0
+  allPlayableEnemies: []
+  myPartyEnemies: []
+  myEnemies: []
   enemigoPrueba: {fileID: 6756909428466296, guid: b6edbb8d4cce50745b88d6718076e06b, type: 3}
   numEnemigos: 0
   enemigo1x: 0
@@ -993,6 +1025,7 @@ MonoBehaviour:
   goldCoins: 0
   charactersParty: []
   allPlayableCharacters: []
+  allPlayableEnemies: []
   NewGame: 0
 --- !u!4 &1001085247
 Transform:

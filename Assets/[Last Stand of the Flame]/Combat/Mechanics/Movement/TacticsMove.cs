@@ -7,8 +7,6 @@ public class TacticsMove : MonoBehaviour
     // Usamos una variable para determinar si es nuestro turno o no
     public bool turn = false;
     public bool calculateZone = false;
-    /*public bool HUDturn = false;
-    public int numTurn = 0;*/
 
     // Creamos una lista para guardar las casillas seleccionables
     List<Tile> selectableTiles = new List<Tile>();
@@ -52,10 +50,15 @@ public class TacticsMove : MonoBehaviour
     // Devuelve: Nada
     public void GetCurrentTile()
     {
+        if(currentTile != null)
+        {
+            currentTile.current = false;
+        }
         // Busca la casilla actual llamando a la función GetTargetTile
         currentTile = GetTargetTile(gameObject);
         // Cuando la encontramos marcamos la casilla como actual dentro de su propio script
         currentTile.current = true;
+        currentTile.target = false;
     }
 
     // Función que busca la casilla en la que esta el objetivo (probablemente busca la casilla en la que esta el personaje que tenga el script)
@@ -240,7 +243,7 @@ public class TacticsMove : MonoBehaviour
     // Función que borra las casillas seleccionables
     // Recive: Nada
     // Devuelve: Nada
-    protected void RemoveSelectableTiles()
+    public void RemoveSelectableTiles()
     {
         // Si existe una casilla actual
         if (currentTile != null)
@@ -438,10 +441,9 @@ public class TacticsMove : MonoBehaviour
     // Devuelve: Nada
     public void BeginTurn()
     {
-        //BattleHUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<BattleHUD>();
-        //hud.SetHUD("Juan", 3, 30, 30);
         // Activamos el turno del personaje
         turn = true;
+        calculateZone = false;
     }
 
     // Función que termina el turno del personaje
@@ -451,7 +453,6 @@ public class TacticsMove : MonoBehaviour
     {
         // Desactivamos el turno del personaje
         turn = false;
-        //HUDturn = false;
-        calculateZone = false;
+        //calculateZone = false;
     }
 }

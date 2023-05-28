@@ -32,6 +32,7 @@ public class NPCAttack : BasicAttack
         else
         {
             gameObject.GetComponent<NPCMove>().Move();
+            Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
         }
 
     }
