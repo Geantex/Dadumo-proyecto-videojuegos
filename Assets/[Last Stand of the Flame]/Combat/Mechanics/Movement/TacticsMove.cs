@@ -441,6 +441,10 @@ public class TacticsMove : MonoBehaviour
     // Devuelve: Nada
     public void BeginTurn()
     {
+        if (gameObject.CompareTag("Player"))
+        {
+            FindObjectOfType<BattleHUD>().SetSpecialName(gameObject.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks[0].name);
+        }
         // Activamos el turno del personaje
         turn = true;
         calculateZone = false;

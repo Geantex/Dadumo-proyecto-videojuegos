@@ -59,7 +59,7 @@ public class TurnManager : MonoBehaviour
         {
             TacticsMove unit = units[0];
             units.RemoveAt(0);
-
+            
             unit.BeginTurn();
         }
         else
