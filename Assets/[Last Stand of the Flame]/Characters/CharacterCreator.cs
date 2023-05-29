@@ -16,6 +16,7 @@ public class CharacterCreator : ScriptableObject
     [SerializeField] private float manaPoints;//Puntos de maná del personaje
     [SerializeField] private float damagePoints;//Puntos de daño del personaje
     [SerializeField] private float rangeTiles;//Rango del personaje
+    [SerializeField] private float speed;//Rango del personaje
     [SerializeField] private List<SpecialAttack> specialAttacks;//Lista de ataques especiales
     [SerializeField] private item characterWeapon;//Arma portada por el personaje
     [SerializeField] private item characterArmor;//Armadura portada por el personaje

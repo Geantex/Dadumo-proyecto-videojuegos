@@ -46,7 +46,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo idle");
                 break;
             case "Ladron":
-                pj.Play("Ladron idle");
+                pj.Play("Bandido idle");
                 break;
             case "Rata":
                 pj.Play("Rata idle2");
@@ -90,7 +90,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo correr");
                 break;
             case "Ladron":
-                pj.Play("Ladron correr");
+                pj.Play("Bandido correr");
                 break;
             case "Rata":
                 pj.Play("Rata correr2");
@@ -106,7 +106,6 @@ public class Animaciones : MonoBehaviour
 
     public static void ataque(Animator pj, string name)
     {
-
         switch (name)
         {
             case "Barbara":
@@ -135,7 +134,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo ataque");
                 break;
             case "Ladron":
-                pj.Play("Ladron ataque");
+                pj.Play("Bandido ataque");
                 break;
             case "Rata":
                 pj.Play("Rata ataque2");
@@ -151,8 +150,6 @@ public class Animaciones : MonoBehaviour
     
     public static void ataqueEspecial(Animator pj, string name)
     {
-        pj.Play("Barbara ataque especial");
-
         switch (name)
         {
             case "Barbara":
@@ -181,7 +178,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo ataque especial");
                 break;
             case "Ladron":
-                pj.Play("Ladron ataque especial");
+                pj.Play("Bandido ataque especial");
                 break;
             case "Rata":
                 pj.Play("Rata ataque especial2");
@@ -197,8 +194,6 @@ public class Animaciones : MonoBehaviour
 
     public static void recibirDaño(Animator pj, string name)
     {
-        pj.Play("Barbara recibir daño");
-
         switch (name)
         {
             case "Barbara":
@@ -227,7 +222,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo recibir daño");
                 break;
             case "Ladron":
-                pj.Play("Ladron recibir daño");
+                pj.Play("Bandido recibir daño");
                 break;
             case "Rata":
                 pj.Play("Rata recibir daño2");
@@ -243,8 +238,6 @@ public class Animaciones : MonoBehaviour
 
     public static void morir(Animator pj, string name)
     {
-        pj.Play("Barbara morir");
-
         switch (name)
         {
             case "Barbara":
@@ -273,7 +266,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo morir");
                 break;
             case "Ladron":
-                pj.Play("Ladron morir");
+                pj.Play("Bandido morir");
                 break;
             case "Rata":
                 pj.Play("Rata morir2");
