@@ -7,22 +7,14 @@ public class PlayerSpecialAttack : MonoBehaviour
 {
     public bool AoD = true;
     public List<SpecialAttack> AllSpecialAttacks = new List<SpecialAttack>();
+    public Material enemySelectedColor;
+    public Material enemyBasicColor;
 
-    public Material enemyColor;
-
-    /*public PlayerSpecialAttack(int damage, int range, string stateEffect, double stateEffectProbability, string boostType, double boostValue)
-    {
-        this.Damage = damage;
-        this.Range = range;
-        this.StateEffect = stateEffect;
-        this.StateEffectProbability = stateEffectProbability;
-        this.BoostType = boostType;
-        this.BoostValue = boostValue;
-    }*/
+    //public Material enemyColor;
     // Start is called before the first frame update
     void Start()
     {
-        AddSpecialAttack(new SpecialAttack(20, 8, "Paralyze", 80, "Attack", 20));
+        //AddSpecialAttack(new SpecialAttack(20, 1, 8, "Area", "Paralyze", 80, "Attack", 20));
     }
 
     // Update is called once per frame
@@ -31,29 +23,109 @@ public class PlayerSpecialAttack : MonoBehaviour
         
     }
 
-    public GameObject AttackMouse()
+    public List<GameObject> AttackMouse(int attackIndex)
     {
-        if (Input.GetMouseButtonDown(0))
+        List<GameObject> targets = new List<GameObject>();
+        switch (AllSpecialAttacks[attackIndex].TargetType)
         {
-            Ray trackearCursor = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit sobreUnidad;
-            if (Physics.Raycast(trackearCursor, out sobreUnidad))
-            {
-                if (sobreUnidad.collider.tag == "NPC")
+            case "Aliados":
+                GameObject[] allies = GameObject.FindGameObjectsWithTag("Player");
+                
+
+                foreach (GameObject ally in allies)
                 {
-                    Debug.Log("Unidad encontrada! Se llama " + sobreUnidad.collider.gameObject.name);
-                    Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
-                    //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
-                    renderer.material = enemyColor;
-
-                    //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
-                    return sobreUnidad.collider.gameObject;
-                    //TurnManager.EndTurn();
-
+                    float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
+                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    {
+                        targets.Add(ally);
+                        Renderer renderer = ally.GetComponentInChildren<Renderer>();
+                        renderer.material = enemySelectedColor;
+                    }
                 }
-            }
+                break;
+            case "Enemigos":
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+                foreach (GameObject enemy in enemies)
+                {
+                    float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
+                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    {
+                        targets.Add(enemy);
+                        Renderer renderer = enemy.GetComponentInChildren<Renderer>();
+                        renderer.material = enemySelectedColor;
+                    }
+                }
+                break;
+            case "Todos":
+                GameObject[] alliesAll = GameObject.FindGameObjectsWithTag("Player");
+
+
+                foreach (GameObject ally in alliesAll)
+                {
+                    float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
+                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    {
+                        targets.Add(ally);
+                        Renderer renderer = ally.GetComponentInChildren<Renderer>();
+                        renderer.material = enemySelectedColor;
+                    }
+                }
+
+                GameObject[] enemiesAll = GameObject.FindGameObjectsWithTag("NPC");
+
+                foreach (GameObject enemy in enemiesAll)
+                {
+                    float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
+                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    {
+                        targets.Add(enemy);
+                        Renderer renderer = enemy.GetComponentInChildren<Renderer>();
+                        renderer.material = enemySelectedColor;
+                    }
+                }
+                break;
         }
-        return null;
+        return targets;
+    }
+
+    public void AttackOfPlayer(int attackIndex, GameObject target, List<GameObject> allTargets)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Renderer renderer = enemy.GetComponentInChildren<Renderer>();
+            renderer.material = enemyBasicColor;
+        }
+
+        switch (AllSpecialAttacks[attackIndex].RangeType)
+        {
+            case "Normal":
+                for(int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)
+                {
+                    AllSpecialAttacks[attackIndex].Attack(target, gameObject);
+                }
+                break;
+            case "Area":
+                foreach (GameObject oneTaregt in allTargets)
+                {
+                    for (int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)
+                    {
+                        AllSpecialAttacks[attackIndex].Attack(target, gameObject);
+                    }
+                }
+                break;
+            case "Curacion":
+                for (int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)
+                {
+                    AllSpecialAttacks[attackIndex].Attack(target, gameObject);
+                }
+                break;
+        }
+        gameObject.GetComponent<PlayerMove>().basicAttack = false;
+
+        TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
     }
 
     public void AddSpecialAttack(SpecialAttack SpecialAttack)

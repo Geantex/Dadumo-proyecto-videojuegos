@@ -128,7 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AoD: 1
   AllSpecialAttacks: []
-  enemyColor: {fileID: 2100000, guid: 285812d24dab54346a209faa5ef19395, type: 2}
+  enemySelectedColor: {fileID: 0}
+  enemyBasicColor: {fileID: 0}
 --- !u!114 &7215911098915589419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d15c6b2b75531ff40aaf9a9ad5178093, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d15c6b2b75531ff40aaf9a9ad5178093, type: 3}
       propertyPath: m_LocalPosition.z

@@ -85,6 +85,8 @@ public class TurnManager : MonoBehaviour
             }
         }
 
+        units.Add(unit);
+
         // Eliminar las unidades derrotadas de la lista principal
         foreach (TacticsMove defeatedUnit in defeatedUnits)
         {
@@ -94,7 +96,7 @@ public class TurnManager : MonoBehaviour
 
         
         // Add the unit back to the list and sort the list by speed
-        units.Add(unit);
+        
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
         Debug.Log("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
 

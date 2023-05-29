@@ -21,6 +21,7 @@ MonoBehaviour:
   manaPoints: 100
   damagePoints: 25
   rangeTiles: 1
-  specialAttacks: []
+  specialAttacks:
+  - {fileID: 11400000, guid: bfc72182257091e40afdd22d8c8fffb3, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}

@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class Unit : MonoBehaviour
 {
     // Estadísticas básicas de la unidad
-    public string name = "";
+    public string name;
     private int maxLife = 100;
     private int life = 100;
+    private int maxMana = 100;
     private int mana;
     private int speed;
     private int initDamage;
@@ -20,13 +21,11 @@ public class Unit : MonoBehaviour
     public Image imagen;
 
     // Estadísticas de combate
-    private int lifeInCombat = 100;
+    private int lifeInCombat;
     private int manaInCombat;
     private int speedInCombats;
 
     private string stateEffect;
-    private string boostType;
-    private double boost;
 
     public bool combatStart = false;
     // Start is called before the first frame update
@@ -47,8 +46,6 @@ public class Unit : MonoBehaviour
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         gameObject.SetActive(false);
 
-        //TurnManager.RemoveUnit(gameObject.GetComponent<TacticsMove>());
-
         DestroyImmediate(gameObject);
     }
 
@@ -58,10 +55,22 @@ public class Unit : MonoBehaviour
         StartCoroutine(EsperarCincoSegundo());
     }
 
+    public int MaxLife
+    {
+        get { return maxLife; }
+        set { maxLife = value; }
+    }
+
     public int Life
     {
         get { return life; }
         set { life = value; }
+    }
+
+    public int MaxMana
+    {
+        get { return maxMana; }
+        set { maxMana = value; }
     }
 
     public int Mana
@@ -82,21 +91,18 @@ public class Unit : MonoBehaviour
         set { stateEffect = value; }
     }
 
-    public string BoostType
-    {
-        get { return boostType; }
-        set { boostType = value; }
-    }
-
-    public double Boost
-    {
-        get { return boost; }
-        set { boost = value; }
-    }
-
     public string Name
     {
         get { return name; }
         set { name = value; }
+    }
+
+    public void setStats()
+    {
+        gameObject.GetComponent<PlayerAttack>().Damage = initDamage;
+        gameObject.GetComponent<PlayerAttack>().Range = initRange;
+        lifeInCombat = Life;
+        manaInCombat = Mana;
+        speedInCombats = Speed;
     }
 }

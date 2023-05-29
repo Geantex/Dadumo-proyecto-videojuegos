@@ -16,9 +16,6 @@ public class PlayerMove : TacticsMove
     List<GameObject> targets = new List<GameObject>();
     GameObject actualTarget = null;
     GameObject lastTarget = null;
-    bool clicked = false;
-    bool firstClick = false;
-    bool clickedMarked = false;
 
     public BattleHUD battleHUD;
 
@@ -32,7 +29,7 @@ public class PlayerMove : TacticsMove
 	{
         battleHUD = FindObjectOfType<BattleHUD>();
         //Prueba Special Attack
-        //battleHUD.buttonSpecialAttack1.onClick.AddListener(SpecialAttackButton);
+        battleHUD.buttonSpecialAttack1.onClick.AddListener(SpecialAttackButton);
         //buttonh3.onClick.AddListener();
         //Prueba Special Attack
 
@@ -55,31 +52,12 @@ public class PlayerMove : TacticsMove
         {
             if (basicAttack && targets.Count > 0)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Ray trackearCursor = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit sobreUnidad;
-                    if (Physics.Raycast(trackearCursor, out sobreUnidad))
-                    {
-                        if (sobreUnidad.collider.tag == "NPC")
-                        {
-                            foreach (GameObject target in targets)
-                            {
-                                if (target == sobreUnidad.collider.gameObject)
-                                {
-                                    gameObject.GetComponent<PlayerAttack>().AttackOfPlayer(target);
-                                }
-                            }
-
-                            Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
-                            renderer.material = enemyColor;
-                            //AoD = Attack(sobreUnidad.collider.gameObject, gameObject);
-                            //TurnManager.EndTurn();
-                        }
-                    }
-                }
+                DoBasicAttack();
             }
-            //FindSelectableTiles();
+            if (specialAttack && targets.Count > 0)
+            {
+                DoSpecialAttack();
+            }
             if (!calculateZone)
             {
                 FindSelectableTiles();
@@ -130,33 +108,85 @@ public class PlayerMove : TacticsMove
         targets = gameObject.GetComponent<PlayerAttack>().AttackMouse();
         basicAttack = true;
 
-        if (actualTarget != null)
+        /*if (actualTarget != null)
         {
             gameObject.GetComponent<PlayerAttack>().AoD = gameObject.GetComponent<PlayerAttack>().Attack(actualTarget, gameObject);
-            clicked = false;
-            firstClick = false;
             Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-            //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
             renderer.material = enemyColor;
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
+        }*/
+    }
+
+    void DoBasicAttack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray trackearCursor = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit sobreUnidad;
+            if (Physics.Raycast(trackearCursor, out sobreUnidad))
+            {
+                if (sobreUnidad.collider.tag == "NPC")
+                {
+                    foreach (GameObject target in targets)
+                    {
+                        if (target == sobreUnidad.collider.gameObject)
+                        {
+                            gameObject.GetComponent<PlayerAttack>().AttackOfPlayer(target);
+                        }
+                    }
+
+                    Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
+                    renderer.material = enemyColor;
+                }
+            }
         }
     }
 
     void SpecialAttackButton()
     {
-        if (actualTarget != null)
+        if (!turn && !moving)
+        {
+            return;
+        }
+
+        targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackMouse(0);
+        specialAttack = true;
+
+        /*if (actualTarget != null)
         {
             gameObject.GetComponent<PlayerSpecialAttack>().AoD = gameObject.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks[0].Attack(actualTarget, gameObject);
-            clicked = false;
-            firstClick = false;
             Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-            //renderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/InGameCombat/Units/Enemies/Materials/Enemigo_Color.mat");
             renderer.material = enemyColor;
             lastTarget = null;
             actualTarget = null;
             TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
+        }*/
+    }
+
+    void DoSpecialAttack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray trackearCursor = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit sobreUnidad;
+            if (Physics.Raycast(trackearCursor, out sobreUnidad))
+            {
+                if (sobreUnidad.collider.tag == "NPC" || sobreUnidad.collider.tag == "Player")
+                {
+                    foreach (GameObject target in targets)
+                    {
+                        if (target == sobreUnidad.collider.gameObject)
+                        {
+                            gameObject.GetComponent<PlayerSpecialAttack>().AttackOfPlayer(0, target, targets);
+                        }
+                    }
+
+                    Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
+                    renderer.material = enemyColor;
+                }
+            }
         }
     }
 
@@ -166,15 +196,13 @@ public class PlayerMove : TacticsMove
         {
             return;
         }
-        clicked = false;
-        firstClick = false;
-        if(actualTarget != null)
+        /*if(actualTarget != null)
         {
             Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
             renderer.material = enemyColor;
         }
         lastTarget = null;
-        actualTarget = null;
+        actualTarget = null;*/
 
         basicAttack = false;
         specialAttack = false;
