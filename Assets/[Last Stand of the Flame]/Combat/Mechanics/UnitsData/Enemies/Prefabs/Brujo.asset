@@ -17,10 +17,11 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 7407610076711815920, guid: ea4e29bbbe82494459a754edd7c57f25, type: 3}
-  healthPoints: 50
+  healthPoints: 35
   manaPoints: 0
-  damagePoints: 30
+  damagePoints: 40
   rangeTiles: 3
+  speed: 0
   specialAttacks: []
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
