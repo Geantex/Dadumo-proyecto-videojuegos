@@ -549,18 +549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d0c172d09867f4289cf409eac59bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asesino: {fileID: 0}
-  barbaro: {fileID: 0}
-  bardo: {fileID: 0}
-  clerigo: {fileID: 0}
-  mago: {fileID: 0}
-  monje: {fileID: 0}
-  paladin: {fileID: 0}
-  rata: {fileID: 0}
-  ladron: {fileID: 0}
-  brujo: {fileID: 0}
-  troll: {fileID: 0}
-  boss: {fileID: 0}
 --- !u!1 &478291245
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +691,7 @@ MonoBehaviour:
   enemigo4z: 0
   enemigo5x: 0
   enemigo5z: 0
-  obstaculoBase: {fileID: 3060105310513372811, guid: 36d63ee0a7ca626459c8f27468c2c3c3, type: 3}
+  obstaculoBase: {fileID: 919132149155446097, guid: d92e19f97d38965478df5a54b82d1af6, type: 3}
   numObstaculos: 0
   obstaculo1x: 0
   obstaculo1z: 0

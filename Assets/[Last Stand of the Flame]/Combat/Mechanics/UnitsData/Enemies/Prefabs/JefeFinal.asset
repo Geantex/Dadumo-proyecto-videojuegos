@@ -19,8 +19,9 @@ MonoBehaviour:
   characterPrefab: {fileID: 7145378970324420070, guid: 351a7bebf2658f84bb700d7e4a47a25a, type: 3}
   healthPoints: 200
   manaPoints: 0
-  damagePoints: 40
+  damagePoints: 50
   rangeTiles: 4
+  speed: 0
   specialAttacks: []
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
