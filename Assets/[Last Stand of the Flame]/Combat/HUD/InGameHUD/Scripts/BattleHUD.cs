@@ -88,6 +88,7 @@ public class BattleHUD : MonoBehaviour
     [Header("Movement Buttons")]
     public Button buttonBasicAttack;
     public Button buttonSpecialAttack1;
+    public TextMeshProUGUI special;
     public Button buttonSpecialAttack2;
     public Button buttonSpecialAttack3;
     public Button buttonSpecialAttack4;
@@ -103,6 +104,11 @@ public class BattleHUD : MonoBehaviour
         E2.SetActive(false);
         E3.SetActive(false);
         E4.SetActive(false);
+    }
+
+    public void SetSpecialName(string name)
+    {
+        special.text = name;
     }
 
     //-------------------------------------------------------
