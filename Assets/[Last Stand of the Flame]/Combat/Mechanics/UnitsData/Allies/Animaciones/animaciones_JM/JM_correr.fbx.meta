@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bbfac2d94de76bd499b8b602447e1820
+guid: e228c8255392d1f49aed6e66f329a244
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Barbara correr
+      name: JM correr
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 9
+      lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
