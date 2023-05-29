@@ -17,7 +17,7 @@ MonoBehaviour:
     propone una peque\xF1a apuesta. El juego del dado consiste en elegir entre pares
     e impares para ganar x monedas de oro o apostar a un n\xFAmero con el que ganar\xEDas
     6 veces lo apostado"
-  encounterImage: {fileID: 21300000, guid: c8a7eb3ccc39d33469461548606a82a7, type: 3}
+  encounterImage: {fileID: 21300000, guid: eac208ae15d884347b0378daa5014855, type: 3}
   encounterButton1Text: Par
   encounterButton2Text: Impar
   encounterButton3Text: irse
