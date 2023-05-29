@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialAttack : MonoBehaviour
+[CreateAssetMenu(fileName = "NewSpecialAttack", menuName = "Special Attack")]
+public class SpecialAttack : ScriptableObject
 {
+    [SerializeField] int manaCost;
     [SerializeField] int damage;
+    [SerializeField] int damageTimes;
     [SerializeField] int range;
+    [SerializeField] string rangeType;
+    [SerializeField] string targetType;
     [SerializeField] string stateEffect;
     [SerializeField] double stateEffectProbability;
     [SerializeField] string boostType;
     [SerializeField] double boostValue;
 
-    public SpecialAttack(int damage, int range, string stateEffect, double stateEffectProbability, string boostType, double boostValue)
+    public SpecialAttack(int damage, int damageTimes, int range, string rangeType, string stateEffect, double stateEffectProbability, string boostType, double boostValue)
     {
         this.damage = damage;
+        this.damageTimes = damageTimes;
         this.range = range;
+        this.rangeType = rangeType;
         this.stateEffect = stateEffect;
         this.stateEffectProbability = stateEffectProbability;
         this.boostType = boostType;
@@ -37,27 +44,67 @@ public class SpecialAttack : MonoBehaviour
         float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
         if (distance <= range)
         {
-            enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
-            Debug.Log("La distancia entre los dos objetos es: " + distance);
-            if (stateEffect != null && stateEffectProbability != null)
+            if(rangeType == "Curacion")
             {
-                if (Random.Range(0, 100) < stateEffectProbability)
+                enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life + damage;
+
+                if(enemy.GetComponent<Unit>().Life > enemy.GetComponent<Unit>().MaxLife)
                 {
-                    enemy.GetComponent<Unit>().StateEffect = stateEffect;
+                    enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().MaxLife;
                 }
+
+                FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
             }
-            if (boostType != null && boostValue != null)
+            else
             {
-                enemy.GetComponent<Unit>().BoostType = boostType;
-                enemy.GetComponent<Unit>().Boost = boostValue;
+                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name);
+                Animaciones.recibirDaño(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name);
+                enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
+                FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
             }
+           
+            applyBoost(enemy);
+            applyState(enemy);
+
+            enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Mana - manaCost;
+            FindObjectOfType<BattleHUD>().SetMana(allie.GetComponent<Unit>().party, allie.GetComponent<Unit>().myteam, allie.GetComponent<Unit>().Mana);
+
             return true;
         }
         else
         {
-            Debug.Log("La distancia entre los dos objetos es: " + distance);
             Debug.Log("No hay rango");
             return false;
+        }
+    }
+
+    public void applyBoost(GameObject enemy)
+    {
+        switch (boostType)
+        {
+            case "Attack":
+                enemy.GetComponent<PlayerAttack>().Damage = enemy.GetComponent<PlayerAttack>().Damage + (int)boostValue;
+                break;
+            case "Range":
+                enemy.GetComponent<PlayerAttack>().Range = enemy.GetComponent<PlayerAttack>().Range + (int)boostValue;
+                break;
+            case "Speed":
+                enemy.GetComponent<Unit>().Speed = enemy.GetComponent<Unit>().Speed + (int)boostValue;
+                break;
+            case "Life":
+                enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life + (int)boostValue;
+                break;
+        }
+    }
+
+    public void applyState(GameObject enemy)
+    {
+        if (stateEffect != null)
+        {
+            if (Random.Range(0, 100) < stateEffectProbability)
+            {
+                enemy.GetComponent<Unit>().StateEffect = stateEffect;
+            }
         }
     }
 
@@ -67,10 +114,28 @@ public class SpecialAttack : MonoBehaviour
         set { damage = value; }
     }
 
+    public int DamageTimes
+    {
+        get { return damageTimes; }
+        set { damageTimes = value; }
+    }
+
     public int Range
     {
         get { return range; }
         set { range = value; }
+    }
+
+    public string RangeType
+    {
+        get { return rangeType; }
+        set { rangeType = value; }
+    }
+
+    public string TargetType
+    {
+        get { return targetType; }
+        set { targetType = value; }
     }
 
     public string StateEffect

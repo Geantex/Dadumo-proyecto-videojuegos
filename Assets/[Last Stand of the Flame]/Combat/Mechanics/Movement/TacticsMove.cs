@@ -227,7 +227,7 @@ public class TacticsMove : MonoBehaviour
         else
         {
             // Borra las casillas seleccionables
-            RemoveSelectableTiles();
+            //RemoveSelectableTiles();
             //Cuando acabamos de recorrer el camino paramos el movimiento
             moving = false;
 
@@ -453,6 +453,6 @@ public class TacticsMove : MonoBehaviour
     {
         // Desactivamos el turno del personaje
         turn = false;
-        //calculateZone = false;
+        calculateZone = false;
     }
 }
