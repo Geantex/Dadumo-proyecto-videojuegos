@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Deen Ecan
-  maxLife: 0
-  life: 0
+  maxLife: 100
+  life: 100
   maxMana: 0
-  mana: 0
+  mana: 100
   speed: 0
   party: 2
   myteam: 1
@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5003b7e5603a14797dbda414f99463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 20
   range: 1
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &4321863125354626044
 MonoBehaviour:
@@ -132,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoD: 1
-  AllSpecialAttacks: []
+  AllSpecialAttacks:
+  - {fileID: 11400000, guid: bfc72182257091e40afdd22d8c8fffb3, type: 2}
 --- !u!114 &8399226091280734194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,11 +153,12 @@ MonoBehaviour:
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
   healthPoints: 100
-  maxHealthPoints: 0
+  maxHealthPoints: 100
   manaPoints: 100
-  damagePoints: 25
+  damagePoints: 20
   rangeTiles: 1
-  specialAttacks: []
+  specialAttacks:
+  - {fileID: 11400000, guid: bfc72182257091e40afdd22d8c8fffb3, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
 --- !u!1001 &5731428645661030101
