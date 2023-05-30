@@ -43,7 +43,7 @@ public class Unit : MonoBehaviour
 
     IEnumerator EsperarCincoSegundo()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1.2f);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         gameObject.SetActive(false);
 
