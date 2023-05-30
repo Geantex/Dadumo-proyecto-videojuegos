@@ -193,6 +193,7 @@ public class Animaciones : MonoBehaviour
                 }
                 break;
             case "Galentin":
+                GameObject bastonGalentin = GetBastonGalentin();
                 pj.Play("Galentin ataque especial");
                 if (attack)
                 {
