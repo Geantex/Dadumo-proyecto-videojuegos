@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 2245592082458939305}
   - component: {fileID: 493568433150732895}
   - component: {fileID: 3072077499017165967}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mazo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 8411349255331468511}
   - component: {fileID: 4842478451559083158}
   - component: {fileID: 7877453820107986522}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Escudo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
