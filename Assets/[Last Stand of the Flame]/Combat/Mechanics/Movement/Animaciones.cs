@@ -171,7 +171,9 @@ public class Animaciones : MonoBehaviour
                 Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.identity);
                 break;
             case "Galentin":
+                GameObject bastonGalentin = GetBastonGalentin();
                 pj.Play("Galentin ataque especial");
+                bastonGalentin.GetComponentInChildren<ParticulaExplosionMagica>().ExplosionMagica(objetivo);
                 break;
             case "Jose Maria":
                 pj.Play("JM ataque especial");
