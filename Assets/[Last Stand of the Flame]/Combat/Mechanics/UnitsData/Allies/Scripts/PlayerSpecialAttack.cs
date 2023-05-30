@@ -105,6 +105,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                     AllSpecialAttacks[attackIndex].Attack(target, gameObject);
                 }
                 gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
+                FindObjectOfType<BattleHUD>().SetMana(gameObject.GetComponent<Unit>().party, gameObject.GetComponent<Unit>().myteam, gameObject.GetComponent<Unit>().Mana);
                 break;
             case "Area":
                 foreach (GameObject oneTarget in allTargets)
@@ -115,6 +116,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                     }
                 }
                 gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
+                FindObjectOfType<BattleHUD>().SetMana(gameObject.GetComponent<Unit>().party, gameObject.GetComponent<Unit>().myteam, gameObject.GetComponent<Unit>().Mana);
                 break;
             case "Curacion":
                 for (int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)
@@ -122,6 +124,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                     AllSpecialAttacks[attackIndex].Attack(target, gameObject);
                 }
                 gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
+                FindObjectOfType<BattleHUD>().SetMana(gameObject.GetComponent<Unit>().party, gameObject.GetComponent<Unit>().myteam, gameObject.GetComponent<Unit>().Mana);
                 break;
         }
         gameObject.GetComponent<PlayerMove>().basicAttack = false;

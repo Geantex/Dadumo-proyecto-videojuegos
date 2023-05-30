@@ -7,6 +7,7 @@ public class TacticsMove : MonoBehaviour
     // Usamos una variable para determinar si es nuestro turno o no
     public bool turn = false;
     public bool calculateZone = false;
+    private bool alreadyMoving = false;
 
     // Creamos una lista para guardar las casillas seleccionables
     List<Tile> selectableTiles = new List<Tile>();
@@ -170,6 +171,7 @@ public class TacticsMove : MonoBehaviour
     // Función que realiza el movimiento
     // Recive: Nada
     // Devuelve: Nada
+    private bool animacionCorrerActiva = false;
     public void Move()
     {
         // Si existe un camino
@@ -209,11 +211,30 @@ public class TacticsMove : MonoBehaviour
                     // Quitamos la casilla del camino
                     path.Pop();
                 }
+                if (GetComponentInChildren<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("correr") 
+                    || GetComponentInChildren<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("correr"))
+                {
+
+                    Debug.Log("Ya me estoy corriendo!");
+
+                }
+                else
+                {
+                    Debug.Log("Me voy a correr corriendo!");
+                    animacionCorrerActiva = true;
+                    Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
+                }
+
             }
             else
             {
+                Debug.Log("Es hora de idlear!");
+
+                Animaciones.idle(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
                 //RemoveSelectableTiles();
                 //Cuando acabamos de recorrer el camino paramos el movimiento
+                animacionCorrerActiva = false;
+
                 moving = false;
 
                 // Si el personaje es un NPC, terminamos su turno
@@ -226,9 +247,13 @@ public class TacticsMove : MonoBehaviour
         }
         else
         {
+            Debug.Log("Es hora de idlear!");
+            Animaciones.idle(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
             // Borra las casillas seleccionables
             //RemoveSelectableTiles();
             //Cuando acabamos de recorrer el camino paramos el movimiento
+            animacionCorrerActiva = false;
+
             moving = false;
 
             // Si el personaje es un NPC, terminamos su turno
