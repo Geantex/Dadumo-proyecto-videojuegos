@@ -200,7 +200,7 @@ public class Animaciones : MonoBehaviour
         }
     }
 
-    public static void recibirDa�o(Animator pj, string name,GameObject damagedUnit, Animaciones a)
+    public static void recibirDano(Animator pj, string name,GameObject damagedUnit, Animaciones a)
     {
         Instantiate(a.sangrePrefab, damagedUnit.transform.position, Quaternion.identity);
         pj.Play("Barbara recibir da�o");
