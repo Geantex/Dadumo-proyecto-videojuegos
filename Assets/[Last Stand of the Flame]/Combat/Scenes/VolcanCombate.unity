@@ -355,6 +355,36 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1823779572, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
+--- !u!1 &474352130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5129056552698784376, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
+  m_PrefabInstance: {fileID: 474352129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &474352131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474352130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d0c172d09867f4289cf409eac59bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sangrePrefab: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
+--- !u!114 &474352132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474352130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0243695d23f7846813ad26e0df623b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +648,7 @@ MonoBehaviour:
   goldCoins: 0
   charactersParty: []
   allPlayableCharacters: []
+  allPlayableEnemies: []
   NewGame: 0
 --- !u!4 &931799352
 Transform:
@@ -830,6 +861,9 @@ MonoBehaviour:
   aliado3z: 0
   aliado4x: 0
   aliado4z: 0
+  allPlayableEnemies: []
+  myPartyEnemies: []
+  myEnemies: []
   enemigoPrueba: {fileID: 6756909428466296, guid: b6edbb8d4cce50745b88d6718076e06b, type: 3}
   numEnemigos: 0
   enemigo1x: 0

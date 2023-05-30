@@ -53,7 +53,6 @@ public class PlayerAttack : BasicAttack
             Renderer renderer = enemy.GetComponentInChildren<Renderer>();
             renderer.material = enemyBasicColor;
         }
-
         Attack(target, gameObject);
 
         gameObject.GetComponent<PlayerMove>().basicAttack = false;

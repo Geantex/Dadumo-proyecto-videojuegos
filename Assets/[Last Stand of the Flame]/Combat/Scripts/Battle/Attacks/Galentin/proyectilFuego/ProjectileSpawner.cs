@@ -5,7 +5,7 @@ public class ProjectileSpawner : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform target;
 
-    public float speed = 0.5f;
+    public float speed = 30f;
 
     // La funcion de ataque tiene que mandarle un objetivo !
     public void SpawnProjectile(GameObject target)
