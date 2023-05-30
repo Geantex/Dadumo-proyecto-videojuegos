@@ -433,6 +433,8 @@ public class Spawner : MonoBehaviour
             //player.CharacterPrefab = ch.CharacterPrefab;
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().HealthPoints = ch.HealthPoints;
             Debug.Log(ch.HealthPoints);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().MaxHealthPoints = ch.MaxHealthPoints;
+            Debug.Log(ch.MaxHealthPoints);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().ManaPoints = ch.ManaPoints;
             Debug.Log(ch.ManaPoints);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().DamagePoints = ch.DamagePoints;

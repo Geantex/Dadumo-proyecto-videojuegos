@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.UI.CanvasScaler;
 
 public class Animaciones : MonoBehaviour
 {
@@ -109,15 +111,17 @@ public class Animaciones : MonoBehaviour
         }
     }
 
-    public static void ataque(Animator pj, string name, Animaciones a,  GameObject target = null)
+    public static void ataque(Animator pj, string name, Animaciones a,  GameObject target, GameObject myUnit)
     {
         switch (name)
         {
             case "Barbara":
                 pj.Play("Barbara ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
@@ -125,83 +129,142 @@ public class Animaciones : MonoBehaviour
                 // Esperamos medio segundo, despues hacemos aparecer la bola de fuego
                 //a.StartCoroutine(a.EsperarMillonacoSegundo());
                 bastonGalentin.GetComponentInChildren<ProjectileSpawner>().SpawnProjectile(target);
+                a.voyASangrar(myUnit, target, pj);
 
                 break;
             case "Jose Maria":
                 pj.Play("JM ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Romero MacBeth":
                 pj.Play("Romero ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
 
             case "Brujo":
                 pj.Play("Brujo ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Ladron":
                 pj.Play("Bandido ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Rata":
                 pj.Play("Rata ataque2");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Troll":
                 pj.Play("Troll ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
             case "Señor de la ceniza":
                 pj.Play("Boss ataque");
+                a.voyASangrar(myUnit, target, pj);
                 break;
         }
     }
     
-    public static void ataqueEspecial(Animator pj, string name,Animaciones a, GameObject objetivo, GameObject unidadEspecial)
+    public static void ataqueEspecial(Animator pj, string name,Animaciones a, GameObject objetivo, GameObject unidadEspecial, bool attack, Vector3 heading)
     {
         switch (name)
         {
             case "Barbara":
                 pj.Play("Barbara ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque especial");
                 Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head");
-                Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.identity);
+                Instantiate(a.fuegito, heading, Quaternion.identity);
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Galentin":
+                GameObject bastonGalentin = GetBastonGalentin();
                 pj.Play("Galentin ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Jose Maria":
                 pj.Play("JM ataque especial");
                 a.curarParticula(a, objetivo);
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Romero MacBeth":
                 pj.Play("Romero ataque especial");
                 a.curarParticula(a, objetivo);
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
 
             case "Brujo":
                 pj.Play("Brujo ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Ladron":
                 pj.Play("Bandido ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Rata":
                 pj.Play("Rata ataque especial2");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Troll":
                 pj.Play("Troll ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
             case "Señor de la ceniza":
                 pj.Play("Boss ataque especial");
+                if (attack)
+                {
+                    a.voyASangrar(unidadEspecial, objetivo, pj);
+                }
                 break;
         }
     }
@@ -209,7 +272,6 @@ public class Animaciones : MonoBehaviour
     public static void recibirDano(Animator pj, string name,GameObject damagedUnit, Animaciones a)
     {
         Instantiate(a.sangrePrefab, damagedUnit.transform.position, Quaternion.identity);
-        pj.Play("Barbara recibir da�o");
 
         switch (name)
         {
@@ -311,5 +373,39 @@ public class Animaciones : MonoBehaviour
     public void curarParticula(Animaciones ani, GameObject objetivoCurar)
     {
         Instantiate(ani.curacionPrefab, objetivoCurar.transform.position, Quaternion.identity);
+    }
+
+    void voyASangrar(GameObject ally, GameObject enemy, Animator a)
+    {
+        //Animaciones.ataqueEspecial(ally.GetComponentInChildren<Animator>(), ally.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), enemy, ally);
+        float animationLength = 0;
+
+        // Asegúrate de tener una referencia válida al componente Animator
+        if (a != null)
+        {
+            // Obtén el estado actual de la animación
+            AnimatorStateInfo stateInfo = a.GetCurrentAnimatorStateInfo(0);
+
+            // Obtén la duración del estado actual
+            animationLength = stateInfo.length;
+
+            // Haz algo con la duración de la animación
+            Debug.Log("Duración de la animación: " + animationLength + " segundos");
+
+            StartCoroutine(RecibirSangrar(animationLength, enemy));
+        }
+        else
+        {
+            Debug.Log("No se encontró ningún componente Animator en el objeto.");
+        }
+    }
+
+
+    IEnumerator RecibirSangrar(float t, GameObject enemy)
+    {
+        Debug.Log(t);
+        yield return new WaitForSeconds(t-1);
+        // Aquí es donde colocas la acción que quieres realizar después de esperar la duración de la animación
+        Animaciones.recibirDano(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name, enemy, FindObjectOfType<Animaciones>());
     }
 }

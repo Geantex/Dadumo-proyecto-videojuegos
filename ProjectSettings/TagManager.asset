@@ -25,6 +25,7 @@ TagManager:
   - mercenarioTienda
   - bastonGalentin
   - PersonajeHoguera
+  - guitarraRomero
   layers:
   - Default
   - TransparentFX
