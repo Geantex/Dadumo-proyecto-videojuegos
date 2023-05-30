@@ -94,12 +94,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Romero MacBeth
-  maxLife: 0
-  life: 0
+  maxLife: 80
+  life: 80
   maxMana: 0
-  mana: 0
+  mana: 100
   speed: 0
-  party: 3
+  party: 1
   myteam: 1
   imagen: {fileID: 0}
   circulo: {fileID: 1654322168963738566}
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   range: 1
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &592460863962224140
 MonoBehaviour:
@@ -132,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoD: 1
-  AllSpecialAttacks: []
+  AllSpecialAttacks:
+  - {fileID: 11400000, guid: 0ba1f7c2cc500c64da56be86e678e79b, type: 2}
 --- !u!114 &3638457038710011606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,12 +152,13 @@ MonoBehaviour:
   characterImage: {fileID: 3792388835238295109, guid: a325707a3e6dcac4ba9e35ed7e632bf8, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 100
-  maxHealthPoints: 0
+  healthPoints: 80
+  maxHealthPoints: 80
   manaPoints: 100
   damagePoints: 25
   rangeTiles: 1
-  specialAttacks: []
+  specialAttacks:
+  - {fileID: 11400000, guid: 0ba1f7c2cc500c64da56be86e678e79b, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
 --- !u!1001 &1243592312697949790
@@ -408,43 +411,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.93657124
+      value: 0.93086994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9365709
+      value: 0.728235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.9365711
+      value: 0.97532994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.108
+      value: -0.16759384
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.462
+      value: -0.4909327
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.239
+      value: 0.17078292
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6384249
+      value: -0.63842493
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5932511
+      value: 0.59325117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.37321106
+      value: -0.37321118
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.31808862
+      value: 0.31808835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -463,8 +466,16 @@ PrefabInstance:
       value: guitarra_Romero
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ad58042e804aa3d49b250390aef13974, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad58042e804aa3d49b250390aef13974, type: 3}
+      propertyPath: m_TagString
+      value: guitarraRomero
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad58042e804aa3d49b250390aef13974, type: 3}

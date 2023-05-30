@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Kazuro
-  maxLife: 0
-  life: 0
+  maxLife: 75
+  life: 75
   maxMana: 0
-  mana: 0
+  mana: 100
   speed: 0
   party: 1
   myteam: 1
@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5003b7e5603a14797dbda414f99463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 25
   range: 1
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &845496164787318266
 MonoBehaviour:
@@ -132,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoD: 1
-  AllSpecialAttacks: []
+  AllSpecialAttacks:
+  - {fileID: 11400000, guid: 3184f55cda8ce4346a6b46fc24f2c458, type: 2}
 --- !u!114 &3517457483022437554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,12 +152,13 @@ MonoBehaviour:
   characterImage: {fileID: 3792388835238295109, guid: 40f908276ded42446b51ef0e6a942e7e, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 50
-  maxHealthPoints: 0
+  healthPoints: 75
+  maxHealthPoints: 75
   manaPoints: 100
-  damagePoints: 50
+  damagePoints: 25
   rangeTiles: 1
-  specialAttacks: []
+  specialAttacks:
+  - {fileID: 11400000, guid: 3184f55cda8ce4346a6b46fc24f2c458, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
 --- !u!1001 &5395981611744057073
@@ -388,6 +391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: arma_kazuro_izquierda
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
 --- !u!1001 &6840251476504404365
@@ -511,6 +518,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
       propertyPath: m_Name
       value: arma_kazuro_derecha
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}

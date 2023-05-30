@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Kaka
-  maxLife: 0
-  life: 0
+  maxLife: 60
+  life: 60
   maxMana: 0
-  mana: 0
+  mana: 100
   speed: 0
   party: 2
   myteam: 1
@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5003b7e5603a14797dbda414f99463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 30
   range: 1
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &8695671047036050726
 MonoBehaviour:
@@ -132,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoD: 1
-  AllSpecialAttacks: []
+  AllSpecialAttacks:
+  - {fileID: 11400000, guid: 2634462329f23604885983c745a45a9f, type: 2}
 --- !u!114 &8491471094195468907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,12 +152,13 @@ MonoBehaviour:
   characterImage: {fileID: 3792388835238295109, guid: 55d6d6ac735fdd3468253370eaad8f16, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 50
-  maxHealthPoints: 0
+  healthPoints: 60
+  maxHealthPoints: 60
   manaPoints: 100
-  damagePoints: 50
+  damagePoints: 30
   rangeTiles: 1
-  specialAttacks: []
+  specialAttacks:
+  - {fileID: 11400000, guid: 2634462329f23604885983c745a45a9f, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
 --- !u!1001 &898263668276084497

@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Barbara
-  maxLife: 0
-  life: 0
+  maxLife: 100
+  life: 90
   maxMana: 0
-  mana: 0
+  mana: 100
   speed: 0
   party: 1
   myteam: 1
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   range: 1
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &8513852502472513235
 MonoBehaviour:
@@ -132,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoD: 1
-  AllSpecialAttacks: []
+  AllSpecialAttacks:
+  - {fileID: 11400000, guid: 51b7cf47643dc10428be92623842ae3a, type: 2}
 --- !u!114 &8647735720920610839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,12 +152,13 @@ MonoBehaviour:
   characterImage: {fileID: 3792388835238295109, guid: 1e3a4fdc7b1c25145b145ab4742561c2, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 100
-  maxHealthPoints: 0
+  healthPoints: 90
+  maxHealthPoints: 100
   manaPoints: 100
   damagePoints: 25
   rangeTiles: 1
-  specialAttacks: []
+  specialAttacks:
+  - {fileID: 11400000, guid: 51b7cf47643dc10428be92623842ae3a, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
 --- !u!1001 &2432976839259317260
@@ -316,6 +319,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 67dafd962f1a70a43a42315bd46f3b82, type: 3}
       propertyPath: m_Name
       value: hacha_Barbara
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67dafd962f1a70a43a42315bd46f3b82, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67dafd962f1a70a43a42315bd46f3b82, type: 3}

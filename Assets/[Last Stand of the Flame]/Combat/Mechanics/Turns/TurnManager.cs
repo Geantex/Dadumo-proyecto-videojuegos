@@ -37,7 +37,7 @@ public class TurnManager : MonoBehaviour
 
         foreach (TacticsMove move in units)
         {
-            FindObjectOfType<BattleHUD>().SetHUD(move.GetComponent<Unit>().party, move.GetComponent<Unit>().myteam, move.GetComponent<Unit>().name, move.GetComponent<Unit>().Life, move.GetComponent<Unit>().Life, move.GetComponent<Unit>().Mana, move.GetComponent<Unit>().Mana);
+            FindObjectOfType<BattleHUD>().SetHUD(move.GetComponent<Unit>().party, move.GetComponent<Unit>().myteam, move.GetComponent<Unit>().name, move.GetComponent<Unit>().MaxLife, move.GetComponent<Unit>().Life, move.GetComponent<Unit>().Mana, move.GetComponent<Unit>().Mana);
         }
 
         // Sort the units by speed
@@ -126,7 +126,7 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EsperarUnSegundo()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(2.5f);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         StartTurn();
     }
