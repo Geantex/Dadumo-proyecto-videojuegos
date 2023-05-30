@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lanzallamas
   m_EditorClassIdentifier: 
   manaCost: 40
-  damage: 30
+  damage: 40
   damageTimes: 1
   range: 4
   rangeType: Normal

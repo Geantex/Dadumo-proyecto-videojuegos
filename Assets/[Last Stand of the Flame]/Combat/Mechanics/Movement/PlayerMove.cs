@@ -14,12 +14,8 @@ public class PlayerMove : TacticsMove
     public Button buttonFinishTurn;
 
     List<GameObject> targets = new List<GameObject>();
-    GameObject actualTarget = null;
-    GameObject lastTarget = null;
 
     public BattleHUD battleHUD;
-
-    public Material enemyColor;
 
     public bool basicAttack = false;
     public bool specialAttack = false;
@@ -136,9 +132,6 @@ public class PlayerMove : TacticsMove
                             gameObject.GetComponent<PlayerAttack>().AttackOfPlayer(target);
                         }
                     }
-
-                    Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
-                    renderer.material = enemyColor;
                 }
             }
         }
@@ -182,9 +175,6 @@ public class PlayerMove : TacticsMove
                             gameObject.GetComponent<PlayerSpecialAttack>().AttackOfPlayer(0, target, targets);
                         }
                     }
-
-                    Renderer renderer = sobreUnidad.collider.gameObject.GetComponentInChildren<Renderer>();
-                    renderer.material = enemyColor;
                 }
             }
         }

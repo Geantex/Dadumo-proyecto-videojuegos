@@ -7,14 +7,10 @@ public class PlayerSpecialAttack : MonoBehaviour
 {
     public bool AoD = true;
     public List<SpecialAttack> AllSpecialAttacks = new List<SpecialAttack>();
-    public Material enemySelectedColor;
-    public Material enemyBasicColor;
-
-    //public Material enemyColor;
     // Start is called before the first frame update
     void Start()
     {
-        //AddSpecialAttack(new SpecialAttack(20, 1, 8, "Area", "Paralyze", 80, "Attack", 20));
+        
     }
 
     // Update is called once per frame
@@ -38,8 +34,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                     if (distance <= AllSpecialAttacks[attackIndex].Range)
                     {
                         targets.Add(ally);
-                        Renderer renderer = ally.GetComponentInChildren<Renderer>();
-                        renderer.material = enemySelectedColor;
+                        ally.GetComponent<Unit>().circulo.SetActive(true);
                     }
                 }
                 break;
@@ -52,8 +47,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                     if (distance <= AllSpecialAttacks[attackIndex].Range)
                     {
                         targets.Add(enemy);
-                        Renderer renderer = enemy.GetComponentInChildren<Renderer>();
-                        renderer.material = enemySelectedColor;
+                        enemy.GetComponent<Unit>().circulo.SetActive(true);
                     }
                 }
                 break;
@@ -67,8 +61,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                     if (distance <= AllSpecialAttacks[attackIndex].Range)
                     {
                         targets.Add(ally);
-                        Renderer renderer = ally.GetComponentInChildren<Renderer>();
-                        renderer.material = enemySelectedColor;
+                        ally.GetComponent<Unit>().circulo.SetActive(true);
                     }
                 }
 
@@ -80,8 +73,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                     if (distance <= AllSpecialAttacks[attackIndex].Range)
                     {
                         targets.Add(enemy);
-                        Renderer renderer = enemy.GetComponentInChildren<Renderer>();
-                        renderer.material = enemySelectedColor;
+                        enemy.GetComponent<Unit>().circulo.SetActive(true);
                     }
                 }
                 break;
@@ -95,8 +87,14 @@ public class PlayerSpecialAttack : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            Renderer renderer = enemy.GetComponentInChildren<Renderer>();
-            renderer.material = enemyBasicColor;
+            enemy.GetComponent<Unit>().circulo.SetActive(false);
+        }
+
+        GameObject[] allies = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject ally in allies)
+        {
+            ally.GetComponent<Unit>().circulo.SetActive(false);
         }
 
         switch (AllSpecialAttacks[attackIndex].RangeType)
@@ -108,11 +106,11 @@ public class PlayerSpecialAttack : MonoBehaviour
                 }
                 break;
             case "Area":
-                foreach (GameObject oneTaregt in allTargets)
+                foreach (GameObject oneTarget in allTargets)
                 {
                     for (int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)
                     {
-                        AllSpecialAttacks[attackIndex].Attack(target, gameObject);
+                        AllSpecialAttacks[attackIndex].Attack(oneTarget, gameObject);
                     }
                 }
                 break;
@@ -124,6 +122,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 break;
         }
         gameObject.GetComponent<PlayerMove>().basicAttack = false;
+        gameObject.GetComponent<PlayerMove>().specialAttack = false;
 
         TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
     }

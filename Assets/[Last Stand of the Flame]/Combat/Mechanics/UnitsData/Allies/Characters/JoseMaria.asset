@@ -21,7 +21,7 @@ MonoBehaviour:
   maxHealthPoints: 110
   manaPoints: 100
   damagePoints: 15
-  rangeTiles: 4
+  rangeTiles: 2
   speed: 0
   specialAttacks:
   - {fileID: 11400000, guid: 3b5c4a6ea9abd5b49b3e3c4f86f7679e, type: 2}
