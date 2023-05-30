@@ -9,10 +9,7 @@ public class LoseState : FSMState
 {
     protected override void EnterState()
     {
-        /*if (GameController.Instancia.goldCoins >= 50f)
-        {
-            (machine as GameController).goldCoins = GameController.Instancia.goldCoins - 50f;
-        }*/
+        (machine as GameController).replacePartyHealthAndManaPoints();
         (machine as GameController).modifyGoldCoins(-50);
         StartCoroutine(EndState());
     }
