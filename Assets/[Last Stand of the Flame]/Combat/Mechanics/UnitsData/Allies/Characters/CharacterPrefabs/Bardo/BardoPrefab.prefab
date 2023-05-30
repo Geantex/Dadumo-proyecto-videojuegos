@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   range: 1
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &592460863962224140
 MonoBehaviour:
@@ -408,43 +409,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.93657124
+      value: 0.93086994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9365709
+      value: 0.728235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.9365711
+      value: 0.97532994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.108
+      value: -0.16759384
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.462
+      value: -0.4909327
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.239
+      value: 0.17078292
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6384249
+      value: -0.63842493
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5932511
+      value: 0.59325117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.37321106
+      value: -0.37321118
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.31808862
+      value: 0.31808835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -465,6 +466,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad58042e804aa3d49b250390aef13974, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad58042e804aa3d49b250390aef13974, type: 3}
+      propertyPath: m_TagString
+      value: guitarraRomero
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad58042e804aa3d49b250390aef13974, type: 3}
