@@ -26,8 +26,6 @@ public class PlayerMove : TacticsMove
         battleHUD = FindObjectOfType<BattleHUD>();
         //Prueba Special Attack
         battleHUD.buttonSpecialAttack1.onClick.AddListener(SpecialAttackButton);
-        //buttonh3.onClick.AddListener();
-        //Prueba Special Attack
 
         battleHUD.buttonBasicAttack.onClick.AddListener(AttackButton);
         battleHUD.buttonFinishTurn.onClick.AddListener(endMyTurn);
@@ -65,6 +63,7 @@ public class PlayerMove : TacticsMove
             }
             if (!calculateZone)
             {
+                GetCurrentTile();
                 FindSelectableTiles();
                 calculateZone = true;
             }
@@ -76,10 +75,7 @@ public class PlayerMove : TacticsMove
         }
         else
         {
-            //StartCoroutine(RealizarAnimacion());
             Move();
-            Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
-            //Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
         }
 	}
 
@@ -99,7 +95,6 @@ public class PlayerMove : TacticsMove
                     if (t.selectable)
                     {
                         MoveToTile(t);
-                        //preEsperarAnimacion();
                     }
                 }
             }
@@ -179,6 +174,19 @@ public class PlayerMove : TacticsMove
             return;
         }
 
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<Unit>().circulo.SetActive(false);
+        }
+
+        GameObject[] allies = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject ally in allies)
+        {
+            ally.GetComponent<Unit>().circulo.SetActive(false);
+        }
         basicAttack = false;
         specialAttack = false;
 

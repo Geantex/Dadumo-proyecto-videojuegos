@@ -66,9 +66,9 @@ public class SpecialAttack : ScriptableObject
         float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
         if (distance <= range)
         {
-            if(rangeType == "Curacion")
+            if(rangeType == "Curacion")
             {
-                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), enemy,allie);
+                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), enemy,allie, false, heading);
                 enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life + damage;
 
                 if(enemy.GetComponent<Unit>().Life > enemy.GetComponent<Unit>().MaxLife)
@@ -79,9 +79,8 @@ public class SpecialAttack : ScriptableObject
                 FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
             }
             else
-            {
-                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(),enemy, allie);
-                Animaciones.recibirDano(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name, enemy, FindObjectOfType<Animaciones>());
+            {
+                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), enemy, allie, true, heading);
                 enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
                 FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
             }
