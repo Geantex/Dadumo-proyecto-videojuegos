@@ -104,6 +104,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 {
                     AllSpecialAttacks[attackIndex].Attack(target, gameObject);
                 }
+                gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
                 break;
             case "Area":
                 foreach (GameObject oneTarget in allTargets)
@@ -113,12 +114,14 @@ public class PlayerSpecialAttack : MonoBehaviour
                         AllSpecialAttacks[attackIndex].Attack(oneTarget, gameObject);
                     }
                 }
+                gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
                 break;
             case "Curacion":
                 for (int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)
                 {
                     AllSpecialAttacks[attackIndex].Attack(target, gameObject);
                 }
+                gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
                 break;
         }
         gameObject.GetComponent<PlayerMove>().basicAttack = false;
@@ -136,5 +139,14 @@ public class PlayerSpecialAttack : MonoBehaviour
                 AllSpecialAttacks.Add(SpecialAttack);
             }
         }
+    }
+
+    public bool canIDo(int attackIndex)
+    {
+        if (AllSpecialAttacks[attackIndex].ManaCost <= gameObject.GetComponent<Unit>().Mana)
+        {
+            return true;
+        }
+        return false;
     }
 }

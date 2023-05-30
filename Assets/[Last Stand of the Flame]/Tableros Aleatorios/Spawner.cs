@@ -349,14 +349,14 @@ public class Spawner : MonoBehaviour
             case 1:
                 obstaculo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 obstaculo1z = (float)((double)Random.Range(5, 8) - 2.5);
-                Instantiate(obstaculoBase, new Vector3(obstaculo1x, 1.2f, obstaculo1z), Quaternion.identity);
+                Instantiate(obstaculoBase, new Vector3(obstaculo1x, 0.5f, obstaculo1z), Quaternion.identity);
 
                 break;
 
             case 2:
                 obstaculo1x = (float)((double)Random.Range(-4, 15) - 4.5);
                 obstaculo1z = (float)((double)Random.Range(5, 8) - 2.5);
-                Instantiate(obstaculoBase, new Vector3(obstaculo1x, 1.2f, obstaculo1z), Quaternion.identity);
+                Instantiate(obstaculoBase, new Vector3(obstaculo1x, 0.5f, obstaculo1z), Quaternion.identity);
 
                 obstaculo2x = (float)((double)Random.Range(-4, 15) - 4.5);
                 obstaculo2z = (float)((double)Random.Range(5, 8) - 2.5);
@@ -367,7 +367,7 @@ public class Spawner : MonoBehaviour
                     obstaculo2z = (float)((double)Random.Range(5, 8) - 2.5);
                 }
 
-                Instantiate(obstaculoBase, new Vector3(obstaculo2x, 1.2f, obstaculo2z), Quaternion.identity);
+                Instantiate(obstaculoBase, new Vector3(obstaculo2x, 0.5f, obstaculo2z), Quaternion.identity);
 
                 break;
         }

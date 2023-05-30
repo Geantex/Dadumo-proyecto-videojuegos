@@ -44,6 +44,15 @@ public class PlayerMove : TacticsMove
             return;
         }
 
+        if (gameObject.GetComponent<PlayerSpecialAttack>().canIDo(0))
+        {
+            battleHUD.buttonSpecialAttack1.interactable = true;
+        }
+        else
+        {
+            battleHUD.buttonSpecialAttack1.interactable = false;
+        }
+
         if (!moving)
         {
             if (basicAttack && targets.Count > 0)
@@ -103,16 +112,6 @@ public class PlayerMove : TacticsMove
 
         targets = gameObject.GetComponent<PlayerAttack>().AttackMouse();
         basicAttack = true;
-
-        /*if (actualTarget != null)
-        {
-            gameObject.GetComponent<PlayerAttack>().AoD = gameObject.GetComponent<PlayerAttack>().Attack(actualTarget, gameObject);
-            Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-            renderer.material = enemyColor;
-            lastTarget = null;
-            actualTarget = null;
-            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
-        }*/
     }
 
     void DoBasicAttack()
@@ -144,18 +143,8 @@ public class PlayerMove : TacticsMove
             return;
         }
 
-        targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackMouse(0);
+       targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackMouse(0);
         specialAttack = true;
-
-        /*if (actualTarget != null)
-        {
-            gameObject.GetComponent<PlayerSpecialAttack>().AoD = gameObject.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks[0].Attack(actualTarget, gameObject);
-            Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-            renderer.material = enemyColor;
-            lastTarget = null;
-            actualTarget = null;
-            TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
-        }*/
     }
 
     void DoSpecialAttack()
@@ -182,17 +171,10 @@ public class PlayerMove : TacticsMove
 
     void endMyTurn()
     {
-        if (!turn && !moving)
+        if (!turn || moving)
         {
             return;
         }
-        /*if(actualTarget != null)
-        {
-            Renderer renderer = lastTarget.GetComponentInChildren<Renderer>();
-            renderer.material = enemyColor;
-        }
-        lastTarget = null;
-        actualTarget = null;*/
 
         basicAttack = false;
         specialAttack = false;

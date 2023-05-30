@@ -59,15 +59,13 @@ public class SpecialAttack : ScriptableObject
             else
             {
                 Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name);
-                Animaciones.recibirDa�o(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name);
+                Animaciones.recibirDano(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name, enemy, FindObjectOfType<Animaciones>());
                 enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
                 FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
             }
            
             //applyBoost(enemy);
-            //applyState(enemy);
-
-            allie.GetComponent<Unit>().Mana = allie.GetComponent<Unit>().Mana - manaCost;
+            //applyState(enemy);
             FindObjectOfType<BattleHUD>().SetMana(allie.GetComponent<Unit>().party, allie.GetComponent<Unit>().myteam, allie.GetComponent<Unit>().Mana);
 
             return true;
@@ -107,6 +105,12 @@ public class SpecialAttack : ScriptableObject
                 enemy.GetComponent<Unit>().StateEffect = stateEffect;
             }
         }
+    }
+
+    public int ManaCost
+    {
+        get { return manaCost; }
+        set { manaCost = value; }
     }
 
     public int Damage
