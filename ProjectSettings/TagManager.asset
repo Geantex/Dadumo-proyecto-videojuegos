@@ -23,6 +23,7 @@ TagManager:
   - itemTienda4
   - canvas
   - mercenarioTienda
+  - bastonGalentin
   layers:
   - Default
   - TransparentFX
