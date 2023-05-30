@@ -16,7 +16,7 @@ MonoBehaviour:
   encounterDescription: "Cruz\xE1is un r\xEDo y os encontrais con un vendedor de
     rocas que asegura que vende rocas con poderes m\xE1gicos. Este os ense\xF1a su
     cat\xE1logo de rocas, todas parecen iguales."
-  encounterImage: {fileID: 21300000, guid: d77109e8ea0491a428ea46bc9bf1e0ee, type: 3}
+  encounterImage: {fileID: 21300000, guid: 8682c2397d0e23049ab2edf145c29fa4, type: 3}
   encounterButton1Text: "Comprar la roca n\xBA1 por 5 de oro"
   encounterButton2Text: "Comprar la roca n\xBA2 por 5 de oro"
   encounterButton3Text: "Comprar la roca n\xBA3 por 5 de oro"

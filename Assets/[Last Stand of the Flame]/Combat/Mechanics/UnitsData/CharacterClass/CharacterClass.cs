@@ -12,6 +12,7 @@ public class CharacterClass : MonoBehaviour
     [SerializeField] private Material characterMaterial;//Material del personaje (en caso de ser necesario y no estar en el sprite para futuros cambios visuales)
     [SerializeField] private GameObject characterPrefab;//Prefab con los scripts necesarios para el control del personaje
     [SerializeField] private float healthPoints;//Puntos de vida del personaje
+    [SerializeField] private float maxHealthPoints;//Puntos máximos de vida del personaje
     [SerializeField] private float manaPoints;//Puntos de maná del personaje
     [SerializeField] private float damagePoints;//Puntos de daño del personaje
     [SerializeField] private float rangeTiles;//Rango del personaje
@@ -76,6 +77,17 @@ public class CharacterClass : MonoBehaviour
             characterPrefab = value;
         }
     }
+    public float MaxHealthPoints
+    {
+        get
+        {
+            return maxHealthPoints;
+        }
+        set
+        {
+            maxHealthPoints = value;
+        }
+    }
     public float HealthPoints
     {
         get
@@ -84,14 +96,14 @@ public class CharacterClass : MonoBehaviour
         }
         set
         {
-            if (value < 0)
+            /*if (value < 0)
             {
                 value = 0;
             }
-            else if (value > 300)
+            else if (value > MaxHealthPoints)
             {
-                value = 300;
-            }
+                value = MaxHealthPoints;
+            }*/
             healthPoints = value;
         }
     }

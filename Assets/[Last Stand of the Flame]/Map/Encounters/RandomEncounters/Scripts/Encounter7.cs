@@ -21,7 +21,8 @@ public class Encounter7 : MonoBehaviour
     public void functionButton1()
     {
         GameController.Instancia.modifyGoldCoins(-5f);
-        EncounterManager.ShowResults(" Decidís darle 5 monedas y el mendigo de da zaza");
+        GameController.Instancia.modifyPartyHealthPoints(5f);
+        EncounterManager.ShowResults(" Decidís darle 5 monedas y el mendigo te lo agradece con algunas vendas");
     }
     public void functionButton2()
     {

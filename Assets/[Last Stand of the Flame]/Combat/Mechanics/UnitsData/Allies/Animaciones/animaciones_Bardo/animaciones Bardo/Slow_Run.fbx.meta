@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17567dba1c113144e8f2de00f44a46a0
+guid: 8e467e9ef3359044293daa31fc68d719
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: JM correr
+      name: Romero correr
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 41
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

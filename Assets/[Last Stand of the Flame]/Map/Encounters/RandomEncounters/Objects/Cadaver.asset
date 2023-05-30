@@ -15,7 +15,7 @@ MonoBehaviour:
   encounterName: Cadaver
   encounterDescription: "Encountr\xE1is un cadaver de un aventurero que fracas\xF3
     en su camino hacia el se\xF1or de la ceniza"
-  encounterImage: {fileID: 21300000, guid: 21c4ad358f6ebbe4d88e91fc075bebc8, type: 3}
+  encounterImage: {fileID: 21300000, guid: ccfb213d314e83e4da117b0239b0c730, type: 3}
   encounterButton1Text: "Rebusc\xE1is en el cadaver"
   encounterButton2Text: Irse
   encounterButton3Text: 
