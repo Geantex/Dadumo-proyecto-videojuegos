@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b4ba01b91cb71419e513d1ca9939cc, type: 3}
   m_Name: Nitoryu
   m_EditorClassIdentifier: 
-  manaCost: 30
+  manaCost: 25
   damage: 20
   damageTimes: 2
   range: 1

@@ -36,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 8495989137569417997}
   - {fileID: 9083329001351830691}
+  - {fileID: 8196054675361391183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -94,9 +95,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Deen Ecan
+  maxLife: 0
+  life: 0
+  maxMana: 0
+  mana: 0
+  speed: 0
   party: 2
   myteam: 1
   imagen: {fileID: 0}
+  circulo: {fileID: 4027939347754733658}
   combatStart: 0
 --- !u!114 &6786119973686744439
 MonoBehaviour:
@@ -149,12 +156,80 @@ MonoBehaviour:
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
   healthPoints: 100
+  maxHealthPoints: 0
   manaPoints: 100
   damagePoints: 25
   rangeTiles: 1
   specialAttacks: []
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
+--- !u!1001 &1572642625385542982
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 419669529005918349}
+    m_Modifications:
+    - target: {fileID: 2464941638905193756, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_Name
+      value: circulo_gracioso
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+--- !u!1 &4027939347754733658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2464941638905193756, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+  m_PrefabInstance: {fileID: 1572642625385542982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8196054675361391183 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7236469243655902985, guid: 5b414c86b1bf9fc4098e5d45e3ce2340, type: 3}
+  m_PrefabInstance: {fileID: 1572642625385542982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6956983795078089572
 PrefabInstance:
   m_ObjectHideFlags: 0
