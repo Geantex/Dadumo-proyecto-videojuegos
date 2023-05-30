@@ -6,6 +6,8 @@ using UnityEngine;
 public class Animaciones : MonoBehaviour
 {
     public GameObject sangrePrefab;
+    public GameObject curacionPrefab;
+    public GameObject fuegito;
     
     // Start is called before the first frame update
     void Start()
@@ -57,7 +59,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll idle");
                 break;
-            case "Se�or de la ceniza":
+            case "Señor de la ceniza":
                 pj.Play("Boss idle");
                 break;
         }
@@ -101,7 +103,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll correr");
                 break;
-            case "Se�or de la ceniza":
+            case "Señor de la ceniza":
                 pj.Play("Boss correr");
                 break;
         }
@@ -150,13 +152,13 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll ataque");
                 break;
-            case "Se�or de la ceniza":
+            case "Señor de la ceniza":
                 pj.Play("Boss ataque");
                 break;
         }
     }
     
-    public static void ataqueEspecial(Animator pj, string name)
+    public static void ataqueEspecial(Animator pj, string name,Animaciones a, GameObject objetivo, GameObject unidadEspecial)
     {
         switch (name)
         {
@@ -165,12 +167,15 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque especial");
+                Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head");
+                Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.identity);
                 break;
             case "Galentin":
                 pj.Play("Galentin ataque especial");
                 break;
             case "Jose Maria":
                 pj.Play("JM ataque especial");
+                a.curarParticula(a, objetivo);
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque especial");
@@ -180,6 +185,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Romero MacBeth":
                 pj.Play("Romero ataque especial");
+                a.curarParticula(a, objetivo);
                 break;
 
             case "Brujo":
@@ -194,7 +200,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll ataque especial");
                 break;
-            case "Se�or de la ceniza":
+            case "Señor de la ceniza":
                 pj.Play("Boss ataque especial");
                 break;
         }
@@ -208,41 +214,41 @@ public class Animaciones : MonoBehaviour
         switch (name)
         {
             case "Barbara":
-                pj.Play("Barbara recibir da�o");
+                pj.Play("Barbara recibir daño");
                 break;
             case "Deen Ecan":
-                pj.Play("Deen Ecan recibir da�o");
+                pj.Play("Deen Ecan recibir daño");
                 break;
             case "Galentin":
-                pj.Play("Galentin recibir da�o");
+                pj.Play("Galentin recibir daño");
                 break;
             case "Jose Maria":
-                pj.Play("JM recibir da�o");
+                pj.Play("JM recibir daño");
                 break;
             case "Kaka":
-                pj.Play("Kaka recibir da�o");
+                pj.Play("Kaka recibir daño");
                 break;
             case "Kazuro":
-                pj.Play("Kazuro recibir da�o");
+                pj.Play("Kazuro recibir daño");
                 break;
             case "Romero MacBeth":
-                pj.Play("Romero recibir da�o");
+                pj.Play("Romero recibir daño");
                 break;
 
             case "Brujo":
-                pj.Play("Brujo recibir da�o");
+                pj.Play("Brujo recibir daño");
                 break;
             case "Ladron":
-                pj.Play("Bandido recibir da�o");
+                pj.Play("Bandido recibir daño");
                 break;
             case "Rata":
-                pj.Play("Rata recibir da�o2");
+                pj.Play("Rata recibir daño2");
                 break;
             case "Troll":
-                pj.Play("Troll recibir da�o");
+                pj.Play("Troll recibir daño");
                 break;
-            case "Se�or de la ceniza":
-                pj.Play("Boss recibir da�o");
+            case "Señor de la ceniza":
+                pj.Play("Boss recibir daño");
                 break;
         }
     }
@@ -285,7 +291,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll morir");
                 break;
-            case "Se�or de la ceniza":
+            case "Señor de la ceniza":
                 pj.Play("Boss morir");
                 break;
         }
@@ -301,5 +307,9 @@ public class Animaciones : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         //Aqu� es donde colocas la acci�n que quieres realizar despu�s de cinco segundos
+    }
+    public void curarParticula(Animaciones ani, GameObject objetivoCurar)
+    {
+        Instantiate(ani.curacionPrefab, objetivoCurar.transform.position, Quaternion.identity);
     }
 }
