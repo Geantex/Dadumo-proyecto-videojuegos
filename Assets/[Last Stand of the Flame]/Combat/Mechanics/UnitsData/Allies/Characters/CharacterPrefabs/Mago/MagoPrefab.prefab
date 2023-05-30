@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bastonGalentin
       objectReference: {fileID: 0}
+    - target: {fileID: 8929481171164772911, guid: fd4e4264ca0b3634eb93c58cc882d4a0, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd4e4264ca0b3634eb93c58cc882d4a0, type: 3}
 --- !u!1001 &5933223535670650599
