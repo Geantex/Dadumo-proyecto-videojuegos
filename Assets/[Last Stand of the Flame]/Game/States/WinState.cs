@@ -8,7 +8,7 @@ public class WinState : FSMState
 {
     protected override void EnterState()
     {
-
+        (machine as GameController).replacePartyHealthAndManaPoints();
         (machine as GameController).modifyGoldCoins(100f);
         StartCoroutine(EndState());
     }
