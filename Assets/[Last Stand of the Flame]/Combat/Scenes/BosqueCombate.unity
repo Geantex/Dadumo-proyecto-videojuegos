@@ -355,7 +355,7 @@ MonoBehaviour:
   enemigo4z: 0
   enemigo5x: 0
   enemigo5z: 0
-  obstaculoBase: {fileID: 919132149155446097, guid: d92e19f97d38965478df5a54b82d1af6, type: 3}
+  obstaculoBase: {fileID: 4318347385112883726, guid: f542c2cf9489aa147a2f014d0d83f1fe, type: 3}
   numObstaculos: 0
   obstaculo1x: 0
   obstaculo1z: 0
