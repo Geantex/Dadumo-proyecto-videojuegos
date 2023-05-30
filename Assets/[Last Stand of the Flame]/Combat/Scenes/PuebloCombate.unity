@@ -250,6 +250,36 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1823779572, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
+--- !u!1 &470428113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5129056552698784376, guid: 0540eb022538b69498f6c3aea2694ebe, type: 3}
+  m_PrefabInstance: {fileID: 470428112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &470428114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470428113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0243695d23f7846813ad26e0df623b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &470428115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470428113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d0c172d09867f4289cf409eac59bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sangrePrefab: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
 --- !u!1001 &508780061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1406,7 +1436,7 @@ MonoBehaviour:
   allPlayableEnemies: []
   myPartyEnemies: []
   myEnemies: []
-  enemigoPrueba: {fileID: 919132149155446097, guid: d92e19f97d38965478df5a54b82d1af6, type: 3}
+  enemigoPrueba: {fileID: 6756909428466296, guid: b6edbb8d4cce50745b88d6718076e06b, type: 3}
   numEnemigos: 0
   enemigo1x: 0
   enemigo1z: 0

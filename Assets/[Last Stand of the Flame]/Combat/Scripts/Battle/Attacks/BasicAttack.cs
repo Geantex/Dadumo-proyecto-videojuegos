@@ -28,8 +28,8 @@ public class BasicAttack : MonoBehaviour
         float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
         if (distance <= range)
         {
-            Animaciones.ataque(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name);
-            Animaciones.recibirDaño(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name);
+            Animaciones.ataque(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), enemy);
+            Animaciones.recibirDano(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name, enemy, FindObjectOfType<Animaciones>());
             enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
             FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
             return true;
