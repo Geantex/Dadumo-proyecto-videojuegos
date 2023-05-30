@@ -94,12 +94,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Jose Maria
-  maxLife: 0
-  life: 0
+  maxLife: 110
+  life: 110
   maxMana: 0
-  mana: 0
+  mana: 100
   speed: 0
-  party: 2
+  party: 3
   myteam: 1
   imagen: {fileID: 0}
   circulo: {fileID: 30020934646430496}
@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5003b7e5603a14797dbda414f99463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  range: 4
+  damage: 15
+  range: 2
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &5762001418184469663
 MonoBehaviour:
@@ -132,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoD: 1
-  AllSpecialAttacks: []
+  AllSpecialAttacks:
+  - {fileID: 11400000, guid: 3b5c4a6ea9abd5b49b3e3c4f86f7679e, type: 2}
 --- !u!114 &4938232054364106773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,12 +152,13 @@ MonoBehaviour:
   characterImage: {fileID: 3792388835238295109, guid: a01d05e4193205c4abe9141450262801, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 100
-  maxHealthPoints: 0
+  healthPoints: 110
+  maxHealthPoints: 110
   manaPoints: 100
-  damagePoints: 10
-  rangeTiles: 4
-  specialAttacks: []
+  damagePoints: 15
+  rangeTiles: 2
+  specialAttacks:
+  - {fileID: 11400000, guid: 3b5c4a6ea9abd5b49b3e3c4f86f7679e, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
 --- !u!1 &7877731438735566222

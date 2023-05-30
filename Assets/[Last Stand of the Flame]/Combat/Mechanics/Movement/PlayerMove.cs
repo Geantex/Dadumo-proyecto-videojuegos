@@ -76,7 +76,9 @@ public class PlayerMove : TacticsMove
         }
         else
         {
+            //StartCoroutine(RealizarAnimacion());
             Move();
+            Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
             //Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
         }
 	}
@@ -97,6 +99,7 @@ public class PlayerMove : TacticsMove
                     if (t.selectable)
                     {
                         MoveToTile(t);
+                        //preEsperarAnimacion();
                     }
                 }
             }
