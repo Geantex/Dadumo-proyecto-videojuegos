@@ -24,6 +24,7 @@ TagManager:
   - canvas
   - mercenarioTienda
   - bastonGalentin
+  - PersonajeHoguera
   layers:
   - Default
   - TransparentFX
