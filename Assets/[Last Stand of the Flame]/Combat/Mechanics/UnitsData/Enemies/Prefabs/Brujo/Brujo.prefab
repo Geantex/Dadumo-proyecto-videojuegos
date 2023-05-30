@@ -68,7 +68,7 @@ MonoBehaviour:
   calculateZone: 0
   moving: 0
   move: 5
-  moveSpeed: 2
+  moveSpeed: 6
   actualTargetTile: {fileID: 0}
 --- !u!114 &1867367949295583314
 MonoBehaviour:
@@ -82,13 +82,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f00b93609783a2458156868d9d4ae27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Brujo
   maxLife: 0
-  life: 0
+  life: 35
   maxMana: 0
   mana: 0
   speed: 0
-  party: 0
+  party: 2
   myteam: 0
   imagen: {fileID: 0}
   circulo: {fileID: 1445673346468437439}
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e5f0bc30ff31840a575e2b2a9101e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
+  damage: 40
+  range: 3
   AoD: 1
 --- !u!114 &4376254169417296001
 MonoBehaviour:
@@ -120,16 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd64938fc080294e9e4bf35ff2f4361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 
-  characterClassName: 
+  characterName: Brujo
+  characterClassName: brujo
   characterImage: {fileID: 0}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 0
+  healthPoints: 35
   maxHealthPoints: 0
   manaPoints: 0
-  damagePoints: 0
-  rangeTiles: 0
+  damagePoints: 40
+  rangeTiles: 3
   specialAttacks: []
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
@@ -210,6 +210,18 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b5c482e314b03d46b5f9b26d23fa725, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b5c482e314b03d46b5f9b26d23fa725, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b5c482e314b03d46b5f9b26d23fa725, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b5c482e314b03d46b5f9b26d23fa725, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0b5c482e314b03d46b5f9b26d23fa725, type: 3}
       propertyPath: m_LocalPosition.x

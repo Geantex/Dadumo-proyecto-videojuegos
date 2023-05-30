@@ -1476,9 +1476,17 @@ PrefabInstance:
       value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 6589418905783747508, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: fuegito
+      value: 
+      objectReference: {fileID: 4545730075028336661, guid: eafb5fe28c005164a92ca42f3f7532a7, type: 3}
+    - target: {fileID: 6589418905783747508, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: sangrePrefab
       value: 
       objectReference: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
+    - target: {fileID: 6589418905783747508, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: curacionPrefab
+      value: 
+      objectReference: {fileID: 2985539307285833950, guid: 77d9317f29a468c438237dbc84c18caf, type: 3}
     - target: {fileID: 6788771023923020148, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: m_RootOrder
       value: 4
