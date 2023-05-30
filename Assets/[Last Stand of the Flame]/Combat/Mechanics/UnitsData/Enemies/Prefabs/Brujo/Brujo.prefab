@@ -82,6 +82,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  maxLife: 0
+  life: 0
+  maxMana: 0
+  mana: 0
+  speed: 0
   party: 0
   myteam: 0
   imagen: {fileID: 0}
@@ -187,3 +192,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0b5c482e314b03d46b5f9b26d23fa725, type: 3}
   m_PrefabInstance: {fileID: 8437615049067365557}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8780057740923615716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5c482e314b03d46b5f9b26d23fa725, type: 3}
+  m_PrefabInstance: {fileID: 8437615049067365557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &955990909816020304
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8780057740923615716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35b6bdae12cc4614f94483b9801f874f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

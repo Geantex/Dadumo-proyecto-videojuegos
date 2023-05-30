@@ -19,6 +19,7 @@ public class PlayerCharacterCLass : CharacterClass
     {
         gameObject.GetComponent<Unit>().Name = CharacterName;
         gameObject.GetComponent<Unit>().Life = (int)HealthPoints;
+        gameObject.GetComponent<Unit>().MaxLife = (int)MaxHealthPoints;
         gameObject.GetComponent<Unit>().Mana = (int)ManaPoints;
         gameObject.GetComponent<PlayerAttack>().Damage = (int)DamagePoints;
         gameObject.GetComponent<PlayerAttack>().Range = (int)RangeTiles;

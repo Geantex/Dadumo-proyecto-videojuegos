@@ -7,11 +7,11 @@ public class Unit : MonoBehaviour
 {
     // Estadísticas básicas de la unidad
     public string name;
-    private int maxLife = 100;
-    private int life = 100;
-    private int maxMana = 100;
-    private int mana;
-    private int speed;
+    [SerializeField] private int maxLife;
+    [SerializeField] private int life;
+    [SerializeField] private int maxMana;
+    [SerializeField] private int mana;
+    [SerializeField] private int speed;
     private int initDamage;
     private int initRange;
 

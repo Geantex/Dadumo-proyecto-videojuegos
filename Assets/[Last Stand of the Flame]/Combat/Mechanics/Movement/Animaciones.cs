@@ -49,7 +49,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo idle");
                 break;
             case "Ladron":
-                pj.Play("Ladron idle");
+                pj.Play("Bandido idle");
                 break;
             case "Rata":
                 pj.Play("Rata idle2");
@@ -57,7 +57,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll idle");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss idle");
                 break;
         }
@@ -93,7 +93,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo correr");
                 break;
             case "Ladron":
-                pj.Play("Ladron correr");
+                pj.Play("Bandido correr");
                 break;
             case "Rata":
                 pj.Play("Rata correr2");
@@ -101,7 +101,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll correr");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss correr");
                 break;
         }
@@ -109,7 +109,6 @@ public class Animaciones : MonoBehaviour
 
     public static void ataque(Animator pj, string name, Animaciones a,  GameObject target = null)
     {
-
         switch (name)
         {
             case "Barbara":
@@ -143,7 +142,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo ataque");
                 break;
             case "Ladron":
-                pj.Play("Ladron ataque");
+                pj.Play("Bandido ataque");
                 break;
             case "Rata":
                 pj.Play("Rata ataque2");
@@ -151,7 +150,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll ataque");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss ataque");
                 break;
         }
@@ -159,8 +158,6 @@ public class Animaciones : MonoBehaviour
     
     public static void ataqueEspecial(Animator pj, string name)
     {
-        pj.Play("Barbara ataque especial");
-
         switch (name)
         {
             case "Barbara":
@@ -189,7 +186,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo ataque especial");
                 break;
             case "Ladron":
-                pj.Play("Ladron ataque especial");
+                pj.Play("Bandido ataque especial");
                 break;
             case "Rata":
                 pj.Play("Rata ataque especial2");
@@ -197,63 +194,61 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll ataque especial");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss ataque especial");
                 break;
         }
     }
 
-    public static void recibirDaño(Animator pj, string name,GameObject damagedUnit, Animaciones a)
+    public static void recibirDaï¿½o(Animator pj, string name,GameObject damagedUnit, Animaciones a)
     {
         Instantiate(a.sangrePrefab, damagedUnit.transform.position, Quaternion.identity);
-        pj.Play("Barbara recibir daño");
+        pj.Play("Barbara recibir daï¿½o");
 
         switch (name)
         {
             case "Barbara":
-                pj.Play("Barbara recibir daño");
+                pj.Play("Barbara recibir daï¿½o");
                 break;
             case "Deen Ecan":
-                pj.Play("Deen Ecan recibir daño");
+                pj.Play("Deen Ecan recibir daï¿½o");
                 break;
             case "Galentin":
-                pj.Play("Galentin recibir daño");
+                pj.Play("Galentin recibir daï¿½o");
                 break;
             case "Jose Maria":
-                pj.Play("JM recibir daño");
+                pj.Play("JM recibir daï¿½o");
                 break;
             case "Kaka":
-                pj.Play("Kaka recibir daño");
+                pj.Play("Kaka recibir daï¿½o");
                 break;
             case "Kazuro":
-                pj.Play("Kazuro recibir daño");
+                pj.Play("Kazuro recibir daï¿½o");
                 break;
             case "Romero MacBeth":
-                pj.Play("Romero recibir daño");
+                pj.Play("Romero recibir daï¿½o");
                 break;
 
             case "Brujo":
-                pj.Play("Brujo recibir daño");
+                pj.Play("Brujo recibir daï¿½o");
                 break;
             case "Ladron":
-                pj.Play("Ladron recibir daño");
+                pj.Play("Bandido recibir daï¿½o");
                 break;
             case "Rata":
-                pj.Play("Rata recibir daño2");
+                pj.Play("Rata recibir daï¿½o2");
                 break;
             case "Troll":
-                pj.Play("Troll recibir daño");
+                pj.Play("Troll recibir daï¿½o");
                 break;
-            case "Señor de la ceniza":
-                pj.Play("Boss recibir daño");
+            case "Seï¿½or de la ceniza":
+                pj.Play("Boss recibir daï¿½o");
                 break;
         }
     }
 
     public static void morir(Animator pj, string name)
     {
-        pj.Play("Barbara morir");
-
         switch (name)
         {
             case "Barbara":
@@ -282,7 +277,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Brujo morir");
                 break;
             case "Ladron":
-                pj.Play("Ladron morir");
+                pj.Play("Bandido morir");
                 break;
             case "Rata":
                 pj.Play("Rata morir2");
@@ -290,7 +285,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll morir");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss morir");
                 break;
         }
@@ -305,6 +300,6 @@ public class Animaciones : MonoBehaviour
     IEnumerator EsperarMillonacoSegundo()
     {
         yield return new WaitForSeconds(0.5f);
-        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
+        //Aquï¿½ es donde colocas la acciï¿½n que quieres realizar despuï¿½s de cinco segundos
     }
 }
