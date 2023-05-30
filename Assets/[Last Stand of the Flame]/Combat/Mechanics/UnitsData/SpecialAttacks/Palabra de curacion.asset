@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b4ba01b91cb71419e513d1ca9939cc, type: 3}
   m_Name: Palabra de curacion
   m_EditorClassIdentifier: 
-  manaCost: 70
-  damage: 50
+  manaCost: 20
+  damage: 25
   damageTimes: 1
   range: 4
   rangeType: Curacion

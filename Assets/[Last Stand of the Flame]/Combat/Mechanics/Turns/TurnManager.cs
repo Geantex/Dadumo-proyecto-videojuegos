@@ -50,7 +50,13 @@ public class TurnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*Debug.Log("PPPPPPPPPP");
+
+        foreach (TacticsMove move in units)
+        {
+            Debug.Log(move);
+        }
+        Debug.Log("PPPPPPPPPP");*/
     }
 
     static void StartTurn()
@@ -98,13 +104,13 @@ public class TurnManager : MonoBehaviour
         // Add the unit back to the list and sort the list by speed
         
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
-        Debug.Log("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
+        /*Debug.Log("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
 
         foreach (TacticsMove move in units)
         {
             Debug.Log(move);
         }
-        Debug.Log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
+        Debug.Log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");*/
         // Start the next turn
         //StartTurn();
 
@@ -120,7 +126,7 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EsperarUnSegundo()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         StartTurn();
     }

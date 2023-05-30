@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 01fd01307ebe5ae40a2f9d3a2eecee6d
+guid: 4296e5be76a79f841a474c9895c06faf
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Brujo correr
+      name: Barbara ataque especial
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 68
+      lastFrame: 75
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

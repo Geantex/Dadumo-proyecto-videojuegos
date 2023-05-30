@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b4ba01b91cb71419e513d1ca9939cc, type: 3}
   m_Name: Trueno
   m_EditorClassIdentifier: 
-  manaCost: 30
-  damage: 30
+  manaCost: 50
+  damage: 60
   damageTimes: 1
-  range: 5
+  range: 3
   rangeType: Area
   targetType: Enemigos
   stateEffect: 

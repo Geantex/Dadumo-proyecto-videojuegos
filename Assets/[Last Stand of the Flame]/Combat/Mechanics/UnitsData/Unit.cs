@@ -19,6 +19,7 @@ public class Unit : MonoBehaviour
     public bool myteam;
 
     public Image imagen;
+    public GameObject circulo;
 
     // Estadísticas de combate
     private int lifeInCombat;
@@ -31,7 +32,7 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        circulo.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class Unit : MonoBehaviour
 
     IEnumerator EsperarCincoSegundo()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         gameObject.SetActive(false);
 
