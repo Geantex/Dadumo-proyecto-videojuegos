@@ -8,8 +8,6 @@ using UnityEngine.UI;
 public class PlayerAttack : BasicAttack
 {
     public bool AoD = true;
-    public Material enemySelectedColor;
-    public Material enemyBasicColor;
 
 
 
@@ -37,8 +35,7 @@ public class PlayerAttack : BasicAttack
             if (distance <= Range)
             {
                 targets.Add(enemy);
-                Renderer renderer = enemy.GetComponentInChildren<Renderer>();
-                renderer.material = enemySelectedColor;
+                enemy.GetComponent<Unit>().circulo.SetActive(true);
             }
         }
         return targets;
@@ -50,13 +47,13 @@ public class PlayerAttack : BasicAttack
 
         foreach (GameObject enemy in enemies)
         {
-            Renderer renderer = enemy.GetComponentInChildren<Renderer>();
-            renderer.material = enemyBasicColor;
+            enemy.GetComponent<Unit>().circulo.SetActive(false);
         }
 
         Attack(target, gameObject);
 
         gameObject.GetComponent<PlayerMove>().basicAttack = false;
+        gameObject.GetComponent<PlayerMove>().specialAttack = false;
 
         TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
     }

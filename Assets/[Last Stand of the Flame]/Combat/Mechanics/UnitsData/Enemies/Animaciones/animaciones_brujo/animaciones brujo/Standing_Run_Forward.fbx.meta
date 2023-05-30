@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 56712e3c3c71eb9449a47728d76bc3bf
+guid: 5ce97f2a226aaae4fb944f7427289f83
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Troll correr2
+      name: Brujo correr
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 47
+      lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
