@@ -166,60 +166,7 @@ public class TacticsMove : MonoBehaviour
             // Y establecemos la casilla a analizar como la casilla padre de la actual que analizamos
             next = next.parent;
         }
-        animacionActiva = true;
-        //preEsperarAnimacion();
-        //StartCoroutine(RealizarAnimacion());
     }
-
-    public IEnumerator RealizarAnimacion()
-    {
-        preEsperarAnimacion(); // Inicia la animación
-
-        // Espera a que la animación termine
-        while (animacionActiva)
-        {
-            // Obtén la referencia al componente Animator de tu objeto
-            Animator animatorComponent = GetComponentInChildren<Animator>();
-            float animationLength = 0;
-
-            // Asegúrate de tener una referencia válida al componente Animator
-            if (animatorComponent != null)
-            {
-                // Obtén el estado actual de la animación
-                AnimatorStateInfo stateInfo = animatorComponent.GetCurrentAnimatorStateInfo(0);
-
-                // Obtén la duración del estado actual
-                animationLength = stateInfo.length;
-
-                // Haz algo con la duración de la animación
-                Debug.Log("Duración de la animación: " + animationLength + " segundos");
-            }
-            else
-            {
-                Debug.Log("No se encontró ningún componente Animator en el objeto.");
-            }
-
-            yield return StartCoroutine(EsperarAnimacion(animationLength + 1.5f));
-        }
-
-        // La animación ha terminado
-        Debug.Log("La animación ha terminado");
-    }
-
-    IEnumerator EsperarAnimacion(float t)
-    {
-        yield return new WaitForSeconds(t);
-        // Aquí es donde colocas la acción que quieres realizar después de esperar la duración de la animación
-        preEsperarAnimacion();
-    }
-
-    public void preEsperarAnimacion()
-    {
-        Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
-        animacionActiva = false; // Termina el bucle de la animación
-    }
-
-    bool animacionActiva = false;
 
     // Función que realiza el movimiento
     // Recive: Nada
@@ -263,13 +210,11 @@ public class TacticsMove : MonoBehaviour
                     // Quitamos la casilla del camino
                     path.Pop();
                 }
-                //Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
+                Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
             }
             else
             {
-                //animacionActiva = false;
                 Animaciones.idle(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
-                //RemoveSelectableTiles();
                 //Cuando acabamos de recorrer el camino paramos el movimiento
 
                 moving = false;
@@ -284,10 +229,7 @@ public class TacticsMove : MonoBehaviour
         }
         else
         {
-            //animacionActiva = false;
             Animaciones.idle(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
-            // Borra las casillas seleccionables
-            //RemoveSelectableTiles();
             //Cuando acabamos de recorrer el camino paramos el movimiento
 
             moving = false;
