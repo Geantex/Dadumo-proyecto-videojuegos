@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Animaciones : MonoBehaviour
 {
+    public GameObject sangrePrefab;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -104,7 +107,7 @@ public class Animaciones : MonoBehaviour
         }
     }
 
-    public static void ataque(Animator pj, string name)
+    public static void ataque(Animator pj, string name, Animaciones a,  GameObject target = null)
     {
 
         switch (name)
@@ -116,7 +119,12 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Deen Ecan ataque");
                 break;
             case "Galentin":
+                GameObject bastonGalentin = GetBastonGalentin();
                 pj.Play("Galentin ataque");
+                // Esperamos medio segundo, despues hacemos aparecer la bola de fuego
+                //a.StartCoroutine(a.EsperarMillonacoSegundo());
+                bastonGalentin.GetComponentInChildren<ProjectileSpawner>().SpawnProjectile(target);
+
                 break;
             case "Jose Maria":
                 pj.Play("JM ataque");
@@ -195,8 +203,9 @@ public class Animaciones : MonoBehaviour
         }
     }
 
-    public static void recibirDaño(Animator pj, string name)
+    public static void recibirDaño(Animator pj, string name,GameObject damagedUnit, Animaciones a)
     {
+        Instantiate(a.sangrePrefab, damagedUnit.transform.position, Quaternion.identity);
         pj.Play("Barbara recibir daño");
 
         switch (name)
@@ -285,5 +294,17 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Boss morir");
                 break;
         }
+    }
+
+    public static GameObject GetBastonGalentin()
+    {
+        GameObject bastonGalentin = GameObject.FindGameObjectWithTag("bastonGalentin");
+        return bastonGalentin;
+    }
+
+    IEnumerator EsperarMillonacoSegundo()
+    {
+        yield return new WaitForSeconds(0.5f);
+        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
     }
 }
