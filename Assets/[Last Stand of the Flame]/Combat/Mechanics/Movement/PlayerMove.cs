@@ -77,7 +77,7 @@ public class PlayerMove : TacticsMove
         else
         {
             Move();
-            Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
+            //Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
         }
 	}
 
