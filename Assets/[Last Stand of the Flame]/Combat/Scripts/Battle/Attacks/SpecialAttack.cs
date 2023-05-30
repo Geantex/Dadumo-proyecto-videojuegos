@@ -15,6 +15,8 @@ public class SpecialAttack : ScriptableObject
     [SerializeField] double stateEffectProbability;
     [SerializeField] string boostType;
     [SerializeField] double boostValue;
+    public Vector3 heading;
+    float halfHeight = 0;
 
     public SpecialAttack(int damage, int damageTimes, int range, string rangeType, string stateEffect, double stateEffectProbability, string boostType, double boostValue)
     {
@@ -39,8 +41,28 @@ public class SpecialAttack : ScriptableObject
 
     }
 
+    void CalculateHeading(Vector3 target, GameObject allie)
+    {
+        // Calculamos la dirección entre la casilla en la que estamos y a la que nos queremos mover
+        heading = target - allie.transform.position;
+        // Normalizamos el vector (lo hacemos de magnitud 1, por lo que se convierte en vector unitario, para efectuar los movimientos en la dirección del vector unitario)
+        heading.Normalize();
+    }
+
     public bool Attack(GameObject enemy, GameObject allie)
     {
+        allie.transform.forward = heading;
+
+        halfHeight = allie.GetComponent<Collider>().bounds.extents.y;
+        Vector3 target = enemy.transform.position;
+
+        // Mantenemos la misma altura del aliado
+        target.y = allie.transform.position.y;
+
+        CalculateHeading(target, allie);
+
+        allie.transform.forward = heading;
+
         float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
         if (distance <= range)
         {
@@ -55,15 +77,14 @@ public class SpecialAttack : ScriptableObject
                 }
 
                 FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
-            }
-            else
+            }
+            else
             {
                 Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(),enemy, allie);
                 Animaciones.recibirDano(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name, enemy, FindObjectOfType<Animaciones>());
                 enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
                 FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
-            }
-           
+            }
             //applyBoost(enemy);
             //applyState(enemy);
             return true;

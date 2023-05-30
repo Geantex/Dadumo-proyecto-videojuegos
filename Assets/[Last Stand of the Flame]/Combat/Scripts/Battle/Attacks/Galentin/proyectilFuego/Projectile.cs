@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Transform target;
+    [SerializeField] private Transform target;
     private float speed;
     private float rampUpDuration = 0.35f;
     private float rampUpPower = 8f; // Exponential ramp-up power
