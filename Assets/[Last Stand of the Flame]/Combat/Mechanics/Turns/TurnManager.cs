@@ -107,6 +107,7 @@ public class TurnManager : MonoBehaviour
         Debug.Log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
         // Start the next turn
         //StartTurn();
+
         turnManager.StartCoroutine(turnManager.EsperarUnSegundo());
     }
 

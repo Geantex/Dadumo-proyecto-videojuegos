@@ -13,6 +13,7 @@ public class CharacterCreator : ScriptableObject
     [SerializeField] private Material characterMaterial;//Material del personaje (en caso de ser necesario y no estar en el sprite para futuros cambios visuales)
     [SerializeField] private GameObject characterPrefab;//Prefab con los scripts necesarios para el control del personaje
     [SerializeField] private float healthPoints;//Puntos de vida del personaje
+    [SerializeField] private float maxHealthPoints;//Puntos máximos de vida del personaje
     [SerializeField] private float manaPoints;//Puntos de maná del personaje
     [SerializeField] private float damagePoints;//Puntos de daño del personaje
     [SerializeField] private float rangeTiles;//Rango del personaje
@@ -73,9 +74,20 @@ public class CharacterCreator : ScriptableObject
         {
             return characterPrefab;
         }
-        set 
-        { 
-            characterPrefab = value; 
+        set
+        {
+            characterPrefab = value;
+        }
+    }
+    public float MaxHealthPoints
+    {
+        get
+        {
+            return maxHealthPoints;
+        }
+        set
+        {
+
         }
     }
     public float HealthPoints
@@ -90,9 +102,9 @@ public class CharacterCreator : ScriptableObject
             {
                 value = 0;
             }
-            else if(value > 300)
+            else if (value > MaxHealthPoints)
             {
-                value = 300;
+                value = MaxHealthPoints;
             }
             healthPoints = value;
         }
@@ -181,14 +193,17 @@ public class CharacterCreator : ScriptableObject
                 if (armorModified == false)
                 {
                     characterArmor = value;
-                    healthPoints += value.itemHealthModifier;
+                    maxHealthPoints += value.itemHealthModifier;
+                    HealthPoints += value.itemHealthModifier;
                     armorModified = true;
                 }
                 else if (armorModified == true)
                 {
-                    damagePoints -= characterArmor.itemHealthModifier;
+                    HealthPoints -= characterArmor.itemHealthModifier;
+                    maxHealthPoints -= value.itemHealthModifier;
                     characterArmor = value;
-                    healthPoints += value.itemHealthModifier;
+                    maxHealthPoints += value.itemHealthModifier;
+                    HealthPoints += value.itemHealthModifier;
                 }
 
             }

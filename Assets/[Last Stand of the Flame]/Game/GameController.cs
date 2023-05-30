@@ -19,7 +19,7 @@ public class GameController : FSMMachine
 
     [SerializeField] public bool NewGame = false;
 
-    
+
 
     public float GoldCoins
     {
@@ -101,6 +101,29 @@ public class GameController : FSMMachine
         foreach (CharacterCreator character in charactersParty)
         {
             character.HealthPoints += HP;
+        }
+    }
+
+    public void replacePartyHealthAndManaPoints()
+    {
+        GameObject[] PlayersInScene = GameObject.FindGameObjectsWithTag("Player");
+
+        for (int i = 0; i < charactersParty.Count; i++)
+        {
+            foreach (CharacterCreator CharacterInParty in charactersParty)
+            {
+                Debug.Log("Hola soy " + CharacterInParty.CharacterName);
+                Debug.Log("Hola soy " + PlayersInScene[i].GetComponent<Unit>().name);
+                if (CharacterInParty.CharacterName == PlayersInScene[i].GetComponent<Unit>().name)
+                {
+                    CharacterInParty.HealthPoints = PlayersInScene[i].GetComponent<Unit>().Life;
+                    Debug.Log("Ahora mi vida es " + CharacterInParty.HealthPoints);
+                    CharacterInParty.ManaPoints = PlayersInScene[i].GetComponent<Unit>().Mana;
+                    Debug.Log("Ahora mi maná es " + CharacterInParty.ManaPoints);
+                }
+            }
+
+
         }
     }
 

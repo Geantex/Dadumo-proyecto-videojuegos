@@ -109,7 +109,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -393,6 +393,8 @@ public class Spawner : MonoBehaviour
             //player.CharacterPrefab = ch.CharacterPrefab;
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().HealthPoints = ch.HealthPoints;
             Debug.Log(ch.HealthPoints);
+            gameObjectPlayer.GetComponent<PlayerCharacterCLass>().MaxHealthPoints = ch.MaxHealthPoints;
+            Debug.Log(ch.MaxHealthPoints);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().ManaPoints = ch.ManaPoints;
             Debug.Log(ch.ManaPoints);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().DamagePoints = ch.DamagePoints;
@@ -455,7 +457,7 @@ public class Spawner : MonoBehaviour
         {
             case "BosqueCombate":
                 numEnemigos = Random.Range(2, 5);
-                for(int i = 0; i < numEnemigos; i++)
+                for (int i = 0; i < numEnemigos; i++)
                 {
                     myPartyEnemies.Add(allPlayableEnemies.Find(character => character.CharacterClass == "rata rapida"));
                 }
