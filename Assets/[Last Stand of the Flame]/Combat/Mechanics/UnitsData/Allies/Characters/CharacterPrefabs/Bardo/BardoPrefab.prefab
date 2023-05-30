@@ -94,12 +94,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Romero MacBeth
-  maxLife: 0
-  life: 0
+  maxLife: 80
+  life: 80
   maxMana: 0
-  mana: 0
+  mana: 100
   speed: 0
-  party: 3
+  party: 1
   myteam: 1
   imagen: {fileID: 0}
   circulo: {fileID: 1654322168963738566}
@@ -133,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoD: 1
-  AllSpecialAttacks: []
+  AllSpecialAttacks:
+  - {fileID: 11400000, guid: 0ba1f7c2cc500c64da56be86e678e79b, type: 2}
 --- !u!114 &3638457038710011606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,12 +152,13 @@ MonoBehaviour:
   characterImage: {fileID: 3792388835238295109, guid: a325707a3e6dcac4ba9e35ed7e632bf8, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
-  healthPoints: 100
-  maxHealthPoints: 0
+  healthPoints: 80
+  maxHealthPoints: 80
   manaPoints: 100
   damagePoints: 25
   rangeTiles: 1
-  specialAttacks: []
+  specialAttacks:
+  - {fileID: 11400000, guid: 0ba1f7c2cc500c64da56be86e678e79b, type: 2}
   characterWeapon: {fileID: 0}
   characterArmor: {fileID: 0}
 --- !u!1001 &1243592312697949790
