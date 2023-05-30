@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
@@ -129,7 +130,6 @@ namespace Map
                 case NodeType.RestSite:
                     // Aqui es un descanso y recuperas salud
                     SceneManager.LoadScene("Hoguera");
-
                     break;
                 case NodeType.Treasure:
                     // Aqui consigues una mejora de ataque o de salud

@@ -112,8 +112,7 @@ public class GameController : FSMMachine
         {
             foreach (CharacterCreator CharacterInParty in charactersParty)
             {
-                Debug.Log("Hola soy " + CharacterInParty.CharacterName);
-                Debug.Log("Hola soy " + PlayersInScene[i].GetComponent<Unit>().name);
+                Debug.Log("Hola soy " + CharacterInParty.CharacterName + " " + PlayersInScene[i].GetComponent<Unit>().name);
                 if (CharacterInParty.CharacterName == PlayersInScene[i].GetComponent<Unit>().name)
                 {
                     CharacterInParty.HealthPoints = PlayersInScene[i].GetComponent<Unit>().Life;
