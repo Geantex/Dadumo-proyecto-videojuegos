@@ -43,33 +43,33 @@ public class SpecialAttack : ScriptableObject
     {
         float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
         if (distance <= range)
-        {
-            if(rangeType == "Curacion")
-            {
-                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name);
-                enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life + damage;
-
-                if(enemy.GetComponent<Unit>().Life > enemy.GetComponent<Unit>().MaxLife)
-                {
-                    enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().MaxLife;
-                }
-
-                FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
-            }
-            else
-            {
-                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name);
-                Animaciones.recibirDaño(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name);
-                enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
-                FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
-            }
+        {
+            if(rangeType == "Curacion")
+            {
+                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name);
+                enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life + damage;
+
+                if(enemy.GetComponent<Unit>().Life > enemy.GetComponent<Unit>().MaxLife)
+                {
+                    enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().MaxLife;
+                }
+
+                FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
+            }
+            else
+            {
+                Animaciones.ataqueEspecial(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name);
+                Animaciones.recibirDaï¿½o(enemy.GetComponentInChildren<Animator>(), enemy.GetComponent<Unit>().Name);
+                enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
+                FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
+            }
            
             //applyBoost(enemy);
             //applyState(enemy);
 
-            allie.GetComponent<Unit>().Mana = allie.GetComponent<Unit>().Mana - manaCost;
-            FindObjectOfType<BattleHUD>().SetMana(allie.GetComponent<Unit>().party, allie.GetComponent<Unit>().myteam, allie.GetComponent<Unit>().Mana);
-
+            allie.GetComponent<Unit>().Mana = allie.GetComponent<Unit>().Mana - manaCost;
+            FindObjectOfType<BattleHUD>().SetMana(allie.GetComponent<Unit>().party, allie.GetComponent<Unit>().myteam, allie.GetComponent<Unit>().Mana);
+
             return true;
         }
         else

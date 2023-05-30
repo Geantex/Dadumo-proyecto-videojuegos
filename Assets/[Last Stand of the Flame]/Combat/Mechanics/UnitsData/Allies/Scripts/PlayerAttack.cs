@@ -49,7 +49,6 @@ public class PlayerAttack : BasicAttack
         {
             enemy.GetComponent<Unit>().circulo.SetActive(false);
         }
-
         Attack(target, gameObject);
 
         gameObject.GetComponent<PlayerMove>().basicAttack = false;

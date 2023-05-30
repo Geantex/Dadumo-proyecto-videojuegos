@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Animaciones : MonoBehaviour
 {
+    public GameObject sangrePrefab;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +57,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll idle");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss idle");
                 break;
         }
@@ -98,13 +101,13 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll correr");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss correr");
                 break;
         }
     }
 
-    public static void ataque(Animator pj, string name)
+    public static void ataque(Animator pj, string name, Animaciones a,  GameObject target = null)
     {
         switch (name)
         {
@@ -115,7 +118,12 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Deen Ecan ataque");
                 break;
             case "Galentin":
+                GameObject bastonGalentin = GetBastonGalentin();
                 pj.Play("Galentin ataque");
+                // Esperamos medio segundo, despues hacemos aparecer la bola de fuego
+                //a.StartCoroutine(a.EsperarMillonacoSegundo());
+                bastonGalentin.GetComponentInChildren<ProjectileSpawner>().SpawnProjectile(target);
+
                 break;
             case "Jose Maria":
                 pj.Play("JM ataque");
@@ -142,7 +150,7 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll ataque");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss ataque");
                 break;
         }
@@ -186,52 +194,55 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll ataque especial");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss ataque especial");
                 break;
         }
     }
 
-    public static void recibirDaño(Animator pj, string name)
+    public static void recibirDano(Animator pj, string name,GameObject damagedUnit, Animaciones a)
     {
+        Instantiate(a.sangrePrefab, damagedUnit.transform.position, Quaternion.identity);
+        pj.Play("Barbara recibir daï¿½o");
+
         switch (name)
         {
             case "Barbara":
-                pj.Play("Barbara recibir daño");
+                pj.Play("Barbara recibir daï¿½o");
                 break;
             case "Deen Ecan":
-                pj.Play("Deen Ecan recibir daño");
+                pj.Play("Deen Ecan recibir daï¿½o");
                 break;
             case "Galentin":
-                pj.Play("Galentin recibir daño");
+                pj.Play("Galentin recibir daï¿½o");
                 break;
             case "Jose Maria":
-                pj.Play("JM recibir daño");
+                pj.Play("JM recibir daï¿½o");
                 break;
             case "Kaka":
-                pj.Play("Kaka recibir daño");
+                pj.Play("Kaka recibir daï¿½o");
                 break;
             case "Kazuro":
-                pj.Play("Kazuro recibir daño");
+                pj.Play("Kazuro recibir daï¿½o");
                 break;
             case "Romero MacBeth":
-                pj.Play("Romero recibir daño");
+                pj.Play("Romero recibir daï¿½o");
                 break;
 
             case "Brujo":
-                pj.Play("Brujo recibir daño");
+                pj.Play("Brujo recibir daï¿½o");
                 break;
             case "Ladron":
-                pj.Play("Bandido recibir daño");
+                pj.Play("Bandido recibir daï¿½o");
                 break;
             case "Rata":
-                pj.Play("Rata recibir daño2");
+                pj.Play("Rata recibir daï¿½o2");
                 break;
             case "Troll":
-                pj.Play("Troll recibir daño");
+                pj.Play("Troll recibir daï¿½o");
                 break;
-            case "Señor de la ceniza":
-                pj.Play("Boss recibir daño");
+            case "Seï¿½or de la ceniza":
+                pj.Play("Boss recibir daï¿½o");
                 break;
         }
     }
@@ -274,9 +285,21 @@ public class Animaciones : MonoBehaviour
             case "Troll":
                 pj.Play("Troll morir");
                 break;
-            case "Señor de la ceniza":
+            case "Seï¿½or de la ceniza":
                 pj.Play("Boss morir");
                 break;
         }
+    }
+
+    public static GameObject GetBastonGalentin()
+    {
+        GameObject bastonGalentin = GameObject.FindGameObjectWithTag("bastonGalentin");
+        return bastonGalentin;
+    }
+
+    IEnumerator EsperarMillonacoSegundo()
+    {
+        yield return new WaitForSeconds(0.5f);
+        //Aquï¿½ es donde colocas la acciï¿½n que quieres realizar despuï¿½s de cinco segundos
     }
 }
