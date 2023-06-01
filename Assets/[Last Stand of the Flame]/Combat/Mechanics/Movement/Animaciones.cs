@@ -195,7 +195,6 @@ public class Animaciones : MonoBehaviour
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
                 pj.Play("Galentin ataque especial");
-                bastonGalentin.GetComponentInChildren<ParticulaExplosionMagica>().ExplosionMagica(objetivo);
                 if (attack)
                 {
                     a.voyASangrar(unidadEspecial, objetivo, pj);
