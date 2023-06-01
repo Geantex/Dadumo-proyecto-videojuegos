@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Dapasa.FSM;
 
 public class Unit : MonoBehaviour
 {
@@ -43,10 +44,17 @@ public class Unit : MonoBehaviour
 
     IEnumerator EsperarCincoSegundo()
     {
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(2.8f);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         gameObject.SetActive(false);
-
+        string name = gameObject.GetComponent<Unit>().Name;
+        foreach (CharacterCreator ch in GameController.Instancia.CharactersParty)
+        {
+            if (ch.CharacterName == gameObject.GetComponent<Unit>().Name)
+            {
+                GameController.Instancia.CharactersParty.Remove(ch);
+            }
+        }
         DestroyImmediate(gameObject);
     }
 

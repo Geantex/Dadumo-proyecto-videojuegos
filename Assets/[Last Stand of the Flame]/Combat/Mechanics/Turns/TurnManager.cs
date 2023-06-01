@@ -126,7 +126,7 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EsperarUnSegundo()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3f);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         StartTurn();
     }

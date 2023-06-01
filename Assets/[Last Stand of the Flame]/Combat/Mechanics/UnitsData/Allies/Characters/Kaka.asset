@@ -20,6 +20,7 @@ MonoBehaviour:
   healthPoints: 60
   maxHealthPoints: 60
   manaPoints: 100
+  maxManaPoints: 100
   damagePoints: 30
   rangeTiles: 1
   speed: 0

@@ -14,6 +14,7 @@ public class CharacterClass : MonoBehaviour
     [SerializeField] private float healthPoints;//Puntos de vida del personaje
     [SerializeField] private float maxHealthPoints;//Puntos máximos de vida del personaje
     [SerializeField] private float manaPoints;//Puntos de maná del personaje
+    [SerializeField] public float maxManaPoints;//Puntos de maná del personaje
     [SerializeField] private float damagePoints;//Puntos de daño del personaje
     [SerializeField] private float rangeTiles;//Rango del personaje
     [SerializeField] private List<SpecialAttack> specialAttacks;//Lista de ataques especiales
