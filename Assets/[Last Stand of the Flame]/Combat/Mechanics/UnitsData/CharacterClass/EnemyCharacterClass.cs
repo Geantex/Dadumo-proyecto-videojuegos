@@ -22,7 +22,6 @@ public class EnemyCharacterClass : CharacterClass
         gameObject.GetComponent<Unit>().Life = (int)HealthPoints;
         gameObject.GetComponent<Unit>().MaxLife = (int)MaxHealthPoints;
         gameObject.GetComponent<Unit>().Mana = (int)ManaPoints;
-        gameObject.GetComponent<Unit>().MaxMana = (int)maxManaPoints;
         gameObject.GetComponent<NPCAttack>().Damage = (int)DamagePoints;
         gameObject.GetComponent<NPCAttack>().Range = (int)RangeTiles;
     }
