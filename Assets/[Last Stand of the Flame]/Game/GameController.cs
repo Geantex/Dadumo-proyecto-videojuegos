@@ -66,8 +66,7 @@ public class GameController : FSMMachine
     }
 
     public static GameController Instancia
-    {
-        get
+    {        get
         {
             return _instancia;
         }
