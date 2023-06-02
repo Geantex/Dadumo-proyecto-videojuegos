@@ -47,7 +47,7 @@ public class Randomizer : FSMState
     {
         (machine as GameController).GoldCoins = 100f;
         GameController.Instancia.CharactersParty.Clear();
-        SceneManager.LoadScene("Random");
+        SceneManager.LoadScene("Reroll");
         electedCharacters = new List<CharacterCreator>();
         characters = GameController.Instancia.AllPlayableCharacters;
         //characterNumber = characters.Count+1;

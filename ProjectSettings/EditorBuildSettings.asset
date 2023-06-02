@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/[Last Stand of the Flame]/Map/Shop/Scenes/Shop.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/[Last Stand of the Flame]/Randomizer/Scene/Random.unity
+    path: Assets/[Last Stand of the Flame]/ReRoll/Scene/Reroll.unity
     guid: 5e58e9a2e752c4241b7d880416aa6432
   - enabled: 1
-    path: Assets/[Last Stand of the Flame]/Map/Encounters/RestsiteEncounters/mapaHoguera/Hoguera.unity
+    path: Assets/[Last Stand of the Flame]/Map/Encounters/RestsiteEncounters/mapaHoguera/Scene/Hoguera.unity
     guid: 3fa2efc57b8275f4d9ccc98d0186aaf3
   - enabled: 1
     path: Assets/[Last Stand of the Flame]/Combat/Scenes/BosqueCombate.unity
