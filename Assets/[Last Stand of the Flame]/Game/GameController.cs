@@ -17,6 +17,10 @@ public class GameController : FSMMachine
 
     [SerializeField] private List<CharacterCreator> allPlayableEnemies;
 
+    [SerializeField] private List<Encounter> encounterList;
+
+    
+
     [SerializeField] public bool NewGame = false;
 
 
@@ -62,6 +66,18 @@ public class GameController : FSMMachine
         get
         {
             return allPlayableEnemies;
+        }
+    }
+
+    public List<Encounter> EncounterList
+    {
+        get
+        {
+            return encounterList;
+        }
+        set 
+        { 
+            encounterList = value; 
         }
     }
 
