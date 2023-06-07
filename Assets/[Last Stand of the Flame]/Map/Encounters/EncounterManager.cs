@@ -21,52 +21,15 @@ public class EncounterManager : MonoBehaviour
     public Button button3;
     public Button button4;
 
-    public List<Encounter> encounterList = new List<Encounter>();
     public List<Encounter> restsiteList = new List<Encounter>();
     public List<Encounter> treasureList = new List<Encounter>();
 
     // Start is called before the first frame update
-    void Start()
-    {
-        Invoke("getEncounterList", 1.5f);
-    }
-    void getEncounterList()
-    {
-        //Aquí uno de los problemas que causan el fallo el ASSETDATABASE, es mejor añadir a mano directamente los encuentros
-        //en el ENCOUNTERMANAGER directamente a mano para no tener problemas de compilación el el futuro
-
-        /*string[] encounterPaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RandomEncounters/Objects" });
-        Encounter[] arrayEncounter = new Encounter[encounterPaths.Length];
-        for (int i = 0; i < encounterPaths.Length; i++)
-        {
-            string pathEncounter = AssetDatabase.GUIDToAssetPath(encounterPaths[i]);
-            arrayEncounter[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathEncounter);
-        }
-        encounterList = new List<Encounter>(arrayEncounter);*/
-
-        /*string[] restsitePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/RestsiteEncounters/Objects" });
-        Encounter[] arrayRestsite = new Encounter[restsitePaths.Length];
-        for (int i = 0; i < restsitePaths.Length; i++)
-        {
-            string pathRestsite = AssetDatabase.GUIDToAssetPath(restsitePaths[i]);
-            arrayRestsite[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathRestsite);
-        }
-        restsiteList = new List<Encounter>(arrayRestsite);*/
-
-        /*string[] treasurePaths = AssetDatabase.FindAssets("t: Encounter", new string[] { "Assets/[Last Stand of the Flame]/Map/Encounters/TreasureEncounters/Objects" });
-        Encounter[] arrayTreasure = new Encounter[treasurePaths.Length];
-        for (int i = 0; i < treasurePaths.Length; i++)
-        {
-            string pathTreasure = AssetDatabase.GUIDToAssetPath(treasurePaths[i]);
-            arrayTreasure[i] = AssetDatabase.LoadAssetAtPath<Encounter>(pathTreasure);
-        }
-        treasureList = new List<Encounter>(arrayTreasure);*/
-    }
-
     Encounter PopEncounter(int index)
     {
-        Encounter encounter = encounterList.ElementAt(index);
-        encounterList.RemoveAt(index);
+        Encounter encounter = GameController.Instancia.EncounterList.ElementAt(index);
+        GameController.Instancia.EncounterList.RemoveAt(index);
+        Debug.Log("He quitado el evento " + encounter.encounterName);
         return encounter;
     }
 
@@ -88,7 +51,7 @@ public class EncounterManager : MonoBehaviour
         Encounter randomEncounter;
         if (encuentroEspecifico == 0)
         {
-            encuentroAleatorioNumero = Random.Range(1, encounterList.Count + 1); // de 1 a uhhhhh
+            encuentroAleatorioNumero = Random.Range(1, GameController.Instancia.EncounterList.Count + 1); // de 1 a uhhhhh
             randomEncounter = PopEncounter(encuentroAleatorioNumero - 1);
 
 
@@ -99,7 +62,7 @@ public class EncounterManager : MonoBehaviour
         {
             // Aqui es si queremos un encuentro específico
             encuentroAleatorioNumero = encuentroEspecifico;
-            randomEncounter = encounterList.ElementAt(encuentroAleatorioNumero - 1);
+            randomEncounter = GameController.Instancia.EncounterList.ElementAt(encuentroAleatorioNumero - 1);
 
         }
         showOnlyEncounterCanvas();
