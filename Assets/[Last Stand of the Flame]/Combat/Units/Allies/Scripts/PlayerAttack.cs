@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerAttack : BasicAttack
@@ -48,6 +49,18 @@ public class PlayerAttack : BasicAttack
         foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<Unit>().circulo.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name == "TutorialCombate")
+        {
+            // ESTO OCURRE SOLO EN LA ESCENA DE TUTORIAL
+            // Sé que esto está horriblemente optimizado, quien lo arregle se lleva un beso y una hora de trello.
+            TutorialConsejos _tutorialConsejos = GameObject.Find("TutorialConsejos").GetComponent<TutorialConsejos>();
+            if (_tutorialConsejos.contadorConsejo == 2)
+            {
+                // esta funcion solo se llamara si el contador es 2, es decir, mostrará solamente el TERCER consejo
+                _tutorialConsejos.DeslizarPanel();
+            }
+
         }
         Attack(target, gameObject);
 

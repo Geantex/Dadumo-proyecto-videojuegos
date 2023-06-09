@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TurnManager : MonoBehaviour
 {
@@ -78,6 +79,18 @@ public class TurnManager : MonoBehaviour
 
     public static void EndTurn(TacticsMove unit, TurnManager turnManager)
     {
+        if (SceneManager.GetActiveScene().name == "TutorialCombate")
+        {
+            // ESTO OCURRE SOLO EN LA ESCENA DE TUTORIAL
+            // Sé que esto está horriblemente optimizado, quien lo arregle se lleva un beso y una hora de trello.
+            TutorialConsejos _tutorialConsejos = GameObject.Find("TutorialConsejos").GetComponent<TutorialConsejos>();
+            if (_tutorialConsejos.contadorConsejo == 1)
+            {
+                // esta funcion solo se llamara si el contador es 1, es decir, mostrará solamente el SEGUNDO consejo
+                _tutorialConsejos.DeslizarPanel();
+            }
+
+        }
         unit.EndTurn();
         unit.RemoveSelectableTiles();
 
