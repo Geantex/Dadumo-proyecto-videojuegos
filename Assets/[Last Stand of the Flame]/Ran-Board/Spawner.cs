@@ -77,11 +77,11 @@ public class Spawner : MonoBehaviour
     public GameObject obstaculoBase;
     public int numObstaculos = 0;
 
-    //Enemigo 1
+    //Obstaculo 1
     public float obstaculo1x = 0;
     public float obstaculo1z = 0;
 
-    //Enemigo 2
+    //Obstaculo 2
     public float obstaculo2x = 0;
     public float obstaculo2z = 0;
 

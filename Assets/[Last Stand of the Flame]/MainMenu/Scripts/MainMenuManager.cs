@@ -28,6 +28,18 @@ public class MainMenuManager : MonoBehaviour
         //SceneManager.CreateScene("Map");
     }
 
+    public void TutorialFade()
+    {
+        FadeToBlack.QuickFade();
+        Invoke("Tutorial", 0.25f);
+    }
+
+    public void Tutorial()
+    {
+        GameController.Instancia.SetStateByType(typeof(GameState));
+        SceneManager.LoadScene("TutorialCombate");
+    }
+
     public void ExitGameFade()
     {
         FadeToBlack.QuickFade();
