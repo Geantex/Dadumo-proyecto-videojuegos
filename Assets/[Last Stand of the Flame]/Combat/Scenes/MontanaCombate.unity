@@ -1324,6 +1324,7 @@ MonoBehaviour:
   charactersParty: []
   allPlayableCharacters: []
   allPlayableEnemies: []
+  encounterList: []
   NewGame: 0
 --- !u!4 &1890875762
 Transform:
