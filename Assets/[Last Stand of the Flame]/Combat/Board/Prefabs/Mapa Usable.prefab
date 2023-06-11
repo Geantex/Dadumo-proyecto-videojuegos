@@ -34853,7 +34853,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7d6e630df3524d54093f082168c4ee62, type: 3}
   - {fileID: 8300000, guid: 3e47dc135064c374f8c03d2c69f2cfc5, type: 3}
   - {fileID: 8300000, guid: e08a835d9fdbb0a478a93d9d8e3e599b, type: 3}
-  RomeroAttack: []
+  RomeroAttack:
+  - {fileID: 8300000, guid: 50073ef7b1d48e84e824f7b2422ec95c, type: 3}
+  - {fileID: 8300000, guid: fc8f35b381c42a840a29f3fc0d7fcbc1, type: 3}
+  - {fileID: 8300000, guid: f240d6f04fafd4a4183287e4986bcbd7, type: 3}
   RomeroDeath: []
   RomeroHurt: []
   DeenEcanAttack:

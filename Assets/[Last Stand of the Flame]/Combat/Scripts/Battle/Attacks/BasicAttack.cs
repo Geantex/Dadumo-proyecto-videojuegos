@@ -64,12 +64,12 @@ public class BasicAttack : MonoBehaviour
         // Si la distancia es menor o igual que el rango del ataque
         if (distance <= (range + 0.5f))
         {
-            // Efectuamos la animación de ataque
-            Animaciones.ataque(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), enemy, allie);
             // Reducimos la vida del enemigo
             enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;
             // Actualizamos la vida del enemigo en la interfaz
             FindObjectOfType<BattleHUD>().SetHP(enemy.GetComponent<Unit>().party, enemy.GetComponent<Unit>().myteam, enemy.GetComponent<Unit>().Life);
+            // Efectuamos la animación de ataque
+            Animaciones.ataque(allie.GetComponentInChildren<Animator>(), allie.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), enemy, allie);
             // Devolvemos que el ataque ha sido un éxito
             return true;
         }

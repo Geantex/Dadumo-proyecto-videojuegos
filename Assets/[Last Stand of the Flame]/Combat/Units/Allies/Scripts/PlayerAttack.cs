@@ -62,11 +62,10 @@ public class PlayerAttack : BasicAttack
             }
 
         }
-        Attack(target, gameObject);
-
         gameObject.GetComponent<PlayerMove>().basicAttack = false;
         gameObject.GetComponent<PlayerMove>().specialAttack = false;
 
-        TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
+        Attack(target, gameObject);
+        //TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
     }
 }
