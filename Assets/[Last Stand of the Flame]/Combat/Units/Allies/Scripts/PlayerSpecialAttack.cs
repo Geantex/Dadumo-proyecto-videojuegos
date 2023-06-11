@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpecialAttack : MonoBehaviour
 {
@@ -83,6 +84,19 @@ public class PlayerSpecialAttack : MonoBehaviour
 
     public void AttackOfPlayer(int attackIndex, GameObject target, List<GameObject> allTargets)
     {
+
+        if (SceneManager.GetActiveScene().name == "TutorialCombate")
+        {
+            // ESTO OCURRE SOLO EN LA ESCENA DE TUTORIAL
+            // Sé que esto está horriblemente optimizado, quien lo arregle se lleva un beso y una hora de trello.
+            TutorialConsejos _tutorialConsejos = GameObject.Find("TutorialConsejos").GetComponent<TutorialConsejos>();
+            if (_tutorialConsejos.contadorConsejo == 3)
+            {
+                _tutorialConsejos.CerrarConsejo();
+            }
+
+        }
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
 
         foreach (GameObject enemy in enemies)

@@ -9,8 +9,6 @@ public class LoseState : FSMState
 {
     protected override void EnterState()
     {
-        (machine as GameController).replacePartyHealthAndManaPoints();
-        (machine as GameController).modifyGoldCoins(-50);
         StartCoroutine(EndState());
     }
 
@@ -19,9 +17,11 @@ public class LoseState : FSMState
         yield return new WaitForSeconds(1.74f);
         FadeToBlack.QuickFade();
         yield return new WaitForSeconds(0.26f);
-        SceneManager.LoadScene("Map");
-        machine.SetStateByType(typeof(MapState));
-        
+        // AQUI MARIO - Tenemos que hacer que te resetee la run (porque has perdido y muerto y te manda al menu principal)
+        // Esto es si estas en el tutorial (te manda al menu principal)
+        SceneManager.LoadScene("MainMenu");
+        machine.SetStateByType(typeof(MainMenuState));
+
     }
     protected override void ExitState()
     {
