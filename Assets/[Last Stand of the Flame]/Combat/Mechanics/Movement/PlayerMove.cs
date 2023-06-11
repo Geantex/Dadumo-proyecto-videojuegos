@@ -4,96 +4,115 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerMove : TacticsMove 
+public class PlayerMove : TacticsMove
 {
-    public Button buttonBasicAttack;
-    public Button buttonSpecialAttack1;
-    public Button buttonSpecialAttack2;
-    public Button buttonSpecialAttack3;
-    public Button buttonSpecialAttack4;
-    public Button buttonFinishTurn;
+    // -----------------------------------------------------------------------------
+    // En esta clase vamos a controlar el movimiento del jugador
+    // -----------------------------------------------------------------------------
 
+    // Creamos una lista donde guardaremos los objetivos de los ataques
     List<GameObject> targets = new List<GameObject>();
 
-    public BattleHUD battleHUD;
-
+    // Creamos dos variables que nos indican si el jugador ha seleccionado un ataque básico o especial
+    // Con esto conseguimos que, una vez seleccionado el ataque que queremos realizar, podamos seleccionar el objetivo y concluir el ataque
     public bool basicAttack = false;
     public bool specialAttack = false;
 
     // Use this for initialization
-    void Start () 
-	{
-        battleHUD = FindObjectOfType<BattleHUD>();
-        //Prueba Special Attack
-        battleHUD.buttonSpecialAttack1.onClick.AddListener(SpecialAttackButton);
+    void Start()
+    {
+        // Establecemos las funciones que se ejecutarán al pulsar los botones de la interfaz
+        FindObjectOfType<BattleHUD>().buttonSpecialAttack1.onClick.AddListener(SpecialAttackButton);
+        FindObjectOfType<BattleHUD>().buttonBasicAttack.onClick.AddListener(AttackButton);
+        FindObjectOfType<BattleHUD>().buttonFinishTurn.onClick.AddListener(endMyTurn);
 
-        battleHUD.buttonBasicAttack.onClick.AddListener(AttackButton);
-        battleHUD.buttonFinishTurn.onClick.AddListener(endMyTurn);
+        // Inicializamos el movimiento
         Init();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-        Debug.DrawRay(transform.position, transform.forward);
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        // Si no es su turno, no hace nada
         if (!turn)
         {
             return;
         }
 
+        // En función de si tenemos suficiente maná o no para realizar el ataque especial, activamos o desactivamos el botón
         if (gameObject.GetComponent<PlayerSpecialAttack>().canIDo(0))
         {
-            battleHUD.buttonSpecialAttack1.interactable = true;
+            FindObjectOfType<BattleHUD>().buttonSpecialAttack1.interactable = true;
         }
         else
         {
-            battleHUD.buttonSpecialAttack1.interactable = false;
+            FindObjectOfType<BattleHUD>().buttonSpecialAttack1.interactable = false;
         }
 
+        // Si no se está moviendo, calculamos la zona de movimiento y el camino
         if (!moving)
         {
+            // Si hemos activado el ataque básido y hay objetivos, podemos realizamos el ataque
             if (basicAttack && targets.Count > 0)
             {
                 DoBasicAttack();
             }
+            // Si hemos activado el ataque especial y hay objetivos, podemos realizamos el ataque
             if (specialAttack && targets.Count > 0)
             {
                 DoSpecialAttack();
             }
+            // Si no se ha calculado la zona de movimiento, la calculamos
             if (!calculateZone)
             {
+                // Obtenemos la casilla en la que está el jugador
                 GetCurrentTile();
+                // Calculamos la zona de movimiento
                 FindSelectableTiles();
+                // Indicamos que se ha calculado la zona de movimiento
                 calculateZone = true;
             }
             else
             {
+                // Si se ha calculado la zona de movimiento, recalculamos la casilla en la que está el jugador
                 GetCurrentTile();
             }
+            // Con esta función estaremos en constante comprobación para poder movernos a la casilla que queramos de las que están en la zona de movimiento
             CheckMouse();
         }
         else
         {
+            // Si se está moviendo, nos movemos
             Move();
         }
-	}
+    }
 
+    // Comprobamos si hemos pulsado en una casilla de la zona de movimiento y nos movemos a ella
+    // Recive: Nada
+    // Devuelve: Nada
     void CheckMouse()
     {
+        // Si no se ha pulsado el botón izquierdo del ratón, no hace nada, en caso contrario hace lo siguiente
         if (Input.GetMouseButtonUp(0))
         {
+            // Creamos un rayo que va desde la cámara hasta la posición del ratón
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+            // Creamos un RaycastHit que nos indica si el rayo ha chocado con algo
             RaycastHit hit;
+            // Si el rayo ha chocado con algo, hacemos lo siguiente
             if (Physics.Raycast(ray, out hit))
             {
+                // Si el rayo ha chocado con una casilla, hacemos lo siguiente
                 if (hit.collider.tag == "Tile")
                 {
+                    // Obtenemos la casilla con la que ha chocado el rayo
                     Tile t = hit.collider.GetComponent<Tile>();
 
+                    // Si la casilla es seleccionable, nos movemos a ella
                     if (t.selectable)
                     {
+                        // Indicamos que nos movemos a la casilla seleccionada
                         MoveToTile(t);
                     }
                 }
@@ -141,7 +160,7 @@ public class PlayerMove : TacticsMove
             return;
         }
 
-       targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackMouse(0);
+        targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackMouse(0);
         specialAttack = true;
     }
 

@@ -32,7 +32,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject ally in allies)
                 {
                     float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(ally);
                         ally.GetComponent<Unit>().circulo.SetActive(true);
@@ -45,7 +45,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject enemy in enemies)
                 {
                     float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(enemy);
                         enemy.GetComponent<Unit>().circulo.SetActive(true);
@@ -59,7 +59,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject ally in alliesAll)
                 {
                     float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(ally);
                         ally.GetComponent<Unit>().circulo.SetActive(true);
@@ -71,7 +71,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject enemy in enemiesAll)
                 {
                     float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(enemy);
                         enemy.GetComponent<Unit>().circulo.SetActive(true);

@@ -33,7 +33,7 @@ public class PlayerAttack : BasicAttack
         foreach (GameObject enemy in enemies)
         {
             float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
-            if (distance <= Range)
+            if (distance <= (Range + 0.5f))
             {
                 targets.Add(enemy);
                 enemy.GetComponent<Unit>().circulo.SetActive(true);
