@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00018692, y: 158.50404}
-  m_SizeDelta: {x: 304.71, y: 23.0118}
+  m_AnchoredPosition: {x: -0.06501, y: 158.50404}
+  m_SizeDelta: {x: 295.28, y: 23.0118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &271154210
 CanvasRenderer:
@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <b>Guia del personaje</b>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
+  m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -203,8 +203,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
+  m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -307,7 +307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -206, y: -4.2201e-10}
+  m_AnchoredPosition: {x: -202, y: 0.000046253}
   m_SizeDelta: {x: 41.7445, y: 104.1995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &683140893
@@ -395,6 +395,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5135263201690639440}
         m_TargetAssemblyTypeName: CambioPaginas, Assembly-CSharp
         m_MethodName: PreviousPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 686405376}
+        m_TargetAssemblyTypeName: CambiarImagen, Assembly-CSharp
+        m_MethodName: MostrarImagenAnterior
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -507,7 +519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.30314, y: 154.0457}
+  m_AnchoredPosition: {x: -0.30329, y: 153}
   m_SizeDelta: {x: 306.19, y: 41.1886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1211837394
@@ -542,8 +554,8 @@ MonoBehaviour:
     MacBeth\nB\xE1rbara\nKazuro\nRata r\xE1pida\nLadr\xF3n\nBrujo\nTroll\nSr. de
     la Ceniza\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
+  m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -677,8 +689,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '>'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
+  m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -781,7 +793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 202, y: 0}
+  m_AnchoredPosition: {x: 207, y: 0}
   m_SizeDelta: {x: 41.7445, y: 104.1995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2085119957
@@ -878,6 +890,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 686405376}
+        m_TargetAssemblyTypeName: CambiarImagen, Assembly-CSharp
+        m_MethodName: MostrarSiguienteImagen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &330852732780558393
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,8 +941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 181, y: -35.741577}
-  m_SizeDelta: {x: -681.7985, y: -186.6457}
+  m_AnchoredPosition: {x: 176.06729, y: -1.1913147}
+  m_SizeDelta: {x: -804.9058, y: -433.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1993261003602203886
 Canvas:
@@ -992,6 +1016,7 @@ GameObject:
   - component: {fileID: 1124519840916316208}
   - component: {fileID: 3362167347734847402}
   - component: {fileID: 8263540651502855093}
+  - component: {fileID: 660335734}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1016,8 +1041,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76.69999, y: 39.141}
-  m_SizeDelta: {x: 153.4, y: 171}
+  m_AnchoredPosition: {x: -75.1, y: 39.641}
+  m_SizeDelta: {x: 105, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3362167347734847402
 CanvasRenderer:
@@ -1047,7 +1072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c62958c72af5cfe4aab8d0710018baa0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1057,6 +1082,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &660335734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558071248425207619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d34725fed3ead429f51753bcb6ecd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 25eacbd8c04bb1d44a243b16f3f5880e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  imagenBoton: {fileID: 0}
 --- !u!1 &1708130205890688371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,8 +1143,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -17.051}
-  m_SizeDelta: {x: 304.7088, y: 322.39}
+  m_AnchoredPosition: {x: -0.0656, y: -17.051}
+  m_SizeDelta: {x: 295.2831, y: 322.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8444545748153778021
 CanvasRenderer:
@@ -1123,15 +1174,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b></b>Galent\xEDn Br\xE9bori es un personaje que destaca sobre el resto
-    de personajes jugables por sus poderosos ataques a distancia, el poder atacar
-    a grupos gracias a su poderoso ataque especial y por su extremadamente baja salud.\r\n\r\nLo
-    m\xE1s recomendable en tema posicionamiento para \xE9l es tenerlo lo m\xE1s lejos
-    posible de los enemigos, pero a\xFAn as\xED tener rango para poder atacar.\r\n\r\nRespecto
+  m_text: "Galent\xEDn Br\xE9bori es un personaje que destaca sobre el resto de personajes
+    jugables por sus poderosos ataques a distancia, el poder atacar a grupos gracias
+    a su poderoso ataque especial y por su extremadamente baja salud.\r\n\r\nLo m\xE1s
+    recomendable en tema posicionamiento para \xE9l es tenerlo lo m\xE1s lejos posible
+    de los enemigos, pero a\xFAn as\xED tener rango para poder atacar.\r\n\r\nRespecto
     al tema de ataques, si hay un solo enemigo es m\xE1s recomendable usar su ataque
     b\xE1sico, a no ser que quieras infligir una gran cantidad de da\xF1o para matarlo
     antes, pero s\xED hay un grupo de enemigos juntos es mejor efectuar su ataque
-    especial, porque inflige da\xF1o en \xE1rea puede golpear a todos.\r\n\n\n<b></b>Jos\xE9
+    especial, porque inflige da\xF1o en \xE1rea puede golpear a todos.\r\n\n\n<page>Jos\xE9
     Mar\xEDa es un personaje que destaca sobre el resto gracias a su extremadamente
     alta cantidad de vida y sus curaciones, pero a comparaci\xF3n del resto flojea
     por su poco poder ofensivo.\r\n\r\nCuando hablamos del posicionamiento, el mejor
@@ -1139,7 +1190,7 @@ MonoBehaviour:
     aguantar los golpes para que tu equipo pueda atacar de forma segura, y tus aliados,
     para poder curarlos.\r\n\r\nPara el tema ofensivo este no es el mejor personaje
     que hay, as\xED que no es recomendable usarlo por esta capacidad, pero sin duda
-    hay que tenerlo en cuenta por su capacidad de soporte para el equipo\r.\n\n\n<b></b>Karma
+    hay que tenerlo en cuenta por su capacidad de soporte para el equipo\r.\n\n\n<page>Karma
     Kapalabhati es un personaje que destaca sobre el resto gracias a su alta movilidad
     y sus poderosos ataques cuerpo a cuerpo, pero su mayor desventaja es su baja
     salud.\r\n\r\nSu posicionamiento sobre el tablero debe ser la retaguardia enemiga,
@@ -1148,10 +1199,34 @@ MonoBehaviour:
     al poder ofensivo del personaje, este es el mejor haciendo da\xF1o de forma individual,
     as\xED que puedes usar su ataque especial para matar r\xE1pidamente a enemigos
     y gracias a su gran movilidad aprovecharte para huir en caso de tener poca salud
-    o cambiar de objetivo.\r\n\n\n<page>\n\n<page>\n\n<page>\n\n<page>\n\n<page>"
+    o cambiar de objetivo.\r\n\n\n<page>Deen Ecan es un personaje que destaca por
+    ser un tanque con capacidades ofensivas y no tener muchas debilidades lo suficientemente
+    grandes como para explotarlas.\r\n\r\nSobre el posicionamiento de este personaje,
+    lo mejor es ponerlo en la vanguardia, permitiendo a este aguantar golpes mientras
+    el resto del equipo puede pegar de forma segura.\r\n\r\nAunque este personaje
+    no parezca muy ofensivo por su pesada armadura y sus puntos de vida, este tiene
+    un poder ofensivo elevado gracias a su poderoso ataque espacial.\r\n\n\n<page>Romero
+    MacBeth es un personaje que destaca por tener capacidades h\xEDbridas, teniendo
+    tanta capacidad de aguante, capacidades ofensivas y capacidades de soporte.\r\n\r\nLa
+    mejor posici\xF3n de este personaje en el tablero es un punto medio entre la
+    primera l\xEDnea de combate y sus compa\xF1eros por su capacidad de curaci\xF3n.\r\n\r\nEl
+    poder ofensivo de este personaje es mediano, ya que tiene un poder de ataque
+    mediano, pero compensa esto con su capacidad de curaci\xF3n y de aguante.\r\n\n\n\n<page>B\xE1rbara
+    es un personaje que destaca por su gran potencial ofensivo tanto en masa como
+    de forma individual y su gran cantidad de vida.\r\n\r\nLo m\xE1s recomendable
+    en tema posicionamiento para este personaje es cerca de los enemigos, intentando
+    estar entre cuantos m\xE1s mejor para usar su ataque especial.\r\n\r\nEl poder
+    ofensivo de este personaje es elevado, ya que tiene mucho da\xF1o y mucha vida
+    como para poder meterse entre todos los enemigos y poder salir viva de esto.\r\n\n\n<page>Kazuro
+    es un personaje que destaca por su poder ofensivo y su gran movilidad, pero su
+    mayor desventaja son las peleas en las que el enemigo tienen superioridad num\xE9rica.\n\nSobre
+    su posicionamiento en el tablero, lo m\xE1s eficaz es aprovechar su alta movilidad
+    para matar primero a los enemigos m\xE1s d\xE9biles y luego matar al resto.\n\nEl
+    poder ofensivo de este personaje es alto en las peleas uno contra uno gracias
+    a su ataque especial.\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
+  m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1175,8 +1250,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1251,7 +1326,7 @@ RectTransform:
   - {fileID: 5152123549519839224}
   - {fileID: 783069264}
   m_Father: {fileID: 2082521693383583165}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1291,12 +1366,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 1
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1050, y: 500}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1347,96 +1422,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8391522552272111894}
-  - {fileID: 3116859881057643700}
   - {fileID: 5049031525653638921}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5380852294803088116
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8391522552272111894}
-  - component: {fileID: 4313879661118533119}
-  - component: {fileID: 8435086998973613601}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8391522552272111894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5380852294803088116}
-  m_LocalRotation: {x: 0.7092096, y: 0.000009404961, z: -0.000006238053, w: 0.7049978}
-  m_LocalPosition: {x: 0.99545044, y: 25.35128, z: -4.4117656}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2082521693383583165}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &4313879661118533119
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5380852294803088116}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 3.5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!81 &8435086998973613601
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5380852294803088116}
-  m_Enabled: 1
 --- !u!1 &5763165668784953950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,8 +1467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -171.59717, y: -35.741577}
-  m_SizeDelta: {x: -681.7985, y: -186.6457}
+  m_AnchoredPosition: {x: -187.50183, y: -1.1924133}
+  m_SizeDelta: {x: -802.8291, y: -433.0826}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1670807145173826350
 Canvas:
@@ -1609,7 +1598,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<b>Estad\xEDsticas</b>\nClase: Mago\r\nVida: 35\t\r\nMan\xE1: 100\r\nDa\xF1o
-    ataque: 30\r\nRango ataque: 5 o 6\nMovimiento: 4\r\n\n<page><b>Estad\xEDsticas</b>\nClase:
+    ataque: 30\r\nRango ataque: 6\nMovimiento: 4\r\n\n<page><b>Estad\xEDsticas</b>\nClase:
     Cl\xE9rigo\r\nVida: 110\t\r\nMan\xE1: 100\r\nDa\xF1o ataque: 15\r\nRango de ataque:
     1\r\nMovimiento: 3\r\n\n<page><b>Estad\xEDsticas</b>\nClase: Monje\r\nVida: 60\r\nMan\xE1:
     100\r\nDa\xF1o ataque: 30\r\nRango de ataque: 1\r\nMovimiento: 5\r\n\n<page><b>Estad\xEDsticas</b>\nClase:
@@ -1622,12 +1611,12 @@ MonoBehaviour:
     5\r\n\n<page><b>Estad\xEDsticas</b>\nVida: 20\r\nMan\xE1: 100\r\nDa\xF1o ataque:
     10\r\nRango de ataque: 1\r\nMovimiento: 5\r\n\n<page><b>Estad\xEDsticas</b>\nVida:
     40\nMan\xE1: 100\r\nDa\xF1o ataque: 30\nRango de ataque: 1\r\nMovimiento: 4\n\n<page><b>Estad\xEDsticas</b>\nVida:
-    35\nMan\xE1: 100\r\nDa\xF1o ataque: 40\nRango de ataque: 1\r4\nMovimiento: 4\n\n<page><b>Estad\xEDsticas</b>\nVida:
+    35\nMan\xE1: 100\r\nDa\xF1o ataque: 40\nRango de ataque: 3\nMovimiento: 4\n\n<page><b>Estad\xEDsticas</b>\nVida:
     50\nMan\xE1: 100\r\nDa\xF1o ataque: 50\nRango de ataque: 1\r\nMovimiento: 3\n\n<page><b>Estad\xEDsticas</b>\nVida:
     250\nMan\xE1: 100\r\nDa\xF1o ataque: 50\nRango de ataque: 1\r\nMovimiento: 5\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
+  m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1693,100 +1682,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &7687030183405755818
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3116859881057643700}
-  - component: {fileID: 5565139311691983607}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3116859881057643700
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7687030183405755818}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0.99568033, y: -25.622513, z: -4.717616}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2082521693383583165}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!108 &5565139311691983607
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7687030183405755818}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &7943744734377514331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1694,7 @@ GameObject:
   - component: {fileID: 4106483958173022830}
   - component: {fileID: 7300620586377855699}
   - component: {fileID: 5135263201690639440}
+  - component: {fileID: 686405376}
   m_Layer: 5
   m_Name: Libro
   m_TagString: Untagged
@@ -1825,8 +1721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: -0.82001}
-  m_SizeDelta: {x: 1002.9438, y: 543.14}
+  m_AnchoredPosition: {x: -1, y: 0}
+  m_SizeDelta: {x: 1105.6228, y: 782.3652}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4106483958173022830
 CanvasRenderer:
@@ -1856,7 +1752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 807cf501ecead1c4d99eb0022b28704b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cef419e0d2b7dd6439ba352ec6732e34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1884,6 +1780,32 @@ MonoBehaviour:
   - {fileID: 1211837393}
   - {fileID: 1154824982827714036}
   totalPages: 12
+--- !u!114 &686405376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943744734377514331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d34725fed3ead429f51753bcb6ecd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenes:
+  - {fileID: 21300000, guid: e0fcb9636085b884aaae367e6a47fcff, type: 3}
+  - {fileID: 21300000, guid: 859e4fa7569720442b842f1d93711805, type: 3}
+  - {fileID: 21300000, guid: 25eacbd8c04bb1d44a243b16f3f5880e, type: 3}
+  - {fileID: 21300000, guid: 776534d4fda3fe14bbaa75524ed03a77, type: 3}
+  - {fileID: 21300000, guid: 05765a0c58b7db845932e8c693ae19b8, type: 3}
+  - {fileID: 21300000, guid: f805f94c12425f5459d82c7c13c66a8c, type: 3}
+  - {fileID: 21300000, guid: 41579e985f48ea6439a9abec92dba33d, type: 3}
+  - {fileID: 21300000, guid: 6eef07709ec259143a52caf741f539c4, type: 3}
+  - {fileID: 21300000, guid: 29adcf288e3745f4eb9836d064ecb86f, type: 3}
+  - {fileID: 21300000, guid: e4e9ee30145474747bba7e544df67096, type: 3}
+  - {fileID: 21300000, guid: 2757231cc4097084cbe42eb27129b15c, type: 3}
+  - {fileID: 21300000, guid: 8f39057e5efd43c4bb9d661704473586, type: 3}
+  imagenBoton: {fileID: 8263540651502855093}
 --- !u!1 &9186243944947849605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,8 +1841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.30329, y: -112.43872}
-  m_SizeDelta: {x: 306.19, y: 122.758}
+  m_AnchoredPosition: {x: 0.0494, y: -114.65}
+  m_SizeDelta: {x: 293.9122, y: 127.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7028430952550056499
 CanvasRenderer:
@@ -1967,8 +1889,8 @@ MonoBehaviour:
     un golpe en X con sus espadas asestando un golpe en los \xF3rganos vitales del
     rival\nCoste de man\xE1: 25\r\nRango: 1\r\nDa\xF1o: 40\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
+  m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1992,8 +1914,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

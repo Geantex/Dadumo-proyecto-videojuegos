@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,70 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1154824982827714036, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
-      propertyPath: m_text
-      value: "<b></b>Galent\xEDn Br\xE9bori es un personaje que destaca sobre el
-        resto de personajes jugables por sus poderosos ataques a distancia, el poder
-        atacar a grupos gracias a su poderoso ataque especial y por su extremadamente
-        baja salud.\r\n\r\nLo m\xE1s recomendable en tema posicionamiento para \xE9l
-        es tenerlo lo m\xE1s lejos posible de los enemigos, pero a\xFAn as\xED tener
-        rango para poder atacar.\r\n\r\nRespecto al tema de ataques, si hay un solo
-        enemigo es m\xE1s recomendable usar su ataque b\xE1sico, a no ser que quieras
-        infligir una gran cantidad de da\xF1o para matarlo antes, pero s\xED hay
-        un grupo de enemigos juntos es mejor efectuar su ataque especial, porque
-        inflige da\xF1o en \xE1rea puede golpear a todos.\r\n\n\n<page>Jos\xE9 Mar\xEDa
-        es un personaje que destaca sobre el resto gracias a su extremadamente alta
-        cantidad de vida y sus curaciones, pero a comparaci\xF3n del resto flojea
-        por su poco poder ofensivo.\r\n\r\nCuando hablamos del posicionamiento, el
-        mejor sitio ser\xEDa un punto medio entre la primera l\xEDnea de combate,
-        para poder aguantar los golpes para que tu equipo pueda atacar de forma segura,
-        y tus aliados, para poder curarlos.\r\n\r\nPara el tema ofensivo este no
-        es el mejor personaje que hay, as\xED que no es recomendable usarlo por esta
-        capacidad, pero sin duda hay que tenerlo en cuenta por su capacidad de soporte
-        para el equipo\r.\n\n\n<page>Karma Kapalabhati es un personaje que destaca
-        sobre el resto gracias a su alta movilidad y sus poderosos ataques cuerpo
-        a cuerpo, pero su mayor desventaja es su baja salud.\r\n\r\nSu posicionamiento
-        sobre el tablero debe ser la retaguardia enemiga, para poder matar a los
-        enemigos m\xE1s d\xE9biles y, luego de esto, centrarse en matar al resto
-        de enemigos con cuidado de no perder mucha vida.\r\n\r\nRespecto al poder
-        ofensivo del personaje, este es el mejor haciendo da\xF1o de forma individual,
-        as\xED que puedes usar su ataque especial para matar r\xE1pidamente a enemigos
-        y gracias a su gran movilidad aprovecharte para huir en caso de tener poca
-        salud o cambiar de objetivo.\r\n\n\n<page>Deen Ecan es un personaje que destaca
-        por ser un tanque con capacidades ofensivas y no tener muchas debilidades
-        lo suficientemente grandes como para explotarlas.\r\n\r\nSobre el posicionamiento
-        de este personaje, lo mejor es ponerlo en la vanguardia, permitiendo a este
-        aguantar golpes mientras el resto del equipo puede pegar de forma segura.\r\n\r\nAunque
-        este personaje no parezca muy ofensivo por su pesada armadura y sus puntos
-        de vida, este tiene un poder ofensivo elevado gracias a su poderoso ataque
-        espacial.\r\n\n\n<page>Romero MacBeth es un personaje que destaca por tener
-        capacidades h\xEDbridas, teniendo tanta capacidad de aguante, capacidades
-        ofensivas y capacidades de soporte.\r\n\r\nLa mejor posici\xF3n de este personaje
-        en el tablero es un punto medio entre la primera l\xEDnea de combate y sus
-        compa\xF1eros por su capacidad de curaci\xF3n.\r\n\r\nEl poder ofensivo de
-        este personaje es mediano, ya que tiene un poder de ataque mediano, pero
-        compensa esto con su capacidad de curaci\xF3n y de aguante.\r\n\n\n\n<page>B\xE1rbara
-        es un personaje que destaca por su gran potencial ofensivo tanto en masa
-        como de forma individual y su gran cantidad de vida.\r\n\r\nLo m\xE1s recomendable
-        en tema posicionamiento para este personaje es cerca de los enemigos, intentando
-        estar entre cuantos m\xE1s mejor para usar su ataque especial.\r\n\r\nEl
-        poder ofensivo de este personaje es elevado, ya que tiene mucho da\xF1o y
-        mucha vida como para poder meterse entre todos los enemigos y poder salir
-        viva de esto.\r\n\n\n<page>Kazuro es un personaje que destaca por su poder
-        ofensivo y su gran movilidad, pero su mayor desventaja son las peleas en
-        las que el enemigo tienen superioridad num\xE9rica.\n\nSobre su posicionamiento
-        en el tablero, lo m\xE1s eficaz es aprovechar su alta movilidad para matar
-        primero a los enemigos m\xE1s d\xE9biles y luego matar al resto.\n\nEl poder
-        ofensivo de este personaje es alto en las peleas uno contra uno gracias a
-        su ataque especial.\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154824982827714036, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
-      propertyPath: m_pageToDisplay
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2082521693383583165, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2082521693383583165, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,17 +178,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: prefabGrimoire
       objectReference: {fileID: 0}
-    - target: {fileID: 5158237767201913264, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8263540651502855093, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b56ead78543dfdb48b910bd81866e90b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
---- !u!1 &1553978266
+--- !u!1 &716098226
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,89 +188,79 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1553978268}
-  - component: {fileID: 1553978267}
+  - component: {fileID: 716098229}
+  - component: {fileID: 716098228}
+  - component: {fileID: 716098227}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Por lo momos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!108 &1553978267
-Light:
+  m_IsActive: 1
+--- !u!81 &716098227
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553978266}
+  m_GameObject: {fileID: 716098226}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
+--- !u!20 &716098228
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716098226}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 30.16703
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1553978268
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &716098229
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553978266}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_GameObject: {fileID: 716098226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 268, z: -1001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

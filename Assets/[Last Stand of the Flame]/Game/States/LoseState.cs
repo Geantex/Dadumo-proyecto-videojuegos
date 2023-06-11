@@ -9,8 +9,6 @@ public class LoseState : FSMState
 {
     protected override void EnterState()
     {
-        (machine as GameController).replacePartyHealthAndManaPoints();
-        (machine as GameController).modifyGoldCoins(-50);
         StartCoroutine(EndState());
     }
 
@@ -19,8 +17,8 @@ public class LoseState : FSMState
         yield return new WaitForSeconds(1.74f);
         FadeToBlack.QuickFade();
         yield return new WaitForSeconds(0.26f);
-        SceneManager.LoadScene("Map");
-        machine.SetStateByType(typeof(MapState));
+        SceneManager.LoadScene("escenaPerder");
+        machine.SetStateByType(typeof(MainMenuState));
         
     }
     protected override void ExitState()
