@@ -152,9 +152,10 @@ MonoBehaviour:
   turn: 0
   calculateZone: 0
   moving: 0
-  move: 5
-  moveSpeed: 6
+  move: 7
+  moveSpeed: 7
   actualTargetTile: {fileID: 0}
+  heading2: {x: 0, y: 0, z: 0}
 --- !u!114 &8623736981273273001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,12 +169,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Rata
-  maxLife: 0
+  maxLife: 20
   life: 20
   maxMana: 0
   mana: 0
   speed: 0
-  party: 4
+  party: 3
   myteam: 0
   imagen: {fileID: 0}
   circulo: {fileID: 2196062962564844435}
@@ -190,8 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e5f0bc30ff31840a575e2b2a9101e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   range: 1
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
 --- !u!114 &3584074038927123869
 MonoBehaviour:
@@ -211,7 +213,7 @@ MonoBehaviour:
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 0}
   healthPoints: 20
-  maxHealthPoints: 0
+  maxHealthPoints: 20
   manaPoints: 0
   damagePoints: 10
   rangeTiles: 1
