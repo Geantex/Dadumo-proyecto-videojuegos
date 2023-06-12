@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 549479804000218926}
   - component: {fileID: 6786119973686744439}
   - component: {fileID: 4321863125354626044}
-  - component: {fileID: 8399226091280734194}
+  - component: {fileID: 1099911803159866955}
   m_Layer: 0
   m_Name: PaladinPrefab
   m_TagString: Player
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
+  animandose: 0
   calculateZone: 0
   moving: 0
   move: 5
@@ -129,7 +130,7 @@ MonoBehaviour:
   AllSpecialAttacks:
   - {fileID: 11400000, guid: bfc72182257091e40afdd22d8c8fffb3, type: 2}
   heading: {x: 0, y: 0, z: 0}
---- !u!114 &8399226091280734194
+--- !u!114 &1099911803159866955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +146,7 @@ MonoBehaviour:
   characterClassName: paladin
   characterImage: {fileID: 3792388835238295109, guid: 9a73b3e38aba6ca49992cfb64ce439df, type: 3}
   characterMaterial: {fileID: 0}
-  characterPrefab: {fileID: 0}
+  characterPrefab: {fileID: 8354084290596415721}
   healthPoints: 100
   maxHealthPoints: 100
   manaPoints: 100
@@ -715,16 +716,39 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1eab587c712678f438d27f63ef254d62, type: 3}
   KazuroFXSpecialAttack:
   - {fileID: 8300000, guid: 2e7dd2cbb62bede429b974c9326bc75e, type: 3}
-  LadronAttack: []
-  LadronFXAttack: []
-  LadronDeath: []
-  LadronHurt: []
+  LadronAttack:
+  - {fileID: 8300000, guid: 89fb02767bf26d6448d5b9ea20271276, type: 3}
+  - {fileID: 8300000, guid: 280a9c3f881451b4ca95d2c2d9d8277c, type: 3}
+  - {fileID: 8300000, guid: ad93ba468a18e6c4d941f7fc93109c0f, type: 3}
+  - {fileID: 8300000, guid: d4fe34c23f01d5641b035da5d3cf10c0, type: 3}
+  - {fileID: 8300000, guid: 012d26091529226459feac892302477d, type: 3}
+  LadronFXAttack:
+  - {fileID: 8300000, guid: 33c3cef44524e3247bba1b636f6bf66c, type: 3}
+  LadronDeath:
+  - {fileID: 8300000, guid: 8fc19d3e1072d404783e331db696caba, type: 3}
+  - {fileID: 8300000, guid: dd7a1d89c4fcd0f499dc03693b75c50c, type: 3}
+  LadronHurt:
+  - {fileID: 8300000, guid: 07bfcb197972a014cb75d59aac00837d, type: 3}
+  - {fileID: 8300000, guid: 2568385c192219a4d846165cac75527a, type: 3}
+  - {fileID: 8300000, guid: 8fa5c0bc19c4a584b97d4a3a63d6d884, type: 3}
+  - {fileID: 8300000, guid: 4f2843b6b5384934687784f17b5c1ec0, type: 3}
+  - {fileID: 8300000, guid: 44028d915c2a2bf4794297843d5ec52f, type: 3}
   LadronSpecialAttack: []
   LadronFXSpecialAttack: []
   BrujoAttack: []
-  BrujoFXAttack: []
-  BrujoDeath: []
-  BrujoHurt: []
+  BrujoFXAttack:
+  - {fileID: 8300000, guid: 2c0f75904002224409f94f21eaa97c0d, type: 3}
+  BrujoDeath:
+  - {fileID: 8300000, guid: 804a603b87d0b0e40986f7d416b90c3e, type: 3}
+  - {fileID: 8300000, guid: 34d70bfbaf57fea45a52af11784ebdec, type: 3}
+  - {fileID: 8300000, guid: 869a292bbd4695541b31cec853eecc6a, type: 3}
+  BrujoHurt:
+  - {fileID: 8300000, guid: 33abf916e4679ef44a66971f2f2331ae, type: 3}
+  - {fileID: 8300000, guid: 52e914425f246c249bc46f5c8aa397ab, type: 3}
+  - {fileID: 8300000, guid: 5d0052a10de39034390c093601cc3005, type: 3}
+  - {fileID: 8300000, guid: 52a61e42f63b0c542ac6f2093f7bef31, type: 3}
+  - {fileID: 8300000, guid: 164ccb11e01b38d4cafd4232848c126a, type: 3}
+  - {fileID: 8300000, guid: 48cd00944c00ea14190805f74a068481, type: 3}
   BrujoSpecialAttack: []
   BrujoFXSpecialAttack: []
   BossAttack: []
@@ -733,22 +757,43 @@ MonoBehaviour:
   BossHurt: []
   BossSpecialAttack: []
   BossFXSpecialAttack: []
-  RataAttack: []
+  RataAttack:
+  - {fileID: 8300000, guid: 625d3a874f7886843a62c3d6d36a1304, type: 3}
   RataFXAttack: []
-  RataDeath: []
-  RataHurt: []
+  RataDeath:
+  - {fileID: 8300000, guid: 73a0296da05ff4542a449c1d5985fc18, type: 3}
+  RataHurt:
+  - {fileID: 8300000, guid: 07c4545d2506779489dd9dbb065d880d, type: 3}
   RataSpecialAttack: []
   RataFXSpecialAttack: []
-  TrollAttack: []
+  TrollAttack:
+  - {fileID: 8300000, guid: ebb4be1673f13034d92c4fc147e92a8d, type: 3}
+  - {fileID: 8300000, guid: 8ba09f3b69d51594bbf379ca1d3a2bf1, type: 3}
+  - {fileID: 8300000, guid: b535796318f4ed543837e7faa114fdb6, type: 3}
   TrollFXAttack: []
-  TrollDeath: []
-  TrollHurt: []
+  TrollDeath:
+  - {fileID: 8300000, guid: 04f02b5fa6a4b3d4ab2566bde7f9ac98, type: 3}
+  - {fileID: 8300000, guid: bfa59266852cabd41a926508fefcb7f8, type: 3}
+  TrollHurt:
+  - {fileID: 8300000, guid: 248c230e70b556347955d8e22c31d134, type: 3}
+  - {fileID: 8300000, guid: bb6c6ef5199caa346a82574839a7f829, type: 3}
+  - {fileID: 8300000, guid: 2e97d2b9113552b4cafb56502fc81b23, type: 3}
+  - {fileID: 8300000, guid: 31e7d171074c12342a7aa890bbd59022, type: 3}
   TrollSpecialAttack: []
   TrollFXSpecialAttack: []
   Pasos:
   - {fileID: 8300000, guid: 67f78f47accb32741aaa43599b752bf1, type: 3}
   - {fileID: 8300000, guid: 9455fe2b75bcfe54ebd1fe0ed5d52b35, type: 3}
   - {fileID: 8300000, guid: f7f677983e5ee1e42ab7dff007d837b8, type: 3}
+  musicaInicio: {fileID: 0}
+  musicaBoss: {fileID: 0}
+  musicaMapa: {fileID: 0}
+  musicaTienda: {fileID: 0}
+  ambienteBosque: {fileID: 0}
+  ambientePueblo: {fileID: 0}
+  ambienteMontana: {fileID: 0}
+  ambienteVolcan: {fileID: 0}
+  ambienteHoguera: {fileID: 0}
 --- !u!114 &6806987100776714363
 MonoBehaviour:
   m_ObjectHideFlags: 0

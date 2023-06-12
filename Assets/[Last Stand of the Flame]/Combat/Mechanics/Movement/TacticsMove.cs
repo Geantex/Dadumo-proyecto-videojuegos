@@ -6,6 +6,7 @@ public class TacticsMove : MonoBehaviour
 {
     // Usamos una variable para determinar si es nuestro turno o no
     public bool turn = false;
+    public bool animandose = false;
     public bool calculateZone = false;
     private bool alreadyMoving = false;
 
@@ -19,6 +20,11 @@ public class TacticsMove : MonoBehaviour
     public Stack<Tile> path = new Stack<Tile>();
     // Creamos una variable para guardar la casilla actual
     Tile currentTile;
+
+    public Tile CurrentTile
+    {
+        get { return currentTile; }
+    }
 
     // Variables para el movimiento
     public bool moving = false;
@@ -460,6 +466,7 @@ public class TacticsMove : MonoBehaviour
     {
         // Desactivamos el turno del personaje
         turn = false;
+        animandose = false;
         calculateZone = false;
     }
 }

@@ -133,10 +133,21 @@ public class SoundClips : MonoBehaviour
     //-------------------------------------------------------
     //-----------------------MUSICA--------------------------
     //-------------------------------------------------------
+    [Header("Musica")]
+    public AudioClip musicaInicio;
+    public AudioClip musicaBoss;
+    public AudioClip musicaMapa;
+    public AudioClip musicaTienda;
 
     //-------------------------------------------------------
     //----------------------AMBIENTE-------------------------
     //-------------------------------------------------------
+    [Header("Ambiente")]
+    public AudioClip ambienteBosque;
+    public AudioClip ambientePueblo;
+    public AudioClip ambienteMontana;
+    public AudioClip ambienteVolcan;
+    public AudioClip ambienteHoguera;
 
     // Start is called before the first frame update
     void Start()

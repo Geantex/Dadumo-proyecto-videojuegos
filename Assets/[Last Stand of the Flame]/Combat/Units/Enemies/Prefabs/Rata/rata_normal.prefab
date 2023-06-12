@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7208151735913903702}
   - component: {fileID: 7717901697121970082}
   - component: {fileID: 7137841504784373593}
-  - component: {fileID: 8109675890778389932}
   m_Layer: 0
   m_Name: rata_normal
   m_TagString: NPC
@@ -66,11 +65,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
+  animandose: 0
   calculateZone: 0
   moving: 0
   move: 5
   moveSpeed: 6
   actualTargetTile: {fileID: 0}
+  heading2: {x: 0, y: 0, z: 0}
 --- !u!114 &7717901697121970082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,32 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   range: 0
+  heading: {x: 0, y: 0, z: 0}
   AoD: 1
---- !u!114 &8109675890778389932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4855578793925419431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd64938fc080294e9e4bf35ff2f4361, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: 
-  characterClassName: 
-  characterImage: {fileID: 0}
-  characterMaterial: {fileID: 0}
-  characterPrefab: {fileID: 0}
-  healthPoints: 0
-  maxHealthPoints: 0
-  manaPoints: 0
-  damagePoints: 0
-  rangeTiles: 0
-  specialAttacks: []
-  characterWeapon: {fileID: 0}
-  characterArmor: {fileID: 0}
 --- !u!1 &6249404867766182542
 GameObject:
   m_ObjectHideFlags: 0

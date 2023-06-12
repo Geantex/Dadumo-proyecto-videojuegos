@@ -140,14 +140,14 @@ public class Animaciones : MonoBehaviour
                 break;
 
             case "Brujo":
-                a.llamarCoordinarRayos(myUnit, target);
                 pj.Play("Brujo ataque");
+                a.llamarCoordinarRayos(myUnit, target);
                 break;
             case "Ladron":
                 pj.Play("Bandido ataque");
                 break;
             case "Rata":
-                pj.Play("Rata ataque2");
+                pj.Play("Rata atacar2");
                 break;
             case "Troll":
                 pj.Play("Troll ataque");
