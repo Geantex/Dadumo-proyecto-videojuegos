@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 966132186975044333}
   - component: {fileID: 6402018752072293969}
   - component: {fileID: -2089795438235298575}
+  - component: {fileID: 6499284335979927622}
   m_Layer: 0
   m_Name: Troll
   m_TagString: NPC
@@ -110,6 +111,31 @@ MonoBehaviour:
   range: 1
   heading: {x: 0, y: 0, z: 0}
   AoD: 1
+--- !u!114 &6499284335979927622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928337406835287415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd64938fc080294e9e4bf35ff2f4361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Troll
+  characterClassName: troll
+  characterImage: {fileID: 0}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 8928337406835287415}
+  healthPoints: 50
+  maxHealthPoints: 50
+  manaPoints: 0
+  damagePoints: 50
+  rangeTiles: 1
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
 --- !u!1001 &3086340146145503393
 PrefabInstance:
   m_ObjectHideFlags: 0

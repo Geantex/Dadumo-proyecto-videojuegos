@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 549479804000218926}
   - component: {fileID: 6786119973686744439}
   - component: {fileID: 4321863125354626044}
+  - component: {fileID: 1099911803159866955}
   m_Layer: 0
   m_Name: PaladinPrefab
   m_TagString: Player
@@ -129,6 +130,32 @@ MonoBehaviour:
   AllSpecialAttacks:
   - {fileID: 11400000, guid: bfc72182257091e40afdd22d8c8fffb3, type: 2}
   heading: {x: 0, y: 0, z: 0}
+--- !u!114 &1099911803159866955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8354084290596415721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Deen Ecan
+  characterClassName: paladin
+  characterImage: {fileID: 3792388835238295109, guid: 9a73b3e38aba6ca49992cfb64ce439df, type: 3}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 8354084290596415721}
+  healthPoints: 100
+  maxHealthPoints: 100
+  manaPoints: 100
+  damagePoints: 20
+  rangeTiles: 1
+  specialAttacks:
+  - {fileID: 11400000, guid: bfc72182257091e40afdd22d8c8fffb3, type: 2}
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
 --- !u!1001 &5731428645661030101
 PrefabInstance:
   m_ObjectHideFlags: 0

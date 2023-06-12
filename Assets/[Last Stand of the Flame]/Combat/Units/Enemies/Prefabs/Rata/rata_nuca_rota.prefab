@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6213104371148011298}
   - component: {fileID: 8623736981273273001}
   - component: {fileID: 91473157624508172}
+  - component: {fileID: 7940659348448549909}
   m_Layer: 0
   m_Name: rata_nuca_rota
   m_TagString: NPC
@@ -195,6 +196,31 @@ MonoBehaviour:
   range: 1
   heading: {x: 0, y: 0, z: 0}
   AoD: 1
+--- !u!114 &7940659348448549909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283088128132516384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd64938fc080294e9e4bf35ff2f4361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Rata
+  characterClassName: rata rapida
+  characterImage: {fileID: 0}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 6283088128132516384}
+  healthPoints: 20
+  maxHealthPoints: 20
+  manaPoints: 0
+  damagePoints: 10
+  rangeTiles: 1
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
 --- !u!1001 &4621161204815051215
 PrefabInstance:
   m_ObjectHideFlags: 0

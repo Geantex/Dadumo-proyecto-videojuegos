@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 6003626008245300262}
   - component: {fileID: 9155009054608668857}
   - component: {fileID: -2128924981269584756}
+  - component: {fileID: 5080178659317696436}
   m_Layer: 0
   m_Name: JefeFinal
   m_TagString: NPC
@@ -223,6 +224,31 @@ MonoBehaviour:
   range: 0
   heading: {x: 0, y: 0, z: 0}
   AoD: 1
+--- !u!114 &5080178659317696436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145378970324420070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd64938fc080294e9e4bf35ff2f4361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: "Se\xF1or de la ceniza"
+  characterClassName: boss
+  characterImage: {fileID: 0}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 7145378970324420070}
+  healthPoints: 250
+  maxHealthPoints: 250
+  manaPoints: 0
+  damagePoints: 50
+  rangeTiles: 4
+  specialAttacks: []
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
 --- !u!1001 &2998951517192718575
 PrefabInstance:
   m_ObjectHideFlags: 0
