@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2177955778653700190}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -114,6 +114,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3302330506944412026}
   - {fileID: 7808183520894390122}
   - {fileID: 7128398901002917513}
   - {fileID: 911568915993001804}
@@ -196,7 +197,7 @@ RectTransform:
   m_Children:
   - {fileID: 6009645649456429455}
   m_Father: {fileID: 2177955778653700190}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -328,7 +329,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2177955778653700190}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1212,18 +1213,6 @@ MonoBehaviour:
   button2: {fileID: 4192329415852910418}
   button3: {fileID: 4192329415229766796}
   button4: {fileID: 4192329416066236681}
-  encounterList:
-  - {fileID: 11400000, guid: 5de5dac0379ce6342803ef4b6e45f30e, type: 2}
-  - {fileID: 11400000, guid: 804666f2788ea2f4f8758ccd1f20ce4a, type: 2}
-  - {fileID: 11400000, guid: 7d1cbd006315cd64daadced4c671c1df, type: 2}
-  - {fileID: 11400000, guid: 0bc2a4d6f5eec834991b349e180f9c60, type: 2}
-  - {fileID: 11400000, guid: a60a46419c29d3244980cee903156df0, type: 2}
-  - {fileID: 11400000, guid: fcd4de8ac8854dd45a65b9ab720459cc, type: 2}
-  - {fileID: 11400000, guid: 4f82545f34213fe49abb34421465a127, type: 2}
-  - {fileID: 11400000, guid: 9df99dc2b1705d6429dc8f66ea16dfe0, type: 2}
-  - {fileID: 11400000, guid: 8ab6a7f97732640458c7c6f5b81cd95e, type: 2}
-  - {fileID: 11400000, guid: 63ed9b63bd9fcf54ba7b89e607670f67, type: 2}
-  - {fileID: 11400000, guid: 88a7f5931b8c34e4c99092ec1f38f91f, type: 2}
   restsiteList:
   - {fileID: 11400000, guid: 78235d307677a1d4dbb54d16324d1146, type: 2}
   treasureList:
@@ -1771,6 +1760,82 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Volver al mapa
+--- !u!1 &6741693365694464471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3302330506944412026}
+  - component: {fileID: 6485443853874041724}
+  - component: {fileID: 7845217281656875973}
+  m_Layer: 5
+  m_Name: ResultadoImage
+  m_TagString: ResultsCanvas
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3302330506944412026
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741693365694464471}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2177955778653700190}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6485443853874041724
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741693365694464471}
+  m_CullTransparentMesh: 1
+--- !u!114 &7845217281656875973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741693365694464471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b2a009078c6c75f4d8cf0aeb2fef2457, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7982365606882790505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1850,7 @@ GameObject:
   - component: {fileID: 249421007533476101}
   m_Layer: 5
   m_Name: ResultsCanvas
-  m_TagString: EncounterCanvas
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

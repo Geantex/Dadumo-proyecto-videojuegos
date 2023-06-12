@@ -140,6 +140,7 @@ public class Animaciones : MonoBehaviour
                 break;
 
             case "Brujo":
+                a.llamarCoordinarRayos(myUnit, target);
                 pj.Play("Brujo ataque");
                 break;
             case "Ladron":
@@ -301,6 +302,16 @@ public class Animaciones : MonoBehaviour
     {
         GameObject bastonGalentin = GameObject.FindGameObjectWithTag("bastonGalentin");
         return bastonGalentin;
+    }
+    IEnumerator CoordinarRayos(GameObject myUnit, GameObject target)
+    {
+        yield return new WaitForSeconds(0.5f);
+        myUnit.GetComponentInChildren<RayoBrujo>().DispararRayosAlObjetivo(target);
+
+    }
+    private void llamarCoordinarRayos(GameObject myUnit, GameObject target)
+    {
+        StartCoroutine(CoordinarRayos(myUnit, target));
     }
 
     IEnumerator EsperarMillonacoSegundo()
