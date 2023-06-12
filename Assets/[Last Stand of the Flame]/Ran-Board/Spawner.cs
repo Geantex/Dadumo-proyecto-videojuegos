@@ -24,20 +24,16 @@ public class Spawner : MonoBehaviour
     public int numAliados = 0;
 
     //Aliado 1
-    public float aliado1x = 0;
-    public float aliado1z = 0;
+    Vector3 aliado1 = new Vector3(-2.5f, 1.2f, -6.5f);
 
     //Aliado 2
-    public float aliado2x = 0;
-    public float aliado2z = 0;
+    Vector3 aliado2 = new Vector3(2.5f, 1.2f, -6.5f);
 
     //Aliado 3
-    public float aliado3x = 0;
-    public float aliado3z = 0;
+    Vector3 aliado3 = new Vector3(-4.5f, 1.2f, -6.5f);
 
     //Aliado 4
-    public float aliado4x = 0;
-    public float aliado4z = 0;
+    Vector3 aliado4 = new Vector3(4.5f, 1.2f, -6.5f);
 
     //-------------------------------------------------------
     //---------------------ENEMIGOS--------------------------
@@ -52,24 +48,16 @@ public class Spawner : MonoBehaviour
     public int numEnemigos = 0;
 
     //Enemigo 1
-    public float enemigo1x = 0;
-    public float enemigo1z = 0;
+    Vector3 enemigo1 = new Vector3(-2.5f, 1.2f, 6.5f);
 
     //Enemigo 2
-    public float enemigo2x = 0;
-    public float enemigo2z = 0;
+    Vector3 enemigo2 = new Vector3(2.5f, 1.2f, 6.5f);
 
     //Enemigo 3
-    public float enemigo3x = 0;
-    public float enemigo3z = 0;
+    Vector3 enemigo3 = new Vector3(-4.5f, 1.2f, 6.5f);
 
     //Enemigo 4
-    public float enemigo4x = 0;
-    public float enemigo4z = 0;
-
-    //Enemigo 5
-    public float enemigo5x = 0;
-    public float enemigo5z = 0;
+    Vector3 enemigo4 = new Vector3(4.5f, 1.2f, 6.5f);
 
     //-------------------------------------------------------
     //---------------------OBSTACULOS------------------------
@@ -77,11 +65,11 @@ public class Spawner : MonoBehaviour
     public GameObject obstaculoBase;
     public int numObstaculos = 0;
 
-    //Enemigo 1
+    //Obstaculo 1
     public float obstaculo1x = 0;
     public float obstaculo1z = 0;
 
-    //Enemigo 2
+    //Obstaculo 2
     public float obstaculo2x = 0;
     public float obstaculo2z = 0;
 
@@ -123,109 +111,65 @@ public class Spawner : MonoBehaviour
         //-------------------------------------------------------
         //---------------------ALIADOS---------------------------
         //-------------------------------------------------------
+        GameObject unitObject;
         switch (numAliados)
         {
             case 1:
-                aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
-                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
-                myPlayers[0].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
+                unitObject = myPlayers[0].gameObject;
+                unitObject.GetComponent<Unit>().party = 1;
+                unitObject.GetComponent<Unit>().myteam = true;
+
+                Instantiate(unitObject, aliado1, Quaternion.identity);
                 break;
             case 2:
-                aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
-                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
-                myPlayers[0].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
+                unitObject = myPlayers[0].gameObject;
+                unitObject.GetComponent<Unit>().party = 1;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado1, Quaternion.identity);
 
-                aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
-
-                while (aliado2x == aliado1x && aliado2z == aliado1z)
-                {
-                    aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
-                }
-                myPlayers[1].gameObject.GetComponent<Unit>().party = 2;
-                myPlayers[1].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[1].gameObject, new Vector3(aliado2x, 1.2f, aliado2z), Quaternion.identity);
+                unitObject = myPlayers[1].gameObject;
+                unitObject.GetComponent<Unit>().party = 2;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado2, Quaternion.identity);
 
                 break;
             case 3:
-                aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
-                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
-                myPlayers[0].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
+                unitObject = myPlayers[0].gameObject;
+                unitObject.GetComponent<Unit>().party = 1;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado1, Quaternion.identity);
 
-                aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
+                unitObject = myPlayers[1].gameObject;
+                unitObject.GetComponent<Unit>().party = 2;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado2, Quaternion.identity);
 
-                while (aliado2x == aliado1x && aliado2z == aliado1z)
-                {
-                    aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
-                }
-                myPlayers[1].gameObject.GetComponent<Unit>().party = 2;
-                myPlayers[1].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[1].gameObject, new Vector3(aliado2x, 1.2f, aliado2z), Quaternion.identity);
-
-                aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado3z = (float)((double)Random.Range(-3, -7) - 2.5);
-
-                while (aliado3x == aliado1x && aliado3z == aliado1z || aliado3x == aliado2x && aliado3z == aliado2z)
-                {
-                    aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    aliado3z = (float)((double)Random.Range(-3, -7) - 2.5);
-                }
-                myPlayers[2].gameObject.GetComponent<Unit>().party = 3;
-                myPlayers[2].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[2].gameObject, new Vector3(aliado3x, 1.2f, aliado3z), Quaternion.identity);
+                unitObject = myPlayers[2].gameObject;
+                unitObject.GetComponent<Unit>().party = 3;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado3, Quaternion.identity);
 
                 break;
             case 4:
-                aliado1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado1z = (float)((double)Random.Range(-3, -7) - 2.5);
-                myPlayers[0].gameObject.GetComponent<Unit>().party = 1;
-                myPlayers[0].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[0].gameObject, new Vector3(aliado1x, 1.2f, aliado1z), Quaternion.identity);
+                unitObject = myPlayers[0].gameObject;
+                unitObject.GetComponent<Unit>().party = 1;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado1, Quaternion.identity);
 
-                aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
+                unitObject = myPlayers[1].gameObject;
+                unitObject.GetComponent<Unit>().party = 2;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado2, Quaternion.identity);
 
-                while (aliado2x == aliado1x && aliado2z == aliado1z)
-                {
-                    aliado2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    aliado2z = (float)((double)Random.Range(-3, -7) - 2.5);
-                }
-                myPlayers[1].gameObject.GetComponent<Unit>().party = 2;
-                myPlayers[1].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[1].gameObject, new Vector3(aliado2x, 1.2f, aliado2z), Quaternion.identity);
+                unitObject = myPlayers[2].gameObject;
+                unitObject.GetComponent<Unit>().party = 3;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado3, Quaternion.identity);
 
-                aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado3z = (float)((double)Random.Range(-3, -7) - 2.5);
-
-                while (aliado3x == aliado1x && aliado3z == aliado1z || aliado3x == aliado2x && aliado3z == aliado2z)
-                {
-                    aliado3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    aliado3z = (float)((double)Random.Range(-3, -7) - 2.5);
-                }
-                myPlayers[2].gameObject.GetComponent<Unit>().party = 3;
-                myPlayers[2].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[2].gameObject, new Vector3(aliado3x, 1.2f, aliado3z), Quaternion.identity);
-
-                aliado4x = (float)((double)Random.Range(-4, 15) - 4.5);
-                aliado4z = (float)((double)Random.Range(-3, -7) - 2.5);
-
-                while (aliado4x == aliado1x && aliado4z == aliado1z || aliado4x == aliado2x && aliado4z == aliado2z || aliado4x == aliado3x && aliado4z == aliado3z)
-                {
-                    aliado4x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    aliado4z = (float)((double)Random.Range(-3, -7) - 2.5);
-                }
-                myPlayers[3].gameObject.GetComponent<Unit>().party = 4;
-                myPlayers[3].gameObject.GetComponent<Unit>().myteam = true;
-                Instantiate(myPlayers[3].gameObject, new Vector3(aliado4x, 1.2f, aliado4z), Quaternion.identity);
+                unitObject = myPlayers[3].gameObject;
+                unitObject.GetComponent<Unit>().party = 4;
+                unitObject.GetComponent<Unit>().myteam = true;
+                Instantiate(unitObject, aliado4, Quaternion.identity);
 
                 break;
         }
@@ -233,110 +177,65 @@ public class Spawner : MonoBehaviour
         //-------------------------------------------------------
         //---------------------ENEMIGOS--------------------------
         //-------------------------------------------------------
+        GameObject enemyUnitObject;
         switch (numEnemigos)
         {
             case 1:
-                enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
-                myEnemies[0].GetComponent<Unit>().party = 1;
-                myEnemies[0].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+                enemyUnitObject = myEnemies[0].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 1;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo1, Quaternion.identity);
 
                 break;
             case 2:
-                enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
-                myEnemies[0].GetComponent<Unit>().party = 1;
-                myEnemies[0].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+                enemyUnitObject = myEnemies[0].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 1;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo1, Quaternion.identity);
 
-                enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
-
-                while (enemigo2x == enemigo1x && enemigo2z == enemigo1z)
-                {
-                    enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
-                }
-                myEnemies[1].GetComponent<Unit>().party = 2;
-                myEnemies[1].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[1], new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
+                enemyUnitObject = myEnemies[1].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 2;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo2, Quaternion.identity);
 
                 break;
             case 3:
-                enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
-                myEnemies[0].GetComponent<Unit>().party = 1;
-                myEnemies[0].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+                enemyUnitObject = myEnemies[0].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 1;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo1, Quaternion.identity);
 
-                enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
+                enemyUnitObject = myEnemies[1].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 2;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo2, Quaternion.identity);
 
-                while (enemigo2x == enemigo1x && enemigo2z == enemigo1z)
-                {
-                    enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
-                }
-                myEnemies[1].GetComponent<Unit>().party = 2;
-                myEnemies[1].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[1], new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
-
-                enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
-
-                while (enemigo3x == enemigo1x && enemigo3z == enemigo1z || enemigo3x == enemigo2x && enemigo3z == enemigo2z)
-                {
-                    enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
-                }
-                myEnemies[2].GetComponent<Unit>().party = 3;
-                myEnemies[2].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[2], new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
+                enemyUnitObject = myEnemies[2].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 3;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo3, Quaternion.identity);
 
                 break;
             case 4:
-                enemigo1x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo1z = (float)((double)Random.Range(8, 13) - 2.5);
-                myEnemies[0].GetComponent<Unit>().party = 1;
-                myEnemies[0].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[0], new Vector3(enemigo1x, 1.2f, enemigo1z), Quaternion.identity);
+                enemyUnitObject = myEnemies[0].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 1;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo1, Quaternion.identity);
 
-                enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
+                enemyUnitObject = myEnemies[1].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 2;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo2, Quaternion.identity);
 
-                while (enemigo2x == enemigo1x && enemigo2z == enemigo1z)
-                {
-                    enemigo2x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    enemigo2z = (float)((double)Random.Range(8, 13) - 2.5);
-                }
-                myEnemies[1].GetComponent<Unit>().party = 2;
-                myEnemies[1].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[1], new Vector3(enemigo2x, 1.2f, enemigo2z), Quaternion.identity);
+                enemyUnitObject = myEnemies[2].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 3;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo3, Quaternion.identity);
 
-                enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
-
-                while (enemigo3x == enemigo1x && enemigo3z == enemigo1z || enemigo3x == enemigo2x && enemigo3z == enemigo2z)
-                {
-                    enemigo3x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    enemigo3z = (float)((double)Random.Range(8, 13) - 2.5);
-                }
-                myEnemies[2].GetComponent<Unit>().party = 3;
-                myEnemies[2].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[2], new Vector3(enemigo3x, 1.2f, enemigo3z), Quaternion.identity);
-
-                enemigo4x = (float)((double)Random.Range(-4, 15) - 4.5);
-                enemigo4z = (float)((double)Random.Range(8, 13) - 2.5);
-
-                while (enemigo4x == enemigo1x && enemigo4z == enemigo1z || enemigo4x == enemigo2x && enemigo4z == enemigo2z || enemigo4x == enemigo3x && enemigo4z == enemigo3z)
-                {
-                    enemigo4x = (float)((double)Random.Range(-4, 15) - 4.5);
-                    enemigo4z = (float)((double)Random.Range(8, 13) - 2.5);
-                }
-                myEnemies[3].GetComponent<Unit>().party = 4;
-                myEnemies[3].GetComponent<Unit>().myteam = false;
-                Instantiate(myEnemies[3], new Vector3(enemigo4x, 1.2f, enemigo4z), Quaternion.identity);
+                enemyUnitObject = myEnemies[3].gameObject;
+                enemyUnitObject.GetComponent<Unit>().party = 4;
+                enemyUnitObject.GetComponent<Unit>().myteam = false;
+                Instantiate(enemyUnitObject, enemigo4, Quaternion.identity);
 
                 break;
         }
@@ -379,9 +278,6 @@ public class Spawner : MonoBehaviour
         {
             GameObject gameObjectPlayer = ch.CharacterPrefab;
 
-            //PlayerCharacterCLass player = new PlayerCharacterCLass();
-
-
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterName = ch.CharacterName;
             Debug.Log(gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterName);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterClassName = ch.CharacterClass;
@@ -418,9 +314,6 @@ public class Spawner : MonoBehaviour
         foreach (CharacterCreator ch in myPartyEnemies)
         {
             GameObject gameObjectEnemy = ch.CharacterPrefab;
-
-            //PlayerCharacterCLass player = new PlayerCharacterCLass();
-
 
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName = ch.CharacterName;
             Debug.Log(gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName);

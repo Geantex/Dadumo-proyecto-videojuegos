@@ -12,9 +12,8 @@ public class MainMenuManager : MonoBehaviour
     }
     public void NewGame()
     {
-        
         GameController.Instancia.NewGame = true;
-        GameController.Instancia.SetStateByType(typeof(Randomizer));
+        SceneManager.LoadScene("IntroGame");
     }
     public void StartGameFade()
     {
@@ -26,6 +25,18 @@ public class MainMenuManager : MonoBehaviour
         GameController.Instancia.SetStateByType(typeof(MapState));
         SceneManager.LoadScene("Map");
         //SceneManager.CreateScene("Map");
+    }
+
+    public void TutorialFade()
+    {
+        FadeToBlack.QuickFade();
+        Invoke("Tutorial", 0.25f);
+    }
+
+    public void Tutorial()
+    {
+        GameController.Instancia.SetStateByType(typeof(GameState));
+        SceneManager.LoadScene("TutorialCombate");
     }
 
     public void ExitGameFade()

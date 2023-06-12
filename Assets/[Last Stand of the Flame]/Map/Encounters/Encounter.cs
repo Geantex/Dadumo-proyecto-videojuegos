@@ -54,15 +54,12 @@ public class Encounter : ScriptableObject
 
         // Puede que no hayan 4 opciones en todos los encuentros, así que vamos a hacer ifs para ver si hay texto que agregar al boton
         //myScriptReference = go.GetComponent<MyScript>();
-        Debug.Log("Es hora de asignar!");
         if (encounterButton1Text != "")
         {
             button1TextSlot.GetComponent<Text>().text = encounterButton1Text;
-            Debug.Log("Tranquilo Gabriel, asignare el boton, no te fallaré!");
 
             try
             {
-                Debug.Log("He asignado la funcion1 al boton1!");
                 // veamos si funciona????
                 button1.GetComponent<Button>().onClick.AddListener(() => buttonScripts.GetComponent<MonoBehaviour>().GetType().GetMethod("functionButton1").Invoke(buttonScripts.GetComponent<MonoBehaviour>(), null));
             }

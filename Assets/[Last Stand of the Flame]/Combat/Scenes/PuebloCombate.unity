@@ -1081,9 +1081,35 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   goldCoins: 0
-  charactersParty: []
-  allPlayableCharacters: []
-  allPlayableEnemies: []
+  charactersParty:
+  - {fileID: 11400000, guid: 8563f8fdebd6b3d4ca1bf5d8ea5f435d, type: 2}
+  - {fileID: 11400000, guid: 427673078df35e545a0e97329a340f96, type: 2}
+  - {fileID: 11400000, guid: 57b929b3bd1919247bc0165afebb62c9, type: 2}
+  allPlayableCharacters:
+  - {fileID: 11400000, guid: 8ceefd68976399d43bb47bfec26b8c9b, type: 2}
+  - {fileID: 11400000, guid: a9bcc39bf9e41ad4da537b90811aed2d, type: 2}
+  - {fileID: 11400000, guid: 8563f8fdebd6b3d4ca1bf5d8ea5f435d, type: 2}
+  - {fileID: 11400000, guid: 57b929b3bd1919247bc0165afebb62c9, type: 2}
+  - {fileID: 11400000, guid: 427673078df35e545a0e97329a340f96, type: 2}
+  - {fileID: 11400000, guid: 99287287a81a68e478ec4179d8163ace, type: 2}
+  - {fileID: 11400000, guid: 8ef191de64af36c43ac9168f7a09428e, type: 2}
+  allPlayableEnemies:
+  - {fileID: 11400000, guid: 344c941275a988a4eaa9ab1095c7557c, type: 2}
+  - {fileID: 11400000, guid: 1ccb0573cbbca614e9de3d2ac9f304a2, type: 2}
+  - {fileID: 11400000, guid: 3f9d3198eb5a24543877ba0fc5229b5f, type: 2}
+  - {fileID: 11400000, guid: e60314a397a5e5f458f5cae44aceb15e, type: 2}
+  - {fileID: 11400000, guid: 5237e7204939dba47ac62133e55d1cf7, type: 2}
+  encounterList:
+  - {fileID: 11400000, guid: a60a46419c29d3244980cee903156df0, type: 2}
+  - {fileID: 11400000, guid: 4f82545f34213fe49abb34421465a127, type: 2}
+  - {fileID: 11400000, guid: 9df99dc2b1705d6429dc8f66ea16dfe0, type: 2}
+  - {fileID: 11400000, guid: 8ab6a7f97732640458c7c6f5b81cd95e, type: 2}
+  - {fileID: 11400000, guid: 5de5dac0379ce6342803ef4b6e45f30e, type: 2}
+  - {fileID: 11400000, guid: 804666f2788ea2f4f8758ccd1f20ce4a, type: 2}
+  - {fileID: 11400000, guid: 63ed9b63bd9fcf54ba7b89e607670f67, type: 2}
+  - {fileID: 11400000, guid: 88a7f5931b8c34e4c99092ec1f38f91f, type: 2}
+  - {fileID: 11400000, guid: 0bc2a4d6f5eec834991b349e180f9c60, type: 2}
+  - {fileID: 11400000, guid: fcd4de8ac8854dd45a65b9ab720459cc, type: 2}
   NewGame: 0
 --- !u!4 &691762106
 Transform:
@@ -1197,7 +1223,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.9
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

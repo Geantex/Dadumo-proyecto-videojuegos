@@ -42,11 +42,11 @@ namespace Map
         [Tooltip("Node Visited or Attainable color")]
         public Color32 visitedColor = Color.white;
         [Tooltip("Locked node color")]
-        public Color32 lockedColor = Color.gray;
+        public Color32 lockedColor = Color.black;
         [Tooltip("Visited or available path color")]
         public Color32 lineVisitedColor = Color.white;
         [Tooltip("Unavailable path color")]
-        public Color32 lineLockedColor = Color.gray;
+        public Color32 lineLockedColor = Color.black;
 
         protected GameObject firstParent;
         protected GameObject mapParent;
