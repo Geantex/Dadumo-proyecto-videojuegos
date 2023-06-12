@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterName: "\xA1Tesoro!"
   encounterDescription: "\xA1Encuentras un equipamiento para tus personajes!"
-  encounterImage: {fileID: 21300000, guid: 427d8666986a68a49985fd1f30ecd04a, type: 3}
+  encounterImage: {fileID: 21300000, guid: 102e915d5d93e0e4081eb78821f374c6, type: 3}
   encounterButton1Text: Equiparse el equipamiento
   encounterButton2Text: 
   encounterButton3Text: 

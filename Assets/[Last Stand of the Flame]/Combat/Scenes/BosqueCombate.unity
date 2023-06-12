@@ -332,29 +332,11 @@ MonoBehaviour:
   myPlayers: []
   aliadoPrueba: {fileID: 3858053825818039181, guid: e2651b0e02c7e5942ab2a955459a8e7f, type: 3}
   numAliados: 0
-  aliado1x: 0
-  aliado1z: 0
-  aliado2x: 0
-  aliado2z: 0
-  aliado3x: 0
-  aliado3z: 0
-  aliado4x: 0
-  aliado4z: 0
   allPlayableEnemies: []
   myPartyEnemies: []
   myEnemies: []
   enemigoPrueba: {fileID: 6756909428466296, guid: b6edbb8d4cce50745b88d6718076e06b, type: 3}
   numEnemigos: 0
-  enemigo1x: 0
-  enemigo1z: 0
-  enemigo2x: 0
-  enemigo2z: 0
-  enemigo3x: 0
-  enemigo3z: 0
-  enemigo4x: 0
-  enemigo4z: 0
-  enemigo5x: 0
-  enemigo5z: 0
   obstaculoBase: {fileID: 4318347385112883726, guid: f542c2cf9489aa147a2f014d0d83f1fe, type: 3}
   numObstaculos: 0
   obstaculo1x: 0

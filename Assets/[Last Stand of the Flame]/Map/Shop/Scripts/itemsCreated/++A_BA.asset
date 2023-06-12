@@ -9,15 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
+  m_Script: {fileID: 11500000, guid: 768112012ca54ce4c8df4a04f9461728, type: 3}
   m_Name: ++A_BA
   m_EditorClassIdentifier: 
-  itemName: Hacha vikinga Nivel 3
-  itemPrice: 350
-  itemImage: {fileID: 21300000, guid: 72c380f02e09c92428e9133d7e184b28, type: 3}
-  itemDamageModifier: 40
-  itemHealthModifier: 0
-  itemTier: 3
-  characterTag: barbaro
-  itemSlot: weapon
-  characterImage: {fileID: 0}
