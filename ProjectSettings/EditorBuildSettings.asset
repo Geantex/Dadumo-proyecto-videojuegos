@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[Last Stand of the Flame]/Intro/IntroGame.unity
     guid: 197d8569bfcd7064bb06e6b5c3e73553
+  - enabled: 1
+    path: Assets/[Last Stand of the Flame]/Game/UI/escenaPerder.unity
+    guid: b1a79ba455bb6974fbaf53ddbea3d7ff
+  - enabled: 1
+    path: Assets/[Last Stand of the Flame]/Grimoire/escenaGrimoire.unity
+    guid: 1b2c760d6df6e8047959abaa8a6ffdb0
   m_configObjects: {}

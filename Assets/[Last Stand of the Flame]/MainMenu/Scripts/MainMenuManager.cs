@@ -39,6 +39,17 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("TutorialCombate");
     }
 
+    public void GrimoireFade()
+    {
+        FadeToBlack.QuickFade();
+        Invoke("Grimoire", 0.25f);
+    }
+
+    public void Grimoire()
+    {
+        SceneManager.LoadScene("escenaGrimoire");
+    }
+
     public void ExitGameFade()
     {
         FadeToBlack.QuickFade();
