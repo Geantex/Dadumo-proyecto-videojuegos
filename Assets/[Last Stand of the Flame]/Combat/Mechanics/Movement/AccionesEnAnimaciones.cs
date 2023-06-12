@@ -23,8 +23,16 @@ public class AccionesEnAnimaciones : MonoBehaviour
         TurnManager.EndTurn(unit.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
     }
     
-    /*public void SonidoAtaque()
+    public void RecibirDano()
     {
-        combatSounds.ataque(gameObject.GetComponent<Unit>().Name);
-    }*/
+        Animaciones.recibirDano(gameObject.GetComponent<Animator>(), unit.GetComponent<PlayerMove>().UniqueTarget.GetComponent<Unit>().Name, unit.GetComponent<PlayerMove>().UniqueTarget, FindObjectOfType<Animaciones>());
+    }
+
+    public void RecibirDanoArea()
+    {
+        foreach (GameObject target in unit.GetComponent<PlayerMove>().Targets)
+        {
+            Animaciones.recibirDano(gameObject.GetComponent<Animator>(), target.GetComponent<Unit>().Name, target, FindObjectOfType<Animaciones>());
+        }
+    }
 }

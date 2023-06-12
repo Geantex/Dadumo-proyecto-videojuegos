@@ -12,6 +12,7 @@ public class PlayerMove : TacticsMove
 
     // Creamos una lista donde guardaremos los objetivos de los ataques
     List<GameObject> targets = new List<GameObject>();
+    GameObject uniqueTarget;
 
     // Creamos dos variables que nos indican si el jugador ha seleccionado un ataque básico o especial
     // Con esto conseguimos que, una vez seleccionado el ataque que queremos realizar, podamos seleccionar el objetivo y concluir el ataque
@@ -145,6 +146,7 @@ public class PlayerMove : TacticsMove
                     {
                         if (target == sobreUnidad.collider.gameObject)
                         {
+                            uniqueTarget = target;
                             gameObject.GetComponent<PlayerAttack>().AttackOfPlayer(target);
                         }
                     }
@@ -178,6 +180,7 @@ public class PlayerMove : TacticsMove
                     {
                         if (target == sobreUnidad.collider.gameObject)
                         {
+                            uniqueTarget = target;
                             gameObject.GetComponent<PlayerSpecialAttack>().AttackOfPlayer(0, target, targets);
                         }
                     }
@@ -210,5 +213,17 @@ public class PlayerMove : TacticsMove
         specialAttack = false;
 
         TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
+    }
+
+    public GameObject UniqueTarget
+    {
+        get { return uniqueTarget; }
+        set { uniqueTarget = value; }
+    }
+
+    public List<GameObject> Targets
+    {
+        get { return targets; }
+        set { targets = value; }
     }
 }
