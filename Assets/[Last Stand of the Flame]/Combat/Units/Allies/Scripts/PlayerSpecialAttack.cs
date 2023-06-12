@@ -115,7 +115,7 @@ public class PlayerSpecialAttack : MonoBehaviour
             TutorialConsejos _tutorialConsejos = GameObject.Find("TutorialConsejos").GetComponent<TutorialConsejos>();
             if (_tutorialConsejos.contadorConsejo == 3)
             {
-                _tutorialConsejos.CerrarConsejo();
+                _tutorialConsejos.DeslizarPanel();
             }
 
         }

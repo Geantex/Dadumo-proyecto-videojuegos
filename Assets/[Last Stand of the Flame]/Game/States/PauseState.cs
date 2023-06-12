@@ -67,15 +67,29 @@ public class PauseState : FSMState
 
     protected override void EnterState()
     {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        string sceneName;
+        // Obtén el nombre de la escena actual
+        sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName != "VictoriaScene")
+        {
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        
 
     }
 
     protected override void ExitState()
     {
-        pauseMenuUI.SetActive(false);
+        string sceneName;
+        // Obtén el nombre de la escena actual
+        sceneName = SceneManager.GetActiveScene().name;
+        if(sceneName != "VictoriaScene")
+        {
+            pauseMenuUI.SetActive(false);
+        }
         Time.timeScale = 1f;
+
 
     }
 }
