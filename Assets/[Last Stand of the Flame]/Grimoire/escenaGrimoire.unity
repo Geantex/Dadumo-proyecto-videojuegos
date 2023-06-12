@@ -130,14 +130,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 402549978, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402549978, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402549978, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402549978, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 683140892, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 683140892, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9676a4c1eea342947938cfc24416f114, type: 3}
+    - target: {fileID: 1612462451, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612462451, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612462451, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612462451, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 2085119956, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2085119956, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 9676a4c1eea342947938cfc24416f114, type: 3}
     - target: {fileID: 2082521693383583165, guid: 0088bf5ec9c141b4788e33282e0b0b2c, type: 3}
       propertyPath: m_RootOrder
       value: 0

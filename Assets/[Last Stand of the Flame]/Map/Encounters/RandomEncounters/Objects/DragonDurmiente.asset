@@ -16,7 +16,7 @@ MonoBehaviour:
   encounterDescription: "Pasando cerca de una cueva, escuch\xE1is a un drag\xF3n
     roncar en su cueva, con su gran pila de tesoro. Podr\xEDais intentar apropiaros
     con parte de su tesoro, pero si el drag\xF3n despierta..."
-  encounterImage: {fileID: 21300000, guid: b2a009078c6c75f4d8cf0aeb2fef2457, type: 3}
+  encounterImage: {fileID: 21300000, guid: ba8670a2fe352004fb0b5e5d2228a02f, type: 3}
   encounterButton1Text: "Robar 50 de oro (75% de \xE9xito)"
   encounterButton2Text: "Robar equipamiento (50% de \xE9xito)"
   encounterButton3Text: "\xA1Nos largamos!"
