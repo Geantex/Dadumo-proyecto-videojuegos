@@ -17,7 +17,7 @@ public class item : ScriptableObject
     public string characterTag; // Esto lo usaremos para que solo salgan objetos de personajes que hayan en el juego
     public string itemSlot; // esto solo puede ser o "weapon" o "armor"
     public Sprite characterImage; // podemos poner una imagen en el canvas que señale quien puede equiparse el objeto
-
+    public GameObject itemPrefab; //item prefab
 
     // (1)* Si un objeto está equipado, no debería volver a salir en esta partida. Tampoco deberían de salir objetos de menor tier
     // Esto lo haremos guardandolo en una lista, y comparando los tiers (puede?)
