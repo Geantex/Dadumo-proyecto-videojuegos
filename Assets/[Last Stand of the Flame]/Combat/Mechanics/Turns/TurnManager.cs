@@ -117,15 +117,6 @@ public class TurnManager : MonoBehaviour
         // Add the unit back to the list and sort the list by speed
         
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
-        /*Debug.Log("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
-
-        foreach (TacticsMove move in units)
-        {
-            Debug.Log(move);
-        }
-        Debug.Log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");*/
-        // Start the next turn
-        //StartTurn();
 
         turnManager.StartCoroutine(turnManager.EsperarUnSegundo());
     }
@@ -139,7 +130,7 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EsperarUnSegundo()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.5f);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         StartTurn();
     }

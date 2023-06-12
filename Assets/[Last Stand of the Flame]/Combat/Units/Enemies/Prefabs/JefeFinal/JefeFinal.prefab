@@ -384,6 +384,102 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 982101cabe049cc4dae36b7ca6f3aba8, type: 3}
   m_PrefabInstance: {fileID: 7370544430054230470}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &7906644990551822038
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676393031092728983}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &1559063695726779834
 Animator:
   serializedVersion: 5
@@ -404,6 +500,221 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2647464576466369048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676393031092728983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08114ee908639749aa45d4b9fe0efed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 7145378970324420070}
+  combatSounds: {fileID: 4673237514883735136}
+--- !u!114 &4673237514883735136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676393031092728983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fd96cedae864b449ff66df758824d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips: {fileID: 7124765590262139380}
+  soundClipsSource: {fileID: 7906644990551822038}
+--- !u!114 &7124765590262139380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676393031092728983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21300c26faead3a47bb99d140deb8bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarbaraAttack:
+  - {fileID: 8300000, guid: cf08410388a65054db82c3b00aa8fec7, type: 3}
+  - {fileID: 8300000, guid: 2b47006af800ba2438968ceee8165963, type: 3}
+  - {fileID: 8300000, guid: cac6f965eb36ccf488785ad2a7c55fea, type: 3}
+  - {fileID: 8300000, guid: deae8323c629f96489cda59715f566cc, type: 3}
+  BarbaraFXAttack:
+  - {fileID: 8300000, guid: 1b7a9037465158644897cf9e3d29e580, type: 3}
+  BarbaraDeath:
+  - {fileID: 8300000, guid: 64af7cfbad725014bacf507f823e5794, type: 3}
+  - {fileID: 8300000, guid: 0c7e3eab598e2b74a9ab010d47fe8b5b, type: 3}
+  - {fileID: 8300000, guid: 213d10baee88b6243a0ad7b46d00fe40, type: 3}
+  BarbaraHurt:
+  - {fileID: 8300000, guid: 7d6e630df3524d54093f082168c4ee62, type: 3}
+  - {fileID: 8300000, guid: 3e47dc135064c374f8c03d2c69f2cfc5, type: 3}
+  - {fileID: 8300000, guid: e08a835d9fdbb0a478a93d9d8e3e599b, type: 3}
+  BarbaraSpecialAttack:
+  - {fileID: 8300000, guid: cf08410388a65054db82c3b00aa8fec7, type: 3}
+  - {fileID: 8300000, guid: 2b47006af800ba2438968ceee8165963, type: 3}
+  - {fileID: 8300000, guid: cac6f965eb36ccf488785ad2a7c55fea, type: 3}
+  - {fileID: 8300000, guid: deae8323c629f96489cda59715f566cc, type: 3}
+  BarbaraFXSpecialAttack:
+  - {fileID: 8300000, guid: 1b7a9037465158644897cf9e3d29e580, type: 3}
+  RomeroAttack:
+  - {fileID: 8300000, guid: a9c8723126f389e43aefaed05ad1d1d5, type: 3}
+  - {fileID: 8300000, guid: 2f70894f66df13545a642ac4e8e7c7fe, type: 3}
+  - {fileID: 8300000, guid: ecd160880cfd6a74f98f0e83afd304fc, type: 3}
+  - {fileID: 8300000, guid: 45f03b3a58aad1647aad78fdc65d436b, type: 3}
+  - {fileID: 8300000, guid: e3e410f6b205f5a48bb517284f8cb1f4, type: 3}
+  RomeroFXAttack:
+  - {fileID: 8300000, guid: 8bf2a9b2760ffe24fbdf64ec569c7631, type: 3}
+  RomeroDeath:
+  - {fileID: 8300000, guid: e26f563ef1078bf4ebb4119cde12ed7d, type: 3}
+  - {fileID: 8300000, guid: 1b14361c727393b40964e7a51ad05d85, type: 3}
+  RomeroHurt:
+  - {fileID: 8300000, guid: 3ad8f980168aecc4387b57d477598d0d, type: 3}
+  - {fileID: 8300000, guid: 39694a69951e0234b8716fb302a84e7e, type: 3}
+  - {fileID: 8300000, guid: 05185e7888766b041b45fe405b37026c, type: 3}
+  - {fileID: 8300000, guid: b6da95fa1017fe043a8a53543f591ae3, type: 3}
+  RomeroSpecialAttack: []
+  RomeroFXSpecialAttack:
+  - {fileID: 8300000, guid: b822f8e2ca76e6948844725b7d4e6393, type: 3}
+  DeenEcanAttack:
+  - {fileID: 8300000, guid: 40697bb8b58c1524f84ee3d6b4657a33, type: 3}
+  - {fileID: 8300000, guid: 6790e4cee1cfd4f43a56cee803167c86, type: 3}
+  - {fileID: 8300000, guid: 42df0e0e9367cad48b6f1b5fcce504db, type: 3}
+  - {fileID: 8300000, guid: 39384507750ec8a499b65f74b04f7be0, type: 3}
+  DeenEcanFXAttack:
+  - {fileID: 8300000, guid: 285ad8d88dbc7ef4f97935fde9fec38e, type: 3}
+  DeenEcanDeath:
+  - {fileID: 8300000, guid: f4accf2c3a253fe4690c93e920d13fdb, type: 3}
+  - {fileID: 8300000, guid: c261702d6bac8f643827b294a1ed987a, type: 3}
+  DeenEcanHurt:
+  - {fileID: 8300000, guid: 508592f82555ae14996de13e57570f1d, type: 3}
+  - {fileID: 8300000, guid: cad7a487e530cb04bb2b3208c37d140b, type: 3}
+  - {fileID: 8300000, guid: d98d0a432c324f44599cafb5072c4912, type: 3}
+  - {fileID: 8300000, guid: 0fd1166a31c1c2643a3b0f1d950a779c, type: 3}
+  - {fileID: 8300000, guid: bcfb8bcfde0ec744f81f7adc1e3b6c1e, type: 3}
+  DeenEcanSpecialAttack: []
+  DeenEcanFXSpecialAttack:
+  - {fileID: 8300000, guid: e135b9e7a323a2d4da2bfc828dc030f3, type: 3}
+  GalentinAttack: []
+  GalentinFXAttack:
+  - {fileID: 8300000, guid: d7610503b129f644c8ee3658b38dd4a5, type: 3}
+  GalentinDeath:
+  - {fileID: 8300000, guid: 804a603b87d0b0e40986f7d416b90c3e, type: 3}
+  - {fileID: 8300000, guid: 34d70bfbaf57fea45a52af11784ebdec, type: 3}
+  - {fileID: 8300000, guid: 869a292bbd4695541b31cec853eecc6a, type: 3}
+  GalentinHurt:
+  - {fileID: 8300000, guid: 33abf916e4679ef44a66971f2f2331ae, type: 3}
+  - {fileID: 8300000, guid: 52e914425f246c249bc46f5c8aa397ab, type: 3}
+  - {fileID: 8300000, guid: 5d0052a10de39034390c093601cc3005, type: 3}
+  - {fileID: 8300000, guid: 52a61e42f63b0c542ac6f2093f7bef31, type: 3}
+  - {fileID: 8300000, guid: 164ccb11e01b38d4cafd4232848c126a, type: 3}
+  - {fileID: 8300000, guid: 48cd00944c00ea14190805f74a068481, type: 3}
+  GalentinSpecialAttack: []
+  GalentinFXSpecialAttack:
+  - {fileID: 8300000, guid: 3c87aec483819d8459ac74419e74e1dc, type: 3}
+  JoseMariaAttack:
+  - {fileID: 8300000, guid: b7ba9ce43462abe47ba379eeaff08b4e, type: 3}
+  - {fileID: 8300000, guid: 276b4a31adf1c7e4ea1396bb096187f7, type: 3}
+  - {fileID: 8300000, guid: 23aa5b05ae25a2146af73d9c17b40516, type: 3}
+  - {fileID: 8300000, guid: 4b0f118ac89532e4b80d1bdf734e3a5b, type: 3}
+  - {fileID: 8300000, guid: b4897175aedd65d41a1536155a24e5c5, type: 3}
+  JoseMariaFXAttack:
+  - {fileID: 8300000, guid: 3f25b9dcb2b8f594b8ec0a453b1ed9cb, type: 3}
+  JoseMariaDeath:
+  - {fileID: 8300000, guid: 49ddd20506c068444a1aaf1dbbe3b8e3, type: 3}
+  - {fileID: 8300000, guid: 934736deafeef9e419d235954591414e, type: 3}
+  JoseMariaHurt:
+  - {fileID: 8300000, guid: 8e1f24deb5add0a4eb56baa36bdf1fb4, type: 3}
+  - {fileID: 8300000, guid: 3e0f42032222cec4db52a06ef6b8bf88, type: 3}
+  - {fileID: 8300000, guid: fa3f8b89d2213224ea3a51e1b5be4b7c, type: 3}
+  - {fileID: 8300000, guid: a239d14b3ad988d48a9db43e5fb94f2e, type: 3}
+  - {fileID: 8300000, guid: e446faf2b49497744b713dfa3ba1a009, type: 3}
+  JoseMariaSpecialAttack: []
+  JoseMariaFXSpecialAttack:
+  - {fileID: 8300000, guid: b822f8e2ca76e6948844725b7d4e6393, type: 3}
+  KakaAttack:
+  - {fileID: 8300000, guid: 4352daad3c790e149b9b259332f9a56e, type: 3}
+  - {fileID: 8300000, guid: 61930d81ed36bcc4aa97e51ab9d399e2, type: 3}
+  - {fileID: 8300000, guid: d7dad6921500edc419d28fd371885533, type: 3}
+  - {fileID: 8300000, guid: 23cb4bfe4cab5cb42a49f07252fc9ad8, type: 3}
+  - {fileID: 8300000, guid: c6b0c5f258f958545a774e519701b243, type: 3}
+  KakaFXAttack:
+  - {fileID: 8300000, guid: 76c75de4638e7e14abcae085ae743ac1, type: 3}
+  KakaDeath:
+  - {fileID: 8300000, guid: c7f12a3a5e62cc24db3781a02eb9f85e, type: 3}
+  - {fileID: 8300000, guid: 14f6cbce546f10e4a8485fe7a4399410, type: 3}
+  KakaHurt:
+  - {fileID: 8300000, guid: a7e80b64acb32884c9cb7734520e59f1, type: 3}
+  - {fileID: 8300000, guid: 9ef1e560ae797b5449fbb0c1accb04b3, type: 3}
+  - {fileID: 8300000, guid: cbd716ca28ddb9a4280fc651399076f9, type: 3}
+  - {fileID: 8300000, guid: 769d810f58c11e545ab798e15cb047bf, type: 3}
+  - {fileID: 8300000, guid: 9ca1cbd27ad371848a890dc0dfaed121, type: 3}
+  KakaSpecialAttack:
+  - {fileID: 8300000, guid: 017c1a4fac8be664b8c0764c5ad26e49, type: 3}
+  KakaFXSpecialAttack:
+  - {fileID: 8300000, guid: 7f18cbb07700fd84abbfa0550f3b9abf, type: 3}
+  KazuroAttack:
+  - {fileID: 8300000, guid: e193b68b6b3ef9f45b1126daae3b9afe, type: 3}
+  - {fileID: 8300000, guid: dd3ab0f4a892ace49a6dcaa287e21c3f, type: 3}
+  - {fileID: 8300000, guid: 39e0ee218285ec84f9670ed75f2387f6, type: 3}
+  - {fileID: 8300000, guid: 1eab587c712678f438d27f63ef254d62, type: 3}
+  KazuroFXAttack:
+  - {fileID: 8300000, guid: 797d714f8eb281347a87061631c0aa44, type: 3}
+  KazuroDeath:
+  - {fileID: 8300000, guid: 6f7068a26a788484a9d2108b4209edb3, type: 3}
+  - {fileID: 8300000, guid: 5bf5a96f9e3b6e04eadbebeda81505d3, type: 3}
+  KazuroHurt:
+  - {fileID: 8300000, guid: a824bbe25c6a75d448a096633dcd1cfb, type: 3}
+  - {fileID: 8300000, guid: 6d3045e309734e14181f336aff8ddd44, type: 3}
+  - {fileID: 8300000, guid: af82c30a9e49d434da2acfc721b14927, type: 3}
+  - {fileID: 8300000, guid: 96711fffc41da04408988d975b04049a, type: 3}
+  - {fileID: 8300000, guid: cd03990703eaa5843aa6d9f43790302a, type: 3}
+  KazuroSpecialAttack:
+  - {fileID: 8300000, guid: e193b68b6b3ef9f45b1126daae3b9afe, type: 3}
+  - {fileID: 8300000, guid: dd3ab0f4a892ace49a6dcaa287e21c3f, type: 3}
+  - {fileID: 8300000, guid: 39e0ee218285ec84f9670ed75f2387f6, type: 3}
+  - {fileID: 8300000, guid: 1eab587c712678f438d27f63ef254d62, type: 3}
+  KazuroFXSpecialAttack:
+  - {fileID: 8300000, guid: 2e7dd2cbb62bede429b974c9326bc75e, type: 3}
+  LadronAttack: []
+  LadronFXAttack: []
+  LadronDeath: []
+  LadronHurt: []
+  LadronSpecialAttack: []
+  LadronFXSpecialAttack: []
+  BrujoAttack: []
+  BrujoFXAttack: []
+  BrujoDeath: []
+  BrujoHurt: []
+  BrujoSpecialAttack: []
+  BrujoFXSpecialAttack: []
+  BossAttack: []
+  BossFXAttack: []
+  BossDeath: []
+  BossHurt: []
+  BossSpecialAttack: []
+  BossFXSpecialAttack: []
+  RataAttack: []
+  RataFXAttack: []
+  RataDeath: []
+  RataHurt: []
+  RataSpecialAttack: []
+  RataFXSpecialAttack: []
+  TrollAttack: []
+  TrollFXAttack: []
+  TrollDeath: []
+  TrollHurt: []
+  TrollSpecialAttack: []
+  TrollFXSpecialAttack: []
+  Pasos:
+  - {fileID: 8300000, guid: 67f78f47accb32741aaa43599b752bf1, type: 3}
+  - {fileID: 8300000, guid: 9455fe2b75bcfe54ebd1fe0ed5d52b35, type: 3}
+  - {fileID: 8300000, guid: f7f677983e5ee1e42ab7dff007d837b8, type: 3}
 --- !u!4 &9222461443456513550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 982101cabe049cc4dae36b7ca6f3aba8, type: 3}

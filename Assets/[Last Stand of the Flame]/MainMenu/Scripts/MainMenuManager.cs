@@ -12,9 +12,8 @@ public class MainMenuManager : MonoBehaviour
     }
     public void NewGame()
     {
-        
         GameController.Instancia.NewGame = true;
-        GameController.Instancia.SetStateByType(typeof(Randomizer));
+        SceneManager.LoadScene("IntroGame");
     }
     public void StartGameFade()
     {
@@ -38,6 +37,17 @@ public class MainMenuManager : MonoBehaviour
     {
         GameController.Instancia.SetStateByType(typeof(GameState));
         SceneManager.LoadScene("TutorialCombate");
+    }
+
+    public void GrimoireFade()
+    {
+        FadeToBlack.QuickFade();
+        Invoke("Grimoire", 0.25f);
+    }
+
+    public void Grimoire()
+    {
+        SceneManager.LoadScene("escenaGrimoire");
     }
 
     public void ExitGameFade()

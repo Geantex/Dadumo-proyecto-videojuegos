@@ -17,11 +17,9 @@ public class LoseState : FSMState
         yield return new WaitForSeconds(1.74f);
         FadeToBlack.QuickFade();
         yield return new WaitForSeconds(0.26f);
-        // AQUI MARIO - Tenemos que hacer que te resetee la run (porque has perdido y muerto y te manda al menu principal)
-        // Esto es si estas en el tutorial (te manda al menu principal)
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("escenaPerder");
         machine.SetStateByType(typeof(MainMenuState));
-
+        
     }
     protected override void ExitState()
     {

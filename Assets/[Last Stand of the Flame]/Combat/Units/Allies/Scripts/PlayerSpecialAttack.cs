@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements.Experimental;
 
 public class PlayerSpecialAttack : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject ally in allies)
                 {
                     float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(ally);
                         ally.GetComponent<Unit>().circulo.SetActive(true);
@@ -45,7 +46,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject enemy in enemies)
                 {
                     float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(enemy);
                         enemy.GetComponent<Unit>().circulo.SetActive(true);
@@ -59,7 +60,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject ally in alliesAll)
                 {
                     float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(ally);
                         ally.GetComponent<Unit>().circulo.SetActive(true);
@@ -71,7 +72,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 foreach (GameObject enemy in enemiesAll)
                 {
                     float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
-                    if (distance <= AllSpecialAttacks[attackIndex].Range)
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
                     {
                         targets.Add(enemy);
                         enemy.GetComponent<Unit>().circulo.SetActive(true);
@@ -82,8 +83,30 @@ public class PlayerSpecialAttack : MonoBehaviour
         return targets;
     }
 
+    public Vector3 heading;
+    float halfHeight = 0;
+
+    void CalculateHeading(Vector3 target, GameObject allie)
+    {
+        // Calculamos la dirección entre la casilla en la que estamos y a la que nos queremos mover
+        heading = target - allie.transform.position;
+        // Normalizamos el vector (lo hacemos de magnitud 1, por lo que se convierte en vector unitario, para efectuar los movimientos en la dirección del vector unitario)
+        heading.Normalize();
+    }
+
     public void AttackOfPlayer(int attackIndex, GameObject target, List<GameObject> allTargets)
     {
+        gameObject.transform.forward = heading;
+
+        halfHeight = gameObject.GetComponent<Collider>().bounds.extents.y;
+        Vector3 targetDireccion = target.transform.position;
+
+        // Mantenemos la misma altura del aliado
+        targetDireccion.y = gameObject.transform.position.y;
+
+        CalculateHeading(targetDireccion, gameObject);
+
+        gameObject.transform.forward = heading;
 
         if (SceneManager.GetActiveScene().name == "TutorialCombate")
         {
@@ -120,6 +143,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 }
                 gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
                 FindObjectOfType<BattleHUD>().SetMana(gameObject.GetComponent<Unit>().party, gameObject.GetComponent<Unit>().myteam, gameObject.GetComponent<Unit>().Mana);
+                Animaciones.ataqueEspecial(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), gameObject, heading, target);
                 break;
             case "Area":
                 foreach (GameObject oneTarget in allTargets)
@@ -131,6 +155,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 }
                 gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
                 FindObjectOfType<BattleHUD>().SetMana(gameObject.GetComponent<Unit>().party, gameObject.GetComponent<Unit>().myteam, gameObject.GetComponent<Unit>().Mana);
+                Animaciones.ataqueEspecial(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), gameObject, heading);
                 break;
             case "Curacion":
                 for (int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)
@@ -139,12 +164,13 @@ public class PlayerSpecialAttack : MonoBehaviour
                 }
                 gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
                 FindObjectOfType<BattleHUD>().SetMana(gameObject.GetComponent<Unit>().party, gameObject.GetComponent<Unit>().myteam, gameObject.GetComponent<Unit>().Mana);
+                Animaciones.ataqueEspecial(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), gameObject, heading, target);
                 break;
         }
         gameObject.GetComponent<PlayerMove>().basicAttack = false;
         gameObject.GetComponent<PlayerMove>().specialAttack = false;
 
-        TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
+        //TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
     }
 
     public void AddSpecialAttack(SpecialAttack SpecialAttack)

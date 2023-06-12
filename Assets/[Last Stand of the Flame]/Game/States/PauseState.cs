@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class PauseState : FSMState
 {
     public GameObject pauseMenuUI;
-    private string stateName;
 
     void Update()
     {
@@ -46,21 +45,21 @@ public class PauseState : FSMState
     }
     public void FSMStateChangeHandler(FSMState nuevo, FSMState anterior)
     {
-        if (anterior is GameState) stateName = "GameState";
-        else if (anterior is MapState) stateName = "MapState";
+        if (anterior is GameState) StateName = "GameState";
+        else if (anterior is MapState) StateName = "MapState";
         //Debug.Log(stateName);
     }
 
 
     public void StateChanger()
     {
-        if (stateName == "MapState")
+        if (StateName == "MapState")
         {
             Debug.Log("Cambio a mapa");
             //SceneManager.UnloadSceneAsync("Map");
             GameController.Instancia.SetStateByType(typeof(MapState));
         }
-        else if (stateName == "GameState")
+        else if (StateName == "GameState")
         {
             GameController.Instancia.SetStateByType(typeof(GameState));
         }   
