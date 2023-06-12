@@ -119,8 +119,8 @@ public class CombatSounds : MonoBehaviour
                 soundClipsSource.Play();
                 break;
             case "Galentin":
-                /*soundClipsSource.clip = soundClips.GalentinAttack[Random.Range(1, 3)];
-                soundClipsSource.Play();*/
+                soundClipsSource.clip = soundClips.GalentinFXAttack[Random.Range(0, 1)];
+                soundClipsSource.Play();
                 break;
             case "Jose Maria":
                 soundClipsSource.clip = soundClips.JoseMariaAttack[Random.Range(0, 5)];
@@ -162,26 +162,32 @@ public class CombatSounds : MonoBehaviour
         switch (name)
         {
             case "Barbara":
-                
+                soundClipsSource.clip = soundClips.BarbaraSpecialAttack[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Deen Ecan":
-                
+                soundClipsSource.clip = soundClips.DeenEcanFXSpecialAttack[Random.Range(0, 1)];
+                soundClipsSource.Play();
                 break;
             case "Galentin":
-                
+                soundClipsSource.clip = soundClips.GalentinFXSpecialAttack[Random.Range(0, 1)];
+                soundClipsSource.Play();
                 break;
             case "Jose Maria":
-                
+                soundClipsSource.clip = soundClips.JoseMariaFXSpecialAttack[Random.Range(0, 1)];
+                soundClipsSource.Play();
                 break;
             case "Kaka":
-                   
-                
+                soundClipsSource.clip = soundClips.KakaSpecialAttack[Random.Range(0, 1)];
+                soundClipsSource.Play();
                 break;
             case "Kazuro":
-                
+                soundClipsSource.clip = soundClips.KazuroSpecialAttack[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Romero MacBeth":
-                
+                soundClipsSource.clip = soundClips.RomeroFXSpecialAttack[Random.Range(0, 1)];
+                soundClipsSource.Play();
                 break;
 
             case "Brujo":
@@ -207,25 +213,32 @@ public class CombatSounds : MonoBehaviour
         switch (name)
         {
             case "Barbara":
-                
+                soundClipsSource.clip = soundClips.BarbaraHurt[Random.Range(0, 3)];
+                soundClipsSource.Play();
                 break;
             case "Deen Ecan":
-                
+                soundClipsSource.clip = soundClips.BarbaraHurt[Random.Range(0, 5)];
+                soundClipsSource.Play();
                 break;
             case "Galentin":
-                
+                soundClipsSource.clip = soundClips.BarbaraHurt[Random.Range(0, 6)];
+                soundClipsSource.Play();
                 break;
             case "Jose Maria":
-                
+                soundClipsSource.clip = soundClips.BarbaraHurt[Random.Range(0, 5)];
+                soundClipsSource.Play();
                 break;
             case "Kaka":
-                
+                soundClipsSource.clip = soundClips.BarbaraHurt[Random.Range(0, 5)];
+                soundClipsSource.Play();
                 break;
             case "Kazuro":
-                
+                soundClipsSource.clip = soundClips.BarbaraHurt[Random.Range(0, 5)];
+                soundClipsSource.Play();
                 break;
             case "Romero MacBeth":
-                
+                soundClipsSource.clip = soundClips.BarbaraHurt[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
 
             case "Brujo":
@@ -251,25 +264,32 @@ public class CombatSounds : MonoBehaviour
         switch (name)
         {
             case "Barbara":
-                
+                soundClipsSource.clip = soundClips.BarbaraDeath[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Deen Ecan":
-                
+                soundClipsSource.clip = soundClips.BarbaraDeath[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Galentin":
-                
+                soundClipsSource.clip = soundClips.BarbaraDeath[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Jose Maria":
-                
+                soundClipsSource.clip = soundClips.BarbaraDeath[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Kaka":
-                
+                soundClipsSource.clip = soundClips.BarbaraDeath[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Kazuro":
-                
+                soundClipsSource.clip = soundClips.BarbaraDeath[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
             case "Romero MacBeth":
-                
+                soundClipsSource.clip = soundClips.BarbaraDeath[Random.Range(0, 4)];
+                soundClipsSource.Play();
                 break;
 
             case "Brujo":

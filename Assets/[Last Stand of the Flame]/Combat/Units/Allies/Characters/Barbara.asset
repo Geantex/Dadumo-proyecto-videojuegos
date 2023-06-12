@@ -18,7 +18,7 @@ MonoBehaviour:
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 117066107719519134, guid: aee834ceeaef53f40bdfc67f0cfa0375, type: 3}
   healthPoints: 90
-  maxHealthPoints: 100
+  maxHealthPoints: 90
   manaPoints: 100
   damagePoints: 25
   rangeTiles: 1
