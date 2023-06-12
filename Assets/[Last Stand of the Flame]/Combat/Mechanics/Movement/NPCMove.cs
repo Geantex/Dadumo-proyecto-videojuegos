@@ -48,6 +48,11 @@ public class NPCMove : TacticsMove
             return;
         }
 
+        if (animandose)
+        {
+            return;
+        }
+
         // Si no se está moviendo, calculamos la zona de movimiento y el camino
         if (!moving)
         {

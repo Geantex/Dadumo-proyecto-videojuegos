@@ -35,4 +35,9 @@ public class AccionesEnAnimaciones : MonoBehaviour
             Animaciones.recibirDano(gameObject.GetComponent<Animator>(), target.GetComponent<Unit>().Name, target, FindObjectOfType<Animaciones>());
         }
     }
+
+    public void RecibirDanoEnemigo()
+    {
+        Animaciones.recibirDano(gameObject.GetComponent<Animator>(), unit.GetComponent<NPCMove>().Target.GetComponent<Unit>().Name, unit.GetComponent<NPCMove>().Target, FindObjectOfType<Animaciones>());
+    }
 }

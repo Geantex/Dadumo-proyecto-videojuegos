@@ -332,29 +332,11 @@ MonoBehaviour:
   myPlayers: []
   aliadoPrueba: {fileID: 3858053825818039181, guid: e2651b0e02c7e5942ab2a955459a8e7f, type: 3}
   numAliados: 0
-  aliado1x: 0
-  aliado1z: 0
-  aliado2x: 0
-  aliado2z: 0
-  aliado3x: 0
-  aliado3z: 0
-  aliado4x: 0
-  aliado4z: 0
   allPlayableEnemies: []
   myPartyEnemies: []
   myEnemies: []
   enemigoPrueba: {fileID: 6756909428466296, guid: b6edbb8d4cce50745b88d6718076e06b, type: 3}
   numEnemigos: 0
-  enemigo1x: 0
-  enemigo1z: 0
-  enemigo2x: 0
-  enemigo2z: 0
-  enemigo3x: 0
-  enemigo3z: 0
-  enemigo4x: 0
-  enemigo4z: 0
-  enemigo5x: 0
-  enemigo5z: 0
   obstaculoBase: {fileID: 4318347385112883726, guid: f542c2cf9489aa147a2f014d0d83f1fe, type: 3}
   numObstaculos: 0
   obstaculo1x: 0
@@ -1472,6 +1454,518 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: musicaBoss
+      value: 
+      objectReference: {fileID: 8300000, guid: ab89d9040ba988348bf62e220a6d2f6d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: musicaMapa
+      value: 
+      objectReference: {fileID: 8300000, guid: c4a8f760aa2515144983928fc1aefa71, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: musicaInicio
+      value: 
+      objectReference: {fileID: 8300000, guid: 38b532f0e8e10a54190d9a5884a300c9, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: musicaTienda
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a33bf110e2be544cbcfda67ce8c5982, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: ambienteBosque
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b2d4ef92d3d2c04b8b241757953c284, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: ambientePueblo
+      value: 
+      objectReference: {fileID: 8300000, guid: 44c40ae482756a8458db2626cfb16fad, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: ambienteVolcan
+      value: 
+      objectReference: {fileID: 8300000, guid: cffdf48e78691584d91fade40e39b9af, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: ambienteHoguera
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a019d94874f4a443bd51b8b7d13c060, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: ambienteMontana
+      value: 
+      objectReference: {fileID: 8300000, guid: 82efd9e90246fc7429e60e440226a617, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RataHurt.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoHurt.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RataDeath.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollHurt.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoDeath.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroHurt.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronHurt.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RataAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroHurt.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollDeath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronDeath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RataHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 07c4545d2506779489dd9dbb065d880d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroDeath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollAttack.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 33abf916e4679ef44a66971f2f2331ae, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoHurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52e914425f246c249bc46f5c8aa397ab, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoHurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d0052a10de39034390c093601cc3005, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoHurt.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52a61e42f63b0c542ac6f2093f7bef31, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoHurt.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 164ccb11e01b38d4cafd4232848c126a, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoHurt.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 48cd00944c00ea14190805f74a068481, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinHurt.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KakaFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronAttack.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RataDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 73a0296da05ff4542a449c1d5985fc18, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroAttack.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 248c230e70b556347955d8e22c31d134, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollHurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: bb6c6ef5199caa346a82574839a7f829, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollHurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e97d2b9113552b4cafb56502fc81b23, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollHurt.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 31e7d171074c12342a7aa890bbd59022, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 804a603b87d0b0e40986f7d416b90c3e, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 34d70bfbaf57fea45a52af11784ebdec, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoDeath.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 869a292bbd4695541b31cec853eecc6a, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinDeath.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a824bbe25c6a75d448a096633dcd1cfb, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroHurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d3045e309734e14181f336aff8ddd44, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroHurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: af82c30a9e49d434da2acfc721b14927, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroHurt.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 96711fffc41da04408988d975b04049a, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroHurt.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd03990703eaa5843aa6d9f43790302a, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 07bfcb197972a014cb75d59aac00837d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronHurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2568385c192219a4d846165cac75527a, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronHurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fa5c0bc19c4a584b97d4a3a63d6d884, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronHurt.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f2843b6b5384934687784f17b5c1ec0, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronHurt.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 44028d915c2a2bf4794297843d5ec52f, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RataAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 625d3a874f7886843a62c3d6d36a1304, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ad8f980168aecc4387b57d477598d0d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroHurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39694a69951e0234b8716fb302a84e7e, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroHurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 05185e7888766b041b45fe405b37026c, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroHurt.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b6da95fa1017fe043a8a53543f591ae3, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 04f02b5fa6a4b3d4ab2566bde7f9ac98, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: bfa59266852cabd41a926508fefcb7f8, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fc19d3e1072d404783e331db696caba, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: dd7a1d89c4fcd0f499dc03693b75c50c, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e26f563ef1078bf4ebb4119cde12ed7d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b14361c727393b40964e7a51ad05d85, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ebb4be1673f13034d92c4fc147e92a8d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ba09f3b69d51594bbf379ca1d3a2bf1, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b535796318f4ed543837e7faa114fdb6, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 33abf916e4679ef44a66971f2f2331ae, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinHurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52e914425f246c249bc46f5c8aa397ab, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinHurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d0052a10de39034390c093601cc3005, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinHurt.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52a61e42f63b0c542ac6f2093f7bef31, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinHurt.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 164ccb11e01b38d4cafd4232848c126a, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinHurt.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 48cd00944c00ea14190805f74a068481, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KakaFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 76c75de4638e7e14abcae085ae743ac1, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 89fb02767bf26d6448d5b9ea20271276, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 280a9c3f881451b4ca95d2c2d9d8277c, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ad93ba468a18e6c4d941f7fc93109c0f, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronAttack.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4fe34c23f01d5641b035da5d3cf10c0, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronAttack.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 012d26091529226459feac892302477d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a9c8723126f389e43aefaed05ad1d1d5, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f70894f66df13545a642ac4e8e7c7fe, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ecd160880cfd6a74f98f0e83afd304fc, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroAttack.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 45f03b3a58aad1647aad78fdc65d436b, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroAttack.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: e3e410f6b205f5a48bb517284f8cb1f4, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BrujoFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c0f75904002224409f94f21eaa97c0d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: DeenEcanFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 804a603b87d0b0e40986f7d416b90c3e, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 34d70bfbaf57fea45a52af11784ebdec, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinDeath.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 869a292bbd4695541b31cec853eecc6a, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: JoseMariaFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KakaSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 797d714f8eb281347a87061631c0aa44, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: LadronFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 33c3cef44524e3247bba1b636f6bf66c, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8bf2a9b2760ffe24fbdf64ec569c7631, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b7a9037465158644897cf9e3d29e580, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: DeenEcanFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 285ad8d88dbc7ef4f97935fde9fec38e, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d7610503b129f644c8ee3658b38dd4a5, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KakaFXSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroSpecialAttack.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraSpecialAttack.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: JoseMariaFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f25b9dcb2b8f594b8ec0a453b1ed9cb, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KakaSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 017c1a4fac8be664b8c0764c5ad26e49, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroFXSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroFXSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraFXSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KakaFXSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f18cbb07700fd84abbfa0550f3b9abf, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e193b68b6b3ef9f45b1126daae3b9afe, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroSpecialAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: dd3ab0f4a892ace49a6dcaa287e21c3f, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroSpecialAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39e0ee218285ec84f9670ed75f2387f6, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroSpecialAttack.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1eab587c712678f438d27f63ef254d62, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cf08410388a65054db82c3b00aa8fec7, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraSpecialAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b47006af800ba2438968ceee8165963, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraSpecialAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: cac6f965eb36ccf488785ad2a7c55fea, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraSpecialAttack.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: deae8323c629f96489cda59715f566cc, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: DeenEcanFXSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinFXSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: JoseMariaFXSpecialAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: KazuroFXSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e7dd2cbb62bede429b974c9326bc75e, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: RomeroFXSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b822f8e2ca76e6948844725b7d4e6393, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BarbaraFXSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b7a9037465158644897cf9e3d29e580, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: DeenEcanFXSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e135b9e7a323a2d4da2bfc828dc030f3, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: GalentinFXSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c87aec483819d8459ac74419e74e1dc, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: JoseMariaFXSpecialAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b822f8e2ca76e6948844725b7d4e6393, type: 3}
     - target: {fileID: 6589418905783747507, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: m_Name
       value: Map
@@ -1534,3 +2028,129 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+--- !u!1 &6589418905993166193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6589418905783747507, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+  m_PrefabInstance: {fileID: 6589418905993166192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6589418905993166194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+  m_PrefabInstance: {fileID: 6589418905993166192}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589418905993166193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21300c26faead3a47bb99d140deb8bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6589418905993166195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589418905993166193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8619c691fc7fa93409579468644b4474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips: {fileID: 6589418905993166194}
+  soundClipsSource: {fileID: 6589418905993166196}
+--- !u!82 &6589418905993166196
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589418905993166193}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

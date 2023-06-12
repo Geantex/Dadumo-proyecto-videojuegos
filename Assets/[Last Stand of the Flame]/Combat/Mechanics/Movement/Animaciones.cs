@@ -140,13 +140,13 @@ public class Animaciones : MonoBehaviour
                 break;
 
             case "Brujo":
-                pj.Play("Brujo ataque");
+                pj.Play("Brujo atacque");
                 break;
             case "Ladron":
                 pj.Play("Bandido ataque");
                 break;
             case "Rata":
-                pj.Play("Rata ataque2");
+                pj.Play("Rata atacar2");
                 break;
             case "Troll":
                 pj.Play("Troll ataque");
