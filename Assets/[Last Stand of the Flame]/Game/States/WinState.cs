@@ -28,9 +28,14 @@ public class WinState : FSMState
             SceneManager.LoadScene("MainMenu");
             machine.SetStateByType(typeof(MainMenuState));
         }
+        else if (sceneName == "VolcanCombate"){
+            // Esto es si ganas al jefe final (te lleva a la escena de victoria)
+            SceneManager.LoadScene("VictoriaScene");
+            machine.SetStateByType(typeof(MainMenuState));
+        }
         else
         {
-            // Esto es si estas jugando de normal
+            // Esto es si estas jugando de normal (te devuelve al mapa)
             SceneManager.LoadScene("Map");
             machine.SetStateByType(typeof(MapState));
         }

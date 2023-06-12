@@ -31,8 +31,8 @@ public class TutorialConsejos : MonoBehaviour
         listaConsejos.Add(textaco1);
 
         // Consejo 2: Como atacar + consejo de atacar a distancia con Galentin
-        string textaco2 = "Cuando estés al lado de una rata, haz click en \"Ataque básico\". Se seleccionarán los enemigos a los " +
-            "que puedes atacar. El mago azul, Galentín, puede atacar a distancia";
+        string textaco2 = "Cuando estés al lado de una rata, haz click en \"Ataque básico\". Se marcarán los enemigos a los " +
+            "que puedes atacar. Haz click en un enemigo marcado para atacarle.  El mago azul, Galentín, puede atacar de lejos";
         listaConsejos.Add(textaco2);
 
         // Consejo 3: Como usar ataques especiales
@@ -40,11 +40,15 @@ public class TutorialConsejos : MonoBehaviour
             "pueden causar daño de área; otros pueden hacer muchísimo daño. Mira el grimorio para más información";
         listaConsejos.Add(textaco3);
 
+        // Consejo 3: Como usar ataques especiales
+        string textaco4 = "Puedes controlar la cámara haciendo click en los botones de (donde sea girar la camara)";
+        listaConsejos.Add(textaco4);
+
         DeslizarPanel(); // esto desliza el PRIMER consejo. el ultimo consejo hay que colocarlo en el script de ataque normal
     }
     public void DeslizarPanel()
     {
-        if (contadorConsejo >= 3)
+        if (contadorConsejo >= 4)
         {
             Debug.Log("No más consejos");
             CerrarConsejo();
@@ -108,6 +112,9 @@ public class TutorialConsejos : MonoBehaviour
             case 2: // habilitamos el ataque especial y desactivamos el basico
                 ataqueBasicoBoton.SetActive(false);
                 ataqueEspecialBoton.SetActive(true);
+                break;
+            case 3: // rehabilitamos todo
+                ataqueBasicoBoton.SetActive(true);
                 break;
         }
     }
