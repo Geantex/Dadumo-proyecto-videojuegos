@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,21 +18,27 @@ public class item : ScriptableObject
     public string characterTag; // Esto lo usaremos para que solo salgan objetos de personajes que hayan en el juego
     public string itemSlot; // esto solo puede ser o "weapon" o "armor"
     public Sprite characterImage; // podemos poner una imagen en el canvas que señale quien puede equiparse el objeto
-
+    public GameObject itemPrefab; //item prefab
 
     // (1)* Si un objeto está equipado, no debería volver a salir en esta partida. Tampoco deberían de salir objetos de menor tier
     // Esto lo haremos guardandolo en una lista, y comparando los tiers (puede?)
 
     public item equipItem(item itemConseguido)
     {
-        // esta funcion equipara un objeto en el personaje que llame a la funcion si!!!
+        List<CharacterCreator> CharactersList = GameController.Instancia.CharactersParty;
+        foreach (CharacterCreator character in CharactersList)
+        {
+            if (itemConseguido.characterTag == character.CharacterClass && itemConseguido.itemSlot == "armor")
+            {
+                character.CharacterArmor = itemConseguido;
+            }
+            else if(itemConseguido.characterTag == character.CharacterClass && itemConseguido.itemSlot == "weapon")
+            {
+                character.CharacterWeapon = itemConseguido;
+            }
+            // esta funcion equipara un objeto en el personaje que llame a la funcion si!!!
+        }
         return itemConseguido;
-    }
-
-    public void buyItem()
-    {
-        item item = new item();
-        equipItem(item);
     }
 
     // Esta funcion deberia llamarse cada vez de que el personaje que tenga equipado el objeto golpea a un enemigo YIPIE!!!

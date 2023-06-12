@@ -12,9 +12,8 @@ public class MainMenuManager : MonoBehaviour
     }
     public void NewGame()
     {
-        
         GameController.Instancia.NewGame = true;
-        GameController.Instancia.SetStateByType(typeof(Randomizer));
+        SceneManager.LoadScene("IntroGame");
     }
     public void StartGameFade()
     {

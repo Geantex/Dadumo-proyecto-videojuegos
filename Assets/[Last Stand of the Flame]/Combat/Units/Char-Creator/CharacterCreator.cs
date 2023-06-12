@@ -161,9 +161,10 @@ public class CharacterCreator : ScriptableObject
         }
         set
         {
+            Debug.Log(value.itemName);
             if (value.itemSlot == "weapon" && value.itemTier > characterWeapon.itemTier && value.characterTag == characterClass)
             {
-                //Modifica el valor del arma añadiendo una y modificando el ataque del personaje
+                //Modifica el valor del arma añadiendo una y modificando el ataque del personaje.
                 if (weaponModified == false)
                 {
                     characterWeapon = value;
@@ -187,6 +188,7 @@ public class CharacterCreator : ScriptableObject
         }
         set
         {
+            Debug.Log(value.itemName);
             if (value.itemSlot == "armor" && value.itemTier > characterArmor.itemTier && value.characterTag == characterClass)
             {
                 //Modifica el valor de la armadura añadiendo una y modificando la vida del personaje
