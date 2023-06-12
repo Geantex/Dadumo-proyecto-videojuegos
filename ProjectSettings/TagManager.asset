@@ -26,6 +26,7 @@ TagManager:
   - bastonGalentin
   - PersonajeHoguera
   - guitarraRomero
+  - ResultsCanvas
   layers:
   - Default
   - TransparentFX
