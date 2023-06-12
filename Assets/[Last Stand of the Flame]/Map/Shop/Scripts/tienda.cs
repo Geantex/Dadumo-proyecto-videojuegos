@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,6 +28,7 @@ public class tienda : MonoBehaviour
     GameObject canvasTienda;
 
     GameObject imagen1;
+    GameObject empty1;
     GameObject nombre1;
     GameObject price1;
 
@@ -79,11 +82,12 @@ public class tienda : MonoBehaviour
         itemsList = canvasTienda.GetComponent<itemManager>().allItemsList;
         //-------------------item1----------------------
         item1 = pickItemRandom(itemsList);
-        //Debug.Log(item1.itemName);
+        empty1 = itemTienda1.transform.Find("Empty1").gameObject;
         imagen1 =  itemTienda1.transform.Find("Image1").gameObject;
         nombre1 = itemTienda1.transform.Find("nombreDeItem1").gameObject;
         price1 = itemTienda1.transform.Find("Button1").gameObject.transform.Find("textoBoton1").gameObject;  //Frankestein anmorten inummicus
 
+        empty1 = item1.itemPrefab;
         imagen1.GetComponent<Image>().sprite = item1.itemImage;
         nombre1.GetComponent<Text>().text = item1.itemName;
         price1.GetComponent<Text>().text = item1.itemPrice.ToString();
@@ -118,7 +122,7 @@ public class tienda : MonoBehaviour
         nombre4.GetComponent<Text>().text = item4.itemName;
         price4.GetComponent<Text>().text = item4.itemPrice.ToString();
 
-        //------------mercenario(epic??)------------------
+        /*//------------mercenario(epic??)------------------
         // mercenarioAleatorio = pickPartyMemberRandom(partyMemberList);
         mercenarioImage = mercenarioTienda.transform.Find("imagenMercenario").gameObject;
         mercenarioNombre = mercenarioTienda.transform.Find("nombreMercenario").gameObject;
@@ -130,7 +134,7 @@ public class tienda : MonoBehaviour
 
         mercenarioImage.GetComponent<Image>().sprite = mercenarioImagen;
         mercenarioNombre.GetComponent<Text>().text = mercenarioName;
-        mercenarioPrecioText.GetComponent<Text>().text = mercenarioPrecio.ToString();
+        mercenarioPrecioText.GetComponent<Text>().text = mercenarioPrecio.ToString();*/
     }
     public item pickItemRandom(List<item> itemList) 
     {
@@ -169,7 +173,7 @@ public class tienda : MonoBehaviour
             dineraco = dineraco - item1.itemPrice;
             GameController.Instancia.GoldCoins = dineraco;
             // comprar el objeto, equiparselo al jugador y descontarselo del dinero total
-            //item1.equipItem(item1);
+            item1.equipItem(item1);
             itemTienda1.transform.Find("Vendido").gameObject.SetActive(true);
             itemTienda1.transform.Find("Button1").gameObject.SetActive(false);
         }
@@ -186,7 +190,7 @@ public class tienda : MonoBehaviour
             dineraco = dineraco - item2.itemPrice;
             GameController.Instancia.GoldCoins = dineraco;
             // comprar el objeto, equiparselo al jugador y descontarselo del dinero total
-            //item2.equipItem(item2);
+            item2.equipItem(item2);
             itemTienda2.transform.Find("Vendido").gameObject.SetActive(true);
             itemTienda2.transform.Find("Button2").gameObject.SetActive(false);
 
@@ -205,7 +209,7 @@ public class tienda : MonoBehaviour
             dineraco = dineraco - item3.itemPrice;
             GameController.Instancia.GoldCoins = dineraco;
             // comprar el objeto, equiparselo al jugador y descontarselo del dinero total
-            //item3.equipItem(item3);
+            item3.equipItem(item3);
             itemTienda3.transform.Find("Vendido").gameObject.SetActive(true);
             itemTienda3.transform.Find("Button3").gameObject.SetActive(false);
         }
@@ -221,7 +225,7 @@ public class tienda : MonoBehaviour
         {
             dineraco = dineraco - item4.itemPrice;
             GameController.Instancia.GoldCoins = dineraco;
-            //item4.equipItem(item4); // Hugo c:
+            item4.equipItem(item4); // Hugo c:
             // comprar el objeto, equiparselo al jugador y descontarselo del dinero total
             itemTienda4.transform.Find("Vendido").gameObject.SetActive(true);
             itemTienda4.transform.Find("Button4").gameObject.SetActive(false);
@@ -243,6 +247,7 @@ public class tienda : MonoBehaviour
             dineraco = dineraco - 100;
             GameController.Instancia.GoldCoins = dineraco;
             // curar a la party funcion Hugo vuelale los cojones a Gerad!! y a Maro! y a George! y a Miawses! y a Gabriel! espera soy yo!! a ese tambien !! mm
+            GameController.Instancia.modifyPartyHealthPoints(40f);
             sanacionBoton.transform.Find("Vendido").gameObject.SetActive(true);
             sanacionBoton.onClick.RemoveAllListeners();
         }
