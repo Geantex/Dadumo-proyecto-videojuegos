@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ using Random = UnityEngine.Random;
 public class EncounterManager : MonoBehaviour
 {
     public GameObject Mapa;
-    // hola Dora la exploradora!! estoy por explorarme!!
+
     public GameObject EncounterCanvas;
     public GameObject ResultCanvas;
     public GameObject ResultDescription;
@@ -75,7 +76,7 @@ public class EncounterManager : MonoBehaviour
         //yield return new WaitForSeconds(0.24f);
         ResultCanvas.SetActive(true);
         EncounterCanvas.SetActive(false);
-        ResultDescription.GetComponent<Text>().text = results;
+        ResultDescription.GetComponent<TextMeshProUGUI>().text = results;
         //FadeToBlack.QuickReverseFade();
 
     }

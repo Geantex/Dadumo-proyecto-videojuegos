@@ -495,6 +495,10 @@ PrefabInstance:
       propertyPath: Mapa
       value: 
       objectReference: {fileID: 1311161698}
+    - target: {fileID: 4192329416027699383, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+      propertyPath: ResultDescription
+      value: 
+      objectReference: {fileID: 86694672}
     - target: {fileID: 4192329416066236680, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
       propertyPath: m_Type
       value: 0
@@ -629,6 +633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+--- !u!1 &86694672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5872339486808627058, guid: eafcab2d16f69e141942720e13ed76e7, type: 3}
+  m_PrefabInstance: {fileID: 86694671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &108503353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8a64b9e6847ef434abc8c22eba9cd10e, type: 3}
