@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,15 +49,15 @@ public class Encounter : ScriptableObject
         GameObject button4TextSlot = button4.transform.Find("EncounterButton4Text").gameObject;
 
 
-        nameSlot.GetComponent<Text>().text = encounterName;
-        descriptionSlot.GetComponent<Text>().text = encounterDescription;
+        nameSlot.GetComponent<TextMeshProUGUI>().text = encounterName;
+        descriptionSlot.GetComponent<TextMeshProUGUI>().text = encounterDescription;
         imageSlot.GetComponent<Image>().sprite = encounterImage;
 
         // Puede que no hayan 4 opciones en todos los encuentros, así que vamos a hacer ifs para ver si hay texto que agregar al boton
         //myScriptReference = go.GetComponent<MyScript>();
         if (encounterButton1Text != "")
         {
-            button1TextSlot.GetComponent<Text>().text = encounterButton1Text;
+            button1TextSlot.GetComponent<TextMeshProUGUI>().text = encounterButton1Text;
 
             try
             {
@@ -75,7 +76,7 @@ public class Encounter : ScriptableObject
 
         if (encounterButton2Text != "")
         {
-            button2TextSlot.GetComponent<Text>().text = encounterButton2Text;
+            button2TextSlot.GetComponent<TextMeshProUGUI>().text = encounterButton2Text;
             try
             {
                 // veamos si funciona????
@@ -93,7 +94,7 @@ public class Encounter : ScriptableObject
 
         if (encounterButton3Text != "")
         {
-            button3TextSlot.GetComponent<Text>().text = encounterButton3Text;
+            button3TextSlot.GetComponent<TextMeshProUGUI>().text = encounterButton3Text;
             try
             {
                 // veamos si funciona????
@@ -111,7 +112,7 @@ public class Encounter : ScriptableObject
 
         if (encounterButton4Text != "")
         {
-            button4TextSlot.GetComponent<Text>().text = encounterButton4Text;
+            button4TextSlot.GetComponent<TextMeshProUGUI>().text = encounterButton4Text;
             try
             {
                 // veamos si funciona????
