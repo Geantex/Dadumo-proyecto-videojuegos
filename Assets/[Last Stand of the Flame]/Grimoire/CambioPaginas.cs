@@ -50,4 +50,17 @@ public class CambioPaginas : MonoBehaviour
         Debug.Log("Pagina actual" + currentPage);
         // Activar el nuevo objeto TextMeshPro
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            NextPage();
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            PreviousPage();
+        }
+    }
 }
