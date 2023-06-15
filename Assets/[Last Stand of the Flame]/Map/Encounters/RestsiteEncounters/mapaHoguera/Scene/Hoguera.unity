@@ -489,7 +489,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716546969
 GameObject:
@@ -621,7 +621,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &753955912
 GameObject:
@@ -718,7 +718,7 @@ RectTransform:
   m_Children:
   - {fileID: 69979283}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2160,6 +2160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 415494659633751586, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 715513803870158018, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_Name
       value: ResultsCanvas
@@ -2184,6 +2188,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: volverAlMapa, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3088627280456853300, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 977375d27f4a42343890a5adac8dc5f2, type: 3}
+    - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769380783232944420, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4080240455660992711, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2194,7 +2234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4080240455660992711, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4080240455660992711, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2268,9 +2308,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4487754908241386341, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487754908241386341, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1165.8551
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487754908241386341, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 211.9835
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487754908241386341, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -290
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487754908241386341, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062339968754155410, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130345686822578917, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7338268303678890972, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_Text
       value: Lugar de acampada
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750554359394865127, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955959674219342539, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443447735652495596, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_text
+      value: Lugar de Acampada
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811400394367793318, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_text
+      value: "Recuper\xE1is el 50% de vuestra salud y mana"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c325997365288374eb28b12de1b5b718, type: 3}
