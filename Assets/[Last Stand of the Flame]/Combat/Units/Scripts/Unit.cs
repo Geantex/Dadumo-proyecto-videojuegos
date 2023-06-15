@@ -41,19 +41,9 @@ public class Unit : MonoBehaviour
 
     }
 
-    IEnumerator EsperarCincoSegundo()
-    {
-        yield return new WaitForSeconds(2.3f);
-        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
-        gameObject.SetActive(false);
-
-        DestroyImmediate(gameObject);
-    }
-
     public void desaparecer()
     {
         Animaciones.morir(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name);
-        StartCoroutine(EsperarCincoSegundo());
     }
 
     public int MaxLife

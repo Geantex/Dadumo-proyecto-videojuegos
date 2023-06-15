@@ -26,6 +26,11 @@ public class TacticsMove : MonoBehaviour
         get { return currentTile; }
     }
 
+    public Stack<Tile> Path
+    {
+        get { return path; }
+    }
+
     // Variables para el movimiento
     public bool moving = false;
     public int move = 5;
@@ -161,6 +166,7 @@ public class TacticsMove : MonoBehaviour
         tile.target = true;
         // Activamos el movimiento de la unidad
         moving = true;
+        Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
 
         // Guardamos la casilla a la cual queremos ir
         Tile next = tile;
@@ -216,11 +222,10 @@ public class TacticsMove : MonoBehaviour
                     // Quitamos la casilla del camino
                     path.Pop();
                 }
-                Animaciones.correr(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
+                
             }
             else
             {
-                Animaciones.idle(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
                 //Cuando acabamos de recorrer el camino paramos el movimiento
 
                 moving = false;
@@ -235,7 +240,6 @@ public class TacticsMove : MonoBehaviour
         }
         else
         {
-            Animaciones.idle(GetComponentInChildren<Animator>(), GetComponent<Unit>().Name);
             //Cuando acabamos de recorrer el camino paramos el movimiento
 
             moving = false;
