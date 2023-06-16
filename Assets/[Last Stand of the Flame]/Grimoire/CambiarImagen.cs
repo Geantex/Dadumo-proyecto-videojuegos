@@ -35,4 +35,17 @@ public class CambiarImagen : MonoBehaviour
 
         imagenBoton.sprite = imagenes[indiceActual];
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            MostrarSiguienteImagen();
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            MostrarImagenAnterior();
+        }
+    }
 }

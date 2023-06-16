@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Dapasa.FSM;
 
 public class tienda : MonoBehaviour
 {
@@ -43,12 +44,12 @@ public class tienda : MonoBehaviour
     GameObject nombre4;
     GameObject price4;
 
-    GameObject mercenarioImage;
+    /*GameObject mercenarioImage;
     GameObject mercenarioNombre;
     GameObject mercenarioPrecioText;
 
     public string mercenarioName;
-    public Sprite mercenarioImagen;
+    public Sprite mercenarioImagen;*/
 
     public Button sanacionBoton;
 
@@ -64,7 +65,6 @@ public class tienda : MonoBehaviour
 
         GameObject canvasTienda = GameObject.FindWithTag("canvas");
         dineroText = canvasTienda.transform.Find("DineroTotal").gameObject;
-        sanacionBoton.onClick.AddListener(buySanacion);
 
         Debug.Log("ESTOY POR EJECUTARME");
         Invoke("itemTienda", 0f); //esto es una fix temporal, no debería de estar en la main build, el fichero carga más rápido que la lista
@@ -81,12 +81,10 @@ public class tienda : MonoBehaviour
         itemsList = canvasTienda.GetComponent<itemManager>().allItemsList;
         //-------------------item1----------------------
         item1 = pickItemRandom(itemsList);
-        empty1 = itemTienda1.transform.Find("Empty1").gameObject;
         imagen1 = itemTienda1.transform.Find("Image1").gameObject;
         nombre1 = itemTienda1.transform.Find("nombreDeItem1").gameObject;
         price1 = itemTienda1.transform.Find("Button1").gameObject.transform.Find("textoBoton1").gameObject;  //Frankestein anmorten inummicus
 
-        empty1 = item1.itemPrefab;
         imagen1.GetComponent<Image>().sprite = item1.itemImage;
         nombre1.GetComponent<Text>().text = item1.itemName;
         price1.GetComponent<Text>().text = item1.itemPrice.ToString();
