@@ -1491,7 +1491,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 82efd9e90246fc7429e60e440226a617, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossHurt.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RataHurt.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossDeath.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
@@ -1504,6 +1512,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: TrollHurt.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossAttack.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
@@ -1531,13 +1543,29 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossHurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4748a8756c693474ea9804ae3691e8df, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossHurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17bdfb7111892014f8cdc5a8ef2882d0, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossHurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c715aa621ad8b94f9ca1940881a0e45, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossHurt.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 05b1f31b80b160a4195762534b2dcbf4, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: LadronDeath.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RataHurt.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 07c4545d2506779489dd9dbb065d880d, type: 3}
+      objectReference: {fileID: 8300000, guid: b175211392b7f904c97c21b6e613459e, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RomeroDeath.Array.size
       value: 2
@@ -1545,6 +1573,14 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: TrollAttack.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 737a60e0a31139849984963ab2a7b83e, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossFXAttack.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: BrujoHurt.Array.data[0]
@@ -1585,7 +1621,7 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RataDeath.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 73a0296da05ff4542a449c1d5985fc18, type: 3}
+      objectReference: {fileID: 8300000, guid: db6e8a5143138dd4a9eb9231ef1ed7b6, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RomeroAttack.Array.size
       value: 5
@@ -1606,6 +1642,22 @@ PrefabInstance:
       propertyPath: TrollHurt.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 31e7d171074c12342a7aa890bbd59022, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f359f5147105c2c49878b0bfe9b85528, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ce9623f701ffb4742aa5b377213da482, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: bf85a1ff29557054b96dc37ee1332bc3, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossAttack.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 23ca3d7540abae74394cca4f365f9859, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: BrujoDeath.Array.data[0]
       value: 
@@ -1669,7 +1721,7 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RataAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 625d3a874f7886843a62c3d6d36a1304, type: 3}
+      objectReference: {fileID: 8300000, guid: bfcf563f95287c74bbad572848e42431, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RomeroHurt.Array.data[0]
       value: 
@@ -1694,6 +1746,10 @@ PrefabInstance:
       propertyPath: TrollDeath.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: bfa59266852cabd41a926508fefcb7f8, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollFXAttack.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KazuroFXAttack.Array.size
       value: 1
@@ -1739,6 +1795,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: BossFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d0b877ae85e24de45b2bc9b51aef5fed, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: GalentinHurt.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 33abf916e4679ef44a66971f2f2331ae, type: 3}
@@ -1765,7 +1825,7 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KakaFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 76c75de4638e7e14abcae085ae743ac1, type: 3}
+      objectReference: {fileID: 8300000, guid: da93b15cba2bcbd48af9082b405339b3, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: LadronAttack.Array.data[0]
       value: 
@@ -1809,7 +1869,7 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: BrujoFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 2c0f75904002224409f94f21eaa97c0d, type: 3}
+      objectReference: {fileID: 8300000, guid: 5b5db2aaba1dfa2428e69340edcb382b, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: DeenEcanFXAttack.Array.size
       value: 1
@@ -1831,6 +1891,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
+      propertyPath: TrollFXAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e747fada7345d14aac9d220705dbf6d, type: 3}
+    - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: JoseMariaFXAttack.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1841,27 +1905,27 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KazuroFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 797d714f8eb281347a87061631c0aa44, type: 3}
+      objectReference: {fileID: 8300000, guid: 5dd34411a3afdd3438d37ba77d164763, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: LadronFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 33c3cef44524e3247bba1b636f6bf66c, type: 3}
+      objectReference: {fileID: 8300000, guid: af43f2773eefe52418b8b21bd10b53de, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RomeroFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 8bf2a9b2760ffe24fbdf64ec569c7631, type: 3}
+      objectReference: {fileID: 8300000, guid: c7486c1229a8f5747b0860e16f0a68e5, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: BarbaraFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 1b7a9037465158644897cf9e3d29e580, type: 3}
+      objectReference: {fileID: 8300000, guid: f6bbb6803127d6c4e860fea067433576, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: DeenEcanFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 285ad8d88dbc7ef4f97935fde9fec38e, type: 3}
+      objectReference: {fileID: 8300000, guid: fd59fad836d61834fbcdea6f0fdf2052, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: GalentinFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: d7610503b129f644c8ee3658b38dd4a5, type: 3}
+      objectReference: {fileID: 8300000, guid: 79f891237670d964691a2238d120070c, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KakaFXSpecialAttack.Array.size
       value: 1
@@ -1877,7 +1941,7 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: JoseMariaFXAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 3f25b9dcb2b8f594b8ec0a453b1ed9cb, type: 3}
+      objectReference: {fileID: 8300000, guid: 0261b76c77facd641ac7677aaf959b71, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KakaSpecialAttack.Array.data[0]
       value: 
@@ -1897,7 +1961,7 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KakaFXSpecialAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 7f18cbb07700fd84abbfa0550f3b9abf, type: 3}
+      objectReference: {fileID: 8300000, guid: 993f7f112b9d5794cad7274477c672c9, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KazuroSpecialAttack.Array.data[0]
       value: 
@@ -1945,27 +2009,27 @@ PrefabInstance:
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: KazuroFXSpecialAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 2e7dd2cbb62bede429b974c9326bc75e, type: 3}
+      objectReference: {fileID: 8300000, guid: 25b73eb3c38a5d64f8e69c26bb8bb724, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: RomeroFXSpecialAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: b822f8e2ca76e6948844725b7d4e6393, type: 3}
+      objectReference: {fileID: 8300000, guid: 48b425370dd87d54eb84f5dfe2169828, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: BarbaraFXSpecialAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 1b7a9037465158644897cf9e3d29e580, type: 3}
+      objectReference: {fileID: 8300000, guid: f6bbb6803127d6c4e860fea067433576, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: DeenEcanFXSpecialAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: e135b9e7a323a2d4da2bfc828dc030f3, type: 3}
+      objectReference: {fileID: 8300000, guid: fb390b0bdece20e45bcfe715624d1516, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: GalentinFXSpecialAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 3c87aec483819d8459ac74419e74e1dc, type: 3}
+      objectReference: {fileID: 8300000, guid: c2bb41e715732cb4e995f982e1f05d12, type: 3}
     - target: {fileID: 2411148130562370901, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: JoseMariaFXSpecialAttack.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: b822f8e2ca76e6948844725b7d4e6393, type: 3}
+      objectReference: {fileID: 8300000, guid: 48b425370dd87d54eb84f5dfe2169828, type: 3}
     - target: {fileID: 6589418905783747507, guid: ce5f3ecef32d5224d8043ee1e08f1803, type: 3}
       propertyPath: m_Name
       value: Map

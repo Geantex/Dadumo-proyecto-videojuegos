@@ -13,11 +13,13 @@ public class Projectile : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject particlePrefab;
     private ParticleSystem particleSystem;
+    public GameObject unit;
 
-    public void SetTarget(Transform target, float speed)
+    public void SetTarget(Transform target, float speed, GameObject unit)
     {
         this.target = target;
         this.speed = speed;
+        this.unit = unit;
     }
 
     private void Start()
@@ -55,7 +57,7 @@ public class Projectile : MonoBehaviour
             {
                 // Spawn explosion prefab at current position
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
+                TurnManager.EndTurn(unit.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
                 // Destroy the projectile
                 Destroy(gameObject);
             }
