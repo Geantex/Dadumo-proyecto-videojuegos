@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08114ee908639749aa45d4b9fe0efed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 6853032101664464643}
+  unit: {fileID: 2160288323178000895}
   combatSounds: {fileID: 5502822465807577558}
 --- !u!114 &4930337274959763895
 MonoBehaviour:
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundClips: {fileID: 4930337274959763895}
   soundClipsSource: {fileID: 2573306811584980826}
-  soundFXClipsSource: {fileID: 0}
+  soundFXClipsSource: {fileID: 3989492036381434239}
 --- !u!4 &7457106078367887659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1070350730909333850, guid: bd75c8b5af78e4149ac95ed52c89848e, type: 3}
