@@ -8,7 +8,6 @@ public class CambioPaginas : MonoBehaviour
     public int totalPages = 7;
     public SoundManager soundManager;
 
-    [SerializeField] SoundManager soundManager;
 
     private void Start()
     {
