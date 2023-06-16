@@ -314,11 +314,6 @@ public class Animaciones : MonoBehaviour
         StartCoroutine(CoordinarRayos(myUnit, target));
     }
 
-    IEnumerator EsperarMillonacoSegundo()
-    {
-        yield return new WaitForSeconds(0.5f);
-        //Aqu� es donde colocas la acci�n que quieres realizar despu�s de cinco segundos
-    }
     public void curarParticula(Animaciones ani, GameObject objetivoCurar)
     {
         Instantiate(ani.curacionPrefab, objetivoCurar.transform.position, Quaternion.identity);

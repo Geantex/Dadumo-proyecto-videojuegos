@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AccionesEnAnimaciones : MonoBehaviour
 {
@@ -22,7 +23,54 @@ public class AccionesEnAnimaciones : MonoBehaviour
     {
         TurnManager.EndTurn(unit.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
     }
-    
+
+    public void SeguirCorriendo()
+    {
+        if (unit.GetComponent<PlayerMove>().moving)
+        {
+            Animaciones.correr(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+        }
+    }
+
+    public void SeguirCorriendoEnemigo()
+    {
+        if (unit.GetComponent<NPCMove>().moving)
+        {
+            Animaciones.correr(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+        }
+    }
+
+    public void MorirDestruccion()
+    {
+        if(SceneManager.GetActiveScene().name == "VictoriaScene")
+        {
+            Animator animator = gameObject.GetComponent<Animator>();
+            animator.enabled = false;
+        }
+        else
+        {
+            unit.SetActive(false);
+
+            DestroyImmediate(unit);
+        }
+    }
+
+    public void AcabarAnimacionCorrer()
+    {
+        if (unit.GetComponent<PlayerMove>().Path.Count == 1)
+        {
+            Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+        }
+    }
+
+    public void AcabarAnimacionCorrerEnemigo()
+    {
+        if (!unit.GetComponent<NPCMove>().moving)
+        {
+            Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+        }
+    }
+
     public void RecibirDano()
     {
         Animaciones.recibirDano(gameObject.GetComponent<Animator>(), unit.GetComponent<PlayerMove>().UniqueTarget.GetComponent<Unit>().Name, unit.GetComponent<PlayerMove>().UniqueTarget, FindObjectOfType<Animaciones>());

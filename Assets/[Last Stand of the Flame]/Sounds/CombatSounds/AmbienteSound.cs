@@ -28,6 +28,14 @@ public class AmbienteSound : MonoBehaviour
                 soundClipsSource.clip = soundClips.ambienteVolcan;
                 soundClipsSource.Play();
                 break;
+            case "TutorialCombate":
+                soundClipsSource.clip = soundClips.ambienteVolcan;
+                soundClipsSource.Play();
+                break;
+            case "Hoguera":
+                soundClipsSource.clip = soundClips.ambienteHoguera;
+                soundClipsSource.Play();
+                break;
         }
     }
 

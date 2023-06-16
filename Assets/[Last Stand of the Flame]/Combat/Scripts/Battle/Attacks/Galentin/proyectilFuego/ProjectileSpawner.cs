@@ -4,6 +4,7 @@ public class ProjectileSpawner : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform target;
+    public GameObject unit;
 
     public float speed = 30f;
 
@@ -12,6 +13,6 @@ public class ProjectileSpawner : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Projectile projectileScript = projectile.GetComponent<Projectile>();
-        projectileScript.SetTarget(target.transform, speed);
+        projectileScript.SetTarget(target.transform, speed, unit);
     }
 }
