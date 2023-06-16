@@ -7,6 +7,8 @@ public class CambioPaginas : MonoBehaviour
     private int currentPage = 1;  // Índice de la página actual
     public int totalPages = 7;
 
+    [SerializeField] SoundManager soundManager;
+
     private void Start()
     {
         
@@ -56,11 +58,14 @@ public class CambioPaginas : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             NextPage();
+
+            soundManager.PlayButtonSound1();
         }
 
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             PreviousPage();
+            soundManager.PlayButtonSound2();
         }
     }
 }
