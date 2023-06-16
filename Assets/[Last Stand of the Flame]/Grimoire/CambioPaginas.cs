@@ -4,10 +4,11 @@ using TMPro;
 public class CambioPaginas : MonoBehaviour
 {
     public TextMeshProUGUI[] textMeshProObjects;  // Arreglo de todos los objetos TextMeshPro que deseas controlar
-    private int currentPage = 1;  // Índice de la página actual
+    private int currentPage = 1;  // ï¿½ndice de la pï¿½gina actual
     public int totalPages = 7;
     public SoundManager soundManager;
 
+    [SerializeField] SoundManager soundManager;
 
     private void Start()
     {
@@ -29,13 +30,13 @@ public class CambioPaginas : MonoBehaviour
     {
        
 
-        // Calcular el índice del nuevo objeto TextMeshPro
+        // Calcular el ï¿½ndice del nuevo objeto TextMeshPro
         int newPage = currentPage + pageOffset;
 
-        // Verificar los límites del arreglo
+        // Verificar los lï¿½mites del arreglo
         if (newPage <= 0)
         {
-            newPage = totalPages;  // Ir al último objeto TextMeshPro
+            newPage = totalPages;  // Ir al ï¿½ltimo objeto TextMeshPro
         }
         else if (newPage > totalPages)
         {
@@ -47,7 +48,7 @@ public class CambioPaginas : MonoBehaviour
             textObj.pageToDisplay = newPage;
 
         }
-        // Actualizar el índice de la página actual
+        // Actualizar el ï¿½ndice de la pï¿½gina actual
         currentPage = newPage;
         Debug.Log("Pagina actual" + currentPage);
         // Activar el nuevo objeto TextMeshPro
@@ -58,6 +59,7 @@ public class CambioPaginas : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             NextPage();
+
             soundManager.PlayButtonSound1();
         }
 
