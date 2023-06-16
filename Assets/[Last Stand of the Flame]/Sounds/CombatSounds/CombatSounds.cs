@@ -136,8 +136,8 @@ public class CombatSounds : MonoBehaviour
                 soundFXClipsSource.Play();
                 break;
             case "Galentin":
-                soundClipsSource.clip = soundClips.GalentinFXAttack[Random.Range(0, 1)];
-                soundClipsSource.Play();
+                soundFXClipsSource.clip = soundClips.GalentinFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
                 break;
             case "Jose Maria":
                 soundClipsSource.clip = soundClips.JoseMariaAttack[Random.Range(0, 5)];
@@ -165,8 +165,8 @@ public class CombatSounds : MonoBehaviour
                 break;
 
             case "Brujo":
-                soundClipsSource.clip = soundClips.BrujoFXAttack[Random.Range(0, 4)];
-                soundClipsSource.Play();
+                soundFXClipsSource.clip = soundClips.BrujoFXAttack[Random.Range(0, 4)];
+                soundFXClipsSource.Play();
                 break;
             case "Ladron":
                 soundClipsSource.clip = soundClips.LadronAttack[Random.Range(0, 5)];
