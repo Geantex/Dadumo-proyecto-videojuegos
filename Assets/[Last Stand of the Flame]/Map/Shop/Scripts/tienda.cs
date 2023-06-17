@@ -65,7 +65,7 @@ public class tienda : MonoBehaviour
 
         GameObject canvasTienda = GameObject.FindWithTag("canvas");
         dineroText = canvasTienda.transform.Find("DineroTotal").gameObject;
-        sanacionBoton.onClick.AddListener(buySanacion);
+
         
         Debug.Log("ESTOY POR EJECUTARME");
         Invoke("itemTienda", 0f); //esto es una fix temporal, no debería de estar en la main build, el fichero carga más rápido que la lista
