@@ -21,7 +21,7 @@ public class GameController : FSMMachine
 
     
 
-    [SerializeField] public bool NewGame = false;
+    [SerializeField] public bool NewGame = true;
 
 
 
