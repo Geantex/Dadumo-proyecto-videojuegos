@@ -77,6 +77,7 @@ public class PlayerMove : TacticsMove
             {
                 // Si se ha calculado la zona de movimiento, recalculamos la casilla en la que está el jugador
                 GetCurrentTile();
+                FindParentTiles();
             }
             // Con esta función estaremos en constante comprobación para poder movernos a la casilla que queramos de las que están en la zona de movimiento
             CheckMouse();

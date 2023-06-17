@@ -57,9 +57,9 @@ public class AccionesEnAnimaciones : MonoBehaviour
 
     public void AcabarAnimacionCorrer()
     {
-        if (unit.GetComponent<PlayerMove>().Path.Count == 1)
+        if (!unit.GetComponent<PlayerMove>().moving)
         {
-            Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+            //Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
         }
     }
 
@@ -67,7 +67,7 @@ public class AccionesEnAnimaciones : MonoBehaviour
     {
         if (!unit.GetComponent<NPCMove>().moving)
         {
-            Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+            //Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
         }
     }
 

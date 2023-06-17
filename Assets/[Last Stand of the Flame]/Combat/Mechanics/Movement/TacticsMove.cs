@@ -155,6 +155,54 @@ public class TacticsMove : MonoBehaviour
         }
     }
 
+    // Función que busca las casillas que se pueden seleccionar
+    // Recive: Nada
+    // Devuelve: Nada
+    public void FindParentTiles()
+    {
+        foreach (GameObject tile in tiles)
+        {
+            Tile t = tile.GetComponent<Tile>();
+            t.parent = null;
+        }
+
+        // Buscamos la casilla actual
+        GetCurrentTile();
+
+        // Creamos una cola para guardar las casillas que se van a procesar
+        Queue<Tile> process = new Queue<Tile>();
+
+        // Añadimos la casilla actual a la cola
+        process.Enqueue(currentTile);
+        // Marcamos la casilla actual como visitada
+        currentTile.visited = true;
+        //currentTile.parent = ??  leave as null 
+
+        // Mientras la cola tenga casillas por procesar seguimos buscando casillas
+        while (process.Count > 0)
+        {
+            // Sacamos la primera casilla de la cola y la guardamos en una variable
+            Tile t = process.Dequeue();
+
+            // Si la distancia de la casilla es menor que el movimiento de la unidad
+            if (t.distance < move)
+            {
+                // Recorremos todas las casillas adyacentes a la casilla actual
+                foreach (Tile tile in t.adjacencyList)
+                {
+                    // Y en el caso de que no hayan sido visitadas
+                    if (!tile.visited)
+                    {
+                        tile.parent = t; // Guardamos la casilla actual como padre de la casilla adyacente
+                        tile.visited = true; // Marcamos la casilla como visitada (Visitada en este caso significa que ya se ha procesado, no que sea la casilla en la que estamos, ya que recordemos que es una de las variables de la busqueda BFS)
+                        tile.distance = 1 + t.distance; // Vamos aumentando la distancia de la casilla adyacente para así saber la distancia que hay desde la casilla actual hasta la casilla adyacente, y que cuando llegue a la máxima no continue el proceso
+                        process.Enqueue(tile); // Añadimos la casilla a la cola para que se procese
+                    }
+                }
+            }
+        }
+    }
+
     // Función que habilita el movimiento de la unidad
     // Recive: La casilla a la cual nos queremos mover
     // Devuelve: Nada
@@ -212,6 +260,8 @@ public class TacticsMove : MonoBehaviour
                     // Se mueve el personaje en función de la velocidad y el tiempo
                     // Establece el movimiento que se debe aplicar en cada fotograma
                     transform.position += velocity * Time.deltaTime;
+
+                    //Animaciones.idle(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name);
                 }
                 else
                 {
@@ -227,7 +277,7 @@ public class TacticsMove : MonoBehaviour
             else
             {
                 //Cuando acabamos de recorrer el camino paramos el movimiento
-
+                Animaciones.idle(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name);
                 moving = false;
 
                 // Si el personaje es un NPC, terminamos su turno
@@ -241,7 +291,7 @@ public class TacticsMove : MonoBehaviour
         else
         {
             //Cuando acabamos de recorrer el camino paramos el movimiento
-
+            Animaciones.idle(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name);
             moving = false;
 
             // Si el personaje es un NPC, terminamos su turno
