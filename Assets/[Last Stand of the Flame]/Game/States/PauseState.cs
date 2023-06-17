@@ -24,7 +24,7 @@ public class PauseState : FSMState
         
     }
 
-    private void LoadMenuFade()
+    public void LoadMenuFade()
     {
         GameController.Instancia.SetStateByType(typeof(MainMenuState));
         SceneManager.LoadScene("MainMenu");

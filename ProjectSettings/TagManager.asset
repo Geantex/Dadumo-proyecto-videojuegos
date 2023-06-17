@@ -27,6 +27,7 @@ TagManager:
   - PersonajeHoguera
   - guitarraRomero
   - ResultsCanvas
+  - Pause
   layers:
   - Default
   - TransparentFX
