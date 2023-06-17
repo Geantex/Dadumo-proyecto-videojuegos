@@ -51,7 +51,7 @@ public class AccionesEnAnimaciones : MonoBehaviour
         {
             unit.SetActive(false);
 
-            DestroyImmediate(unit);
+            Destroy(unit);
         }
     }
 
