@@ -139,12 +139,14 @@ namespace Map
                 case NodeType.Store:
                     // Tienda para comprar objetos
                     GameController.Instancia.SetStateByType(typeof(ShopState));
-                    
+                    SceneManager.LoadScene("Shop");
+
                     break;
                 case NodeType.Boss:
                     // El señor de la ceniza (plin plin plon!)
                     // Aqui solo puede salir el volcan!
                     // Hay que meter esta escena en el scene manager
+                    GameController.Instancia.SetStateByType(typeof(GameState));
                     SceneManager.LoadScene("VolcanCombate");
 
                     break;

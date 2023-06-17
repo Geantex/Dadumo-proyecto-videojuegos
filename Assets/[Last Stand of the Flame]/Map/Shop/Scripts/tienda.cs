@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -6,7 +6,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using Dapasa.FSM;
 public class tienda : MonoBehaviour
 {
 
@@ -61,6 +61,9 @@ public class tienda : MonoBehaviour
         itemTienda2 = GameObject.FindWithTag("itemTienda2");
         itemTienda3 = GameObject.FindWithTag("itemTienda3");
         itemTienda4 = GameObject.FindWithTag("itemTienda4");
+
+        sanacionBoton.onClick.AddListener(buySanacion);
+
         mercenarioTienda = GameObject.FindWithTag("mercenarioTienda");
 
         GameObject canvasTienda = GameObject.FindWithTag("canvas");
@@ -68,7 +71,7 @@ public class tienda : MonoBehaviour
 
         
         Debug.Log("ESTOY POR EJECUTARME");
-        Invoke("itemTienda", 0f); //esto es una fix temporal, no deberÌa de estar en la main build, el fichero carga m·s r·pido que la lista
+        Invoke("itemTienda", 0f); //esto es una fix temporal, no deber√≠a de estar en la main build, el fichero carga m√°s r√°pido que la lista
         //itemTienda();
     }
 
@@ -82,12 +85,11 @@ public class tienda : MonoBehaviour
         itemsList = canvasTienda.GetComponent<itemManager>().allItemsList;
         //-------------------item1----------------------
         item1 = pickItemRandom(itemsList);
-        empty1 = itemTienda1.transform.Find("Empty1").gameObject;
+
         imagen1 =  itemTienda1.transform.Find("Image1").gameObject;
         nombre1 = itemTienda1.transform.Find("nombreDeItem1").gameObject;
         price1 = itemTienda1.transform.Find("Button1").gameObject.transform.Find("textoBoton1").gameObject;  //Frankestein anmorten inummicus
 
-        empty1 = item1.itemPrefab;
         imagen1.GetComponent<Image>().sprite = item1.itemImage;
         nombre1.GetComponent<Text>().text = item1.itemName;
         price1.GetComponent<Text>().text = item1.itemPrice.ToString();
@@ -270,6 +272,37 @@ public class tienda : MonoBehaviour
             mercenarioTienda.transform.Find("botonMercenario").gameObject.SetActive(false);
         }
 
+    }
+    void DeleteItemFromList(item itemToDelete)
+    {
+        itemsList.Remove(itemToDelete);
+    }
+
+    public void OnEquip(item equippedItem)
+    {
+        DeleteItemFromList(equippedItem);
+        foreach (item item in itemsList)
+        {
+            // Esto hace que se borren los objetos que sean del mismo personaje, que tengan un tier igual o menor, y que ocupen el mismo espacio (arma == arma o armadura == armadura)
+            if (item.characterTag == equippedItem.characterTag && item.itemTier <= equippedItem.itemTier && item.itemSlot == equippedItem.itemSlot)
+            {
+                DeleteItemFromList(item);
+            }
+        }
+        foreach (CharacterCreator charac in GameController.Instancia.CharactersParty)
+        {
+            if (charac.CharacterClass == equippedItem.characterTag)
+            {
+                if (equippedItem.itemSlot == "armor")
+                {
+                    charac.CharacterArmor = equippedItem;
+                }
+                else if (equippedItem.itemSlot == "weapon")
+                {
+                    charac.CharacterWeapon = equippedItem;
+                }
+            }
+        }
     }
 
 }

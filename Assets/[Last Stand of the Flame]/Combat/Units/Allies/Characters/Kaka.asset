@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kaka
   m_EditorClassIdentifier: 
   characterName: Kaka
-  characterClass: monje
+  characterClass: asesino
   characterImage: {fileID: 3792388835238295109, guid: 55d6d6ac735fdd3468253370eaad8f16, type: 3}
   characterMaterial: {fileID: 0}
   characterPrefab: {fileID: 7470411927642483249, guid: b5bef26b295d6104a8af1c7b9561f50f, type: 3}

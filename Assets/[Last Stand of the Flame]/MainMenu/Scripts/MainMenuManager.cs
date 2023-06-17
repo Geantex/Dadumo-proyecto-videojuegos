@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    private void Start()
+    {
+        GameController.Instancia.SetStateByType(typeof(MainMenuState));
+    }
+
     public void NewGameFade()
     {
         FadeToBlack.QuickFade();
