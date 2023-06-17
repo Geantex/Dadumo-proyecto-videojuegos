@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +32,7 @@ public class item : ScriptableObject
             {
                 character.CharacterArmor = itemConseguido;
             }
-            else if (itemConseguido.characterTag == character.CharacterClass && itemConseguido.itemSlot == "weapon")
+            else if(itemConseguido.characterTag == character.CharacterClass && itemConseguido.itemSlot == "weapon")
             {
                 character.CharacterWeapon = itemConseguido;
             }
