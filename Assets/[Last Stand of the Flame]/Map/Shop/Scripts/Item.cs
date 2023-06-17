@@ -25,17 +25,27 @@ public class item : ScriptableObject
 
     public item equipItem(item itemConseguido)
     {
-        List<CharacterCreator> CharactersList = GameController.Instancia.CharactersParty;
-        foreach (CharacterCreator character in CharactersList)
+        foreach (CharacterCreator character in GameController.Instancia.CharactersParty)
         {
-            if (itemConseguido.characterTag == character.CharacterClass && itemConseguido.itemSlot == "armor")
+            if (itemConseguido.characterTag == character.CharacterClass)
             {
-                character.CharacterArmor = itemConseguido;
+                Debug.Log(itemConseguido.itemName);
+                Debug.Log(itemConseguido.itemSlot);
+                Debug.Log(itemConseguido.itemTier);
+                Debug.Log(itemConseguido.characterTag);
+                Debug.Log(character.CharacterClass);
+                if(itemConseguido.itemSlot == "armor")
+                {
+                    character.CharacterArmor = itemConseguido;
+                    Debug.Log(character.CharacterArmor);
+                }
+                else if (itemConseguido.itemSlot == "weapon")
+                {
+                    character.CharacterWeapon = itemConseguido;
+                    Debug.Log(character.CharacterWeapon);
+                }
             }
-            else if(itemConseguido.characterTag == character.CharacterClass && itemConseguido.itemSlot == "weapon")
-            {
-                character.CharacterWeapon = itemConseguido;
-            }
+            
             // esta funcion equipara un objeto en el personaje que llame a la funcion si!!!
         }
         return itemConseguido;
