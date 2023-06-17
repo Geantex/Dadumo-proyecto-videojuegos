@@ -161,21 +161,26 @@ public class CharacterCreator : ScriptableObject
         }
         set
         {
-            Debug.Log(value.itemName);
-            if (value.itemSlot == "weapon" && value.itemTier > characterWeapon.itemTier && value.characterTag == characterClass)
+            if (characterWeapon == null)
             {
-                //Modifica el valor del arma añadiendo una y modificando el ataque del personaje.
-                if (weaponModified == false)
+                characterWeapon = value;
+                DamagePoints += value.itemDamageModifier;
+                weaponModified = true;
+            }
+            else if (value.itemTier > characterWeapon.itemTier)
+            {
+                //Modifica el valor de daño añadiendo una y modificando el daño del personaje
+                if (armorModified == false)
                 {
                     characterWeapon = value;
-                    damagePoints += value.itemDamageModifier;
+                    DamagePoints += value.itemDamageModifier;
                     weaponModified = true;
                 }
-                else if (weaponModified == true)
+                else if (armorModified == true)
                 {
-                    damagePoints -= characterWeapon.itemDamageModifier;
+                    DamagePoints -= characterWeapon.itemDamageModifier;
                     characterWeapon = value;
-                    damagePoints += value.itemDamageModifier;
+                    DamagePoints += value.itemDamageModifier;
                 }
             }
         }
@@ -188,8 +193,14 @@ public class CharacterCreator : ScriptableObject
         }
         set
         {
-            Debug.Log(value.itemName);
-            if (value.itemSlot == "armor" && value.itemTier > characterArmor.itemTier && value.characterTag == characterClass)
+            if (characterArmor == null)
+            {
+                characterArmor = value;
+                maxHealthPoints += value.itemHealthModifier;
+                HealthPoints += value.itemHealthModifier;
+                armorModified = true;
+            }
+            else if (value.itemTier > characterArmor.itemTier)
             {
                 //Modifica el valor de la armadura añadiendo una y modificando la vida del personaje
                 if (armorModified == false)
@@ -207,9 +218,7 @@ public class CharacterCreator : ScriptableObject
                     maxHealthPoints += value.itemHealthModifier;
                     HealthPoints += value.itemHealthModifier;
                 }
-
             }
         }
     }
-
 }

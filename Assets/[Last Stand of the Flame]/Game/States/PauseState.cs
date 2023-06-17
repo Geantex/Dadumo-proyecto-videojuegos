@@ -47,6 +47,7 @@ public class PauseState : FSMState
     {
         if (anterior is GameState) StateName = "GameState";
         else if (anterior is MapState) StateName = "MapState";
+        else if (anterior is ShopState) StateName = "ShopState";
         //Debug.Log(stateName);
     }
 
@@ -62,7 +63,11 @@ public class PauseState : FSMState
         else if (StateName == "GameState")
         {
             GameController.Instancia.SetStateByType(typeof(GameState));
-        }   
+        }
+        else if (StateName == "ShopState")
+        {
+            GameController.Instancia.SetStateByType(typeof(ShopState));
+        }
     }
 
     protected override void EnterState()

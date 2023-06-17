@@ -17,7 +17,7 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: 2ad759b668e2bc5488c09f57071ee370, type: 3}
   itemDamageModifier: 0
   itemHealthModifier: 20
-  itemTier: 0
+  itemTier: 2
   characterTag: clerigo
   itemSlot: armor
   characterImage: {fileID: 21300000, guid: 4fc96291f5f99504091ceee1d6f8abe8, type: 3}

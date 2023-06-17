@@ -28,6 +28,7 @@ TagManager:
   - guitarraRomero
   - ResultsCanvas
   - Pause
+  - sanacionTienda
   layers:
   - Default
   - TransparentFX

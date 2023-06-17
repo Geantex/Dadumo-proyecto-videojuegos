@@ -16,12 +16,15 @@ public class ShopState : FSMState
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GameController.Instancia.SetStateByType(typeof(PauseState));
+        }
     }
 
     protected override void EnterState()
     {
-        SceneManager.LoadScene("Shop");
+        
     }
     protected override void ExitState()
     {

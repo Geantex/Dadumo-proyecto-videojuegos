@@ -29,21 +29,5 @@ public class itemManager : MonoBehaviour
 
     }
 
-    void DeleteItemFromList(item itemToDelete)
-    {
-        allItemsList.Remove(itemToDelete);
-    }
-
-    public void OnEquip(item equippedItem)
-    {
-        DeleteItemFromList(equippedItem);
-        foreach (item item in allItemsList) 
-        { 
-            // Esto borrar� los objetos que sean del mismo personaje, que tengan un tier igual o menor, y que ocupen el mismo espacio (arma == arma o armadura == armadura)
-            if (item.characterTag == equippedItem.characterTag && item.itemTier <= equippedItem.itemTier && item.itemSlot == equippedItem.itemSlot)
-            {
-                DeleteItemFromList(item);
-            }
-        }
-    }
+    
 }
