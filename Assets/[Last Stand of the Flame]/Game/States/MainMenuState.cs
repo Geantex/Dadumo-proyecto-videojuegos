@@ -20,7 +20,7 @@ public class MainMenuState : FSMState
 
     protected override void EnterState()
     {
-        //SceneManager.LoadScene("MainMenu");
+        
     }
 
     protected override void ExitState()
