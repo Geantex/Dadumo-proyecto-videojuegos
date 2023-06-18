@@ -390,7 +390,7 @@ public class PlayerMove : TacticsMove
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                if (CurrentTile.adjacencyList[1] != null)
+                if (CurrentTile.adjacencyList[1] != null && CurrentTile.adjacencyList[1].selectable)
                 {
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
 
@@ -407,7 +407,7 @@ public class PlayerMove : TacticsMove
 
             if (Input.GetKeyDown(KeyCode.A))
             {
-                if (CurrentTile.adjacencyList[3] != null)
+                if (CurrentTile.adjacencyList[3] != null && CurrentTile.adjacencyList[1].selectable)
                 {
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
 
@@ -424,7 +424,7 @@ public class PlayerMove : TacticsMove
 
             if (Input.GetKeyDown(KeyCode.W))
             {
-                if (CurrentTile.adjacencyList[0] != null)
+                if (CurrentTile.adjacencyList[0] != null && CurrentTile.adjacencyList[1].selectable)
                 {
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
 
@@ -441,7 +441,7 @@ public class PlayerMove : TacticsMove
 
             if (Input.GetKeyDown(KeyCode.D))
             {
-                if (CurrentTile.adjacencyList[2] != null)
+                if (CurrentTile.adjacencyList[2] != null && CurrentTile.adjacencyList[1].selectable)
                 {
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
 
