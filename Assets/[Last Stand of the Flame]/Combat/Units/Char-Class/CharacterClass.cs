@@ -8,8 +8,7 @@ public class CharacterClass : MonoBehaviour
 {
     [SerializeField] private string characterName;//Poner nombre de personaje
     [SerializeField] private string characterClassName;//Clase del personaje
-    [SerializeField] private Image characterImage;//Sprite del personaje
-    [SerializeField] private Material characterMaterial;//Material del personaje (en caso de ser necesario y no estar en el sprite para futuros cambios visuales)
+    [SerializeField] private Sprite characterImage;//Sprite del personaje
     [SerializeField] private GameObject characterPrefab;//Prefab con los scripts necesarios para el control del personaje
     [SerializeField] private float healthPoints;//Puntos de vida del personaje
     [SerializeField] private float maxHealthPoints;//Puntos máximos de vida del personaje
@@ -44,7 +43,7 @@ public class CharacterClass : MonoBehaviour
             characterClassName = value;
         }
     }
-    public Image CharacterImage
+    public Sprite CharacterImage
     {
         get
         {
@@ -53,17 +52,6 @@ public class CharacterClass : MonoBehaviour
         set
         {
             characterImage = value;
-        }
-    }
-    public Material CharacterMaterial
-    {
-        get
-        {
-            return characterMaterial;
-        }
-        set
-        {
-            characterMaterial = value;
         }
     }
     public GameObject CharacterPrefab

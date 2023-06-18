@@ -9,12 +9,12 @@ public class CharacterCreator : ScriptableObject
 {
     [SerializeField] private string characterName;//Poner nombre de personaje
     [SerializeField] private string characterClass;//Clase del personaje
-    [SerializeField] private Image characterImage;//Sprite del personaje
-    [SerializeField] private Material characterMaterial;//Material del personaje (en caso de ser necesario y no estar en el sprite para futuros cambios visuales)
+    [SerializeField] private Sprite characterImage;//Sprite del personaje
     [SerializeField] private GameObject characterPrefab;//Prefab con los scripts necesarios para el control del personaje
     [SerializeField] private float healthPoints;//Puntos de vida del personaje
     [SerializeField] private float maxHealthPoints;//Puntos máximos de vida del personaje
     [SerializeField] private float manaPoints;//Puntos de maná del personaje
+    [SerializeField] private float maxManaPoints;//Puntos máximos de mana del personaje
     [SerializeField] private float damagePoints;//Puntos de daño del personaje
     [SerializeField] private float rangeTiles;//Rango del personaje
     [SerializeField] private float speed;//Rango del personaje
@@ -23,6 +23,31 @@ public class CharacterCreator : ScriptableObject
     [SerializeField] private item characterArmor;//Armadura portada por el personaje
     private bool weaponModified = false;
     private bool armorModified = false;
+
+    public void SetUpCharacters()
+    {
+        CharacterPrefab.GetComponent<Unit>().Name = CharacterName;
+        CharacterPrefab.GetComponent<Unit>().imagen = CharacterImage;
+        CharacterPrefab.GetComponent<Unit>().Life = (int)HealthPoints;
+        CharacterPrefab.GetComponent<Unit>().MaxLife = (int)MaxHealthPoints;
+        CharacterPrefab.GetComponent<Unit>().Mana = (int)ManaPoints;
+        CharacterPrefab.GetComponent<Unit>().MaxMana = (int)ManaPoints;
+        CharacterPrefab.GetComponent<PlayerAttack>().Damage = (int)DamagePoints;
+        CharacterPrefab.GetComponent<PlayerAttack>().Range = (int)RangeTiles;
+        CharacterPrefab.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks = SpecialAttacks;
+    }
+
+    public void SetUpEnemies()
+    {
+        CharacterPrefab.GetComponent<Unit>().Name = CharacterName;
+        CharacterPrefab.GetComponent<Unit>().imagen = CharacterImage;
+        CharacterPrefab.GetComponent<Unit>().Life = (int)HealthPoints;
+        CharacterPrefab.GetComponent<Unit>().MaxLife = (int)MaxHealthPoints;
+        CharacterPrefab.GetComponent<Unit>().Mana = (int)ManaPoints;
+        CharacterPrefab.GetComponent<Unit>().MaxMana = (int)ManaPoints;
+        CharacterPrefab.GetComponent<NPCAttack>().Damage = (int)DamagePoints;
+        CharacterPrefab.GetComponent<NPCAttack>().Range = (int)RangeTiles;
+    }
 
     public string CharacterName
     {
@@ -46,7 +71,7 @@ public class CharacterCreator : ScriptableObject
             characterClass = value;
         }
     }
-    public Image CharacterImage
+    public Sprite CharacterImage
     {
         get
         {
@@ -55,17 +80,6 @@ public class CharacterCreator : ScriptableObject
         set
         {
             characterImage = value;
-        }
-    }
-    public Material CharacterMaterial
-    {
-        get
-        {
-            return characterMaterial;
-        }
-        set
-        {
-            characterMaterial = value;
         }
     }
     public GameObject CharacterPrefab
