@@ -117,9 +117,11 @@ public class Animaciones : MonoBehaviour
         {
             case "Barbara":
                 pj.Play("Barbara ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 1.76f, 3.16f));
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.63f, 1.12f));
                 break;
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
@@ -128,15 +130,18 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Jose Maria":
                 pj.Play("JM ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.3f, 1.26f));
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque");
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.3f, 1.15f));
                 break;
             case "Romero MacBeth":
                 pj.Play("Romero ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.45f, 1f));
                 break;
 
             case "Brujo":
@@ -145,15 +150,21 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Ladron":
                 pj.Play("Bandido ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.4f, 0.58f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 1f, 1.2f));
                 break;
             case "Rata":
                 pj.Play("Rata atacar2");
                 break;
             case "Troll":
                 pj.Play("Troll ataque");
+                // El troll hace 2 garrotazos en el mismo ataque (esto es solo cosmético)
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.68f, 1.08f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 1.4f, 1.8f));
                 break;
             case "Señor de la ceniza":
                 pj.Play("Boss ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.33f, 1.1f));
                 break;
         }
     }
@@ -164,6 +175,9 @@ public class Animaciones : MonoBehaviour
         {
             case "Barbara":
                 pj.Play("Barbara ataque especial");
+                a.StartCoroutine(a.HabilitarArmaTrail(unidadEspecial, 0.4f, 1.5f));
+
+
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque especial");
@@ -318,4 +332,21 @@ public class Animaciones : MonoBehaviour
     {
         Instantiate(ani.curacionPrefab, objetivoCurar.transform.position, Quaternion.identity);
     }
+    private IEnumerator HabilitarArmaTrail(GameObject myUnit, float tiempoInicial, float tiempoFinal)
+    {
+        TrailRenderer[] armasTrails = myUnit.GetComponentsInChildren<TrailRenderer>();
+        yield return new WaitForSeconds(tiempoInicial);
+        foreach (TrailRenderer trailRenderer in armasTrails)
+        {
+            trailRenderer.emitting = true;
+        }
+        // esto es para que tiempoFinal tenga en cuenta el tiempo en el que Trail está activo
+        tiempoFinal = tiempoFinal - tiempoInicial;
+        yield return new WaitForSeconds(tiempoFinal);
+        foreach (TrailRenderer trailRenderer in armasTrails)
+        {
+            trailRenderer.emitting = false;
+        }
+    }
+
 }

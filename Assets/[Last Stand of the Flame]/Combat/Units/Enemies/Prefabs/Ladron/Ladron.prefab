@@ -961,3 +961,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
+--- !u!4 &6954467024197292952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
+  m_PrefabInstance: {fileID: 7424610136633635955}
+  m_PrefabAsset: {fileID: 0}

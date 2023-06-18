@@ -27,21 +27,21 @@ public class TutorialConsejos : MonoBehaviour
 
         // Consejo 1: Como moverte
         string textaco1 = "¡Bienvenido, aventurero! Para superar este tutorial, has de enfrentarte a las ratas. " +
-            "Muevete hacia ellas haciendo click en una casilla roja, y después, pasa tu turno haciendo click en \"Pasar Turno\"";
+            "Muevete hacia ellas haciendo click en una casilla roja o con las teclas WASD, y después, pasa tu turno haciendo click en \"Pasar Turno\" o pulsando la tecla \"c\"";
         listaConsejos.Add(textaco1);
 
         // Consejo 2: Como atacar + consejo de atacar a distancia con Galentin
-        string textaco2 = "Cuando estés al lado de una rata, haz click en \"Ataque básico\". Se marcarán los enemigos a los " +
-            "que puedes atacar. Haz click en un enemigo marcado para atacarle.  El mago azul, Galentín, puede atacar de lejos";
+        string textaco2 = "Cuando estés al lado de una rata, haz click en \"Ataque básico\" o pulsa la tecla \"Z\". Se marcarán los enemigos a los " +
+            "que puedes atacar. Haz click o usa las flechas en un enemigo para marcarle y atacarle.  El mago azul, Galentín, puede atacar a distancia";
         listaConsejos.Add(textaco2);
 
         // Consejo 3: Como usar ataques especiales
-        string textaco3 = "Cada personaje tiene una habilidad especial. Algunos curan, como Jose María, el clérigo. Otros " +
+        string textaco3 = "Cada personaje tiene una habilidad especial. Haz click en \"Habilidad especial\" o pulsa la tecla \"X\" Algunos curan, como Jose María, el clérigo. Otros " +
             "pueden causar daño de área; otros pueden hacer muchísimo daño. Mira el grimorio para más información";
         listaConsejos.Add(textaco3);
 
         // Consejo 3: Como usar ataques especiales
-        string textaco4 = "Puedes controlar la cámara haciendo click en los botones de (donde sea girar la camara)";
+        string textaco4 = "Puedes controlar la cámara haciendo click en los botones de los lados, o pulsando \"q\" ó \"e\"";
         listaConsejos.Add(textaco4);
 
         DeslizarPanel(); // esto desliza el PRIMER consejo. el ultimo consejo hay que colocarlo en el script de ataque normal

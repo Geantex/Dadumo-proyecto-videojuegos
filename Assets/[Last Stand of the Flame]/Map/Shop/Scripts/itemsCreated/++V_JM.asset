@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: ++V_JM
   m_EditorClassIdentifier: 
-  itemName: Cuchillo de Gitanaco Nivel 3
-  itemPrice: 350
+  itemName: Gran Escudo Nivel 3
+  itemPrice: 100
   itemImage: {fileID: 21300000, guid: eec882534bb3bea4ab94a3796a31c5c5, type: 3}
   itemDamageModifier: 0
   itemHealthModifier: 40
@@ -21,3 +21,4 @@ MonoBehaviour:
   characterTag: clerigo
   itemSlot: armor
   characterImage: {fileID: 21300000, guid: 4fc96291f5f99504091ceee1d6f8abe8, type: 3}
+  itemPrefab: {fileID: 0}

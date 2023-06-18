@@ -36,7 +36,7 @@ public class Randomizer : FSMState
     public Image Clerigo;
     public Image Asesino;
     public Image Paladin;
-    public Image Monje;
+    public Image Luchador;
     public Image Mago;
     public Image Bardo;
     public Image Barbaro;
@@ -45,7 +45,7 @@ public class Randomizer : FSMState
 
     protected override void EnterState()
     {
-        (machine as GameController).GoldCoins = 100f;
+        (machine as GameController).GoldCoins = 10000f;
         GameController.Instancia.CharactersParty.Clear();
         SceneManager.LoadScene("Reroll");
         electedCharacters = new List<CharacterCreator>();
@@ -54,12 +54,12 @@ public class Randomizer : FSMState
         characterNumber = 8;
         //Para el find el personaje esta creado o no funciona bien el script
         Paladin = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "paladin").CharacterImage;
-        Monje = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "monje").CharacterImage;
+        Asesino = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "asesino").CharacterImage;
         Mago = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "mago").CharacterImage;
         Bardo = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "bardo").CharacterImage;
         Barbaro = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "barbaro").CharacterImage;
         Clerigo = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "clerigo").CharacterImage;
-        Asesino = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "asesino").CharacterImage;
+        Luchador = GameController.Instancia.AllPlayableCharacters.Find(character => character.CharacterClass == "luchador").CharacterImage;
 
         firstCharacterIndex = Random.Range(1, characterNumber);
 
@@ -301,35 +301,35 @@ public class Randomizer : FSMState
                 }
 
                 break;
-            case "monje":
+            case "luchador":
                 switch (orden)
                 {
                     case 1:
-                        if (Monje != null)
+                        if (Luchador != null)
                         {
-                            Debug.Log(Monje);
+                            Debug.Log(Luchador);
                         }
                         //imageCharacter1.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/KAKA_animacion_azul.png");
-                        imageCharacter1 = Monje;
-                        electedCharacters.Add(characters.Find(character => character.CharacterClass == "monje"));
+                        imageCharacter1 = Luchador;
+                        electedCharacters.Add(characters.Find(character => character.CharacterClass == "luchador"));
                         break;
                     case 2:
-                        if (Monje != null)
+                        if (Luchador != null)
                         {
-                            Debug.Log(Monje);
+                            Debug.Log(Luchador);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/KAKA_animacion_azul.png");
-                        imageCharacter2 = Monje;
-                        electedCharacters.Add(characters.Find(character => character.CharacterClass == "monje"));
+                        imageCharacter2 = Luchador;
+                        electedCharacters.Add(characters.Find(character => character.CharacterClass == "luchador"));
                         break;
                     case 3:
-                        if (Monje != null)
+                        if (Luchador != null)
                         {
-                            Debug.Log(Monje);
+                            Debug.Log(Luchador);
                         }
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/KAKA_animacion_azul.png");
-                        imageCharacter3 = Monje;
-                        electedCharacters.Add(characters.Find(character => character.CharacterClass == "monje"));
+                        imageCharacter3 = Luchador;
+                        electedCharacters.Add(characters.Find(character => character.CharacterClass == "luchador"));
                         break;
                 }
 

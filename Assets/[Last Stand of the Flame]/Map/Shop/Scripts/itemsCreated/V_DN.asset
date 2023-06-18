@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: V_DN
   m_EditorClassIdentifier: 
-  itemName: Armadura draconica
-  itemPrice: 100
-  itemImage: {fileID: 21300000, guid: 72c380f02e09c92428e9133d7e184b28, type: 3}
+  itemName: Armadura draconida Nivel 1
+  itemPrice: 25
+  itemImage: {fileID: 21300000, guid: 282d0fae98d6a1648ae4404845b2d935, type: 3}
   itemDamageModifier: 0
   itemHealthModifier: 15
   itemTier: 1
   characterTag: paladin
   itemSlot: armor
   characterImage: {fileID: 0}
+  itemPrefab: {fileID: 0}
