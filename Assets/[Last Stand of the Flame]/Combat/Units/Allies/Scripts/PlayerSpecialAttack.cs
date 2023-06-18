@@ -83,6 +83,68 @@ public class PlayerSpecialAttack : MonoBehaviour
         return targets;
     }
 
+    public List<GameObject> AttackKey(int attackIndex)
+    {
+        List<GameObject> targets = new List<GameObject>();
+        switch (AllSpecialAttacks[attackIndex].TargetType)
+        {
+            case "Aliados":
+                GameObject[] allies = GameObject.FindGameObjectsWithTag("Player");
+
+
+                foreach (GameObject ally in allies)
+                {
+                    float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
+                    {
+                        targets.Add(ally);
+                        //ally.GetComponent<Unit>().circulo.SetActive(true);
+                    }
+                }
+                break;
+            case "Enemigos":
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+                foreach (GameObject enemy in enemies)
+                {
+                    float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
+                    {
+                        targets.Add(enemy);
+                        //enemy.GetComponent<Unit>().circulo.SetActive(true);
+                    }
+                }
+                break;
+            case "Todos":
+                GameObject[] alliesAll = GameObject.FindGameObjectsWithTag("Player");
+
+
+                foreach (GameObject ally in alliesAll)
+                {
+                    float distance = Vector3.Distance(ally.transform.position, gameObject.transform.position);
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
+                    {
+                        targets.Add(ally);
+                        //ally.GetComponent<Unit>().circulo.SetActive(true);
+                    }
+                }
+
+                GameObject[] enemiesAll = GameObject.FindGameObjectsWithTag("NPC");
+
+                foreach (GameObject enemy in enemiesAll)
+                {
+                    float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
+                    if (distance <= (AllSpecialAttacks[attackIndex].Range + 0.5f))
+                    {
+                        targets.Add(enemy);
+                        //enemy.GetComponent<Unit>().circulo.SetActive(true);
+                    }
+                }
+                break;
+        }
+        return targets;
+    }
+
     public Vector3 heading;
     float halfHeight = 0;
 

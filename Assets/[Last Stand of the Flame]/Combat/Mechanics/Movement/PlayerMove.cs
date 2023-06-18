@@ -40,6 +40,8 @@ public class PlayerMove : TacticsMove
             return;
         }
 
+        teclas();
+
         // En función de si tenemos suficiente maná o no para realizar el ataque especial, activamos o desactivamos el botón
         if (gameObject.GetComponent<PlayerSpecialAttack>().canIDo(0))
         {
@@ -77,6 +79,7 @@ public class PlayerMove : TacticsMove
             {
                 // Si se ha calculado la zona de movimiento, recalculamos la casilla en la que está el jugador
                 GetCurrentTile();
+                FindParentTiles();
             }
             // Con esta función estaremos en constante comprobación para poder movernos a la casilla que queramos de las que están en la zona de movimiento
             CheckMouse();
@@ -107,6 +110,14 @@ public class PlayerMove : TacticsMove
                 // Si el rayo ha chocado con una casilla, hacemos lo siguiente
                 if (hit.collider.tag == "Tile")
                 {
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+                    foreach (GameObject enemy in enemies)
+                    {
+                        enemy.GetComponent<Unit>().circulo.SetActive(false);
+                    }
+
+                    gameObject.GetComponent<PlayerMove>().Targets.Clear();
                     // Obtenemos la casilla con la que ha chocado el rayo
                     Tile t = hit.collider.GetComponent<Tile>();
 
@@ -129,6 +140,24 @@ public class PlayerMove : TacticsMove
         }
 
         targets = gameObject.GetComponent<PlayerAttack>().AttackMouse();
+        specialAttack = false;
+        basicAttack = true;
+    }
+
+    void AttackKey()
+    {
+        if (!turn && !moving)
+        {
+            return;
+        }
+
+        targets = gameObject.GetComponent<PlayerAttack>().AttackKey();
+        if(targets.Count > 0)
+        {
+            targets[0].GetComponent<Unit>().circulo.SetActive(true);
+            uniqueTarget = targets[0];
+        }
+        specialAttack = false;
         basicAttack = true;
     }
 
@@ -163,6 +192,23 @@ public class PlayerMove : TacticsMove
         }
 
         targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackMouse(0);
+        basicAttack = false;
+        specialAttack = true;
+    }
+
+    void SpecialAttackKey()
+    {
+        if (!turn && !moving)
+        {
+            return;
+        }
+
+        targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackKey(0);
+        if (targets.Count > 0)
+        {
+            targets[0].GetComponent<Unit>().circulo.SetActive(true);
+        }
+        basicAttack = false;
         specialAttack = true;
     }
 
@@ -209,10 +255,212 @@ public class PlayerMove : TacticsMove
         {
             ally.GetComponent<Unit>().circulo.SetActive(false);
         }
+
+        Targets.Clear();
+
         basicAttack = false;
         specialAttack = false;
 
         TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
+    }
+
+    void teclas()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            AttackKey();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            SpecialAttackKey();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            endMyTurn();
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            int index = targets.IndexOf(uniqueTarget);
+            uniqueTarget.GetComponent<Unit>().circulo.SetActive(false);
+            Debug.Log("Arriba");
+            if ((index -1) < 0)
+            {
+                uniqueTarget = targets[index - 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+            else
+            {
+                uniqueTarget = targets[index - 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Debug.Log("Izq");
+            int index = targets.IndexOf(uniqueTarget);
+            uniqueTarget.GetComponent<Unit>().circulo.SetActive(false);
+            if ((index - 1) < 0)
+            {
+                uniqueTarget = targets[index - 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+            else
+            {
+                uniqueTarget = targets[index - 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Debug.Log("Der");
+            int index = targets.IndexOf(uniqueTarget);
+            uniqueTarget.GetComponent<Unit>().circulo.SetActive(false);
+            if ((index + 1) == targets.Count)
+            {
+                uniqueTarget = targets[index + 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+            else
+            {
+                uniqueTarget = targets[index + 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Debug.Log("Abajo");
+            int index = targets.IndexOf(uniqueTarget);
+            uniqueTarget.GetComponent<Unit>().circulo.SetActive(false);
+            if ((index + 1) == targets.Count)
+            {
+                uniqueTarget = targets[index + 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+            else
+            {
+                uniqueTarget = targets[index + 1];
+                uniqueTarget.GetComponent<Unit>().circulo.SetActive(true);
+            }
+        }
+
+        // Si no se está moviendo, calculamos la zona de movimiento y el camino
+        if (!moving)
+        {
+            // Si hemos activado el ataque básido y hay objetivos, podemos realizamos el ataque
+            if (basicAttack && targets.Count > 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    gameObject.GetComponent<PlayerAttack>().AttackOfPlayer(uniqueTarget);
+                }
+            }
+            // Si hemos activado el ataque especial y hay objetivos, podemos realizamos el ataque
+            if (specialAttack && targets.Count > 0)
+            {
+                // En función de si tenemos suficiente maná o no para realizar el ataque especial, activamos o desactivamos el botón
+                if (gameObject.GetComponent<PlayerSpecialAttack>().canIDo(0))
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        gameObject.GetComponent<PlayerSpecialAttack>().AttackOfPlayer(0, uniqueTarget, targets);
+                    }
+                }
+            }
+            // Si no se ha calculado la zona de movimiento, la calculamos
+            if (!calculateZone)
+            {
+                // Obtenemos la casilla en la que está el jugador
+                GetCurrentTile();
+                // Calculamos la zona de movimiento
+                FindSelectableTiles();
+                // Indicamos que se ha calculado la zona de movimiento
+                calculateZone = true;
+            }
+            else
+            {
+                // Si se ha calculado la zona de movimiento, recalculamos la casilla en la que está el jugador
+                GetCurrentTile();
+                FindParentTiles();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (CurrentTile.adjacencyList[1] != null)
+                {
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+                    foreach (GameObject enemy in enemies)
+                    {
+                        enemy.GetComponent<Unit>().circulo.SetActive(false);
+                    }
+
+                    gameObject.GetComponent<PlayerMove>().Targets.Clear();
+
+                    MoveToTile(CurrentTile.adjacencyList[1]);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (CurrentTile.adjacencyList[3] != null)
+                {
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+                    foreach (GameObject enemy in enemies)
+                    {
+                        enemy.GetComponent<Unit>().circulo.SetActive(false);
+                    }
+
+                    gameObject.GetComponent<PlayerMove>().Targets.Clear();
+
+                    MoveToTile(CurrentTile.adjacencyList[3]);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (CurrentTile.adjacencyList[0] != null)
+                {
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+                    foreach (GameObject enemy in enemies)
+                    {
+                        enemy.GetComponent<Unit>().circulo.SetActive(false);
+                    }
+
+                    gameObject.GetComponent<PlayerMove>().Targets.Clear();
+
+                    MoveToTile(CurrentTile.adjacencyList[0]);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                if (CurrentTile.adjacencyList[2] != null)
+                {
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+
+                    foreach (GameObject enemy in enemies)
+                    {
+                        enemy.GetComponent<Unit>().circulo.SetActive(false);
+                    }
+
+                    gameObject.GetComponent<PlayerMove>().Targets.Clear();
+
+                    MoveToTile(CurrentTile.adjacencyList[2]);
+                }
+            }
+        }
+        else
+        {
+            // Si se está moviendo, nos movemos
+            Move();
+        }
     }
 
     public GameObject UniqueTarget
