@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Dapasa.FSM;
+using UnityEngine.SceneManagement;
 
 public class ToReRoll : MonoBehaviour
 {

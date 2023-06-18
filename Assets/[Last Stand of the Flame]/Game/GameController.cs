@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Dapasa.FSM;
 using Unity.VisualScripting;
@@ -119,17 +120,34 @@ public class GameController : FSMMachine
         }
     }
 
+    public void modifyPartyManaPoints(float MP)
+    {
+        foreach (CharacterCreator character in charactersParty)
+        {
+            character.ManaPoints += MP;
+        }
+    }
+
     public void replacePartyHealthAndManaPoints()
     {
         GameObject[] PlayersInScene = GameObject.FindGameObjectsWithTag("Player");
+        foreach (CharacterCreator CharacterInParty in charactersParty)
+        {
+            Debug.Log("Hola soy " + CharacterInParty.CharacterName + " el futuro es incierto");
+        }
+        charactersParty =Intersect(charactersParty, PlayersInScene).ToList();
+        foreach (CharacterCreator CharacterInParty in charactersParty)
+        {
+            Debug.Log("Hola soy " + CharacterInParty.CharacterName + " sigo vivo");
+        }
 
         for (int i = 0; i < charactersParty.Count; i++)
         {
             foreach (CharacterCreator CharacterInParty in charactersParty)
             {
-                Debug.Log("Hola soy " + CharacterInParty.CharacterName + " " + PlayersInScene[i].GetComponent<Unit>().name);
                 if (CharacterInParty.CharacterName == PlayersInScene[i].GetComponent<Unit>().name)
                 {
+                    Debug.Log("Hola soy " + CharacterInParty.CharacterName + " " + PlayersInScene[i].GetComponent<Unit>().name);
                     CharacterInParty.HealthPoints = PlayersInScene[i].GetComponent<Unit>().Life;
                     Debug.Log("Ahora mi vida es " + CharacterInParty.HealthPoints);
                     CharacterInParty.ManaPoints = PlayersInScene[i].GetComponent<Unit>().Mana;
@@ -144,5 +162,28 @@ public class GameController : FSMMachine
     public void GenerateMap()
     {
         MapPlayerTracker.Instance.GetComponent<MapManager>().GenerateNewMap();
+    }
+
+    public static List<CharacterCreator> Intersect(List<CharacterCreator> first, GameObject[] second)
+    {
+        HashSet<string> characterNames = new HashSet<string>(first.Select(c => c.CharacterName));
+        List<CharacterCreator> intersection = new List<CharacterCreator>();
+
+        foreach (GameObject gameObject in second)
+        {
+            string gameObjectName = gameObject.GetComponent<Unit>().name;
+
+            if (characterNames.Contains(gameObjectName))
+            {
+                CharacterCreator character = first.FirstOrDefault(c => c.CharacterName == gameObjectName);
+
+                if (character != null)
+                {
+                    intersection.Add(character);
+                }
+            }
+        }
+
+        return intersection;
     }
 }
