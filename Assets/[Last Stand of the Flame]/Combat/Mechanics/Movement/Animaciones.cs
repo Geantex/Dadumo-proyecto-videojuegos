@@ -181,8 +181,10 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque especial");
-                Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head");
-                Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.LookRotation(objetivo.transform.position));
+                // cabezaDeenecan actual coge el CUELLO de Deenecan, pruebo despues, el comentado coge la CABEZA
+                Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck");
+                //Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head");
+                a.StartCoroutine(a.lanzarLlamaradaDeenecan(cabezaDeenecan, objetivo,a));
                 break;
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
@@ -330,6 +332,13 @@ public class Animaciones : MonoBehaviour
     public void curarParticula(Animaciones ani, GameObject objetivoCurar)
     {
         Instantiate(ani.curacionPrefab, objetivoCurar.transform.position, Quaternion.identity);
+    }
+    public IEnumerator lanzarLlamaradaDeenecan(Transform cabezaDeenecan, GameObject objetivo, Animaciones a)
+    {
+        yield return new WaitForSeconds(0.75f);
+        GameObject llamarada = Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.LookRotation(objetivo.transform.position));
+        llamarada.transform.LookAt(objetivo.transform);
+
     }
     private IEnumerator HabilitarArmaTrail(GameObject myUnit, float tiempoInicial, float tiempoFinal)
     {
