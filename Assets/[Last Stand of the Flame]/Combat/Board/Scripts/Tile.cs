@@ -55,7 +55,6 @@ public class Tile : MonoBehaviour
         }
         else
         {
-            // CHATGPT, HERE!!!
             // Instead of turning white, I want it to become invisible
             Color invisibleColor = new Color(0, 0, 0, 0);  // Set the alpha channel to 0 (fully transparent)
             GetComponent<Renderer>().material.color = invisibleColor;
