@@ -51,15 +51,15 @@ public class AccionesEnAnimaciones : MonoBehaviour
         {
             unit.SetActive(false);
 
-            DestroyImmediate(unit);
+            Destroy(unit);
         }
     }
 
     public void AcabarAnimacionCorrer()
     {
-        if (unit.GetComponent<PlayerMove>().Path.Count == 1)
+        if (!unit.GetComponent<PlayerMove>().moving)
         {
-            Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+            //Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
         }
     }
 
@@ -67,25 +67,25 @@ public class AccionesEnAnimaciones : MonoBehaviour
     {
         if (!unit.GetComponent<NPCMove>().moving)
         {
-            Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
+            //Animaciones.idle(gameObject.GetComponent<Animator>(), unit.GetComponent<Unit>().Name);
         }
     }
 
     public void RecibirDano()
     {
-        Animaciones.recibirDano(gameObject.GetComponent<Animator>(), unit.GetComponent<PlayerMove>().UniqueTarget.GetComponent<Unit>().Name, unit.GetComponent<PlayerMove>().UniqueTarget, FindObjectOfType<Animaciones>());
+        Animaciones.recibirDano(unit.GetComponent<PlayerMove>().UniqueTarget.GetComponentInChildren<Animator>(), unit.GetComponent<PlayerMove>().UniqueTarget.GetComponent<Unit>().Name, unit.GetComponent<PlayerMove>().UniqueTarget, FindObjectOfType<Animaciones>());
     }
 
     public void RecibirDanoArea()
     {
         foreach (GameObject target in unit.GetComponent<PlayerMove>().Targets)
         {
-            Animaciones.recibirDano(gameObject.GetComponent<Animator>(), target.GetComponent<Unit>().Name, target, FindObjectOfType<Animaciones>());
+            Animaciones.recibirDano(unit.GetComponent<PlayerMove>().UniqueTarget.GetComponentInChildren<Animator>(), target.GetComponent<Unit>().Name, target, FindObjectOfType<Animaciones>());
         }
     }
 
     public void RecibirDanoEnemigo()
     {
-        Animaciones.recibirDano(gameObject.GetComponent<Animator>(), unit.GetComponent<NPCMove>().Target.GetComponent<Unit>().Name, unit.GetComponent<NPCMove>().Target, FindObjectOfType<Animaciones>());
+        Animaciones.recibirDano(unit.GetComponent<NPCMove>().Target.GetComponentInChildren<Animator>(), unit.GetComponent<NPCMove>().Target.GetComponent<Unit>().Name, unit.GetComponent<NPCMove>().Target, FindObjectOfType<Animaciones>());
     }
 }

@@ -42,6 +42,23 @@ public class PlayerAttack : BasicAttack
         return targets;
     }
 
+    public List<GameObject> AttackKey()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+        List<GameObject> targets = new List<GameObject>();
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
+            if (distance <= (Range + 0.5f))
+            {
+                targets.Add(enemy);
+                //enemy.GetComponent<Unit>().circulo.SetActive(true);
+            }
+        }
+        return targets;
+    }
+
     public void AttackOfPlayer(GameObject target)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
@@ -50,6 +67,9 @@ public class PlayerAttack : BasicAttack
         {
             enemy.GetComponent<Unit>().circulo.SetActive(false);
         }
+
+        gameObject.GetComponent<PlayerMove>().Targets.Clear();
+
         if (SceneManager.GetActiveScene().name == "TutorialCombate")
         {
             // ESTO OCURRE SOLO EN LA ESCENA DE TUTORIAL

@@ -11,12 +11,12 @@ public class LoseText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        display = GetComponent<Text>();
+        //display = GetComponent<Text>();
     }
 
     public void FSMStateChangeHandler(FSMState nuevo, FSMState anterior)
     {
-        if (nuevo is LoseState) gameObject.SetActive(true);
-        else gameObject.SetActive(false);
+        //if (nuevo is LoseState) gameObject.SetActive(true);
+        //else gameObject.SetActive(false);
     }
 }
