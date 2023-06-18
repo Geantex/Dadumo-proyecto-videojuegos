@@ -10,6 +10,7 @@ public class botonDescansar : MonoBehaviour
     public void ActivarResultCanvasHoguera()
     {
         GameController.Instancia.modifyPartyHealthPoints(50f);
+        GameController.Instancia.modifyPartyManaPoints(50f);
         FadeToBlack.QuickFade();
         Invoke("HolaDani", 0.25f);
     }

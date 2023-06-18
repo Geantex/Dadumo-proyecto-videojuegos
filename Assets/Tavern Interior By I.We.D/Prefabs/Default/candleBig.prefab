@@ -142,7 +142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
       propertyPath: simulationSpeed
-      value: 1
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -150,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 11
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -167,6 +171,14 @@ PrefabInstance:
     - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
       propertyPath: InitialModule.startRotation.scalar
       value: 1.2299335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
+      propertyPath: RotationBySpeedModule.curve.scalar
+      value: 1.5707963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8657023836019744815, guid: 52d7b484ccef9d14caaaede6fb553649, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.ctime1
