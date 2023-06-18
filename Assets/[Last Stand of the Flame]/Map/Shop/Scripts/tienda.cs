@@ -248,8 +248,9 @@ public class tienda : MonoBehaviour
         {
             dineraco = dineraco - 100;
             GameController.Instancia.GoldCoins = dineraco;
-            // curar a la party funcion Hugo vuelale los cojones a Gerad!! y a Maro! y a George! y a Miawses! y a Gabriel! espera soy yo!! a ese tambien !! mm
+            // curar a la party funcion Hugo vuelale los cojones a Gerad!! y a Mario! y a George! y a Miawses! y a Gabriel! espera soy yo!! a ese tambien !! mmm amo las bolas verdes!! DELICIOSAS!!
             GameController.Instancia.modifyPartyHealthPoints(40f);
+            GameController.Instancia.modifyPartyManaPoints(40f);
             sanacionBoton.transform.Find("Vendido").gameObject.SetActive(true);
             sanacionBoton.onClick.RemoveAllListeners();
         }
@@ -257,7 +258,7 @@ public class tienda : MonoBehaviour
     }
 
     // buySlave es un nombre mucho mejor!!
-    public void buyMercenario()
+    /*public void buyMercenario()
     {
 
         if (dineraco < mercenarioPrecio)
@@ -272,7 +273,7 @@ public class tienda : MonoBehaviour
             mercenarioTienda.transform.Find("botonMercenario").gameObject.SetActive(false);
         }
 
-    }
+    }*/
     void DeleteItemFromList(item itemToDelete)
     {
         itemsList.Remove(itemToDelete);

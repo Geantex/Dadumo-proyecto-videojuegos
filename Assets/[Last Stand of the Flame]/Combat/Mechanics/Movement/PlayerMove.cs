@@ -110,11 +110,9 @@ public class PlayerMove : TacticsMove
                 // Si el rayo ha chocado con una casilla, hacemos lo siguiente
                 if (hit.collider.tag == "Tile")
                 {
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
-
-                    foreach (GameObject enemy in enemies)
+                    foreach (GameObject target in targets)
                     {
-                        enemy.GetComponent<Unit>().circulo.SetActive(false);
+                        target.GetComponent<Unit>().circulo.SetActive(false);
                     }
 
                     gameObject.GetComponent<PlayerMove>().Targets.Clear();
@@ -139,6 +137,13 @@ public class PlayerMove : TacticsMove
             return;
         }
 
+        foreach (GameObject target in targets)
+        {
+            target.GetComponent<Unit>().circulo.SetActive(false);
+        }
+
+        gameObject.GetComponent<PlayerMove>().Targets.Clear();
+
         targets = gameObject.GetComponent<PlayerAttack>().AttackMouse();
         specialAttack = false;
         basicAttack = true;
@@ -150,6 +155,13 @@ public class PlayerMove : TacticsMove
         {
             return;
         }
+
+        foreach (GameObject target in targets)
+        {
+            target.GetComponent<Unit>().circulo.SetActive(false);
+        }
+
+        gameObject.GetComponent<PlayerMove>().Targets.Clear();
 
         targets = gameObject.GetComponent<PlayerAttack>().AttackKey();
         if(targets.Count > 0)
@@ -191,6 +203,13 @@ public class PlayerMove : TacticsMove
             return;
         }
 
+        foreach (GameObject target in targets)
+        {
+            target.GetComponent<Unit>().circulo.SetActive(false);
+        }
+
+        gameObject.GetComponent<PlayerMove>().Targets.Clear();
+
         targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackMouse(0);
         basicAttack = false;
         specialAttack = true;
@@ -202,6 +221,13 @@ public class PlayerMove : TacticsMove
         {
             return;
         }
+
+        foreach (GameObject target in targets)
+        {
+            target.GetComponent<Unit>().circulo.SetActive(false);
+        }
+
+        gameObject.GetComponent<PlayerMove>().Targets.Clear();
 
         targets = gameObject.GetComponent<PlayerSpecialAttack>().AttackKey(0);
         if (targets.Count > 0)
@@ -443,11 +469,9 @@ public class PlayerMove : TacticsMove
             {
                 if (CurrentTile.adjacencyList[2] != null && CurrentTile.adjacencyList[2].selectable)
                 {
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
-
-                    foreach (GameObject enemy in enemies)
+                    foreach (GameObject target in targets)
                     {
-                        enemy.GetComponent<Unit>().circulo.SetActive(false);
+                        target.GetComponent<Unit>().circulo.SetActive(false);
                     }
 
                     gameObject.GetComponent<PlayerMove>().Targets.Clear();
