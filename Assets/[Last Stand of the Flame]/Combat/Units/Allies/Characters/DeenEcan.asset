@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Deen Ecan
   characterClass: paladin
-  characterImage: {fileID: 3792388835238295109, guid: 9a73b3e38aba6ca49992cfb64ce439df, type: 3}
-  characterMaterial: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 4af0eebc319290e4081944e18bd0d9df, type: 3}
   characterPrefab: {fileID: 8354084290596415721, guid: c7620fe674528004cb863150133b7022, type: 3}
   healthPoints: 100
   maxHealthPoints: 100
   manaPoints: 100
+  maxManaPoints: 0
   damagePoints: 20
   rangeTiles: 1
   speed: 0

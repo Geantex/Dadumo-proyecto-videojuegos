@@ -27,19 +27,19 @@ public class Randomizer : FSMState
     //public Button reroll2;
     //public Button reroll3;
 
-    public Image imageCharacter1;
-    public Image imageCharacter2;
-    public Image imageCharacter3;
+    public Sprite imageCharacter1;
+    public Sprite imageCharacter2;
+    public Sprite imageCharacter3;
 
     public bool rerollUsed = false;
 
-    public Image Clerigo;
-    public Image Asesino;
-    public Image Paladin;
-    public Image Luchador;
-    public Image Mago;
-    public Image Bardo;
-    public Image Barbaro;
+    public Sprite Clerigo;
+    public Sprite Asesino;
+    public Sprite Paladin;
+    public Sprite Luchador;
+    public Sprite Mago;
+    public Sprite Bardo;
+    public Sprite Barbaro;
 
     private int characterNumber = 0;
 

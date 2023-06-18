@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class RandomizerManager : MonoBehaviour
 {
-    [SerializeField] public Image Image1Scene;
-    [SerializeField] public Image Image2Scene;
-    [SerializeField] public Image Image3Scene;
+    [SerializeField] public Sprite Image1Scene;
+    [SerializeField] public Sprite Image2Scene;
+    [SerializeField] public Sprite Image3Scene;
 
-    private Image image1;
-    private Image image2;
-    private Image image3;
+    private Sprite image1;
+    private Sprite image2;
+    private Sprite image3;
 
     [SerializeField] private List<Button> rerollButtons;
 
@@ -35,9 +35,9 @@ public class RandomizerManager : MonoBehaviour
         image2 = GameController.Instancia.GetComponent<Randomizer>().imageCharacter2;
         image3 = GameController.Instancia.GetComponent<Randomizer>().imageCharacter3;
 
-        Image1Scene.sprite = image1.sprite;
-        Image2Scene.sprite = image2.sprite;
-        Image3Scene.sprite = image3.sprite;
+        Image1Scene = image1;
+        Image2Scene = image2;
+        Image3Scene = image3;
 
         if (rollUsed == true)
         {

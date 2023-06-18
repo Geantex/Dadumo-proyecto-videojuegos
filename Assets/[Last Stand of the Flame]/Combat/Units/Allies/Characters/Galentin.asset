@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Galentin
   characterClass: mago
-  characterImage: {fileID: 3792388835238295109, guid: ff2806427202a6b40b41925b56030478, type: 3}
-  characterMaterial: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 2c713e1f97b8c464fbdb933211285b36, type: 3}
   characterPrefab: {fileID: 7408311994210719567, guid: 5ef2143f28798dd4ab7a30c430ac95ce, type: 3}
   healthPoints: 35
   maxHealthPoints: 35
   manaPoints: 100
+  maxManaPoints: 0
   damagePoints: 30
   rangeTiles: 6
   speed: 0

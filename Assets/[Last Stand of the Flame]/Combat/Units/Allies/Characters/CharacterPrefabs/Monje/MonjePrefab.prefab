@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6789401541128754549}
   - component: {fileID: 4281771115954950224}
   - component: {fileID: 8695671047036050726}
-  - component: {fileID: 5429128601899052500}
   m_Layer: 0
   m_Name: MonjePrefab
   m_TagString: Player
@@ -130,32 +129,6 @@ MonoBehaviour:
   AllSpecialAttacks:
   - {fileID: 11400000, guid: 2634462329f23604885983c745a45a9f, type: 2}
   heading: {x: 0, y: 0, z: 0}
---- !u!114 &5429128601899052500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7470411927642483249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Kaka
-  characterClassName: monje
-  characterImage: {fileID: 3792388835238295109, guid: 55d6d6ac735fdd3468253370eaad8f16, type: 3}
-  characterMaterial: {fileID: 0}
-  characterPrefab: {fileID: 7470411927642483249}
-  healthPoints: 60
-  maxHealthPoints: 60
-  manaPoints: 100
-  damagePoints: 30
-  rangeTiles: 1
-  specialAttacks:
-  - {fileID: 11400000, guid: 2634462329f23604885983c745a45a9f, type: 2}
-  characterWeapon: {fileID: 0}
-  characterArmor: {fileID: 0}
 --- !u!1001 &537616259117264720
 PrefabInstance:
   m_ObjectHideFlags: 0

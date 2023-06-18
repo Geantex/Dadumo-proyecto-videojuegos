@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Brujo
   characterClass: brujo
-  characterImage: {fileID: 0}
-  characterMaterial: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 1b43f459048adb840b4a08064bb0adc2, type: 3}
   characterPrefab: {fileID: 7407610076711815920, guid: ea4e29bbbe82494459a754edd7c57f25, type: 3}
   healthPoints: 35
   maxHealthPoints: 35
   manaPoints: 0
+  maxManaPoints: 0
   damagePoints: 40
   rangeTiles: 3
   speed: 0
