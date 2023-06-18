@@ -20,5 +20,5 @@ MonoBehaviour:
   encounterButton1Text: "Se\xF1alar a alg\xFAn lugar aleatorio"
   encounterButton2Text: Pelear contra el
   encounterButton3Text: "Os qued\xE1is mir\xE1ndole fijamente"
-  encounterButton4Text: Hacer como que hablas su idioma y asentar con la cabeza
+  encounterButton4Text: Hacer como que hablas su idioma y asentar
   buttonScripts: {fileID: 8796509189422582022, guid: d0e49f83edb91664cbdb9676f92bf2d8, type: 3}
