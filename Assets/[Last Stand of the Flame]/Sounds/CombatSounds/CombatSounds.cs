@@ -65,7 +65,7 @@ public class CombatSounds : MonoBehaviour
 
     public void correr(string name)
     {
-        switch (name)
+        /*switch (name)
         {
             case "Barbara":
                 soundClipsSource.clip = soundClips.Pasos[Random.Range(0, 3)];
@@ -116,7 +116,7 @@ public class CombatSounds : MonoBehaviour
                 soundClipsSource.clip = soundClips.Pasos[Random.Range(0, 3)];
                 soundClipsSource.Play();
                 break;
-        }
+        }*/
     }
 
     public void ataque(string name)
