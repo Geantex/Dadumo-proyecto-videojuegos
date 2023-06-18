@@ -182,7 +182,7 @@ public class Animaciones : MonoBehaviour
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque especial");
                 Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head");
-                Instantiate(a.fuegito, heading, Quaternion.identity);
+                Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.LookRotation(objetivo.transform.position));
                 break;
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
