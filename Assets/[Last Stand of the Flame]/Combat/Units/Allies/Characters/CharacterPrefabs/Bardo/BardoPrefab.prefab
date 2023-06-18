@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4787043343876038151}
   - component: {fileID: 799080042042419572}
   - component: {fileID: 592460863962224140}
-  - component: {fileID: 7563348533802595246}
   m_Layer: 0
   m_Name: BardoPrefab
   m_TagString: Player
@@ -130,32 +129,6 @@ MonoBehaviour:
   AllSpecialAttacks:
   - {fileID: 11400000, guid: 0ba1f7c2cc500c64da56be86e678e79b, type: 2}
   heading: {x: 0, y: 0, z: 0}
---- !u!114 &7563348533802595246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2160288323178000895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Romero MacBeth
-  characterClassName: bardo
-  characterImage: {fileID: 3792388835238295109, guid: a325707a3e6dcac4ba9e35ed7e632bf8, type: 3}
-  characterMaterial: {fileID: 0}
-  characterPrefab: {fileID: 2160288323178000895}
-  healthPoints: 80
-  maxHealthPoints: 80
-  manaPoints: 100
-  damagePoints: 25
-  rangeTiles: 1
-  specialAttacks:
-  - {fileID: 11400000, guid: 0ba1f7c2cc500c64da56be86e678e79b, type: 2}
-  characterWeapon: {fileID: 0}
-  characterArmor: {fileID: 0}
 --- !u!1001 &1610511677140760461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -829,11 +802,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad58042e804aa3d49b250390aef13974, type: 3}
---- !u!4 &6075651458395489721 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad58042e804aa3d49b250390aef13974, type: 3}
-  m_PrefabInstance: {fileID: 6042623104679813714}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6853032101664464643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ad58042e804aa3d49b250390aef13974, type: 3}
