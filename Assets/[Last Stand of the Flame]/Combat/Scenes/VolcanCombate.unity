@@ -502,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sangrePrefab: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
   curacionPrefab: {fileID: 2985539307285833950, guid: 77d9317f29a468c438237dbc84c18caf, type: 3}
-  fuegito: {fileID: 4545730075028336661, guid: eafb5fe28c005164a92ca42f3f7532a7, type: 3}
+  fuegito: {fileID: 56852242586695119, guid: 4da76223a2881094d98ebf9f4d27d0aa, type: 3}
 --- !u!114 &474352132
 MonoBehaviour:
   m_ObjectHideFlags: 0

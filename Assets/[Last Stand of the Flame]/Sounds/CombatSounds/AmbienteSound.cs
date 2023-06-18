@@ -29,7 +29,8 @@ public class AmbienteSound : MonoBehaviour
                 soundClipsSource.Play();
                 break;
             case "TutorialCombate":
-                soundClipsSource.clip = soundClips.ambienteVolcan;
+                // Esto estaba como volcan, el gilipollas que lo puso, que aprenda a leer
+                soundClipsSource.clip = soundClips.ambienteBosque;
                 soundClipsSource.Play();
                 break;
             case "Hoguera":
