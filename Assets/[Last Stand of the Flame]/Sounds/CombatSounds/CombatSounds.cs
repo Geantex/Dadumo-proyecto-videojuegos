@@ -165,7 +165,7 @@ public class CombatSounds : MonoBehaviour
                 break;
 
             case "Brujo":
-                soundFXClipsSource.clip = soundClips.BrujoFXAttack[Random.Range(0, 4)];
+                soundFXClipsSource.clip = soundClips.BrujoFXAttack[Random.Range(0, 1)];
                 soundFXClipsSource.Play();
                 break;
             case "Ladron":
