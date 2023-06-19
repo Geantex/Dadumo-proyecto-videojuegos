@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: +A_JM
   m_EditorClassIdentifier: 
-  itemName: Gran Maza Nivel 2
+  itemName: Gran Maza Nivel 2 (+10 ATK)
   itemPrice: 50
   itemImage: {fileID: 21300000, guid: 252ed7f914aec7b4cb31720c69fdd03c, type: 3}
   itemDamageModifier: 10
