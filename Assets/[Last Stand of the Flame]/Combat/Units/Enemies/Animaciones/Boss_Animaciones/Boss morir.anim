@@ -67753,7 +67753,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: morir
-    data: "Se\xF1or de las cenizas"
+    data: "Se\xF1or de la ceniza"
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
