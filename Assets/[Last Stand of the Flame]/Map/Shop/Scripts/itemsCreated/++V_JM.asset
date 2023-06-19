@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: ++V_JM
   m_EditorClassIdentifier: 
-  itemName: Gran Escudo Nivel 3
+  itemName: Gran Escudo Nivel 3 (+40 HP)
   itemPrice: 100
-  itemImage: {fileID: 21300000, guid: eec882534bb3bea4ab94a3796a31c5c5, type: 3}
+  itemImage: {fileID: 21300000, guid: 2ad759b668e2bc5488c09f57071ee370, type: 3}
   itemDamageModifier: 0
   itemHealthModifier: 40
   itemTier: 3

@@ -18,6 +18,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextA1;
     public Slider hpSliderA1;
     public Slider manaSliderA1;
+    public Image imageA1;
 
     //-------------------------------------------------------
     //---------------------ALIADO 2--------------------------
@@ -27,6 +28,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextA2;
     public Slider hpSliderA2;
     public Slider manaSliderA2;
+    public Image imageA2;
 
     //-------------------------------------------------------
     //---------------------ALIADO 3--------------------------
@@ -36,6 +38,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextA3;
     public Slider hpSliderA3;
     public Slider manaSliderA3;
+    public Image imageA3;
 
     //-------------------------------------------------------
     //---------------------ALIADO 4--------------------------
@@ -45,6 +48,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextA4;
     public Slider hpSliderA4;
     public Slider manaSliderA4;
+    public Image imageA4;
 
     //-------------------------------------------------------
     //---------------------ENEMIGO 1-------------------------
@@ -54,6 +58,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextE1;
     public Slider hpSliderE1;
     public Slider manaSliderE1;
+    public Image imageE1;
 
     //-------------------------------------------------------
     //---------------------ENEMIGO 2-------------------------
@@ -63,6 +68,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextE2;
     public Slider hpSliderE2;
     public Slider manaSliderE2;
+    public Image imageE2;
 
     //-------------------------------------------------------
     //---------------------ENEMIGO 3-------------------------
@@ -72,6 +78,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextE3;
     public Slider hpSliderE3;
     public Slider manaSliderE3;
+    public Image imageE3;
 
     //-------------------------------------------------------
     //---------------------ENEMIGO 4-------------------------
@@ -81,6 +88,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameTextE4;
     public Slider hpSliderE4;
     public Slider manaSliderE4;
+    public Image imageE4;
 
     //-------------------------------------------------------
     //-----------------MOVEMENT BUTTONS----------------------
@@ -114,7 +122,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ALIADO 1-------------------
     //-------------------------------------------------------
-    public void SetHUDA1(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDA1(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         A1.SetActive(true);
         nameTextA1.text = name;
@@ -122,6 +130,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderA1.value = currenthp;
         manaSliderA1.maxValue = maxmana;
         manaSliderA1.value = currentmana;
+        imageA1.sprite = image;
     }
 
     public void SetNameA1(string name)
@@ -142,7 +151,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ALIADO 2-------------------
     //-------------------------------------------------------
-    public void SetHUDA2(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDA2(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         A2.SetActive(true);
         nameTextA2.text = name;
@@ -150,6 +159,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderA2.value = currenthp;
         manaSliderA2.maxValue = maxmana;
         manaSliderA2.value = currentmana;
+        imageA2.sprite = image;
     }
 
     public void SetNameA2(string name)
@@ -170,7 +180,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ALIADO 3-------------------
     //-------------------------------------------------------
-    public void SetHUDA3(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDA3(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         A3.SetActive(true);
         nameTextA3.text = name;
@@ -178,6 +188,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderA3.value = currenthp;
         manaSliderA3.maxValue = maxmana;
         manaSliderA3.value = currentmana;
+        imageA3.sprite = image;
     }
 
     public void SetNameA3(string name)
@@ -198,7 +209,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ALIADO 4-------------------
     //-------------------------------------------------------
-    public void SetHUDA4(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDA4(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         A4.SetActive(true);
         nameTextA4.text = name;
@@ -206,6 +217,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderA4.value = currenthp;
         manaSliderA4.maxValue = maxmana;
         manaSliderA4.value = currentmana;
+        imageA4.sprite = image;
     }
 
     public void SetNameA4(string name)
@@ -226,7 +238,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ENEMIGO 1------------------
     //-------------------------------------------------------
-    public void SetHUDE1(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDE1(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         E1.SetActive(true);
         nameTextE1.text = name;
@@ -234,6 +246,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderE1.value = currenthp;
         manaSliderE1.maxValue = maxmana;
         manaSliderE1.value = currentmana;
+        imageE1.sprite = image;
     }
 
     public void SetNameE1(string name)
@@ -254,7 +267,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ENEMIGO 2------------------
     //-------------------------------------------------------
-    public void SetHUDE2(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDE2(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         E2.SetActive(true);
         nameTextE2.text = name;
@@ -262,6 +275,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderE2.value = currenthp;
         manaSliderE2.maxValue = maxmana;
         manaSliderE2.value = currentmana;
+        imageE2.sprite = image;
     }
 
     public void SetNameE2(string name)
@@ -282,7 +296,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ENEMIGO 3------------------
     //-------------------------------------------------------
-    public void SetHUDE3(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDE3(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         E3.SetActive(true);
         nameTextE3.text = name;
@@ -290,6 +304,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderE3.value = currenthp;
         manaSliderE3.maxValue = maxmana;
         manaSliderE3.value = currentmana;
+        imageE3.sprite = image;
     }
 
     public void SetNameE3(string name)
@@ -310,7 +325,7 @@ public class BattleHUD : MonoBehaviour
     //-------------------------------------------------------
     //--------------FUNCIONES DEL ENEMIGO 4------------------
     //-------------------------------------------------------
-    public void SetHUDE4(string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUDE4(string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         E4.SetActive(true);
         nameTextE4.text = name;
@@ -318,6 +333,7 @@ public class BattleHUD : MonoBehaviour
         hpSliderE4.value = currenthp;
         manaSliderE4.maxValue = maxmana;
         manaSliderE4.value = currentmana;
+        imageE4.sprite = image;
     }
 
     public void SetNameE4(string name)
@@ -335,7 +351,7 @@ public class BattleHUD : MonoBehaviour
         manaSliderE4.value = mana;
     }
 
-    public void SetHUD(int party, bool myteam, string name, int maxhp, int currenthp, int maxmana, int currentmana)
+    public void SetHUD(int party, bool myteam, string name, int maxhp, int currenthp, int maxmana, int currentmana, Sprite image)
     {
         switch(myteam)
         {
@@ -344,16 +360,16 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-                        SetHUDA1(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDA1(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                     case 2:
-                        SetHUDA2(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDA2(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                     case 3:
-                        SetHUDA3(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDA3(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                     case 4:
-                        SetHUDA4(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDA4(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                 }
 
@@ -364,16 +380,16 @@ public class BattleHUD : MonoBehaviour
                 switch (party)
                 {
                     case 1:
-                        SetHUDE1(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDE1(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                     case 2:
-                        SetHUDE2(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDE2(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                     case 3:
-                        SetHUDE3(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDE3(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                     case 4:
-                        SetHUDE4(name, maxhp, currenthp, maxmana, currentmana);
+                        SetHUDE4(name, maxhp, currenthp, maxmana, currentmana, image);
                         break;
                 }
 

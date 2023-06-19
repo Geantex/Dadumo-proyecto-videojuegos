@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: "Se\xF1or de la ceniza"
   characterClass: boss
-  characterImage: {fileID: 0}
-  characterMaterial: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 63424f4f97855a84284463a2e0279b74, type: 3}
   characterPrefab: {fileID: 7145378970324420070, guid: 351a7bebf2658f84bb700d7e4a47a25a, type: 3}
   healthPoints: 250
   maxHealthPoints: 250
   manaPoints: 0
+  maxManaPoints: 0
   damagePoints: 50
   rangeTiles: 4
   speed: 0

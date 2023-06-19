@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Kaka
   characterClass: asesino
-  characterImage: {fileID: 3792388835238295109, guid: 55d6d6ac735fdd3468253370eaad8f16, type: 3}
-  characterMaterial: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 5f1aecc09ff26a9468d403cab73a6a3d, type: 3}
   characterPrefab: {fileID: 7470411927642483249, guid: b5bef26b295d6104a8af1c7b9561f50f, type: 3}
   healthPoints: 60
   maxHealthPoints: 60
   manaPoints: 100
+  maxManaPoints: 100
   damagePoints: 30
   rangeTiles: 1
   speed: 0

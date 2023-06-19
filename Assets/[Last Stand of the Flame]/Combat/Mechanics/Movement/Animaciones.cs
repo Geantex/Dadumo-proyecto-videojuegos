@@ -317,6 +317,34 @@ public class Animaciones : MonoBehaviour
         }
     }
 
+    public static void sentado(Animator pj, string name)
+    {
+        switch (name)
+        {
+            case "Barbara":
+                pj.Play("Barbara Sentada");
+                break;
+            case "Deen Ecan":
+                pj.Play("Deen Ecan Sentado");
+                break;
+            case "Galentin":
+                pj.Play("Galentin Sentado");
+                break;
+            case "Jose Maria":
+                pj.Play("JM Sentado");
+                break;
+            case "Kaka":
+                pj.Play("Kaka Sentado");
+                break;
+            case "Kazuro":
+                pj.Play("Kazuro Sentado");
+                break;
+            case "Romero MacBeth":
+                pj.Play("Romero Sentado");
+                break;
+        }
+    }
+
     public static GameObject GetBastonGalentin()
     {
         GameObject bastonGalentin = GameObject.FindGameObjectWithTag("bastonGalentin");

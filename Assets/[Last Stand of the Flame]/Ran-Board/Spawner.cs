@@ -276,7 +276,7 @@ public class Spawner : MonoBehaviour
     {
         foreach (CharacterCreator ch in myPartyPlayers)
         {
-            GameObject gameObjectPlayer = ch.CharacterPrefab;
+            /*GameObject gameObjectPlayer = ch.CharacterPrefab;
 
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterName = ch.CharacterName;
             Debug.Log(gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterName);
@@ -303,9 +303,9 @@ public class Spawner : MonoBehaviour
             //player.CharacterArmor = ch.CharacterArmor;
 
             //gameObjectPlayer.GetComponent<PlayerCharacterCLass>() = player
-            gameObjectPlayer.GetComponent<PlayerCharacterCLass>().UpdateValues();
-
-            myPlayers.Add(gameObjectPlayer);
+            gameObjectPlayer.GetComponent<PlayerCharacterCLass>().UpdateValues();*/
+            ch.SetUpCharacters();
+            myPlayers.Add(ch.CharacterPrefab);
         }
     }
 
@@ -313,7 +313,7 @@ public class Spawner : MonoBehaviour
     {
         foreach (CharacterCreator ch in myPartyEnemies)
         {
-            GameObject gameObjectEnemy = ch.CharacterPrefab;
+            /*GameObject gameObjectEnemy = ch.CharacterPrefab;
 
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName = ch.CharacterName;
             Debug.Log(gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName);
@@ -340,9 +340,9 @@ public class Spawner : MonoBehaviour
             //player.CharacterArmor = ch.CharacterArmor;
 
             //gameObjectPlayer.GetComponent<PlayerCharacterCLass>() = player
-            gameObjectEnemy.GetComponent<EnemyCharacterClass>().UpdateValues();
-
-            myEnemies.Add(gameObjectEnemy);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().UpdateValues();*/
+            ch.SetUpEnemies();
+            myEnemies.Add(ch.CharacterPrefab);
         }
     }
 

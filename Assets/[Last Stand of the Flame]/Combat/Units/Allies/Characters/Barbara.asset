@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Barbara
   characterClass: barbaro
-  characterImage: {fileID: 3792388835238295109, guid: 1e3a4fdc7b1c25145b145ab4742561c2, type: 3}
-  characterMaterial: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 30da82d7d54668946b92c58a89966835, type: 3}
   characterPrefab: {fileID: 117066107719519134, guid: aee834ceeaef53f40bdfc67f0cfa0375, type: 3}
   healthPoints: 90
   maxHealthPoints: 90
   manaPoints: 100
+  maxManaPoints: 100
   damagePoints: 25
   rangeTiles: 1
   speed: 0

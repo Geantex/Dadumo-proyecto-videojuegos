@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8634181106645893253}
   - component: {fileID: 5176258272250879573}
   - component: {fileID: 1966694984470573442}
-  - component: {fileID: 7689741968847155929}
   m_Layer: 0
   m_Name: Ladron
   m_TagString: NPC
@@ -112,31 +111,6 @@ MonoBehaviour:
   range: 1
   heading: {x: 0, y: 0, z: 0}
   AoD: 1
---- !u!114 &7689741968847155929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032444037646478063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd64938fc080294e9e4bf35ff2f4361, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Ladron
-  characterClassName: ladron
-  characterImage: {fileID: 0}
-  characterMaterial: {fileID: 0}
-  characterPrefab: {fileID: 2032444037646478063}
-  healthPoints: 40
-  maxHealthPoints: 40
-  manaPoints: 0
-  damagePoints: 30
-  rangeTiles: 1
-  specialAttacks: []
-  characterWeapon: {fileID: 0}
-  characterArmor: {fileID: 0}
 --- !u!1001 &382124997890752559
 PrefabInstance:
   m_ObjectHideFlags: 0

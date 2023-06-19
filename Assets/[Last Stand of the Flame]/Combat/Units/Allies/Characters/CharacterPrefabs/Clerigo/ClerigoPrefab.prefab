@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 653856213529785359}
   - component: {fileID: 1746646891938990383}
   - component: {fileID: 5762001418184469663}
-  - component: {fileID: 958702469813025752}
   m_Layer: 0
   m_Name: ClerigoPrefab
   m_TagString: Player
@@ -130,32 +129,6 @@ MonoBehaviour:
   AllSpecialAttacks:
   - {fileID: 11400000, guid: 3b5c4a6ea9abd5b49b3e3c4f86f7679e, type: 2}
   heading: {x: 0, y: 0, z: 0}
---- !u!114 &958702469813025752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122086010181723758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Jose Maria
-  characterClassName: clerigo
-  characterImage: {fileID: 3792388835238295109, guid: a01d05e4193205c4abe9141450262801, type: 3}
-  characterMaterial: {fileID: 0}
-  characterPrefab: {fileID: 2122086010181723758}
-  healthPoints: 110
-  maxHealthPoints: 110
-  manaPoints: 100
-  damagePoints: 15
-  rangeTiles: 2
-  specialAttacks:
-  - {fileID: 11400000, guid: 3b5c4a6ea9abd5b49b3e3c4f86f7679e, type: 2}
-  characterWeapon: {fileID: 0}
-  characterArmor: {fileID: 0}
 --- !u!1 &7877731438735566222
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Jose Maria
   characterClass: clerigo
-  characterImage: {fileID: 3792388835238295109, guid: a01d05e4193205c4abe9141450262801, type: 3}
-  characterMaterial: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: fd1223ed6e1364d49928c5940d21edc1, type: 3}
   characterPrefab: {fileID: 2122086010181723758, guid: f8e044d0c658c09448594fd2712d8b2a, type: 3}
   healthPoints: 110
   maxHealthPoints: 110
   manaPoints: 100
+  maxManaPoints: 100
   damagePoints: 15
   rangeTiles: 2
   speed: 0

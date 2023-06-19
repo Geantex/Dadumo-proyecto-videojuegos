@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: A_BA
   m_EditorClassIdentifier: 
-  itemName: Hacha vikinga Nivel 1
+  itemName: Hacha vikinga Nivel 1 (+5 ATK)
   itemPrice: 100
   itemImage: {fileID: 21300000, guid: d3ac8cbe88b76cb4fab11efe10321a8e, type: 3}
-  itemDamageModifier: 10
+  itemDamageModifier: 5
   itemHealthModifier: 0
   itemTier: 1
   characterTag: barbaro

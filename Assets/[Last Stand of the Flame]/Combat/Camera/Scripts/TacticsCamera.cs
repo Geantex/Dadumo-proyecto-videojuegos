@@ -14,4 +14,17 @@ public class TacticsCamera : MonoBehaviour
     {
         transform.Rotate(Vector3.up, -90, Space.Self);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RotateRight();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            RotateLeft();
+        }
+    }
 }
