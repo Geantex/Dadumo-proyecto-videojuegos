@@ -164,7 +164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 744, y: 499}
+  m_AnchoredPosition: {x: 758, y: 499}
   m_SizeDelta: {x: 240.6641, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &81536400
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GOLD COINS:'
+  m_text: 'Dinero:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
   m_sharedMaterial: {fileID: 1209444289601350155, guid: cfb85734ab421f34d887931869be1b6c, type: 2}
@@ -1195,7 +1195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 217, y: 2.7399902}
+  m_AnchoredPosition: {x: 37, y: 2.7399902}
   m_SizeDelta: {x: 189.0592, y: 44.5296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &655522239
