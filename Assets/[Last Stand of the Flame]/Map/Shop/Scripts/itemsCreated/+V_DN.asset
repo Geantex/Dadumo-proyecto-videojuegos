@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: +V_DN
   m_EditorClassIdentifier: 
-  itemName: Armadura draconica Nivel 2
+  itemName: Armadura draconica Nivel 2 (+30HP)
   itemPrice: 50
   itemImage: {fileID: 21300000, guid: 282d0fae98d6a1648ae4404845b2d935, type: 3}
   itemDamageModifier: 0
-  itemHealthModifier: 30
+  itemHealthModifier: 20
   itemTier: 2
   characterTag: paladin
   itemSlot: armor

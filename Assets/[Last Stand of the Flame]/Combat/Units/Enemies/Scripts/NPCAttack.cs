@@ -31,13 +31,14 @@ public class NPCAttack : BasicAttack
         // Buscamos el objetivo más cercano al NPC y lo guardamos
         GameObject gameObjectObjective = gameObject.GetComponent<NPCMove>().FindNearestTarget();
         // Intentamos atacar al objetivo, y recogemos el resultado de si el ataque ha sido exitoso o no
-        AoD = Attack(gameObjectObjective, gameObject);
+        AoD = Attack(gameObjectObjective, gameObject, 0f);
         // Si el ataque ha sido exitoso, terminamos el turno del NPC
         if (AoD)
         {
             gameObject.GetComponent<TacticsMove>().animandose = true;
             gameObject.GetComponent<TacticsMove>().moving = false;
             centralo();
+            gameObject.GetComponent<NPCMove>().MovePalCentro();
             //gameObject.GetComponent<NPCMove>().Move();
             //TurnManager.EndTurn(gameObject.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>()); //AQUI
         }

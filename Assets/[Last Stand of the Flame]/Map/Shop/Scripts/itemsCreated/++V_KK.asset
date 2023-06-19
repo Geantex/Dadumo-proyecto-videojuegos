@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: ++V_KK
   m_EditorClassIdentifier: 
-  itemName: Pocima de Vida del Monasterio Nivel 3
+  itemName: Pocima de Vida del Monasterio Nivel 3 (+30 HP)
   itemPrice: 100
   itemImage: {fileID: 21300000, guid: fd1a572007a6110478974acf1955d4b0, type: 3}
   itemDamageModifier: 0
-  itemHealthModifier: 30
+  itemHealthModifier: 40
   itemTier: 3
   characterTag: asesino
   itemSlot: armor

@@ -34801,9 +34801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d0c172d09867f4289cf409eac59bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sangrePrefab: {fileID: 0}
-  curacionPrefab: {fileID: 0}
-  fuegito: {fileID: 0}
+  sangrePrefab: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
+  curacionPrefab: {fileID: 2985539307285833950, guid: 77d9317f29a468c438237dbc84c18caf, type: 3}
+  fuegito: {fileID: 56852242586695119, guid: 4da76223a2881094d98ebf9f4d27d0aa, type: 3}
 --- !u!114 &6589418906527426880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34845,6 +34845,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2b47006af800ba2438968ceee8165963, type: 3}
   - {fileID: 8300000, guid: cac6f965eb36ccf488785ad2a7c55fea, type: 3}
   - {fileID: 8300000, guid: deae8323c629f96489cda59715f566cc, type: 3}
+  BarbaraFXAttack: []
   BarbaraDeath:
   - {fileID: 8300000, guid: 64af7cfbad725014bacf507f823e5794, type: 3}
   - {fileID: 8300000, guid: 0c7e3eab598e2b74a9ab010d47fe8b5b, type: 3}
@@ -34853,17 +34854,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7d6e630df3524d54093f082168c4ee62, type: 3}
   - {fileID: 8300000, guid: 3e47dc135064c374f8c03d2c69f2cfc5, type: 3}
   - {fileID: 8300000, guid: e08a835d9fdbb0a478a93d9d8e3e599b, type: 3}
+  BarbaraSpecialAttack: []
+  BarbaraFXSpecialAttack: []
   RomeroAttack:
   - {fileID: 8300000, guid: 50073ef7b1d48e84e824f7b2422ec95c, type: 3}
   - {fileID: 8300000, guid: fc8f35b381c42a840a29f3fc0d7fcbc1, type: 3}
   - {fileID: 8300000, guid: f240d6f04fafd4a4183287e4986bcbd7, type: 3}
+  RomeroFXAttack: []
   RomeroDeath: []
   RomeroHurt: []
+  RomeroSpecialAttack: []
+  RomeroFXSpecialAttack: []
   DeenEcanAttack:
   - {fileID: 8300000, guid: 40697bb8b58c1524f84ee3d6b4657a33, type: 3}
   - {fileID: 8300000, guid: 6790e4cee1cfd4f43a56cee803167c86, type: 3}
   - {fileID: 8300000, guid: 42df0e0e9367cad48b6f1b5fcce504db, type: 3}
   - {fileID: 8300000, guid: 39384507750ec8a499b65f74b04f7be0, type: 3}
+  DeenEcanFXAttack: []
   DeenEcanDeath:
   - {fileID: 8300000, guid: f4accf2c3a253fe4690c93e920d13fdb, type: 3}
   - {fileID: 8300000, guid: c261702d6bac8f643827b294a1ed987a, type: 3}
@@ -34873,15 +34880,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d98d0a432c324f44599cafb5072c4912, type: 3}
   - {fileID: 8300000, guid: 0fd1166a31c1c2643a3b0f1d950a779c, type: 3}
   - {fileID: 8300000, guid: bcfb8bcfde0ec744f81f7adc1e3b6c1e, type: 3}
+  DeenEcanSpecialAttack: []
+  DeenEcanFXSpecialAttack: []
   GalentinAttack: []
+  GalentinFXAttack: []
   GalentinDeath: []
   GalentinHurt: []
+  GalentinSpecialAttack: []
+  GalentinFXSpecialAttack: []
   JoseMariaAttack:
   - {fileID: 8300000, guid: b7ba9ce43462abe47ba379eeaff08b4e, type: 3}
   - {fileID: 8300000, guid: 276b4a31adf1c7e4ea1396bb096187f7, type: 3}
   - {fileID: 8300000, guid: 23aa5b05ae25a2146af73d9c17b40516, type: 3}
   - {fileID: 8300000, guid: 4b0f118ac89532e4b80d1bdf734e3a5b, type: 3}
   - {fileID: 8300000, guid: b4897175aedd65d41a1536155a24e5c5, type: 3}
+  JoseMariaFXAttack: []
   JoseMariaDeath:
   - {fileID: 8300000, guid: 49ddd20506c068444a1aaf1dbbe3b8e3, type: 3}
   - {fileID: 8300000, guid: 934736deafeef9e419d235954591414e, type: 3}
@@ -34891,12 +34904,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fa3f8b89d2213224ea3a51e1b5be4b7c, type: 3}
   - {fileID: 8300000, guid: a239d14b3ad988d48a9db43e5fb94f2e, type: 3}
   - {fileID: 8300000, guid: e446faf2b49497744b713dfa3ba1a009, type: 3}
+  JoseMariaSpecialAttack: []
+  JoseMariaFXSpecialAttack: []
   KakaAttack:
   - {fileID: 8300000, guid: 4352daad3c790e149b9b259332f9a56e, type: 3}
   - {fileID: 8300000, guid: 61930d81ed36bcc4aa97e51ab9d399e2, type: 3}
   - {fileID: 8300000, guid: d7dad6921500edc419d28fd371885533, type: 3}
   - {fileID: 8300000, guid: 23cb4bfe4cab5cb42a49f07252fc9ad8, type: 3}
   - {fileID: 8300000, guid: c6b0c5f258f958545a774e519701b243, type: 3}
+  KakaFXAttack: []
   KakaDeath:
   - {fileID: 8300000, guid: c7f12a3a5e62cc24db3781a02eb9f85e, type: 3}
   - {fileID: 8300000, guid: 14f6cbce546f10e4a8485fe7a4399410, type: 3}
@@ -34906,34 +34922,63 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cbd716ca28ddb9a4280fc651399076f9, type: 3}
   - {fileID: 8300000, guid: 769d810f58c11e545ab798e15cb047bf, type: 3}
   - {fileID: 8300000, guid: 9ca1cbd27ad371848a890dc0dfaed121, type: 3}
+  KakaSpecialAttack: []
+  KakaFXSpecialAttack: []
   KazuroAttack:
   - {fileID: 8300000, guid: e193b68b6b3ef9f45b1126daae3b9afe, type: 3}
   - {fileID: 8300000, guid: dd3ab0f4a892ace49a6dcaa287e21c3f, type: 3}
   - {fileID: 8300000, guid: 39e0ee218285ec84f9670ed75f2387f6, type: 3}
   - {fileID: 8300000, guid: 1eab587c712678f438d27f63ef254d62, type: 3}
+  KazuroFXAttack: []
   KazuroDeath:
   - {fileID: 8300000, guid: 6f7068a26a788484a9d2108b4209edb3, type: 3}
   - {fileID: 8300000, guid: 5bf5a96f9e3b6e04eadbebeda81505d3, type: 3}
   KazuroHurt: []
+  KazuroSpecialAttack: []
+  KazuroFXSpecialAttack: []
   LadronAttack: []
+  LadronFXAttack: []
   LadronDeath: []
   LadronHurt: []
+  LadronSpecialAttack: []
+  LadronFXSpecialAttack: []
   BrujoAttack: []
+  BrujoFXAttack: []
   BrujoDeath: []
   BrujoHurt: []
+  BrujoSpecialAttack: []
+  BrujoFXSpecialAttack: []
   BossAttack: []
+  BossFXAttack: []
   BossDeath: []
   BossHurt: []
+  BossSpecialAttack: []
+  BossFXSpecialAttack: []
   RataAttack: []
+  RataFXAttack: []
   RataDeath: []
   RataHurt: []
+  RataSpecialAttack: []
+  RataFXSpecialAttack: []
   TrollAttack: []
+  TrollFXAttack: []
   TrollDeath: []
   TrollHurt: []
+  TrollSpecialAttack: []
+  TrollFXSpecialAttack: []
   Pasos:
   - {fileID: 8300000, guid: 67f78f47accb32741aaa43599b752bf1, type: 3}
   - {fileID: 8300000, guid: 9455fe2b75bcfe54ebd1fe0ed5d52b35, type: 3}
   - {fileID: 8300000, guid: f7f677983e5ee1e42ab7dff007d837b8, type: 3}
+  musicaInicio: {fileID: 0}
+  musicaBoss: {fileID: 0}
+  musicaMapa: {fileID: 0}
+  musicaTienda: {fileID: 0}
+  ambienteBosque: {fileID: 0}
+  ambientePueblo: {fileID: 0}
+  ambienteMontana: {fileID: 0}
+  ambienteVolcan: {fileID: 0}
+  ambienteHoguera: {fileID: 0}
 --- !u!1 &6649161071613576505
 GameObject:
   m_ObjectHideFlags: 0

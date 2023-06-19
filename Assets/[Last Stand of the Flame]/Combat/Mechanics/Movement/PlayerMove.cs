@@ -112,7 +112,10 @@ public class PlayerMove : TacticsMove
                 {
                     foreach (GameObject target in targets)
                     {
-                        target.GetComponent<Unit>().circulo.SetActive(false);
+                        if (target != null)
+                        {
+                            target.GetComponent<Unit>().circulo.SetActive(false);
+                        }
                     }
 
                     gameObject.GetComponent<PlayerMove>().Targets.Clear();

@@ -45,7 +45,7 @@ public class Randomizer : FSMState
 
     protected override void EnterState()
     {
-        (machine as GameController).GoldCoins = 10000f;
+        (machine as GameController).GoldCoins = 0f;
         GameController.Instancia.CharactersParty.Clear();
         SceneManager.LoadScene("Reroll");
         electedCharacters = new List<CharacterCreator>();

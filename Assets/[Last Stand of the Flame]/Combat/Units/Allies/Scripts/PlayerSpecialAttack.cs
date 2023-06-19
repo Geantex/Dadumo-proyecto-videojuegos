@@ -217,7 +217,7 @@ public class PlayerSpecialAttack : MonoBehaviour
                 }
                 gameObject.GetComponent<Unit>().Mana = gameObject.GetComponent<Unit>().Mana - AllSpecialAttacks[attackIndex].ManaCost;
                 FindObjectOfType<BattleHUD>().SetMana(gameObject.GetComponent<Unit>().party, gameObject.GetComponent<Unit>().myteam, gameObject.GetComponent<Unit>().Mana);
-                Animaciones.ataqueEspecial(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), gameObject, heading);
+                Animaciones.ataqueEspecial(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name, FindObjectOfType<Animaciones>(), gameObject, heading, target);
                 break;
             case "Curacion":
                 for (int i = 0; i < AllSpecialAttacks[attackIndex].DamageTimes; i++)

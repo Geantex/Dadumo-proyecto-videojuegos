@@ -31,7 +31,7 @@ public class CharacterCreator : ScriptableObject
         CharacterPrefab.GetComponent<Unit>().Life = (int)HealthPoints;
         CharacterPrefab.GetComponent<Unit>().MaxLife = (int)MaxHealthPoints;
         CharacterPrefab.GetComponent<Unit>().Mana = (int)ManaPoints;
-        CharacterPrefab.GetComponent<Unit>().MaxMana = (int)ManaPoints;
+        CharacterPrefab.GetComponent<Unit>().MaxMana = (int)MaxManaPoints;
         CharacterPrefab.GetComponent<PlayerAttack>().Damage = (int)DamagePoints;
         CharacterPrefab.GetComponent<PlayerAttack>().Range = (int)RangeTiles;
         CharacterPrefab.GetComponent<PlayerSpecialAttack>().AllSpecialAttacks = SpecialAttacks;
@@ -44,7 +44,7 @@ public class CharacterCreator : ScriptableObject
         CharacterPrefab.GetComponent<Unit>().Life = (int)HealthPoints;
         CharacterPrefab.GetComponent<Unit>().MaxLife = (int)MaxHealthPoints;
         CharacterPrefab.GetComponent<Unit>().Mana = (int)ManaPoints;
-        CharacterPrefab.GetComponent<Unit>().MaxMana = (int)ManaPoints;
+        CharacterPrefab.GetComponent<Unit>().MaxMana = (int)MaxManaPoints;
         CharacterPrefab.GetComponent<NPCAttack>().Damage = (int)DamagePoints;
         CharacterPrefab.GetComponent<NPCAttack>().Range = (int)RangeTiles;
     }
@@ -123,6 +123,19 @@ public class CharacterCreator : ScriptableObject
             healthPoints = value;
         }
     }
+
+    public float MaxManaPoints
+    {
+        get
+        {
+            return maxManaPoints;
+        }
+        set
+        {
+
+        }
+    }
+
     public float ManaPoints
     {
         get
