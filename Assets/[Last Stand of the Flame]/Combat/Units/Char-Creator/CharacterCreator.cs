@@ -144,6 +144,14 @@ public class CharacterCreator : ScriptableObject
         }
         set
         {
+            if (value < 0)
+            {
+                value = 0;
+            }
+            else if (value > MaxManaPoints)
+            {
+                value = MaxManaPoints;
+            }
             manaPoints = value;
         }
     }
