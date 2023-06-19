@@ -2740,6 +2740,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3088627280456853300, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -116
+      objectReference: {fileID: 0}
     - target: {fileID: 3720827245778887367, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_Type
       value: 0
@@ -2886,11 +2890,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4487754908241386341, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -290
+      value: 684
       objectReference: {fileID: 0}
     - target: {fileID: 4487754908241386341, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -110
+      value: 288
       objectReference: {fileID: 0}
     - target: {fileID: 7062339968754155410, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -2915,6 +2919,10 @@ PrefabInstance:
     - target: {fileID: 7750554359394865127, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750554359394865127, guid: c325997365288374eb28b12de1b5b718, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 7955959674219342539, guid: c325997365288374eb28b12de1b5b718, type: 3}
       propertyPath: m_RootOrder
