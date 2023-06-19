@@ -134,6 +134,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.3f, 0.8f));
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque");
@@ -160,6 +161,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Troll ataque");
                 // El troll hace 2 garrotazos en el mismo ataque (esto es solo cosmético)
                 a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.68f, 1.08f));
+                a.StartCoroutine(a.SangreTrollDobleGolpe(target, a));
                 a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 1.4f, 1.8f));
                 break;
             case "Señor de la ceniza":
@@ -197,9 +199,11 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque especial");
+                a.StartCoroutine(a.HabilitarArmaTrail(unidadEspecial, 0.5f, 1.25f));
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque especial");
+                a.StartCoroutine(a.HabilitarArmaTrail(unidadEspecial, 0.5f, 0.9f));
                 break;
             case "Romero MacBeth":
                 pj.Play("Romero ataque especial");
@@ -355,6 +359,13 @@ public class Animaciones : MonoBehaviour
         {
             trailRenderer.emitting = false;
         }
+    }
+
+    // Esta funcion es porque los trolls hacen 2 golpes, al menos en la animación
+    public IEnumerator SangreTrollDobleGolpe(GameObject target, Animaciones a)
+    {
+        yield return new WaitForSeconds(1.45f);
+        Instantiate(a.sangrePrefab, target.transform.position, Quaternion.identity);
     }
 
 }
