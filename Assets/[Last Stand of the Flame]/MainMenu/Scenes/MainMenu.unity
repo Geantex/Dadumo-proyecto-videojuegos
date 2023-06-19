@@ -433,10 +433,22 @@ PrefabInstance:
     - target: {fileID: 2286006508606439453, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5a8c0278be73a2649a377b9c676552fe, type: 3}
+      objectReference: {fileID: 21300000, guid: bfdf0a4de2517f34a86be889d69b59de, type: 3}
     - target: {fileID: 2286006508606439453, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286006508606439453, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286006508606439453, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286006508606439453, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 2286006508606439453, guid: 179dddcdb5e21bf478450af71452ef93, type: 3}
       propertyPath: m_Maskable
