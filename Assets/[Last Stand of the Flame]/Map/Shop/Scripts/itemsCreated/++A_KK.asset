@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Brebaje de Monje Agresivo Nivel 3
   itemPrice: 100
   itemImage: {fileID: 21300000, guid: 2d2e68b59b17d9c4bbef998c8bd9080e, type: 3}
-  itemDamageModifier: 40
+  itemDamageModifier: 20
   itemHealthModifier: 0
   itemTier: 3
   characterTag: asesino

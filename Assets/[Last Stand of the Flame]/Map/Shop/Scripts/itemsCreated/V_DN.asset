@@ -16,7 +16,7 @@ MonoBehaviour:
   itemPrice: 25
   itemImage: {fileID: 21300000, guid: 282d0fae98d6a1648ae4404845b2d935, type: 3}
   itemDamageModifier: 0
-  itemHealthModifier: 15
+  itemHealthModifier: 10
   itemTier: 1
   characterTag: paladin
   itemSlot: armor

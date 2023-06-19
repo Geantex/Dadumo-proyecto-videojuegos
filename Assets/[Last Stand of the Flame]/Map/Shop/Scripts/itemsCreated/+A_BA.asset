@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Hacha vikinga Nivel 2
   itemPrice: 50
   itemImage: {fileID: 21300000, guid: d3ac8cbe88b76cb4fab11efe10321a8e, type: 3}
-  itemDamageModifier: 20
+  itemDamageModifier: 10
   itemHealthModifier: 0
   itemTier: 2
   characterTag: barbaro

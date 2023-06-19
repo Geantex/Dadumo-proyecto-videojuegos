@@ -16,7 +16,7 @@ MonoBehaviour:
   itemPrice: 25
   itemImage: {fileID: 21300000, guid: 68fe662bd1de4254088fa5a549bf3b34, type: 3}
   itemDamageModifier: 0
-  itemHealthModifier: 12
+  itemHealthModifier: 10
   itemTier: 1
   characterTag: bardo
   itemSlot: armor
