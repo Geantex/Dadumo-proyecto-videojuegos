@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: +A_GB
   m_EditorClassIdentifier: 
-  itemName: "Bast\xF3n del Hechizero Nivel 2"
+  itemName: "Bast\xF3n del Hechizero Nivel 2 (+10 ATK)"
   itemPrice: 50
   itemImage: {fileID: 21300000, guid: 5a70c31f8228a5d4e8bf28d7f109edc9, type: 3}
   itemDamageModifier: 10

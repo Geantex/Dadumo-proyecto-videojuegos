@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: A_DN
   m_EditorClassIdentifier: 
-  itemName: "Espada Drac\xF3nida Nivel 1"
+  itemName: "Espada Drac\xF3nida Nivel 1 (+5 ATK)"
   itemPrice: 25
   itemImage: {fileID: 21300000, guid: 04301c4ea6f68c145a3425953a666deb, type: 3}
   itemDamageModifier: 5

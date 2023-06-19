@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128b23f68e94efb4ca49bc7ff64c8021, type: 3}
   m_Name: A_RM
   m_EditorClassIdentifier: 
-  itemName: Guitarra Nivel 1
+  itemName: Guitarra Nivel 1 (+5 ATK)
   itemPrice: 25
   itemImage: {fileID: 21300000, guid: ca58848b3c212144d8bf280c07f2e5d2, type: 3}
   itemDamageModifier: 5
