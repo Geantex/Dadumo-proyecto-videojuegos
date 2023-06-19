@@ -41,7 +41,7 @@ public class BasicAttack : MonoBehaviour
     // Calculamos el camino más optimo hacia el objetivo
     // Recive: El aliado y el enemigo
     // Devuelve: Si el ataque ha sido exitoso o no
-    public bool Attack(GameObject enemy, GameObject allie)
+    public bool Attack(GameObject enemy, GameObject allie, float incremento)
     {
         //allie.transform.forward = heading;
 
@@ -62,7 +62,7 @@ public class BasicAttack : MonoBehaviour
         // Calculamos la distancia entre el enemigo y el aliado
         float distance = Vector3.Distance(enemy.transform.position, allie.transform.position);
         // Si la distancia es menor o igual que el rango del ataque
-        if (distance <= (range + 0.5f))
+        if (distance <= (range + incremento))
         {
             // Reducimos la vida del enemigo
             enemy.GetComponent<Unit>().Life = enemy.GetComponent<Unit>().Life - damage;

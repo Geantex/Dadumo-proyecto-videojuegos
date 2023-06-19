@@ -231,6 +231,46 @@ public class TacticsMove : MonoBehaviour
     // Función que realiza el movimiento
     // Recive: Nada
     // Devuelve: Nada
+    public void MovePalCentro()
+    {// Obtenemos la casilla más cercana a la que nos queremos mover
+                Tile t = currentTile;
+                // Y guardamos la posición en un vector
+                Vector3 target = t.transform.position;
+
+                //Calculate the unit's position on top of the target tile
+                // Calcula la posición para que el personaje se mueva encima de la casilla
+                target.y += halfHeight + t.GetComponent<Collider>().bounds.extents.y;
+
+                // Si la distancia entre la posición del personaje y la posición de la casilla es mayor que 0.05
+                if (Vector3.Distance(transform.position, target) >= 0.05f)
+                {
+                    // Calculamos la dirección entre la casilla en la que estamos y a la que nos queremos mover
+                    CalculateHeading(target);
+                    // Calculamos la velocidad a la que nos queremos mover
+                    SetHorizotalVelocity();
+                    //Locomotion
+                    // Se establece la rotación (dirección en la que mira) del personaje y se mueve
+                    transform.forward = heading;
+                    // Se mueve el personaje en función de la velocidad y el tiempo
+                    // Establece el movimiento que se debe aplicar en cada fotograma
+                    transform.position += velocity * Time.deltaTime;
+
+                    //Animaciones.idle(gameObject.GetComponentInChildren<Animator>(), gameObject.GetComponent<Unit>().Name);
+                }
+                else
+                {
+                    //Tile center reached
+                    // Si la distancia entre la posición del personaje y la posición de la casilla es menor que 0.05
+                    // Centramos al personaje en la casilla
+                    transform.position = target;
+                    // Quitamos la casilla del camino
+                    path.Pop();
+                }
+    }
+
+    // Función que realiza el movimiento
+    // Recive: Nada
+    // Devuelve: Nada
     public void Move()
     {
         // Si existe un camino
