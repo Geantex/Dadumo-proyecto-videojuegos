@@ -119,6 +119,8 @@ public class Randomizer : FSMState
 
             rerollUsed = true;
         }
+        GameController.Instancia.CharactersParty.Clear();
+        GameController.Instancia.CharactersParty = electedCharacters;
     }
 
     public void RerollSecond()
@@ -141,6 +143,8 @@ public class Randomizer : FSMState
 
             rerollUsed = true;
         }
+        GameController.Instancia.CharactersParty.Clear();
+        GameController.Instancia.CharactersParty = electedCharacters;
     }
 
     public void RerollThird()
@@ -163,6 +167,8 @@ public class Randomizer : FSMState
 
             rerollUsed = true;
         }
+        GameController.Instancia.CharactersParty.Clear();
+        GameController.Instancia.CharactersParty = electedCharacters;
     }
 
     public void changeSprint(string tipe, int orden)
