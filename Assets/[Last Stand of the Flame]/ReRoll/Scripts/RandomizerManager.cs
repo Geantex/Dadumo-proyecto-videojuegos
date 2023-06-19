@@ -92,7 +92,7 @@ public class RandomizerManager : MonoBehaviour
         // Obtener una referencia al script "PlayerMove"
         PlayerMove playerMoveScript = objeto.GetComponent<PlayerMove>();
 
-        // Comprobar si se encontró el script
+        // Comprobar si se encontrï¿½ el script
         if (playerMoveScript != null)
         {
             // Quitar el script del objeto

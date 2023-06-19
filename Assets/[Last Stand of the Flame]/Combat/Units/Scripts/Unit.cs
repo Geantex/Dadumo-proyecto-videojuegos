@@ -18,7 +18,7 @@ public class Unit : MonoBehaviour
     public int party;
     public bool myteam;
 
-    public Image imagen;
+    public Sprite imagen;
     public GameObject circulo;
 
     // Estadísticas de combate

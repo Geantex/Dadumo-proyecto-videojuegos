@@ -369,29 +369,36 @@ public class TutorialSpawner : MonoBehaviour
     {
         foreach (CharacterCreator ch in myPartyPlayers)
         {
-            GameObject gameObjectPlayer = ch.CharacterPrefab;
-
-            //PlayerCharacterCLass player = new PlayerCharacterCLass();
-
+            /*GameObject gameObjectPlayer = ch.CharacterPrefab;
 
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterName = ch.CharacterName;
+            Debug.Log(gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterName);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterClassName = ch.CharacterClass;
+            Debug.Log(ch.CharacterClass);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterImage = ch.CharacterImage;
+            Debug.Log(ch.CharacterImage);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().CharacterMaterial = ch.CharacterMaterial;
+            Debug.Log(ch.CharacterMaterial);
             //player.CharacterPrefab = ch.CharacterPrefab;
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().HealthPoints = ch.HealthPoints;
+            Debug.Log(ch.HealthPoints);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().MaxHealthPoints = ch.MaxHealthPoints;
+            Debug.Log(ch.MaxHealthPoints);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().ManaPoints = ch.ManaPoints;
+            Debug.Log(ch.ManaPoints);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().DamagePoints = ch.DamagePoints;
+            Debug.Log(ch.DamagePoints);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().RangeTiles = ch.RangeTiles;
+            Debug.Log(ch.RangeTiles);
             gameObjectPlayer.GetComponent<PlayerCharacterCLass>().SpecialAttacks = ch.SpecialAttacks;
+            Debug.Log(ch.SpecialAttacks);
             //player.CharacterWeapon = ch.CharacterWeapon;
             //player.CharacterArmor = ch.CharacterArmor;
 
             //gameObjectPlayer.GetComponent<PlayerCharacterCLass>() = player
-            gameObjectPlayer.GetComponent<PlayerCharacterCLass>().UpdateValues();
-
-            myPlayers.Add(gameObjectPlayer);
+            gameObjectPlayer.GetComponent<PlayerCharacterCLass>().UpdateValues();*/
+            ch.SetUpCharacters();
+            myPlayers.Add(ch.CharacterPrefab);
         }
     }
 
@@ -399,29 +406,36 @@ public class TutorialSpawner : MonoBehaviour
     {
         foreach (CharacterCreator ch in myPartyEnemies)
         {
-            GameObject gameObjectEnemy = ch.CharacterPrefab;
-
-            //PlayerCharacterCLass player = new PlayerCharacterCLass();
-
+            /*GameObject gameObjectEnemy = ch.CharacterPrefab;
 
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName = ch.CharacterName;
+            Debug.Log(gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterName);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterClassName = ch.CharacterClass;
+            Debug.Log(ch.CharacterClass);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterImage = ch.CharacterImage;
+            Debug.Log(ch.CharacterImage);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().CharacterMaterial = ch.CharacterMaterial;
+            Debug.Log(ch.CharacterMaterial);
             //player.CharacterPrefab = ch.CharacterPrefab;
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().HealthPoints = ch.HealthPoints;
+            Debug.Log(ch.HealthPoints);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().MaxHealthPoints = ch.MaxHealthPoints;
+            Debug.Log(ch.MaxHealthPoints);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().ManaPoints = ch.ManaPoints;
+            Debug.Log(ch.ManaPoints);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().DamagePoints = ch.DamagePoints;
+            Debug.Log(ch.DamagePoints);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().RangeTiles = ch.RangeTiles;
+            Debug.Log(ch.RangeTiles);
             gameObjectEnemy.GetComponent<EnemyCharacterClass>().SpecialAttacks = ch.SpecialAttacks;
+            Debug.Log(ch.SpecialAttacks);
             //player.CharacterWeapon = ch.CharacterWeapon;
             //player.CharacterArmor = ch.CharacterArmor;
 
             //gameObjectPlayer.GetComponent<PlayerCharacterCLass>() = player
-            gameObjectEnemy.GetComponent<EnemyCharacterClass>().UpdateValues();
-
-            myEnemies.Add(gameObjectEnemy);
+            gameObjectEnemy.GetComponent<EnemyCharacterClass>().UpdateValues();*/
+            ch.SetUpEnemies();
+            myEnemies.Add(ch.CharacterPrefab);
         }
     }
 

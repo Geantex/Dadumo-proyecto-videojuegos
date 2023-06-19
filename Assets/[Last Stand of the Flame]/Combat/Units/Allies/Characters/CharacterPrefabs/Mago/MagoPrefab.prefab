@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 157439854946010650}
   - component: {fileID: 7818755124549505727}
   - component: {fileID: 2486195661591084226}
-  - component: {fileID: 4048681874464302329}
   m_Layer: 0
   m_Name: MagoPrefab
   m_TagString: Player
@@ -130,32 +129,6 @@ MonoBehaviour:
   AllSpecialAttacks:
   - {fileID: 11400000, guid: c2ebf6ea15d7b8942a5299d7b2b988f5, type: 2}
   heading: {x: 0, y: 0, z: 0}
---- !u!114 &4048681874464302329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7408311994210719567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Galentin
-  characterClassName: mago
-  characterImage: {fileID: 3792388835238295109, guid: ff2806427202a6b40b41925b56030478, type: 3}
-  characterMaterial: {fileID: 0}
-  characterPrefab: {fileID: 7408311994210719567}
-  healthPoints: 35
-  maxHealthPoints: 35
-  manaPoints: 100
-  damagePoints: 30
-  rangeTiles: 6
-  specialAttacks:
-  - {fileID: 11400000, guid: c2ebf6ea15d7b8942a5299d7b2b988f5, type: 2}
-  characterWeapon: {fileID: 0}
-  characterArmor: {fileID: 0}
 --- !u!1001 &1354570903471706818
 PrefabInstance:
   m_ObjectHideFlags: 0
