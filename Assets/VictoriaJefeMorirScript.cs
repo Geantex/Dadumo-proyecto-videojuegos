@@ -49,5 +49,6 @@ public class VictoriaJefeMorirScript : MonoBehaviour
         FadeToBlack.QuickFade();
         yield return new WaitForSeconds(0.26f);
         SceneManager.LoadScene("MainMenu");
+        GameObject.Find("StartButton").GetComponent<Button>().interactable = false;
     }
 }
