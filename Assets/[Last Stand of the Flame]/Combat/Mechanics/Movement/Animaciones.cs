@@ -121,7 +121,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque");
-                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.63f, 1.12f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.73f, 1.05f));
                 break;
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
@@ -134,6 +134,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque");
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.3f, 0.8f));
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque");
@@ -160,11 +161,12 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Troll ataque");
                 // El troll hace 2 garrotazos en el mismo ataque (esto es solo cosmético)
                 a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.68f, 1.08f));
+                a.StartCoroutine(a.SangreTrollDobleGolpe(target, a));
                 a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 1.4f, 1.8f));
                 break;
             case "Señor de la ceniza":
                 pj.Play("Boss ataque");
-                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.33f, 1.1f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.42f, 1f));
                 break;
         }
     }
@@ -181,8 +183,10 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque especial");
-                Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head");
-                Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.LookRotation(objetivo.transform.position));
+                // cabezaDeenecan actual coge el CUELLO de Deenecan, pruebo despues, el comentado coge la CABEZA
+                Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck");
+                //Transform cabezaDeenecan = unidadEspecial.transform.Find("Deen Ecan idle/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head");
+                a.StartCoroutine(a.lanzarLlamaradaDeenecan(cabezaDeenecan, objetivo,a));
                 break;
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
@@ -195,9 +199,11 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Kaka":
                 pj.Play("Kaka ataque especial");
+                a.StartCoroutine(a.HabilitarArmaTrail(unidadEspecial, 0.5f, 1.25f));
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque especial");
+                a.StartCoroutine(a.HabilitarArmaTrail(unidadEspecial, 0.95f, 1.5f));
                 break;
             case "Romero MacBeth":
                 pj.Play("Romero ataque especial");
@@ -359,6 +365,13 @@ public class Animaciones : MonoBehaviour
     {
         Instantiate(ani.curacionPrefab, objetivoCurar.transform.position, Quaternion.identity);
     }
+    public IEnumerator lanzarLlamaradaDeenecan(Transform cabezaDeenecan, GameObject objetivo, Animaciones a)
+    {
+        yield return new WaitForSeconds(0.75f);
+        GameObject llamarada = Instantiate(a.fuegito, cabezaDeenecan.position, Quaternion.LookRotation(objetivo.transform.position));
+        llamarada.transform.LookAt(objetivo.transform);
+
+    }
     private IEnumerator HabilitarArmaTrail(GameObject myUnit, float tiempoInicial, float tiempoFinal)
     {
         TrailRenderer[] armasTrails = myUnit.GetComponentsInChildren<TrailRenderer>();
@@ -374,6 +387,13 @@ public class Animaciones : MonoBehaviour
         {
             trailRenderer.emitting = false;
         }
+    }
+
+    // Esta funcion es porque los trolls hacen 2 golpes, al menos en la animación
+    public IEnumerator SangreTrollDobleGolpe(GameObject target, Animaciones a)
+    {
+        yield return new WaitForSeconds(1.45f);
+        Instantiate(a.sangrePrefab, target.transform.position, Quaternion.identity);
     }
 
 }

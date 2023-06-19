@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5079660338752975267}
   - component: {fileID: 4873649232142898024}
   - component: {fileID: 845496164787318266}
+  - component: {fileID: 2710091391587469243}
   m_Layer: 0
   m_Name: AsesinoPrefab
   m_TagString: Player
@@ -129,6 +130,97 @@ MonoBehaviour:
   AllSpecialAttacks:
   - {fileID: 11400000, guid: 3184f55cda8ce4346a6b46fc24f2c458, type: 2}
   heading: {x: 0, y: 0, z: 0}
+--- !u!114 &2710091391587469243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224001364122300964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47f95c02919e9a45b7629fdd3714e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Kazuro
+  characterClassName: asesino
+  characterImage: {fileID: 3792388835238295109, guid: 40f908276ded42446b51ef0e6a942e7e, type: 3}
+  characterMaterial: {fileID: 0}
+  characterPrefab: {fileID: 4224001364122300964}
+  healthPoints: 75
+  maxHealthPoints: 75
+  manaPoints: 100
+  damagePoints: 25
+  rangeTiles: 1
+  specialAttacks:
+  - {fileID: 11400000, guid: 3184f55cda8ce4346a6b46fc24f2c458, type: 2}
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
+--- !u!1001 &5152128368927111667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5770921596811190334}
+    m_Modifications:
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.236
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405836342549159218, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251000625033799319, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_Name
+      value: ArmaTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341851608839986353, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_Emitting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341851608839986353, guid: d313eff6171fa864eb7041e018932f14, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d313eff6171fa864eb7041e018932f14, type: 3}
 --- !u!1001 &5395981611744057073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,14 +271,6 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 650cd030c0f438943a4cfbaa8e3bd0f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1812909498023395591, guid: 650cd030c0f438943a4cfbaa8e3bd0f1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.25050703
-      objectReference: {fileID: 0}
-    - target: {fileID: -1812909498023395591, guid: 650cd030c0f438943a4cfbaa8e3bd0f1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.6776285
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 650cd030c0f438943a4cfbaa8e3bd0f1, type: 3}
       propertyPath: m_Name
@@ -662,6 +746,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
+--- !u!4 &5770921596811190334 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd1b41287ea6ad14b8ea74fc28400dce, type: 3}
+  m_PrefabInstance: {fileID: 6313158137460475861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6772322412616753582
 PrefabInstance:
   m_ObjectHideFlags: 0
