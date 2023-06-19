@@ -121,7 +121,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Deen Ecan":
                 pj.Play("Deen Ecan ataque");
-                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.63f, 1.12f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.73f, 1.05f));
                 break;
             case "Galentin":
                 GameObject bastonGalentin = GetBastonGalentin();
@@ -166,7 +166,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Señor de la ceniza":
                 pj.Play("Boss ataque");
-                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.33f, 1.1f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.42f, 1f));
                 break;
         }
     }
@@ -203,7 +203,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Kazuro":
                 pj.Play("Kazuro ataque especial");
-                a.StartCoroutine(a.HabilitarArmaTrail(unidadEspecial, 0.5f, 0.9f));
+                a.StartCoroutine(a.HabilitarArmaTrail(unidadEspecial, 0.95f, 1.5f));
                 break;
             case "Romero MacBeth":
                 pj.Play("Romero ataque especial");
