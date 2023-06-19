@@ -166,7 +166,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Señor de la ceniza":
                 pj.Play("Boss ataque");
-                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.42f, 1f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.42f, 0.85f));
                 break;
         }
     }
@@ -306,7 +306,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Bandido morir");
                 break;
             case "Rata":
-                pj.Play("Rata morir2");
+                pj.Play("Rata morir");
                 break;
             case "Troll":
                 pj.Play("Troll morir");

@@ -934,16 +934,16 @@ MonoBehaviour:
   BrujoFXAttack:
   - {fileID: 8300000, guid: 5b5db2aaba1dfa2428e69340edcb382b, type: 3}
   BrujoDeath:
-  - {fileID: 8300000, guid: 804a603b87d0b0e40986f7d416b90c3e, type: 3}
-  - {fileID: 8300000, guid: 34d70bfbaf57fea45a52af11784ebdec, type: 3}
-  - {fileID: 8300000, guid: 869a292bbd4695541b31cec853eecc6a, type: 3}
+  - {fileID: 8300000, guid: c8c2a8ec8932d354c82a409289328278, type: 3}
+  - {fileID: 8300000, guid: fadc57bbc31175840b85a58ad1ce16ff, type: 3}
+  - {fileID: 8300000, guid: e6334a74d7f4bfb418e54fb41911db33, type: 3}
   BrujoHurt:
-  - {fileID: 8300000, guid: 33abf916e4679ef44a66971f2f2331ae, type: 3}
-  - {fileID: 8300000, guid: 52e914425f246c249bc46f5c8aa397ab, type: 3}
-  - {fileID: 8300000, guid: 5d0052a10de39034390c093601cc3005, type: 3}
-  - {fileID: 8300000, guid: 52a61e42f63b0c542ac6f2093f7bef31, type: 3}
-  - {fileID: 8300000, guid: 164ccb11e01b38d4cafd4232848c126a, type: 3}
-  - {fileID: 8300000, guid: 48cd00944c00ea14190805f74a068481, type: 3}
+  - {fileID: 8300000, guid: 0422ab478ddf7ac4981e85e1e778d2c8, type: 3}
+  - {fileID: 8300000, guid: 3b228dce7cc9770479d18d8d564dc211, type: 3}
+  - {fileID: 8300000, guid: d4ad497b585e91447b10ad2cc7a37b60, type: 3}
+  - {fileID: 8300000, guid: ae7b9c0767e45e04f9d3dee3facb7f7b, type: 3}
+  - {fileID: 8300000, guid: d71b276458bd8244db182995507f3b66, type: 3}
+  - {fileID: 8300000, guid: 6c4be60deb7ccf34fb5375a1359605a2, type: 3}
   BrujoSpecialAttack: []
   BrujoFXSpecialAttack: []
   BossAttack:

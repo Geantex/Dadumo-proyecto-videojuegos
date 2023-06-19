@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
             {
                 // Spawn explosion prefab at current position
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-                TurnManager.EndTurn(unit.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
+                //TurnManager.EndTurn(unit.GetComponent<TacticsMove>(), FindObjectOfType<TurnManager>());
                 // Destroy the projectile
                 Destroy(gameObject);
             }

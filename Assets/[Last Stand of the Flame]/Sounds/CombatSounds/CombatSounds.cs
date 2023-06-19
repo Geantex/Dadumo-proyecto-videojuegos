@@ -126,53 +126,44 @@ public class CombatSounds : MonoBehaviour
             case "Barbara":
                 soundClipsSource.clip = soundClips.BarbaraAttack[Random.Range(0, 4)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.BarbaraFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Deen Ecan":
                 soundClipsSource.clip = soundClips.DeenEcanAttack[Random.Range(0, 4)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.DeenEcanFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Galentin":
-                soundFXClipsSource.clip = soundClips.GalentinFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Jose Maria":
                 soundClipsSource.clip = soundClips.JoseMariaAttack[Random.Range(0, 5)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.JoseMariaFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Kaka":
                 soundClipsSource.clip = soundClips.KakaAttack[Random.Range(0, 5)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.KakaFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Kazuro":
                 soundClipsSource.clip = soundClips.KazuroAttack[Random.Range(0, 4)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.KazuroFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Romero MacBeth":
                 soundClipsSource.clip = soundClips.RomeroAttack[Random.Range(0, 3)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.RomeroFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
 
             case "Brujo":
-                soundFXClipsSource.clip = soundClips.BrujoFXAttack[Random.Range(0, 4)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Ladron":
                 soundClipsSource.clip = soundClips.LadronAttack[Random.Range(0, 5)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.LadronFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Rata":
                 soundClipsSource.clip = soundClips.RataAttack[Random.Range(0, 1)];
@@ -181,12 +172,66 @@ public class CombatSounds : MonoBehaviour
             case "Troll":
                 soundClipsSource.clip = soundClips.TrollAttack[Random.Range(0, 3)];
                 soundClipsSource.Play();
-                soundFXClipsSource.clip = soundClips.TrollFXAttack[Random.Range(0, 1)];
-                soundFXClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
                 break;
             case "Señor de la ceniza":
                 soundClipsSource.clip = soundClips.BossAttack[Random.Range(0, 4)];
                 soundClipsSource.Play();
+                StartCoroutine(EsperarUnSegundo(name));
+                break;
+        }
+    }
+
+    public void ataqueFX(string name)
+    {
+        switch (name)
+        {
+            case "Barbara":
+                soundFXClipsSource.clip = soundClips.BarbaraFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Deen Ecan":
+                soundFXClipsSource.clip = soundClips.DeenEcanFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Galentin":
+                soundFXClipsSource.clip = soundClips.GalentinFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Jose Maria":
+                soundFXClipsSource.clip = soundClips.JoseMariaFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Kaka":
+                soundFXClipsSource.clip = soundClips.KakaFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Kazuro":
+                soundFXClipsSource.clip = soundClips.KazuroFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Romero MacBeth":
+                soundFXClipsSource.clip = soundClips.RomeroFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+
+            case "Brujo":
+                soundFXClipsSource.clip = soundClips.BrujoFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Ladron":
+                soundFXClipsSource.clip = soundClips.LadronFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Rata":
+                soundClipsSource.clip = soundClips.RataAttack[Random.Range(0, 1)];
+                soundClipsSource.Play();
+                break;
+            case "Troll":
+                soundFXClipsSource.clip = soundClips.TrollFXAttack[Random.Range(0, 1)];
+                soundFXClipsSource.Play();
+                break;
+            case "Señor de la ceniza":
                 soundFXClipsSource.clip = soundClips.BossFXAttack[Random.Range(0, 1)];
                 soundFXClipsSource.Play();
                 break;
@@ -362,5 +407,12 @@ public class CombatSounds : MonoBehaviour
                 soundClipsSource.Play();
                 break;
         }
+    }
+
+    IEnumerator EsperarUnSegundo(string name)
+    {
+        yield return new WaitForSeconds(0.5f);
+        //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
+        ataqueFX(name);
     }
 }

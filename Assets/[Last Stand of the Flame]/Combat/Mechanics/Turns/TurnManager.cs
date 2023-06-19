@@ -77,6 +77,8 @@ public class TurnManager : MonoBehaviour
         }
     }
 
+    public static bool palMuerto = true;
+
     public static void EndTurn(TacticsMove unit, TurnManager turnManager)
     {
         if (SceneManager.GetActiveScene().name == "TutorialCombate")
@@ -101,6 +103,7 @@ public class TurnManager : MonoBehaviour
             if (move.GetComponent<Unit>().Life <= 0)
             {
                 defeatedUnits.Add(move); // Agregar unidad derrotada a la lista
+                palMuerto = false;
             }
         }
 
@@ -113,7 +116,6 @@ public class TurnManager : MonoBehaviour
             defeatedUnit.GetComponent<Unit>().desaparecer();
         }
 
-        
         // Add the unit back to the list and sort the list by speed
         
         units.Sort((x, y) => y.GetComponent<Unit>().Speed.CompareTo(x.GetComponent<Unit>().Speed));
@@ -130,7 +132,12 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EsperarUnSegundo()
     {
-        yield return new WaitForSeconds(0.5f);
+        float suma = 0f;
+        if (!palMuerto)
+        {
+            suma = 1.6f;
+        }
+        yield return new WaitForSeconds(0.5f + suma);
         //Aquí es donde colocas la acción que quieres realizar después de cinco segundos
         StartTurn();
     }
