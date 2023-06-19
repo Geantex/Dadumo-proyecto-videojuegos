@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 7408311994210719567}
-  combatSounds: {fileID: 0}
+  combatSounds: {fileID: 5293174480256739120}
 --- !u!114 &5293174480256739120
 MonoBehaviour:
   m_ObjectHideFlags: 0
