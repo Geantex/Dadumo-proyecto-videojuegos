@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: "Bast\xF3n del Hechicero Nivel 1"
   itemPrice: 100
   itemImage: {fileID: 21300000, guid: 5a70c31f8228a5d4e8bf28d7f109edc9, type: 3}
-  itemDamageModifier: 10
+  itemDamageModifier: 5
   itemHealthModifier: 2
   itemTier: 1
   characterTag: mago
