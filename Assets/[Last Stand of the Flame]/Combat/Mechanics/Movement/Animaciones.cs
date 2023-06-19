@@ -306,7 +306,7 @@ public class Animaciones : MonoBehaviour
                 pj.Play("Bandido morir");
                 break;
             case "Rata":
-                pj.Play("Rata morir2");
+                pj.Play("Rata morir");
                 break;
             case "Troll":
                 pj.Play("Troll morir");

@@ -52,6 +52,7 @@ public class AccionesEnAnimaciones : MonoBehaviour
             unit.SetActive(false);
 
             Destroy(unit);
+            TurnManager.palMuerto = true;
         }
     }
 
