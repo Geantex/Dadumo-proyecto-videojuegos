@@ -27,9 +27,9 @@ public class Randomizer : FSMState
     //public Button reroll2;
     //public Button reroll3;
 
-    public Image imageCharacter1;
-    public Image imageCharacter2;
-    public Image imageCharacter3;
+    public GameObject prefabCharacter1;
+    public GameObject prefabCharacter2;
+    public GameObject prefabCharacter3;
 
     public bool rerollUsed = false;
 
@@ -42,12 +42,6 @@ public class Randomizer : FSMState
     public GameObject Barbaro;
 
     private int characterNumber = 0;
-
-    public Vector3 Spawn1 = new Vector3(-1.502f, 0.524f, -8.126f);
-
-    public Vector3 Spawn2 = new Vector3(0.321f, 0.524f, -6.681f);
-
-    public Vector3 Spawn3 = new Vector3(2.08f, 0.524f, -8.227f);
 
     protected override void EnterState()
     {
@@ -185,7 +179,8 @@ public class Randomizer : FSMState
                             Debug.Log(Clerigo);
                         }
                         //imageCharacter1.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/JM_pose_rework_png.png");
-                        
+                        prefabCharacter1 = Clerigo;
+
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "clerigo"));
                         break;
                     case 2:
@@ -195,7 +190,7 @@ public class Randomizer : FSMState
                             Debug.Log(Clerigo);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/JM_pose_rework_png.png");
-                        Instantiate(Clerigo, Spawn2, Quaternion.identity);
+                        prefabCharacter2 = Clerigo;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "clerigo"));
                         break;
                     case 3:
@@ -205,7 +200,7 @@ public class Randomizer : FSMState
                             Debug.Log(Clerigo);
                         }
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/JM_pose_rework_png.png");
-                        Instantiate(Clerigo, Spawn2, Quaternion.identity);
+                        prefabCharacter3 = Clerigo;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "clerigo"));
                         break;
                 }
@@ -221,7 +216,7 @@ public class Randomizer : FSMState
                             Debug.Log(Barbaro);
                         }
                         //imageCharacter1.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/barbaro_ani.png");
-                        Instantiate(Barbaro, Spawn1, Quaternion.identity);
+                        prefabCharacter1 = Barbaro;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "barbaro"));
                         break;
                     case 2:
@@ -231,7 +226,7 @@ public class Randomizer : FSMState
                             Debug.Log(Barbaro);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/barbaro_ani.png");
-                        Instantiate(Barbaro, Spawn2, Quaternion.identity);
+                        prefabCharacter2 = Barbaro;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "barbaro"));
                         break;
                     case 3:
@@ -241,7 +236,7 @@ public class Randomizer : FSMState
                             Debug.Log(Barbaro);
                         }
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/barbaro_ani.png");
-                        Instantiate(Barbaro, Spawn3, Quaternion.identity);
+                        prefabCharacter3 = Barbaro;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "barbaro"));
                         break;
                 }
@@ -257,7 +252,7 @@ public class Randomizer : FSMState
                             Debug.Log(Bardo);
                         }
                         //imageCharacter1.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/Romero_Macbeth_ani.png");
-                        Instantiate(Bardo, Spawn1, Quaternion.identity);
+                        prefabCharacter1 = Bardo;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "bardo"));
                         break;
                     case 2:
@@ -267,7 +262,7 @@ public class Randomizer : FSMState
                             Debug.Log(Bardo);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/Romero_Macbeth_ani.png");
-                        Instantiate(Bardo, Spawn2, Quaternion.identity);
+                        prefabCharacter2 = Bardo;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "bardo"));
                         break;
                     case 3:
@@ -277,7 +272,7 @@ public class Randomizer : FSMState
                             Debug.Log(Bardo);
                         }
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/Romero_Macbeth_ani.png");
-                        Instantiate(Bardo, Spawn3, Quaternion.identity);
+                        prefabCharacter3 = Bardo;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "bardo"));
                         break;
                 }
@@ -293,7 +288,7 @@ public class Randomizer : FSMState
                             Debug.Log(Mago);
                         }
                         //imageCharacter1.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/Galentin_pose_png.png");
-                        Instantiate(Mago, Spawn1, Quaternion.identity);
+                        prefabCharacter1 = Mago;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "mago"));
                         break;
                     case 2:
@@ -303,7 +298,7 @@ public class Randomizer : FSMState
                             Debug.Log(Mago);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/Galentin_pose_png.png");
-                        Instantiate(Mago, Spawn2, Quaternion.identity);
+                        prefabCharacter2 = Mago;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "mago"));
                         break;
                     case 3:
@@ -313,7 +308,7 @@ public class Randomizer : FSMState
                             Debug.Log(Mago);
                         }
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/Galentin_pose_png.png");
-                        Instantiate(Mago, Spawn3, Quaternion.identity);
+                        prefabCharacter3 = Mago;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "mago"));
                         break;
                 }
@@ -329,7 +324,7 @@ public class Randomizer : FSMState
                             Debug.Log(Luchador);
                         }
                         //imageCharacter1.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/KAKA_animacion_azul.png");
-                        Instantiate(Luchador, Spawn1, Quaternion.identity);
+                        prefabCharacter1 = Luchador;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "luchador"));
                         break;
                     case 2:
@@ -339,7 +334,7 @@ public class Randomizer : FSMState
                             Debug.Log(Luchador);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/KAKA_animacion_azul.png");
-                        Instantiate(Luchador, Spawn2, Quaternion.identity);
+                        prefabCharacter2 = Luchador;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "luchador"));
                         break;
                     case 3:
@@ -349,7 +344,7 @@ public class Randomizer : FSMState
                             Debug.Log(Luchador);
                         }
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/KAKA_animacion_azul.png");
-                        Instantiate(Luchador, Spawn3, Quaternion.identity);
+                        prefabCharacter3 = Luchador;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "luchador"));
                         break;
                 }
@@ -365,7 +360,7 @@ public class Randomizer : FSMState
                             Debug.Log(Paladin);
                         }
                         //imageCharacter1.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/animacion_Deenecan.png");
-                        Instantiate(Paladin, Spawn1, Quaternion.identity);
+                        prefabCharacter1 = Paladin;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "paladin"));
                         break;
                     case 2:
@@ -375,7 +370,7 @@ public class Randomizer : FSMState
                             Debug.Log(Paladin);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/animacion_Deenecan.png");
-                        Instantiate(Paladin, Spawn2, Quaternion.identity);
+                        prefabCharacter2 = Paladin;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "paladin"));
 
                         break;
@@ -383,7 +378,7 @@ public class Randomizer : FSMState
                     case 3:
                         Debug.Log(orden);
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/animacion_Deenecan.png");
-                        Instantiate(Paladin, Spawn3, Quaternion.identity);
+                        prefabCharacter3 = Paladin;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "paladin"));
 
                         break;
@@ -400,7 +395,7 @@ public class Randomizer : FSMState
                         {
                             Debug.Log(Asesino);
                         }
-                        Instantiate(Asesino, Spawn1, Quaternion.identity);
+                        prefabCharacter1 = Asesino;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "asesino"));
 
                         break;
@@ -411,7 +406,7 @@ public class Randomizer : FSMState
                             Debug.Log(Asesino);
                         }
                         //imageCharacter2.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/kazuro_animacion_png.png");
-                        Instantiate(Asesino, Spawn2, Quaternion.identity);
+                        prefabCharacter2 = Asesino;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "asesino"));
                         break;
                     case 3:
@@ -421,7 +416,7 @@ public class Randomizer : FSMState
                             Debug.Log(Asesino);
                         }
                         //imageCharacter3.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/InGameCombat/Units/Allies/ImagenesCharacters/kazuro_animacion_png.png");
-                        Instantiate(Asesino, Spawn3, Quaternion.identity);
+                        prefabCharacter3 = Asesino;
                         electedCharacters.Add(characters.Find(character => character.CharacterClass == "asesino"));
                         break;
                 }
@@ -440,22 +435,6 @@ public class Randomizer : FSMState
         foreach (CharacterCreator character in electedCharacters)
         {
             (machine as GameController).CharactersParty.Add(Instantiate(character));
-        }
-    }
-
-    public void instantiateAndClean(GameObject objeto, PlayerMove playerMoveScript)
-    {
-        // Instanciar el objeto
-        objeto = Instantiate(Clerigo, Spawn1, Quaternion.identity);
-
-        // Obtener una referencia al script "PlayerMove"
-        playerMoveScript = objeto.GetComponent<PlayerMove>();
-
-        // Comprobar si se encontró el script
-        if (playerMoveScript != null)
-        {
-            // Quitar el script del objeto
-            Destroy(playerMoveScript);
         }
     }
 }

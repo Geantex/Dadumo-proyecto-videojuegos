@@ -291,6 +291,10 @@ PrefabInstance:
       value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 1133483191033134311, guid: c23246447e2c8fa4983565d71b1778b1, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133483191033134311, guid: c23246447e2c8fa4983565d71b1778b1, type: 3}
       propertyPath: m_BounceIntensity
       value: 3
       objectReference: {fileID: 0}
