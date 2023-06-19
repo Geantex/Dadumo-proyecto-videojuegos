@@ -166,7 +166,7 @@ public class Animaciones : MonoBehaviour
                 break;
             case "Señor de la ceniza":
                 pj.Play("Boss ataque");
-                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.42f, 1f));
+                a.StartCoroutine(a.HabilitarArmaTrail(myUnit, 0.42f, 0.85f));
                 break;
         }
     }
