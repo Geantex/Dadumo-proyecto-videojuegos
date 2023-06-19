@@ -158,9 +158,9 @@ RectTransform:
   m_Father: {fileID: 7715098294765157444}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 721, y: 439}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -239, y: -161}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74014423
@@ -3649,6 +3649,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7715098293804426082, guid: c3aab1b3afe7aa4438a641ad0aa6fd96, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -181.22021
+      objectReference: {fileID: 0}
     - target: {fileID: 7715098294128560114, guid: c3aab1b3afe7aa4438a641ad0aa6fd96, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3816,6 +3820,18 @@ PrefabInstance:
     - target: {fileID: 8492389727554959270, guid: c3aab1b3afe7aa4438a641ad0aa6fd96, type: 3}
       propertyPath: m_Name
       value: Randomizador
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492389727554959320, guid: c3aab1b3afe7aa4438a641ad0aa6fd96, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492389727554959320, guid: c3aab1b3afe7aa4438a641ad0aa6fd96, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492389727554959320, guid: c3aab1b3afe7aa4438a641ad0aa6fd96, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8492389727554959322, guid: c3aab1b3afe7aa4438a641ad0aa6fd96, type: 3}
       propertyPath: m_Pivot.x
